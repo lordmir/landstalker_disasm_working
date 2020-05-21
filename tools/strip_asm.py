@@ -6,7 +6,7 @@ import os
 
 def export_ram_labels(text, file):
 
-    r = re.compile(r'^ [0-9A-F]{4}:([0-9A-F]{8}) {7}(\w+)', re.MULTILINE)
+    r = re.compile(r'^ [0-9A-F]{4}:([0-9A-F]{8})\s+([\w\.]+)', re.MULTILINE)
     mm = r.findall(text)
 
     # Search map file for all labels after the end of the ROM section, and put
