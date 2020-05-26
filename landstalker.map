@@ -90,54 +90,54 @@
  0000:000001B8       SRamEnd
  0000:000001BC       Memo
  0000:000001F0       CountrySupport
- 0000:00000200       FrameRate
+ 0000:00000200       SlowDown
  0000:00000202       BuildDate
  0000:00000210       DebugModeEnable
- 0000:00000212       sub_212
- 0000:0000021E       sub_21E
- 0000:00000224       sub_224
- 0000:0000022A       sub_22A
- 0000:00000230       sub_230
- 0000:00000236       sub_236
- 0000:0000023C       sub_23C
- 0000:00000242       sub_242
- 0000:00000248       sub_248
- 0000:0000024E       sub_24E
- 0000:00000254       sub_254
- 0000:0000025A       sub_25A
+ 0000:00000212       j_EnableDisplay
+ 0000:0000021E       j_EnableInterrupts
+ 0000:00000224       j_DisableInterrupts
+ 0000:0000022A       j_EnableDisplayAndInts
+ 0000:00000230       j_DisableDisplayAndInts
+ 0000:00000236       j_DisableVDPSpriteUpdate
+ 0000:0000023C       j_EnableVDPSpriteUpdate
+ 0000:00000242       j_CopyBasePalleteToActivePalette
+ 0000:00000248       j_QueueFullPaletteDMA
+ 0000:0000024E       j_FadeFromBlack
+ 0000:00000254       j_FadeToBlack
+ 0000:0000025A       j_CopyVDPSpriteTableDMA
  0000:00000266       j_ClearVDPSpriteTable
- 0000:00000272       sub_272
- 0000:00000278       sub_278
- 0000:00000296       sub_296
- 0000:000002A2       sub_2A2
- 0000:000002A8       sub_2A8
+ 0000:00000272       j_WaitUntilVBlank
+ 0000:00000278       j_Sleep
+ 0000:00000296       j_EnableProcessingOfVRAMCopyQueue
+ 0000:000002A2       j_EnableDMAQueueProcessing
+ 0000:000002A8       j_FlushDMACopyQueue
  0000:000002C0       j_DoDMACopy_1
- 0000:000002C6       sub_2C6
- 0000:000002CC       sub_2CC
- 0000:000002D2       sub_2D2
- 0000:000002D8       sub_2D8
- 0000:000002DE       sub_2DE
- 0000:000002E4       sub_2E4
- 0000:000002EA       sub_2EA
+ 0000:000002C6       j_QueueDMAOp
+ 0000:000002CC       j_QueueHScrollDMAUpdate
+ 0000:000002D2       j_FillHScrollData
+ 0000:000002D8       j_FillHScrollDataOffset1
+ 0000:000002DE       j_QueueVSRAMUpdate
+ 0000:000002E4       j_FillVSRAM
+ 0000:000002EA       j_FillVSRAMOffset1
  0000:000002F0       j_LoadCompressedGfx
- 0000:000002F6       sub_2F6
- 0000:000002FC       sub_2FC
- 0000:00000302       sub_302
- 0000:00000308       sub_308
- 0000:0000030E       sub_30E
- 0000:00000314       sub_314
- 0000:0000031A       sub_31A
- 0000:00000320       sub_320
+ 0000:000002F6       j_DecompressAndQueueGfxCopy
+ 0000:000002FC       j_QueueTextboxTilemapDMA
+ 0000:00000302       j_MultiplyD3By148
+ 0000:00000308       j_GetVDPReg
+ 0000:0000030E       j_SetVDPReg
+ 0000:00000314       j_OrVDPReg
+ 0000:0000031A       j_AndVDPReg
+ 0000:00000320       j_DoDMAFill
  0000:00000326       j_LoadPaletteToRAM
  0000:0000032C       j_CopyPalette
  0000:00000338       j_ConvertToBase10
- 0000:0000033E       sub_33E
- 0000:0000034A       sub_34A
- 0000:0000035C       sub_35C
+ 0000:0000033E       j_WaitForZ80
+ 0000:0000034A       j_WaitForNextButtonPress
+ 0000:0000035C       j_Wait3SecondsOrUntilButtonPushed
  0000:00000362       j_GenerateRandomNumber
- 0000:00000368       sub_368
- 0000:0000036E       sub_36E
- 0000:0000037A       sub_37A
+ 0000:00000368       j_InitFadeFromBlackParams
+ 0000:0000036E       j_InitFadeToBlackParams
+ 0000:0000037A       j_DarkenPalette
  0000:00000380       sub_380
  0000:00000386       sub_386
  0000:0000038C       sub_38C
@@ -147,58 +147,58 @@
  0000:000003A4       j_CollisionDetect
  0000:000003AA       sub_3AA
  0000:000003B0       j_GetSpeakerSpriteId
- 0000:000003B6       sub_3B6
+ 0000:000003B6       j_QueueHUDTilemapDMA
  0000:000003BC       sub_3BC
  0000:000003C8       sub_3C8
  0000:000003CE       j_SaveGame
- 0000:000003D4       sub_3D4
- 0000:000003DA       sub_3DA
+ 0000:000003D4       j_CheckForCollision
+ 0000:000003DA       j_LoadRoom_0
  0000:000003E0       sub_3E0
  0000:000003E6       sub_3E6
  0000:000003EC       sub_3EC
- 0000:000003F2       sub_3F2
+ 0000:000003F2       j_CheckForRoomTransition
  0000:000003F8       sub_3F8
  0000:000003FE       sub_3FE
  0000:00000404       sub_404
  0000:0000040A       sub_40A
  0000:00000410       sub_410
- 0000:00000416       sub_416
- 0000:0000041C       sub_41C
+ 0000:00000416       j_FadeInFromDarkness
+ 0000:0000041C       j_CheckForDoorNW
  0000:00000428       sub_428
  0000:0000042E       sub_42E
  0000:00000434       sub_434
- 0000:0000043A       sub_43A
+ 0000:0000043A       j_TransitionToNewRoom
  0000:00000440       j_GetOriginalRoomNum
- 0000:00000446       sub_446
+ 0000:00000446       j_RestoreBGM
  0000:0000044C       sub_44C
  0000:0000045E       j_DoVisualEffect
- 0000:00000464       sub_464
- 0000:0000046A       sub_46A
- 0000:00000476       sub_476
- 0000:0000047C       sub_47C
- 0000:00000482       sub_482
+ 0000:00000464       j_LoadMagicSwordGfx
+ 0000:0000046A       j_UpdateEquipPal
+ 0000:00000476       j_FadeFromWhite
+ 0000:0000047C       j_FadeToWhite
+ 0000:00000482       j_EkeEkeHealthRecover
  0000:00000488       sub_488
  0000:0000048E       sub_48E
- 0000:00000494       sub_494
- 0000:0000049A       sub_49A
+ 0000:00000494       j_BlankAllButHUD
+ 0000:0000049A       j_SetLifestockSoldFlag
  0000:000004A0       j_CheckIfLifestockSold
  0000:000004A6       sub_4A6
- 0000:000004AC       loc_4AC
- 0000:000004B2       sub_4B2
+ 0000:000004AC       j_EndGame
+ 0000:000004B2       j_QueueFullHUDTilemapDMA
  0000:000004B8       loc_4B8
- 0000:000004BE       loc_4BE
+ 0000:000004BE       EndGame
  0000:000004CE       loc_4CE
  0000:000004DC       loc_4DC
  0000:000004FE       loc_4FE
- 0000:00000516       sub_516
+ 0000:00000516       ResetVDPAndClearRAM
  0000:0000052A       loc_52A
  0000:00000536       loc_536
- 0000:0000054C       sub_54C
+ 0000:0000054C       ClearAndInitGraphics
  0000:0000057E       loc_57E
  0000:00000594       loc_594
  0000:000005A8       loc_5A8
- 0000:000005C4       word_5C4
- 0000:000005C6       word_5C6
+ 0000:000005C4       InitVDPRegs00
+ 0000:000005C6       InitVDPRegs01
  0000:000005EA       EntryPoint
  0000:000005F8       loc_5F8
  0000:00000618       loc_618
@@ -215,7 +215,7 @@
  0000:000006EA       loc_6EA
  0000:000006FA       InitZ80Driver
  0000:0000071E       loc_71E
- 0000:00000754       sub_754
+ 0000:00000754       WriteAndVerifyReg
  0000:0000075E       Trap00Handler
  0000:00000774       loc_774
  0000:0000077C       loc_77C
@@ -227,64 +227,64 @@
  0000:000007E4       HandleIRQ7
  0000:000007E8       Trap01Handler
  0000:00000802       Trap02Handler
- 0000:00000820       sub_820
+ 0000:00000820       WaitUntilZ80Ready
  0000:00000824       loc_824
  0000:00000830       loc_830
- 0000:00000852       loc_852
- 0000:00000868       sub_868
- 0000:0000087E       sub_87E
- 0000:000008A0       sub_8A0
- 0000:000008B2       sub_8B2
+ 0000:00000852       RestoreBGM
+ 0000:00000868       GetVDPReg
+ 0000:0000087E       SetVDPReg
+ 0000:000008A0       OrVDPReg
+ 0000:000008B2       MaskVDPReg
  0000:000008C2       loc_8C2
- 0000:000008D2       sub_8D2
- 0000:000008DC       loc_8DC
- 0000:000008E6       sub_8E6
- 0000:000008EC       sub_8EC
- 0000:000008F2       sub_8F2
- 0000:000008F6       sub_8F6
- 0000:000008FA       sub_8FA
- 0000:00000904       sub_904
- 0000:0000090E       sub_90E
+ 0000:000008D2       EnableDisplay
+ 0000:000008DC       DisableDisplay
+ 0000:000008E6       EnableInterrupts
+ 0000:000008EC       DisableInterrupts
+ 0000:000008F2       EnableDisplayAndInts
+ 0000:000008F6       DisableDisplayAndInts
+ 0000:000008FA       DisableVDPSpriteUpdate
+ 0000:00000904       EnableVDPSpriteUpdate
+ 0000:0000090E       CopyBasePalleteToActivePalette
  0000:00000922       loc_922
- 0000:0000092C       sub_92C
+ 0000:0000092C       QueueFullPaletteDMA
  0000:00000960       LoadPaletteToRAM
  0000:00000966       CopyPalette
- 0000:0000096A       sub_96A
- 0000:00000972       sub_972
- 0000:0000098A       sub_98A
- 0000:00000990       sub_990
- 0000:000009A8       sub_9A8
+ 0000:0000096A       WordCopy
+ 0000:00000972       InitFadeFromBlackParams
+ 0000:0000098A       FadeFromBlack
+ 0000:00000990       InitFadeToBlackParams
+ 0000:000009A8       FadeToBlack
  0000:000009AA       loc_9AA
  0000:000009AE       loc_9AE
- 0000:000009BE       sub_9BE
- 0000:000009CE       sub_9CE
+ 0000:000009BE       DarkenActivePalette
+ 0000:000009CE       DarkenPalette
  0000:000009E0       loc_9E0
- 0000:000009FC       sub_9FC
+ 0000:000009FC       DarkenColour
  0000:00000A10       loc_A10
  0000:00000A26       loc_A26
  0000:00000A3A       loc_A3A
- 0000:00000A42       sub_A42
- 0000:00000A52       loc_A52
+ 0000:00000A42       FadeFromWhite
+ 0000:00000A52       FadeToWhite
  0000:00000A5E       loc_A5E
  0000:00000A62       loc_A62
  0000:00000A72       loc_A72
- 0000:00000A94       sub_A94
+ 0000:00000A94       BrightenColour
  0000:00000AA8       loc_AA8
  0000:00000AC0       loc_AC0
  0000:00000AD6       loc_AD6
- 0000:00000AE0       sub_AE0
- 0000:00000AE4       loc_AE4
+ 0000:00000AE0       ClearAndRefreshVDPSpriteTableDMA
+ 0000:00000AE4       UpdateVDPSpriteTableDMA
  0000:00000B16       ClearVDPSpriteTable
  0000:00000B24       loc_B24
- 0000:00000B38       sub_B38
- 0000:00000B5E       sub_B5E
+ 0000:00000B38       ClearScrollPlanes
+ 0000:00000B5E       WaitUntilVBlank
  0000:00000B6E       loc_B6E
- 0000:00000B7A       sub_B7A
+ 0000:00000B7A       Sleep
  0000:00000B7E       loc_B7E
- 0000:00000B8A       sub_B8A
- 0000:00000B94       loc_B94
- 0000:00000B9A       sub_B9A
- 0000:00000BA4       sub_BA4
+ 0000:00000B8A       EnableVRAMCopyQueueProcessing
+ 0000:00000B94       FlushVRAMCopyQueue
+ 0000:00000B9A       EnableDMAQueueProcessing
+ 0000:00000BA4       FlushDMACopyQueue
  0000:00000BAA       sub_BAA
  0000:00000BBC       loc_BBC
  0000:00000BE0       loc_BE0
@@ -299,21 +299,21 @@
  0000:00000D22       DoDMACopy
  0000:00000D2C       loc_D2C
  0000:00000DCE       loc_DCE
- 0000:00000DD6       sub_DD6
+ 0000:00000DD6       QueueDMAOp
  0000:00000DDA       loc_DDA
  0000:00000E5E       loc_E5E
- 0000:00000E64       loc_E64
- 0000:00000E8A       sub_E8A
- 0000:00000EBE       sub_EBE
+ 0000:00000E64       SetVRAMAddressOnVDP
+ 0000:00000E8A       QueueHScrollDMAUpdate
+ 0000:00000EBE       FillHScrollData
  0000:00000EC8       loc_EC8
  0000:00000ECC       loc_ECC
- 0000:00000EDA       sub_EDA
- 0000:00000EE6       sub_EE6
- 0000:00000F1A       sub_F1A
+ 0000:00000EDA       FillHScrollDataOffset1
+ 0000:00000EE6       QueueVSRAMUpdate
+ 0000:00000F1A       FillVSRAM
  0000:00000F24       loc_F24
  0000:00000F28       loc_F28
- 0000:00000F36       sub_F36
- 0000:00000F42       sub_F42
+ 0000:00000F36       FillVSRAMOffset1
+ 0000:00000F42       DoDMAFill
  0000:00000FB4       loc_FB4
  0000:00000FDA       ConvertToBase10
  0000:00000FEC       loc_FEC
@@ -321,21 +321,21 @@
  0000:00001004       loc_1004
  0000:00001012       loc_1012
  0000:00001018       PowersOf10
- 0000:00001040       sub_1040
+ 0000:00001040       WaitForZ80
  0000:00001052       loc_1052
  0000:0000106E       ReadControllerInput
- 0000:00001086       sub_1086
- 0000:000010B2       loc_10B2
+ 0000:00001086       ReadControllerReg
+ 0000:000010B2       WaitForButtonPush
  0000:000010C4       locret_10C4
- 0000:000010C6       sub_10C6
+ 0000:000010C6       WaitForNextButtonPress
  0000:000010DA       loc_10DA
  0000:000010EE       locret_10EE
  0000:000010F0       loc_10F0
  0000:00001124       loc_1124
- 0000:00001136       loc_1136
+ 0000:00001136       Wait1SecondOrUntilButtonPushed
  0000:0000113C       loc_113C
  0000:00001152       loc_1152
- 0000:00001158       sub_1158
+ 0000:00001158       Wait3SecondsOrUntilButtonPushed
  0000:00001164       GenerateRandomNumber
  0000:00001184       HandleHBlankInterrupt
  0000:0000119C       loc_119C
@@ -345,19 +345,19 @@
  0000:000011DE       HandleVBlankInterrupt
  0000:000011F6       loc_11F6
  0000:00001246       loc_1246
- 0000:0000124C       sub_124C
- 0000:00001260       sub_1260
- 0000:0000126C       sub_126C
+ 0000:0000124C       DisableDisplay_0
+ 0000:00001260       ProcessQueuedVDPActions
+ 0000:0000126C       ProcessVRAMCopyQueue
  0000:00001288       loc_1288
  0000:000012A2       loc_12A2
  0000:000012CA       loc_12CA
  0000:000012EE       locret_12EE
- 0000:000012F0       sub_12F0
+ 0000:000012F0       ProcessVRAMReadOp
  0000:00001324       loc_1324
  0000:0000132E       locret_132E
- 0000:00001330       sub_1330
+ 0000:00001330       RefreshVDPSpriteTable
  0000:0000133E       locret_133E
- 0000:00001340       sub_1340
+ 0000:00001340       ProcessQueuedDMAOps
  0000:0000135A       loc_135A
  0000:0000137C       loc_137C
  0000:000013B4       locret_13B4
@@ -402,11 +402,11 @@
  0000:0000160A       loc_160A
  0000:00001618       loc_1618
  0000:00001628       SaveGameRamPtrs
- 0000:000016B6       loc_16B6
+ 0000:000016B6       ResetGame
  0000:000016CA       loc_16CA
  0000:000016D2       loc_16D2
  0000:000016DC       sub_16DC
- 0000:00001788       sub_1788
+ 0000:00001788       ProcessControlScript
  0000:000017B8       loc_17B8
  0000:000017BE       locret_17BE
  0000:000017C0       loc_17C0
@@ -424,7 +424,7 @@
  0000:000018FC       loc_18FC
  0000:00001922       loc_1922
  0000:0000192A       loc_192A
- 0000:00001936       sub_1936
+ 0000:00001936       HandleDirectionalControl
  0000:000019B6       locret_19B6
  0000:000019CE       loc_19CE
  0000:000019F2       loc_19F2
@@ -497,7 +497,7 @@
  0000:0000214C       loc_214C
  0000:00002154       loc_2154
  0000:00002176       locret_2176
- 0000:00002178       sub_2178
+ 0000:00002178       CheckForLadderClimb
  0000:000021A4       loc_21A4
  0000:000021AC       locret_21AC
  0000:000021AE       sub_21AE
@@ -569,7 +569,7 @@
  0000:00002744       loc_2744
  0000:000027B2       InitIntro
  0000:000027EC       loc_27EC
- 0000:00002824       sub_2824
+ 0000:00002824       LoadRoom_0
  0000:00002896       sub_2896
  0000:000028FC       loc_28FC
  0000:00002902       loc_2902
@@ -577,7 +577,7 @@
  0000:0000293C       SetRoomVisited
  0000:0000295E       sub_295E
  0000:00002994       locret_2994
- 0000:00002996       sub_2996
+ 0000:00002996       LoadRoom
  0000:000029E8       LoadRoomMusic
  0000:00002A12       loc_2A12
  0000:00002A26       loc_2A26
@@ -616,9 +616,9 @@
  0000:00002D76       loc_2D76
  0000:00002D90       loc_2D90
  0000:00002DB2       locret_2DB2
- 0000:00002DB4       DefaultRoomPal
+ 0000:00002DB4       LabrynthLitPal
  0000:00002DCE       sub_2DCE
- 0000:00002E2E       loc_2E2E
+ 0000:00002E2E       CheckForDebugButtons
  0000:00002E3E       loc_2E3E
  0000:00002E4C       loc_2E4C
  0000:00002E5A       loc_2E5A
@@ -630,9 +630,9 @@
  0000:00002EF8       loc_2EF8
  0000:00002F00       sub_2F00
  0000:00002F0A       locret_2F0A
- 0000:00002F0C       sub_2F0C
+ 0000:00002F0C       CheckForDebugSaveGame
  0000:00002F24       locret_2F24
- 0000:00002F26       sub_2F26
+ 0000:00002F26       LoadGameSelectScreen
  0000:00002F3C       CheckRAM
  0000:00002F48       loc_2F48
  0000:00002F52       loc_2F52
@@ -642,7 +642,7 @@
  0000:00002F98       loc_2F98
  0000:00002FD8       loc_2FD8
  0000:00002FE6       loc_2FE6
- 0000:00002FEA       sub_2FEA
+ 0000:00002FEA       CheckForCollision
  0000:0000300C       loc_300C
  0000:00003046       loc_3046
  0000:00003054       loc_3054
@@ -708,7 +708,7 @@
  0000:00003530       loc_3530
  0000:00003542       loc_3542
  0000:0000354A       loc_354A
- 0000:0000354E       sub_354E
+ 0000:0000354E       UpdateFridayAnimation
  0000:00003632       loc_3632
  0000:00003638       loc_3638
  0000:00003664       loc_3664
@@ -716,6 +716,7 @@
  0000:0000368C       loc_368C
  0000:00003692       sub_3692
  0000:000036B8       locret_36B8
+ 0000:000036BA       byte_36BA
  0000:000036C2       loc_36C2
  0000:000036D6       loc_36D6
  0000:00003702       loc_3702
@@ -885,11 +886,12 @@
  0000:00004A58       loc_4A58
  0000:00004A72       loc_4A72
  0000:00004A74       loc_4A74
- 0000:00004A7A       sub_4A7A
+ 0000:00004A7A       DecompressAndQueueGfxCopy
  0000:00004A94       LoadCompressedGfx
  0000:00004AB2       DecompressLZ77Gfx
  0000:00004AB4       loc_4AB4
  0000:00004ABA       loc_4ABA
+ 0000:00004AD8       loc_4AD8
  0000:00004B04       loc_4B04
  0000:00004B12       locret_4B12
  0000:00004B14       sub_4B14
@@ -975,7 +977,7 @@
  0000:0000620A       sub_620A
  0000:0000620E       loc_620E
  0000:00006212       loc_6212
- 0000:00006224       loc_6224
+ 0000:00006224       TransitionToNewRoom
  0000:00006246       HandleFloorStairs
  0000:0000625E       loc_625E
  0000:00006278       HandleFloorDoor
@@ -1014,12 +1016,11 @@
  0000:0000667A       locret_667A
  0000:0000667C       loc_667C
  0000:00006694       loc_6694
- 0000:00006698       loc_6698
  0000:000066AA       locret_66AA
  0000:000066AC       sub_66AC
  0000:000066FE       loc_66FE
  0000:0000673C       locret_673C
- 0000:0000673E       sub_673E
+ 0000:0000673E       UpdateSwordCharge
  0000:0000674C       locret_674C
  0000:0000674E       loc_674E
  0000:00006782       loc_6782
@@ -1160,15 +1161,15 @@
  0000:0000759C       loc_759C
  0000:000075A2       loc_75A2
  0000:000075C8       locret_75C8
- 0000:000075CA       word_75CA
+ 0000:000075CA       FrameNumbers
  0000:000075D2       loc_75D2
  0000:000075FA       loc_75FA
  0000:00007608       loc_7608
  0000:00007616       loc_7616
- 0000:00007624       sub_7624
+ 0000:00007624       CheckForMenuOpen
  0000:00007654       loc_7654
  0000:000076A0       loc_76A0
- 0000:000076EC       sub_76EC
+ 0000:000076EC       UpdatePlayerDefence
  0000:00007702       loc_7702
  0000:0000770E       ArmourDefence
  0000:00007718       sub_7718
@@ -1177,7 +1178,7 @@
  0000:00007766       sub_7766
  0000:0000776E       loc_776E
  0000:000077A4       locret_77A4
- 0000:000077A6       sub_77A6
+ 0000:000077A6       LoadMagicSwordGfx
  0000:000077DE       loc_77DE
  0000:000077F2       locret_77F2
  0000:000077F4       sub_77F4
@@ -1189,20 +1190,21 @@
  0000:00007858       loc_7858
  0000:00007862       sub_7862
  0000:00007870       loc_7870
- 0000:00007896       InvScreenPal
- 0000:000078B6       sub_78B6
- 0000:000078DE       sub_78DE
+ 0000:00007896       InvItemPal
+ 0000:000078B6       UpdateEquipPal
+ 0000:000078DE       UpdateEquipPalEntries
  0000:000078E0       loc_78E0
  0000:000078EA       loc_78EA
  0000:000078F4       SwordPalSwapIdx
  0000:000078FA       ArmourPalSwapIdx
  0000:00007900       SwordPalSwaps
  0000:00007918       ArmourPalSwaps
- 0000:0000792C       sub_792C
- 0000:00007958       sub_7958
- 0000:00007984       sub_7984
- 0000:000079B8       sub_79B8
- 0000:000079E4       sub_79E4
+ 0000:0000792C       QueueInventoryWinTilemapDMA
+ 0000:00007958       QueueInventoryScrBTilemapDMA
+ 0000:00007984       QueueTextboxTilemapDMA
+ 0000:000079B8       QueuePartialHUDTilemapDMA
+ 0000:000079E4       QueueFullHUDTilemapDMA
+ 0000:00007A10       QueueFullWindowTilemapDMA
  0000:00007A3C       InvScreenTilemap
  0000:00007B10       MagicSwordGfx
  0000:00007DB5       ThunderSwordGfx
@@ -1213,10 +1215,8 @@
  0000:000085FC       loc_85FC
  0000:00008612       loc_8612
  0000:00008614       PrintNothingHappenedString
- 0000:00008620       loc_8620
- 0000:00008624       byte_8624
- 0000:000086B0       loc_86B0
- 0000:000086B4       byte_86B4
+ 0000:00008620       PreUseItemTable
+ 0000:000086B0       PostUseItemTable
  0000:000086DA       ItemUseEkeEke
  0000:000086FA       EkeEkeHealthRecover
  0000:00008712       loc_8712
@@ -1228,7 +1228,7 @@
  0000:00008782       ItemUseMindRepair
  0000:000087A6       ItemUseBlueRibbon
  0000:000087AA       ItemUseLantern
- 0000:000087BE       sub_87BE
+ 0000:000087BE       CheckIfRoomIsLit
  0000:000087C2       loc_87C2
  0000:000087D6       loc_87D6
  0000:000087F2       loc_87F2
@@ -1260,7 +1260,7 @@
  0000:00008B2A       loc_8B2A
  0000:00008B34       loc_8B34
  0000:00008B3A       ItemUseBell
- 0000:00008B44       sub_8B44
+ 0000:00008B44       CheckForLifestock
  0000:00008B4C       loc_8B4C
  0000:00008B68       loc_8B68
  0000:00008B78       loc_8B78
@@ -1269,8 +1269,8 @@
  0000:00008B90       ItemUseShortcake
  0000:00008B98       ConsumeItem
  0000:00008BB2       loc_8BB2
- 0000:00008BBA       loc_8BBA
- 0000:00008BC0       loc_8BC0
+ 0000:00008BBA       ReturnSuccess
+ 0000:00008BC0       ReturnFailure
  0000:00008BC8       sub_8BC8
  0000:00008BD2       loc_8BD2
  0000:00008BE4       loc_8BE4
@@ -1288,21 +1288,21 @@
  0000:00008E10       loc_8E10
  0000:00008E9C       sub_8E9C
  0000:00008EA0       sub_8EA0
- 0000:00008EB4       sub_8EB4
+ 0000:00008EB4       FadeInFromDarkness
  0000:00008ECE       loc_8ECE
- 0000:00008EF4       sub_8EF4
+ 0000:00008EF4       FadeOutToDarkness
  0000:00008EFE       loc_8EFE
- 0000:00008F34       sub_8F34
- 0000:00008F4C       sub_8F4C
+ 0000:00008F34       LoadStatusBarGfx
+ 0000:00008F4C       InitHUD
  0000:00008F56       loc_8F56
- 0000:00008F64       word_8F64
- 0000:00008F6E       sub_8F6E
+ 0000:00008F64       VDPRegs
+ 0000:00008F6E       LoadHUDTiles
  0000:00008F82       loc_8F82
  0000:00008F8C       loc_8F8C
  0000:00008F9A       loc_8F9A
  0000:00008F9E       loc_8F9E
- 0000:00008FB4       sub_8FB4
- 0000:00008FCC       sub_8FCC
+ 0000:00008FB4       LoadPlayerPalette
+ 0000:00008FCC       InitPalettes
  0000:0000901C       DefaultPlayerPal
  0000:0000903C       StatusBarPal
  0000:00009046       LoadHUDSprites
@@ -1330,6 +1330,7 @@
  0000:000096D2       loc_96D2
  0000:000096EE       sub_96EE
  0000:000096F2       DoorSizes
+ 0000:00009702       loc_9702
  0000:0000971C       loc_971C
  0000:00009728       loc_9728
  0000:00009734       loc_9734
@@ -1337,7 +1338,7 @@
  0000:0000974C       loc_974C
  0000:00009758       loc_9758
  0000:00009764       loc_9764
- 0000:0000976C       DoorTableOffsets
+ 0000:0000976C       DoorLookup
  0000:00009A9C       DoorTable
  0000:00009BD0       sub_9BD0
  0000:00009BE8       loc_9BE8
@@ -1346,12 +1347,12 @@
  0000:00009C16       loc_9C16
  0000:00009C3A       loc_9C3A
  0000:00009C40       locret_9C40
- 0000:00009C42       ShopDialogueRooms
+ 0000:00009C42       Shops
  0000:00009C82       GetSpeakerSpriteId
  0000:00009C8E       loc_9C8E
  0000:00009CA0       loc_9CA0
  0000:00009CB2       loc_9CB2
- 0000:00009CC2       sub_9CC2
+ 0000:00009CC2       SetLifestockSoldFlag
  0000:00009CD0       loc_9CD0
  0000:00009CD6       ReadLifestockSoldFlag
  0000:00009CDA       loc_9CDA
@@ -1359,7 +1360,7 @@
  0000:00009CFE       loc_9CFE
  0000:00009D04       CheckIfLifestockSold
  0000:00009D12       loc_9D12
- 0000:00009D18       LifestockSoldFlagIdxs
+ 0000:00009D18       LifestockSoldFlags
  0000:00009D36       LoadAnimTiles
  0000:00009D5C       loc_9D5C
  0000:00009D64       loc_9D64
@@ -1404,7 +1405,7 @@
  0000:0000A13A       loc_A13A
  0000:0000A146       loc_A146
  0000:0000A14A       locret_A14A
- 0000:0000A14C       sub_A14C
+ 0000:0000A14C       CheckForRoomTransition
  0000:0000A15A       loc_A15A
  0000:0000A176       loc_A176
  0000:0000A17A       loc_A17A
@@ -1415,26 +1416,26 @@
  0000:0000A1A8       RoomFallDestination
  0000:0000A35A       RoomClimbDestination
  0000:0000A3D8       RoomTransitionLookup
- 0000:0000A61C       sub_A61C
+ 0000:0000A61C       LoadTopTiles
  0000:0000A630       loc_A630
  0000:0000A652       loc_A652
  0000:0000A672       loc_A672
  0000:0000A678       loc_A678
  0000:0000A684       loc_A684
- 0000:0000A698       sub_A698
- 0000:0000A6B0       sub_A6B0
- 0000:0000A6C4       FlagMenu
+ 0000:0000A698       LoadBottomTiles
+ 0000:0000A6B0       LoadLeftTiles
+ 0000:0000A6C4       loc_A6C4
  0000:0000A6E6       loc_A6E6
  0000:0000A712       loc_A712
  0000:0000A718       loc_A718
  0000:0000A71C       loc_A71C
- 0000:0000A730       sub_A730
- 0000:0000A748       sub_A748
- 0000:0000A77E       word_A77E
- 0000:0000B77E       word_B77E
- 0000:0000BB7E       word_BB7E
- 0000:0000BF7E       word_BF7E
- 0000:0000C37E       sub_C37E
+ 0000:0000A730       LoadRightTiles
+ 0000:0000A748       BlockToTiles
+ 0000:0000A77E       VDPCopyBlockCmds
+ 0000:0000B77E       TopLeftMapOffsets
+ 0000:0000BB7E       BottomMapOffsets
+ 0000:0000BF7E       RightMapOffsets
+ 0000:0000C37E       ConvertXYToBlockPtr
  0000:0000C396       MultiplyD0By148
  0000:0000C3A0       MultiplyD1By148
  0000:0000C3AA       MultiplyD2By148
@@ -1675,9 +1676,9 @@
  0000:0000D9FC       sub_D9FC
  0000:0000DA16       loc_DA16
  0000:0000DA62       sub_DA62
- 0000:0000DA84       sub_DA84
+ 0000:0000DA84       Expand2BPPGfx
  0000:0000DA88       loc_DA88
- 0000:0000DAB4       sub_DAB4
+ 0000:0000DAB4       Get2BitPixel
  0000:0000DAC6       loc_DAC6
  0000:0000DACA       loc_DACA
  0000:0000DAD4       loc_DAD4
@@ -1709,14 +1710,12 @@
  0000:0000DC5E       loc_DC5E
  0000:0000DC6C       loc_DC6C
  0000:0000DC76       MenuFont
- 0000:0000DF76       word_DF76
- 0000:0000E076       word_E076
- 0000:0000E0B6       word_E0B6
- 0000:0000E0BC       word_E0BC
- 0000:0000E0CC       word_E0CC
- 0000:0000E0D0       word_E0D0
- 0000:0000E0E0       word_E0E0
- 0000:0000E0F0       word_E0F0
+ 0000:0000DF76       MenuCursor2BPP
+ 0000:0000E076       ArrowGraphic2BPP
+ 0000:0000E0B6       Unused1_2BPP
+ 0000:0000E0CC       Unused2_2BPP
+ 0000:0000E0E0       InvPalette1
+ 0000:0000E0F0       InvPalette2_GreyedOut
  0000:0000E110       DoVisualEffect
  0000:0000E128       off_E128
  0000:0000E154       sub_E154
@@ -1886,7 +1885,7 @@
  0000:0000EE44       loc_EE44
  0000:0000EE64       loc_EE64
  0000:0000EE80       loc_EE80
- 0000:0000EE84       loc_EE84
+ 0000:0000EE84       InitGameSelectScreen
  0000:0000EE90       loc_EE90
  0000:0000EEF6       loc_EEF6
  0000:0000EF50       loc_EF50
@@ -1984,16 +1983,16 @@
  0000:0000F578       sub_F578
  0000:0000F5CA       sub_F5CA
  0000:0000F5CC       loc_F5CC
- 0000:0000F5DC       sub_F5DC
- 0000:0000F5F4       sub_F5F4
+ 0000:0000F5DC       DMACopyTextBuffer
+ 0000:0000F5F4       ClearTextBuffer
  0000:0000F610       loc_F610
- 0000:0000F618       sub_F618
+ 0000:0000F618       j_j_LoadUncompressedString
  0000:0000F61E       sub_F61E
- 0000:0000F636       sub_F636
- 0000:0000F694       sub_F694
- 0000:0000F6B2       sub_F6B2
+ 0000:0000F636       LoadGameSelectMenu
+ 0000:0000F694       LoadGameStartPalette
+ 0000:0000F6B2       CopyPalette_0
  0000:0000F6B4       loc_F6B4
- 0000:0000F6BC       word_F6BC
+ 0000:0000F6BC       GameStartPalette
  0000:0000F6DC       sub_F6DC
  0000:0000F6E6       loc_F6E6
  0000:0000F71C       loc_F71C
@@ -2044,10 +2043,10 @@
  0000:0000FAD4       loc_FAD4
  0000:0000FAE6       sub_FAE6
  0000:0000FAF0       sub_FAF0
- 0000:0000FB1E       sub_FB1E
+ 0000:0000FB1E       LoadInitialPlayerPalette
  0000:0000FB2A       loc_FB2A
- 0000:0000FB32       word_FB32
- 0000:0000FB52       HUDCharsGfxCmp
+ 0000:0000FB32       InitialPlayerPal
+ 0000:0000FB52       LoadGameScreenCharsCmp
  0000:0000FD5C       LoadGameScreenGfxCmp
  0000:0000FE37       LoadGameScreenTilemapCmp
  0000:0000FF12       sub_FF12
@@ -2077,15 +2076,15 @@
  0000:00010310       sub_10310
  0000:00010314       sub_10314
  0000:00010318       j_PlaybackInput
- 0000:00010320       sub_10320
- 0000:00010324       sub_10324
- 0000:00010328       sub_10328
- 0000:0001032C       sub_1032C
- 0000:00010330       sub_10330
- 0000:00010334       sub_10334
- 0000:00010338       sub_10338
- 0000:0001033C       sub_1033C
- 0000:00010340       sub_10340
+ 0000:00010320       j_ProcessDialogueScriptAction
+ 0000:00010324       j_GetGold
+ 0000:00010328       j_AddGold
+ 0000:0001032C       j_RemoveGold
+ 0000:00010330       j_IncrementSwordCharge
+ 0000:00010334       j_DecreaseSwordCharge
+ 0000:00010338       j_AddHealth
+ 0000:0001033C       j_RemoveHealth
+ 0000:00010340       j_RefreshHUD
  0000:00010344       sub_10344
  0000:00010348       sub_10348
  0000:0001034C       sub_1034C
@@ -2093,8 +2092,8 @@
  0000:00010354       sub_10354
  0000:00010358       sub_10358
  0000:00010368       j_UpdateEkeEkeHUD
- 0000:0001036C       sub_1036C
- 0000:00010370       sub_10370
+ 0000:0001036C       j_MarkHUDForUpdate
+ 0000:00010370       j_AddToMaxHealth
  0000:00010378       j_ClearPlayerStatus
  0000:0001037C       j_GetPlayerStatus
  0000:00010380       sub_10380
@@ -2102,7 +2101,7 @@
  0000:00010388       sub_10388
  0000:0001038E       sub_1038E
  0000:00010394       loc_10394
- 0000:00010398       sub_10398
+ 0000:00010398       j_AddStatusEffect
  0000:0001039C       sub_1039C
  0000:000103A0       j_LookupSpriteUnknownVal6F
  0000:000103A4       sub_103A4
@@ -2112,7 +2111,7 @@
  0000:000103B8       sub_103B8
  0000:000103BE       sub_103BE
  0000:000103C4       sub_103C4
- 0000:000103C8       j_GetSpriteMaxHealth
+ 0000:000103C8       j_GetMaxHealth
  0000:000103CC       j_SetSpriteRotationAnimFlags
  0000:000103D2       sub_103D2
  0000:000103D8       sub_103D8
@@ -2176,7 +2175,7 @@
  0000:000107C0       loc_107C0
  0000:000107CE       loc_107CE
  0000:000107D2       loc_107D2
- 0000:000107D8       UnknownSpriteLookup_0
+ 0000:000107D8       UnknownSpriteLookup_1
  0000:00010842       PlaybackInput
  0000:0001084C       loc_1084C
  0000:00010856       loc_10856
@@ -2194,8 +2193,8 @@
  0000:00010C84       locret_10C84
  0000:00010C86       loc_10C86
  0000:00010C8E       loc_10C8E
- 0000:00010CFE       sub_10CFE
- 0000:00010D08       loc_10D08
+ 0000:00010CFE       ProcessTriggerAction
+ 0000:00010D08       TriggerActionJumpTable
  0000:00010F4C       loc_10F4C
  0000:00010F52       loc_10F52
  0000:00010F56       loc_10F56
@@ -2364,70 +2363,70 @@
  0000:000120BE       loc_120BE
  0000:000120CE       loc_120CE
  0000:000120E6       loc_120E6
- 0000:000120F6       sub_120F6
- 0000:000120FC       sub_120FC
- 0000:00012668       loc_12668
- 0000:00012674       DisplayDialogue
- 0000:00012682       sub_12682
- 0000:0001268C       loc_1268C
- 0000:00012692       loc_12692
- 0000:00012698       loc_12698
- 0000:0001269E       loc_1269E
- 0000:000126B2       loc_126B2
- 0000:000126BC       loc_126BC
- 0000:000126C2       loc_126C2
- 0000:000126F4       loc_126F4
- 0000:00012726       loc_12726
- 0000:00012774       loc_12774
- 0000:000127A4       loc_127A4
- 0000:000127AC       loc_127AC
- 0000:000127D8       loc_127D8
- 0000:000127F2       loc_127F2
- 0000:000127FA       loc_127FA
- 0000:00012802       loc_12802
+ 0000:000120F6       ProcessDialogueScriptAction
+ 0000:000120FC       CustomScriptActionTable
+ 0000:00012668       RestoreBGM_0
+ 0000:00012674       LoadCutsceneDialogue
+ 0000:00012682       CSA_0000
+ 0000:0001268C       CSA_0001
+ 0000:00012692       CSA_0002
+ 0000:00012698       CSA_0003
+ 0000:0001269E       CSA_0004
+ 0000:000126B2       CSA_0005
+ 0000:000126BC       CSA_0006
+ 0000:000126C2       CSA_0007
+ 0000:000126F4       CSA_0008
+ 0000:00012726       CSA_0009
+ 0000:00012774       CSA_000A
+ 0000:000127A4       CSA_000B
+ 0000:000127AC       CSA_000C
+ 0000:000127D8       CSA_000D
+ 0000:000127F2       CSA_000E
+ 0000:000127FA       CSA_000F
+ 0000:00012802       CSA_0010
  0000:0001281E       loc_1281E
- 0000:00012868       loc_12868
- 0000:00012892       loc_12892
- 0000:0001289A       loc_1289A
- 0000:000128A2       loc_128A2
- 0000:000128C4       loc_128C4
- 0000:000128D6       loc_128D6
+ 0000:00012868       CSA_0011
+ 0000:00012892       CSA_0012
+ 0000:0001289A       CSA_0013
+ 0000:000128A2       CSA_0014
+ 0000:000128C4       CSA_0015
+ 0000:000128D6       CSA_0016
  0000:00012906       loc_12906
- 0000:0001290E       loc_1290E
- 0000:0001291A       loc_1291A
+ 0000:0001290E       CSA_0017
+ 0000:0001291A       CSA_0018
  0000:0001294A       loc_1294A
- 0000:00012952       loc_12952
- 0000:0001295C       loc_1295C
- 0000:00012966       loc_12966
- 0000:00012970       loc_12970
- 0000:00012988       loc_12988
- 0000:000129F0       loc_129F0
- 0000:00012A22       loc_12A22
- 0000:00012A48       loc_12A48
- 0000:00012A50       loc_12A50
- 0000:00012A7A       loc_12A7A
- 0000:00012A8C       loc_12A8C
- 0000:00012AA8       loc_12AA8
- 0000:00012AB0       loc_12AB0
- 0000:00012AB8       loc_12AB8
- 0000:00012AC0       loc_12AC0
- 0000:00012AC8       loc_12AC8
+ 0000:00012952       CSA_0019
+ 0000:0001295C       CSA_001A
+ 0000:00012966       CSA_001B
+ 0000:00012970       CSA_001C
+ 0000:00012988       CSA_001D
+ 0000:000129F0       CSA_001E
+ 0000:00012A22       CSA_001F
+ 0000:00012A48       CSA_0020
+ 0000:00012A50       CSA_0021
+ 0000:00012A7A       CSA_0022
+ 0000:00012A8C       CSA_0023
+ 0000:00012AA8       CSA_0024
+ 0000:00012AB0       CSA_0025
+ 0000:00012AB8       CSA_0026
+ 0000:00012AC0       CSA_0027
+ 0000:00012AC8       CSA_0028
  0000:00012AF2       loc_12AF2
- 0000:00012AFA       loc_12AFA
- 0000:00012B12       loc_12B12
- 0000:00012B1A       loc_12B1A
- 0000:00012B22       loc_12B22
- 0000:00012B46       loc_12B46
- 0000:00012B6A       loc_12B6A
- 0000:00012B72       loc_12B72
+ 0000:00012AFA       CSA_0029
+ 0000:00012B12       CSA_002A
+ 0000:00012B1A       CSA_002B
+ 0000:00012B22       CSA_002C
+ 0000:00012B46       CSA_002D
+ 0000:00012B6A       CSA_002E
+ 0000:00012B72       CSA_002F
  0000:00012BA0       loc_12BA0
  0000:00012BFE       loc_12BFE
- 0000:00012C06       loc_12C06
+ 0000:00012C06       CSA_0030
  0000:00012C4E       locret_12C4E
- 0000:00012C50       loc_12C50
+ 0000:00012C50       CSA_0031
  0000:00012CAE       sub_12CAE
  0000:00012CE6       FahlEnemyList
- 0000:00012D18       loc_12D18
+ 0000:00012D18       CSA_0032
  0000:00012D8E       locret_12D8E
  0000:00012D90       loc_12D90
  0000:00012D96       loc_12D96
@@ -2437,74 +2436,74 @@
  0000:00012DAC       loc_12DAC
  0000:00012DC6       loc_12DC6
  0000:00012DCE       loc_12DCE
- 0000:00012E48       loc_12E48
- 0000:00012EC0       loc_12EC0
+ 0000:00012E48       CSA_0033
+ 0000:00012EC0       CSA_0034
  0000:00012EE0       locret_12EE0
- 0000:00012EE2       loc_12EE2
+ 0000:00012EE2       CSA_0035
  0000:00012F00       loc_12F00
- 0000:00012F20       loc_12F20
+ 0000:00012F20       CSA_0036
  0000:00012F50       loc_12F50
  0000:00012F5A       locret_12F5A
- 0000:00012F5C       loc_12F5C
+ 0000:00012F5C       CSA_0037
  0000:00012F7E       loc_12F7E
- 0000:00012F86       loc_12F86
+ 0000:00012F86       CSA_0038
  0000:00012F9E       locret_12F9E
- 0000:00012FA0       loc_12FA0
- 0000:00012FB2       loc_12FB2
- 0000:00012FBA       loc_12FBA
- 0000:00012FC2       loc_12FC2
- 0000:00012FCA       loc_12FCA
+ 0000:00012FA0       CSA_0039
+ 0000:00012FB2       CSA_003A
+ 0000:00012FBA       CSA_003B
+ 0000:00012FC2       CSA_003C
+ 0000:00012FCA       CSA_003D
  0000:00012FE4       locret_12FE4
  0000:00012FE6       sub_12FE6
- 0000:0001302A       loc_1302A
- 0000:0001303C       loc_1303C
- 0000:00013044       loc_13044
- 0000:0001304C       loc_1304C
- 0000:00013054       loc_13054
- 0000:0001305C       loc_1305C
+ 0000:0001302A       CSA_003E
+ 0000:0001303C       CSA_003F
+ 0000:00013044       CSA_0040
+ 0000:0001304C       CSA_0041
+ 0000:00013054       CSA_0042
+ 0000:0001305C       CSA_0043
  0000:00013074       loc_13074
  0000:00013090       loc_13090
  0000:0001309C       loc_1309C
  0000:00013140       sub_13140
  0000:0001315E       locret_1315E
- 0000:00013160       loc_13160
- 0000:00013168       loc_13168
- 0000:00013170       loc_13170
- 0000:00013178       loc_13178
- 0000:000131AC       loc_131AC
- 0000:000131BA       loc_131BA
- 0000:000131C0       loc_131C0
- 0000:000131DE       loc_131DE
- 0000:000131E6       loc_131E6
- 0000:000131EE       loc_131EE
- 0000:000131F6       loc_131F6
- 0000:000131FE       loc_131FE
- 0000:00013230       loc_13230
- 0000:00013240       loc_13240
- 0000:00013260       loc_13260
- 0000:000132B6       loc_132B6
+ 0000:00013160       CSA_0044
+ 0000:00013168       CSA_0045
+ 0000:00013170       CSA_0046
+ 0000:00013178       CSA_0047
+ 0000:000131AC       CSA_0048
+ 0000:000131BA       CSA_0049
+ 0000:000131C0       CSA_004A
+ 0000:000131DE       CSA_004B
+ 0000:000131E6       CSA_004C
+ 0000:000131EE       CSA_004D
+ 0000:000131F6       CSA_004E
+ 0000:000131FE       CSA_004F
+ 0000:00013230       CSA_0050
+ 0000:00013240       CSA_0051
+ 0000:00013260       CSA_0052
+ 0000:000132B6       CSA_0053
  0000:000132D8       loc_132D8
  0000:00013370       loc_13370
- 0000:00013380       loc_13380
- 0000:00013388       loc_13388
+ 0000:00013380       CSA_0054
+ 0000:00013388       CSA_0055
  0000:0001338C       loc_1338C
  0000:000133AE       loc_133AE
- 0000:000133D4       loc_133D4
- 0000:000133D8       loc_133D8
+ 0000:000133D4       CSA_0056
+ 0000:000133D8       CSA_0057
  0000:0001341E       loc_1341E
- 0000:00013428       loc_13428
- 0000:0001342E       loc_1342E
- 0000:0001343E       loc_1343E
- 0000:00013446       loc_13446
- 0000:0001344E       loc_1344E
- 0000:00013456       loc_13456
- 0000:0001345E       loc_1345E
- 0000:00013472       loc_13472
- 0000:00013482       loc_13482
- 0000:0001348A       loc_1348A
- 0000:00013492       loc_13492
+ 0000:00013428       CSA_0058
+ 0000:0001342E       CSA_0059
+ 0000:0001343E       CSA_005A
+ 0000:00013446       CSA_005B
+ 0000:0001344E       CSA_005C
+ 0000:00013456       CSA_005D
+ 0000:0001345E       CSA_005E
+ 0000:00013472       CSA_005F
+ 0000:00013482       CSA_0060
+ 0000:0001348A       CSA_0061
+ 0000:00013492       CSA_0062
  0000:000134BA       loc_134BA
- 0000:000134CA       loc_134CA
+ 0000:000134CA       CSA_0063
  0000:000134D2       loc_134D2
  0000:000135D0       sub_135D0
  0000:000135F6       sub_135F6
@@ -2512,353 +2511,353 @@
  0000:0001363C       loc_1363C
  0000:00013658       loc_13658
  0000:00013672       locret_13672
- 0000:00013674       loc_13674
- 0000:0001367C       loc_1367C
- 0000:00013684       loc_13684
+ 0000:00013674       CSA_0064
+ 0000:0001367C       CSA_0065
+ 0000:00013684       CSA_0066
  0000:00013688       loc_13688
- 0000:000136B6       loc_136B6
- 0000:000136BE       loc_136BE
- 0000:00013726       loc_13726
+ 0000:000136B6       CSA_0067
+ 0000:000136BE       CSA_0068
+ 0000:00013726       CSA_0069
  0000:00013732       loc_13732
  0000:0001375A       sub_1375A
- 0000:00013784       loc_13784
+ 0000:00013784       CSA_006A
  0000:000137CA       loc_137CA
- 0000:000137E8       loc_137E8
- 0000:00013810       loc_13810
- 0000:00013816       loc_13816
- 0000:00013842       loc_13842
- 0000:00013854       loc_13854
- 0000:00013860       loc_13860
- 0000:00013878       loc_13878
- 0000:0001387E       loc_1387E
- 0000:000138B4       loc_138B4
- 0000:000138BC       loc_138BC
- 0000:000138C4       loc_138C4
- 0000:000138DE       loc_138DE
- 0000:00013902       loc_13902
- 0000:0001391E       loc_1391E
+ 0000:000137E8       CSA_006B
+ 0000:00013810       CSA_006C
+ 0000:00013816       CSA_006D
+ 0000:00013842       CSA_006E
+ 0000:00013854       CSA_006F
+ 0000:00013860       CSA_0070
+ 0000:00013878       CSA_0071
+ 0000:0001387E       CSA_0072
+ 0000:000138B4       CSA_0073
+ 0000:000138BC       CSA_0074
+ 0000:000138C4       CSA_0075
+ 0000:000138DE       CSA_0076
+ 0000:00013902       CSA_0077
+ 0000:0001391E       CSA_0078
  0000:00013938       locret_13938
- 0000:0001393A       loc_1393A
- 0000:00013944       loc_13944
+ 0000:0001393A       CSA_0079
+ 0000:00013944       CSA_007A
  0000:00013956       locret_13956
- 0000:00013958       loc_13958
- 0000:00013972       loc_13972
+ 0000:00013958       CSA_007B
+ 0000:00013972       CSA_007C
  0000:00013984       locret_13984
- 0000:00013986       loc_13986
+ 0000:00013986       CSA_007D
  0000:00013998       locret_13998
- 0000:0001399A       loc_1399A
+ 0000:0001399A       CSA_007E
  0000:000139AC       locret_139AC
- 0000:000139AE       loc_139AE
+ 0000:000139AE       CSA_007F
  0000:000139C0       locret_139C0
- 0000:000139C2       loc_139C2
+ 0000:000139C2       CSA_0080
  0000:000139D4       locret_139D4
- 0000:000139D6       loc_139D6
+ 0000:000139D6       CSA_0081
  0000:000139F0       locret_139F0
- 0000:000139F2       loc_139F2
- 0000:000139FA       loc_139FA
+ 0000:000139F2       CSA_0082
+ 0000:000139FA       CSA_0083
  0000:00013A16       loc_13A16
- 0000:00013A2C       loc_13A2C
- 0000:00013A34       loc_13A34
- 0000:00013A56       loc_13A56
- 0000:00013A5E       loc_13A5E
- 0000:00013A90       loc_13A90
+ 0000:00013A2C       CSA_0084
+ 0000:00013A34       CSA_0085
+ 0000:00013A56       CSA_0086
+ 0000:00013A5E       CSA_0087
+ 0000:00013A90       CSA_0088
  0000:00013AAC       loc_13AAC
- 0000:00013AB6       loc_13AB6
+ 0000:00013AB6       CSA_0089
  0000:00013AD2       loc_13AD2
- 0000:00013ADC       loc_13ADC
+ 0000:00013ADC       CSA_008A
  0000:00013AF6       locret_13AF6
- 0000:00013AF8       loc_13AF8
- 0000:00013B06       loc_13B06
- 0000:00013B40       loc_13B40
- 0000:00013B4C       loc_13B4C
+ 0000:00013AF8       CSA_008B
+ 0000:00013B06       CSA_008C
+ 0000:00013B40       CSA_008D
+ 0000:00013B4C       CSA_008E
  0000:00013B56       loc_13B56
- 0000:00013B74       loc_13B74
- 0000:00013B9C       loc_13B9C
- 0000:00013BA4       loc_13BA4
- 0000:00013BAC       loc_13BAC
- 0000:00013BB4       loc_13BB4
- 0000:00013BBC       loc_13BBC
- 0000:00013BDA       loc_13BDA
- 0000:00013BEC       loc_13BEC
- 0000:00013C22       sub_13C22
- 0000:00013C34       loc_13C34
- 0000:00013C5A       loc_13C5A
- 0000:00013C64       loc_13C64
- 0000:00013CBA       loc_13CBA
+ 0000:00013B74       CSA_008F
+ 0000:00013B9C       CSA_0090
+ 0000:00013BA4       CSA_0091
+ 0000:00013BAC       CSA_0092
+ 0000:00013BB4       CSA_0093
+ 0000:00013BBC       CSA_0094
+ 0000:00013BDA       CSA_0095
+ 0000:00013BEC       CSA_0096
+ 0000:00013C22       CSA_0097
+ 0000:00013C34       CSA_0098
+ 0000:00013C5A       CSA_0099
+ 0000:00013C64       CSA_009A
+ 0000:00013CBA       CSA_009B
  0000:00013CD4       locret_13CD4
- 0000:00013CD6       loc_13CD6
- 0000:00013CDE       loc_13CDE
+ 0000:00013CD6       CSA_009C
+ 0000:00013CDE       CSA_009D
  0000:00013CF0       loc_13CF0
- 0000:00013CF4       loc_13CF4
- 0000:00013CFC       loc_13CFC
- 0000:00013D04       loc_13D04
+ 0000:00013CF4       CSA_009E
+ 0000:00013CFC       CSA_009F
+ 0000:00013D04       CSA_00A0
  0000:00013D16       sub_13D16
  0000:00013D1A       loc_13D1A
  0000:00013D3C       sub_13D3C
- 0000:00013D66       loc_13D66
- 0000:00013D6E       loc_13D6E
- 0000:00013D76       loc_13D76
- 0000:00013D92       loc_13D92
- 0000:00013D9A       loc_13D9A
- 0000:00013DAA       loc_13DAA
- 0000:00013DB2       loc_13DB2
- 0000:00013DBA       loc_13DBA
- 0000:00013DC2       loc_13DC2
- 0000:00013DCA       loc_13DCA
- 0000:00013DD2       loc_13DD2
- 0000:00013DF6       loc_13DF6
- 0000:00013DFE       loc_13DFE
- 0000:00013E06       loc_13E06
- 0000:00013E0E       loc_13E0E
- 0000:00013E16       loc_13E16
- 0000:00013E3A       loc_13E3A
- 0000:00013E42       loc_13E42
+ 0000:00013D66       CSA_00A1
+ 0000:00013D6E       CSA_00A2
+ 0000:00013D76       CSA_00A3
+ 0000:00013D92       CSA_00A4
+ 0000:00013D9A       CSA_00A5
+ 0000:00013DAA       CSA_00A6
+ 0000:00013DB2       CSA_00A7
+ 0000:00013DBA       CSA_00A8
+ 0000:00013DC2       CSA_00A9
+ 0000:00013DCA       CSA_00AA
+ 0000:00013DD2       CSA_00AB
+ 0000:00013DF6       CSA_00AC
+ 0000:00013DFE       CSA_00AD
+ 0000:00013E06       CSA_00AE
+ 0000:00013E0E       CSA_00AF
+ 0000:00013E16       CSA_00B0
+ 0000:00013E3A       CSA_00B1
+ 0000:00013E42       CSA_00B2
  0000:00013E7E       loc_13E7E
  0000:00013E86       loc_13E86
  0000:00013EB0       loc_13EB0
- 0000:00013EB8       byte_13EB8
+ 0000:00013EB8       ZakLaraCutsceneFlyCmds
  0000:00013ECA       loc_13ECA
- 0000:00013EE0       sub_13EE0
- 0000:00013EE8       loc_13EE8
- 0000:00013EF2       loc_13EF2
- 0000:00013EF8       sub_13EF8
- 0000:00013F02       loc_13F02
- 0000:00013F0C       sub_13F0C
- 0000:00013F16       loc_13F16
- 0000:00013F20       sub_13F20
- 0000:00013F30       loc_13F30
- 0000:00013F3A       sub_13F3A
- 0000:00013F50       loc_13F50
+ 0000:00013EE0       CSA_00B2_MoveUp
+ 0000:00013EE8       CSA_00B2_ZakOnlyFlyUp
+ 0000:00013EF2       CSA_00B2_ZakOnlyMoveNW
+ 0000:00013EF8       CSA_00B2_MoveSW
+ 0000:00013F02       CSA_00B2_MoveNE
+ 0000:00013F0C       CSA_00B2_MoveSE
+ 0000:00013F16       CSA_00B2_MoveNW
+ 0000:00013F20       CSA_00B2_FlyUpSE
+ 0000:00013F30       CSA_00B2_FlyS
+ 0000:00013F3A       CSA_00B2_FlyUpSE_Spd2
+ 0000:00013F50       CSA_00B2_FlyUpSE_Spd3
  0000:00013F66       sub_13F66
- 0000:00013F6E       sub_13F6E
+ 0000:00013F6E       ZakFlapWings
  0000:00013F74       loc_13F74
  0000:00013F96       locret_13F96
- 0000:00013F98       loc_13F98
- 0000:00013FA0       loc_13FA0
+ 0000:00013F98       CSA_00B3
+ 0000:00013FA0       CSA_00B4
  0000:00013FB2       sub_13FB2
- 0000:00013FDC       loc_13FDC
- 0000:00013FEC       loc_13FEC
- 0000:00013FF4       loc_13FF4
- 0000:00013FFC       loc_13FFC
- 0000:00014004       loc_14004
- 0000:0001400C       loc_1400C
- 0000:00014014       loc_14014
- 0000:0001401C       locret_1401C
- 0000:0001401E       loc_1401E
- 0000:00014026       loc_14026
- 0000:0001402E       loc_1402E
- 0000:00014036       loc_14036
- 0000:0001403E       loc_1403E
- 0000:00014046       loc_14046
+ 0000:00013FDC       CSA_00B5
+ 0000:00013FEC       CSA_00B6
+ 0000:00013FF4       CSA_00B7
+ 0000:00013FFC       CSA_00B8
+ 0000:00014004       CSA_00B9
+ 0000:0001400C       CSA_00BA
+ 0000:00014014       CSA_00BB
+ 0000:0001401C       CSA_00BC
+ 0000:0001401E       CSA_00BD
+ 0000:00014026       CSA_00BE
+ 0000:0001402E       CSA_00BF
+ 0000:00014036       CSA_00C0
+ 0000:0001403E       CSA_00C1
+ 0000:00014046       CSA_00C2
  0000:00014058       loc_14058
  0000:000140C2       loc_140C2
- 0000:000140CC       loc_140CC
- 0000:000140D4       loc_140D4
- 0000:000140E6       loc_140E6
- 0000:000140EE       loc_140EE
- 0000:00014156       locret_14156
- 0000:00014158       loc_14158
+ 0000:000140CC       CSA_00C3
+ 0000:000140D4       CSA_00C4
+ 0000:000140E6       CSA_00C5
+ 0000:000140EE       CSA_00C6
+ 0000:00014156       CSA_00C7
+ 0000:00014158       CSA_00C8
  0000:00014190       loc_14190
  0000:000141E0       loc_141E0
- 0000:000141EA       loc_141EA
- 0000:000141F2       loc_141F2
- 0000:000141FA       loc_141FA
- 0000:00014202       loc_14202
+ 0000:000141EA       CSA_00C9
+ 0000:000141F2       CSA_00CA
+ 0000:000141FA       CSA_00CB
+ 0000:00014202       CSA_00CC
  0000:00014214       locret_14214
- 0000:00014216       loc_14216
- 0000:00014220       loc_14220
- 0000:00014228       loc_14228
- 0000:00014266       sub_14266
- 0000:0001428A       loc_1428A
- 0000:00014292       loc_14292
+ 0000:00014216       CSA_00CD
+ 0000:00014220       CSA_00CE
+ 0000:00014228       CSA_00CF
+ 0000:00014266       SpecialWarp
+ 0000:0001428A       CSA_00D0
+ 0000:00014292       CSA_00D1
  0000:000142B8       locret_142B8
  0000:000142BA       loc_142BA
- 0000:000142C2       loc_142C2
- 0000:00014312       sub_14312
- 0000:00014338       loc_14338
- 0000:00014364       loc_14364
- 0000:00014390       loc_14390
- 0000:00014398       loc_14398
- 0000:000143C8       loc_143C8
- 0000:000143D0       loc_143D0
- 0000:000143D8       loc_143D8
- 0000:000143E0       loc_143E0
- 0000:000143E8       loc_143E8
- 0000:000143F0       loc_143F0
- 0000:000143FA       loc_143FA
- 0000:00014402       loc_14402
- 0000:0001440A       loc_1440A
- 0000:00014436       loc_14436
- 0000:0001444A       loc_1444A
- 0000:00014452       loc_14452
- 0000:0001445A       loc_1445A
- 0000:000144E0       loc_144E0
- 0000:000144E8       loc_144E8
- 0000:000144FC       loc_144FC
+ 0000:000142C2       CSA_00D2
+ 0000:00014312       LoadRoom_1
+ 0000:00014338       CSA_00D3
+ 0000:00014364       CSA_00D4
+ 0000:00014390       CSA_00D5
+ 0000:00014398       CSA_00D6
+ 0000:000143C8       CSA_00D7
+ 0000:000143D0       CSA_00D8
+ 0000:000143D8       CSA_00D9
+ 0000:000143E0       CSA_00DA
+ 0000:000143E8       CSA_00DB
+ 0000:000143F0       CSA_00DC
+ 0000:000143FA       CSA_00DD
+ 0000:00014402       CSA_00DE
+ 0000:0001440A       CSA_00DF
+ 0000:00014436       CSA_00E0
+ 0000:0001444A       CSA_00E1
+ 0000:00014452       CSA_00E2
+ 0000:0001445A       CSA_00E3
+ 0000:000144E0       CSA_00E4
+ 0000:000144E8       CSA_00E5
+ 0000:000144FC       CSA_00E6
  0000:0001450E       locret_1450E
- 0000:00014510       loc_14510
- 0000:00014518       loc_14518
- 0000:0001452C       loc_1452C
- 0000:0001453A       loc_1453A
- 0000:00014544       loc_14544
- 0000:00014550       loc_14550
- 0000:00014558       loc_14558
- 0000:0001456A       loc_1456A
+ 0000:00014510       CSA_00E7
+ 0000:00014518       CSA_00E8
+ 0000:0001452C       CSA_00E9
+ 0000:0001453A       CSA_00EA
+ 0000:00014544       CSA_00EB
+ 0000:00014550       CSA_00EC
+ 0000:00014558       CSA_00ED
+ 0000:0001456A       CSA_00EE
  0000:0001458C       locret_1458C
- 0000:0001458E       loc_1458E
- 0000:0001459E       loc_1459E
- 0000:000145A4       loc_145A4
+ 0000:0001458E       CSA_00EF
+ 0000:0001459E       CSA_00F0
+ 0000:000145A4       CSA_00F1
  0000:000145C2       loc_145C2
- 0000:000145CE       loc_145CE
+ 0000:000145CE       CSA_00F2
  0000:000145E2       sub_145E2
- 0000:0001460C       loc_1460C
- 0000:00014666       loc_14666
- 0000:00014678       loc_14678
+ 0000:0001460C       CSA_00F3
+ 0000:00014666       CSA_00F4
+ 0000:00014678       CSA_00F5
  0000:00014680       loc_14680
- 0000:000146F0       loc_146F0
+ 0000:000146F0       CSA_00F6
  0000:00014704       loc_14704
- 0000:000147DA       loc_147DA
+ 0000:000147DA       CSA_00F7
  0000:000147E8       sub_147E8
- 0000:00014806       loc_14806
+ 0000:00014806       CSA_00F8
  0000:00014812       loc_14812
- 0000:00014832       loc_14832
+ 0000:00014832       CSA_00F9
  0000:00014836       loc_14836
  0000:0001486C       loc_1486C
- 0000:0001487E       loc_1487E
- 0000:0001488E       loc_1488E
- 0000:000148A0       loc_148A0
- 0000:000148DE       loc_148DE
- 0000:000148FC       loc_148FC
+ 0000:0001487E       CSA_00FA
+ 0000:0001488E       CSA_00FB
+ 0000:000148A0       CSA_00FC
+ 0000:000148DE       CSA_00FD
+ 0000:000148FC       CSA_00FE
  0000:00014900       loc_14900
- 0000:00014922       loc_14922
- 0000:0001492A       loc_1492A
- 0000:00014932       loc_14932
- 0000:0001493A       loc_1493A
- 0000:00014942       loc_14942
- 0000:00014954       loc_14954
- 0000:0001495C       loc_1495C
+ 0000:00014922       CSA_00FF
+ 0000:0001492A       CSA_0100
+ 0000:00014932       CSA_0101
+ 0000:0001493A       CSA_0102
+ 0000:00014942       CSA_0103
+ 0000:00014954       CSA_0104
+ 0000:0001495C       CSA_0105
  0000:00014980       loc_14980
  0000:000149A8       loc_149A8
- 0000:000149C0       loc_149C0
- 0000:000149D0       loc_149D0
- 0000:000149D8       loc_149D8
- 0000:000149E0       loc_149E0
- 0000:000149F2       loc_149F2
+ 0000:000149C0       CSA_0106
+ 0000:000149D0       CSA_0107
+ 0000:000149D8       CSA_0108
+ 0000:000149E0       CSA_0109
+ 0000:000149F2       CSA_010A
  0000:00014A12       loc_14A12
- 0000:00014A16       loc_14A16
- 0000:00014A1E       loc_14A1E
+ 0000:00014A16       CSA_010B
+ 0000:00014A1E       CSA_010C
  0000:00014A26       loc_14A26
  0000:00014A3C       loc_14A3C
  0000:00014A44       locret_14A44
- 0000:00014A46       loc_14A46
- 0000:00014A96       loc_14A96
- 0000:00014ADE       loc_14ADE
- 0000:00014B3A       loc_14B3A
- 0000:00014B44       loc_14B44
+ 0000:00014A46       CSA_010D
+ 0000:00014A96       CSA_010E
+ 0000:00014ADE       CSA_010F
+ 0000:00014B3A       CSA_0110
+ 0000:00014B44       CSA_0111
  0000:00014B8E       loc_14B8E
- 0000:00014BF2       sub_14BF2
- 0000:00014C04       loc_14C04
+ 0000:00014BF2       ShowCutsceneDialogueAndWait
+ 0000:00014C04       CSA_0112
  0000:00014CA2       loc_14CA2
- 0000:00014D22       loc_14D22
- 0000:00014D86       loc_14D86
- 0000:00014DE0       loc_14DE0
- 0000:00014E0A       loc_14E0A
- 0000:00014E1C       loc_14E1C
- 0000:00014E26       loc_14E26
- 0000:00014E30       loc_14E30
- 0000:00014E3A       loc_14E3A
- 0000:00014E44       loc_14E44
- 0000:00014E4E       loc_14E4E
- 0000:00014EAA       loc_14EAA
- 0000:00014EB4       loc_14EB4
- 0000:00014EBE       loc_14EBE
- 0000:00014EC8       loc_14EC8
- 0000:00014ED2       loc_14ED2
- 0000:00014EDC       loc_14EDC
- 0000:00014EE6       loc_14EE6
- 0000:00014EF8       loc_14EF8
- 0000:00014F00       loc_14F00
- 0000:00014F3C       loc_14F3C
- 0000:00014F44       loc_14F44
- 0000:00014F4C       loc_14F4C
- 0000:00014F54       loc_14F54
- 0000:00014FB2       loc_14FB2
- 0000:00014FBA       loc_14FBA
- 0000:00014FCA       loc_14FCA
- 0000:00014FD2       loc_14FD2
- 0000:00014FDC       loc_14FDC
- 0000:00014FF0       loc_14FF0
- 0000:00015004       loc_15004
- 0000:00015018       loc_15018
- 0000:0001502C       loc_1502C
+ 0000:00014D22       CSA_0113
+ 0000:00014D86       CSA_0114
+ 0000:00014DE0       CSA_0115
+ 0000:00014E0A       CSA_0116
+ 0000:00014E1C       CSA_0117
+ 0000:00014E26       CSA_0118
+ 0000:00014E30       CSA_0119
+ 0000:00014E3A       CSA_011A
+ 0000:00014E44       CSA_011B
+ 0000:00014E4E       CSA_011C
+ 0000:00014EAA       CSA_011D
+ 0000:00014EB4       CSA_011E
+ 0000:00014EBE       CSA_011F
+ 0000:00014EC8       CSA_0120
+ 0000:00014ED2       CSA_0121
+ 0000:00014EDC       CSA_0122
+ 0000:00014EE6       CSA_0123
+ 0000:00014EF8       CSA_0124
+ 0000:00014F00       CSA_0125
+ 0000:00014F3C       CSA_0126
+ 0000:00014F44       CSA_0127
+ 0000:00014F4C       CSA_0128
+ 0000:00014F54       CSA_0129
+ 0000:00014FB2       CSA_012A
+ 0000:00014FBA       CSA_012B
+ 0000:00014FCA       CSA_012C
+ 0000:00014FD2       CSA_012D
+ 0000:00014FDC       CSA_012E
+ 0000:00014FF0       CSA_012F
+ 0000:00015004       CSA_0130
+ 0000:00015018       CSA_0131
+ 0000:0001502C       CSA_0132
  0000:00015046       locret_15046
- 0000:00015048       loc_15048
+ 0000:00015048       CSA_0133
  0000:0001506E       loc_1506E
  0000:0001508C       loc_1508C
  0000:00015094       loc_15094
- 0000:0001509C       loc_1509C
+ 0000:0001509C       CSA_0134
  0000:000150AE       loc_150AE
- 0000:000150B6       loc_150B6
+ 0000:000150B6       CSA_0135
  0000:000150D0       locret_150D0
- 0000:000150D2       loc_150D2
+ 0000:000150D2       CSA_0136
  0000:000150F4       loc_150F4
- 0000:0001510C       loc_1510C
+ 0000:0001510C       CSA_0137
  0000:00015126       locret_15126
- 0000:00015128       loc_15128
+ 0000:00015128       CSA_0138
  0000:00015142       locret_15142
- 0000:00015144       loc_15144
- 0000:0001514C       loc_1514C
- 0000:00015162       loc_15162
- 0000:0001516A       loc_1516A
- 0000:00015180       loc_15180
- 0000:00015196       loc_15196
- 0000:0001519E       loc_1519E
- 0000:000151A6       loc_151A6
- 0000:000151AE       loc_151AE
- 0000:000151B6       loc_151B6
- 0000:000151BE       loc_151BE
- 0000:000151C6       loc_151C6
- 0000:000151E8       loc_151E8
- 0000:00015202       loc_15202
- 0000:00015224       loc_15224
- 0000:0001522C       loc_1522C
- 0000:00015246       loc_15246
- 0000:0001525C       loc_1525C
+ 0000:00015144       CSA_0139
+ 0000:0001514C       CSA_013A
+ 0000:00015162       CSA_013B
+ 0000:0001516A       CSA_013C
+ 0000:00015180       CSA_013D
+ 0000:00015196       CSA_013E
+ 0000:0001519E       CSA_013F
+ 0000:000151A6       CSA_0140
+ 0000:000151AE       CSA_0141
+ 0000:000151B6       CSA_0142
+ 0000:000151BE       CSA_0143
+ 0000:000151C6       CSA_0144
+ 0000:000151E8       CSA_0145
+ 0000:00015202       CSA_0146
+ 0000:00015224       CSA_0147
+ 0000:0001522C       CSA_0148
+ 0000:00015246       CSA_0149
+ 0000:0001525C       CSA_014A
  0000:00015272       locret_15272
- 0000:00015274       loc_15274
- 0000:00015286       loc_15286
- 0000:0001528E       loc_1528E
- 0000:000152C2       loc_152C2
- 0000:00015426       loc_15426
- 0000:00015438       loc_15438
- 0000:00015444       loc_15444
- 0000:0001546A       loc_1546A
- 0000:0001547C       loc_1547C
+ 0000:00015274       CSA_014B
+ 0000:00015286       CSA_014C
+ 0000:0001528E       CSA_014D
+ 0000:000152C2       CSA_014E
+ 0000:00015426       CSA_014F
+ 0000:00015438       CSA_0150
+ 0000:00015444       CSA_0151
+ 0000:0001546A       CSA_0152
+ 0000:0001547C       CSA_0153
  0000:000154EE       loc_154EE
  0000:00015530       sub_15530
  0000:00015532       loc_15532
- 0000:0001556C       loc_1556C
+ 0000:0001556C       CSA_0154
  0000:00015594       loc_15594
  0000:0001568E       loc_1568E
- 0000:00015724       loc_15724
- 0000:00015730       loc_15730
- 0000:0001573C       loc_1573C
+ 0000:00015724       CSA_0155
+ 0000:00015730       CSA_0156
+ 0000:0001573C       CSA_0157
  0000:00015744       loc_15744
  0000:00015780       loc_15780
  0000:00015786       loc_15786
  0000:0001578E       locret_1578E
- 0000:00015790       loc_15790
+ 0000:00015790       CSA_0158
  0000:000157C0       loc_157C0
  0000:000157DA       loc_157DA
  0000:000157EE       loc_157EE
  0000:00015806       locret_15806
- 0000:00015808       loc_15808
+ 0000:00015808       CSA_0159
  0000:00015836       locret_15836
- 0000:00015838       sub_15838
+ 0000:00015838       CSA_015A
  0000:0001584A       sub_1584A
  0000:00015852       loc_15852
  0000:0001586C       locret_1586C
- 0000:0001586E       sub_1586E
+ 0000:0001586E       SetRoomNumber
  0000:0001587C       sub_1587C
  0000:0001589C       loc_1589C
  0000:00015914       sub_15914
@@ -3000,7 +2999,7 @@
  0000:000164B0       loc_164B0
  0000:000164B8       loc_164B8
  0000:000164E4       locret_164E4
- 0000:000164E6       byte_164E6
+ 0000:000164E6       DamageRecoilCmd
  0000:000164EA       loc_164EA
  0000:00016512       loc_16512
  0000:00016532       loc_16532
@@ -3024,7 +3023,7 @@
  0000:000166E8       sub_166E8
  0000:000166FE       loc_166FE
  0000:00016710       locret_16710
- 0000:00016712       sub_16712
+ 0000:00016712       GaiaEffect
  0000:00016794       sub_16794
  0000:000167A2       loc_167A2
  0000:000167B0       loc_167B0
@@ -3044,17 +3043,17 @@
  0000:000168F8       loc_168F8
  0000:00016908       locret_16908
  0000:0001690A       sub_1690A
- 0000:0001691E       sub_1691E
- 0000:00016928       RefreshMaxHealthHUD
- 0000:0001693A       sub_1693A
+ 0000:0001691E       MarkHUDForUpdate
+ 0000:00016928       RefreshCurrentHealthHUD
+ 0000:0001693A       RefreshHUD
  0000:0001694A       locret_1694A
  0000:0001694C       sub_1694C
  0000:00016966       locret_16966
- 0000:00016968       sub_16968
- 0000:00016978       sub_16978
+ 0000:00016968       RefreshMaxHealthHUD
+ 0000:00016978       UpdateMaxHealthHUD
  0000:00016986       loc_16986
  0000:000169A8       loc_169A8
- 0000:000169B2       UpdateMaxHealthHUD
+ 0000:000169B2       UpdateCurrentHealthHUD
  0000:000169C0       loc_169C0
  0000:000169E2       loc_169E2
  0000:000169EC       UpdateHeartHUD
@@ -3090,7 +3089,7 @@
  0000:00016C3C       UpdateEkeEkeHUD
  0000:00016C4E       loc_16C4E
  0000:00016C68       loc_16C68
- 0000:00016C6E       sub_16C6E
+ 0000:00016C6E       UpdateGoldHUD
  0000:00016CA6       loc_16CA6
  0000:00016CB8       UpdateHUDDigits
  0000:00016CC6       sub_16CC6
@@ -3118,7 +3117,7 @@
  0000:00017537       ParalysisAnimFrame4
  0000:000175A3       CurseAnimFrame1
  0000:00017688       CurseAnimFrame2
- 0000:0001776C       sub_1776C
+ 0000:0001776C       AddStatusEffect
  0000:00017776       loc_17776
  0000:00017782       loc_17782
  0000:0001778C       loc_1778C
@@ -3127,26 +3126,26 @@
  0000:000177B4       loc_177B4
  0000:000177C4       ClearPlayerStatus
  0000:000177CC       GetPlayerStatus
- 0000:000177D4       sub_177D4
- 0000:000177DC       sub_177DC
+ 0000:000177D4       GetGold
+ 0000:000177DC       AddGold
  0000:000177EC       loc_177EC
- 0000:000177F2       sub_177F2
+ 0000:000177F2       RemoveGold
  0000:00017808       loc_17808
- 0000:0001780E       sub_1780E
+ 0000:0001780E       AddHealth
  0000:0001781A       loc_1781A
  0000:0001781E       loc_1781E
  0000:0001782E       locret_1782E
- 0000:00017830       sub_17830
+ 0000:00017830       RemoveHealth
  0000:0001783A       loc_1783A
  0000:00017846       locret_17846
- 0000:00017848       sub_17848
- 0000:00017852       GetSpriteMaxHealth
- 0000:00017858       sub_17858
+ 0000:00017848       AddToMaxHealth
+ 0000:00017852       GetMaxHealth
+ 0000:00017858       IncrementSwordCharge
  0000:0001786C       loc_1786C
  0000:0001788C       loc_1788C
  0000:000178AE       loc_178AE
  0000:000178B2       locret_178B2
- 0000:000178B4       sub_178B4
+ 0000:000178B4       DecreaseSwordCharge
  0000:000178C6       locret_178C6
  0000:000178C8       sub_178C8
  0000:000178D0       loc_178D0
@@ -3236,7 +3235,7 @@
  0000:00017FEA       sub_17FEA
  0000:00017FF6       loc_17FF6
  0000:00018000       loc_18000
- 0000:0001800A       byte_1800A
+ 0000:0001800A       SpeedTable
  0000:00018044       loc_18044
  0000:0001805E       loc_1805E
  0000:00018082       loc_18082
@@ -3656,13 +3655,13 @@
  0000:0001A5A2       loc_1A5A2
  0000:0001A5A6       loc_1A5A6
  0000:0001A5B8       locret_1A5B8
- 0000:0001A5BA       RoomSpriteVisibilityFlags
+ 0000:0001A5BA       SpriteVisibilityFlags
  0000:0001A974       OneTimeEventFlags
- 0000:0001A9BE       EnemyKilledFlags
+ 0000:0001A9BE       RoomClearFlags
  0000:0001AACC       LockedDoorSpriteFlags
  0000:0001AAF6       PermanentSwitchFlags
  0000:0001ABA8       SacredTreeFlags
- 0000:0001ABF2       SpriteGfxIdxLokup
+ 0000:0001ABF2       SpriteGfxIdxLookup
  0000:0001ADCA       SpriteDimensionsLookup
  0000:0001B090       RoomSpriteTableOffset
  0000:0001B6F0       EnemyStats
@@ -3672,10 +3671,10 @@
  0000:00022E88       sub_22E88
  0000:00022E8C       sub_22E8C
  0000:00022E90       j_PrintString
- 0000:00022E94       sub_22E94
- 0000:00022E98       sub_22E98
- 0000:00022E9C       sub_22E9C
- 0000:00022EA0       sub_22EA0
+ 0000:00022E94       j_RefreshAndClearTextbox
+ 0000:00022E98       j_ClearTextbox
+ 0000:00022E9C       j_SetTextboxHInt
+ 0000:00022EA0       j_SetUpTextDisplay
  0000:00022EA4       sub_22EA4
  0000:00022EA8       sub_22EA8
  0000:00022EAC       sub_22EAC
@@ -3683,9 +3682,9 @@
  0000:00022EB4       sub_22EB4
  0000:00022EB8       sub_22EB8
  0000:00022EC0       sub_22EC0
- 0000:00022EC4       sub_22EC4
+ 0000:00022EC4       j_LoadUncompressedString
  0000:00022EC8       sub_22EC8
- 0000:00022ECC       sub_22ECC
+ 0000:00022ECC       j_YesNoPrompt
  0000:00022ED0       j_GetItemQtyAndMaxQty
  0000:00022ED4       sub_22ED4
  0000:00022EE0       j_GetItemUseStringIdx
@@ -3694,14 +3693,14 @@
  0000:00022EEC       sub_22EEC
  0000:00022EF0       sub_22EF0
  0000:00022EF4       j_GetRemainingItemAllowedCount
- 0000:00022EF8       sub_22EF8
+ 0000:00022EF8       j_PlayCutsceneScript
  0000:00022EFC       sub_22EFC
  0000:00022F00       j_DebugGetAllItems
- 0000:00022F04       sub_22F04
- 0000:00022F08       sub_22F08
+ 0000:00022F04       j_GetSaveLocationString
+ 0000:00022F08       j_GetItem
  0000:00022F0C       j_CheckAndConsumeItem
  0000:00022F10       sub_22F10
- 0000:00022F14       sub_22F14
+ 0000:00022F14       j_ClearTextbox_0
  0000:00022F1C       sub_22F1C
  0000:00022F26       PrintString
  0000:00022F2C       loc_22F2C
@@ -3776,25 +3775,25 @@
  0000:0002339E       sub_2339E
  0000:000233BA       DownArrowGfx
  0000:0002343A       sub_2343A
- 0000:0002344C       sub_2344C
- 0000:0002345C       sub_2345C
- 0000:0002346C       sub_2346C
+ 0000:0002344C       RefreshAndClearTextbox
+ 0000:0002345C       SetUpTextDisplay
+ 0000:0002346C       SetTextboxHInt
  0000:00023476       loc_23476
  0000:0002347A       loc_2347A
- 0000:0002347E       sub_2347E
- 0000:0002349E       sub_2349E
- 0000:000234A8       sub_234A8
- 0000:000234B2       sub_234B2
+ 0000:0002347E       SetVDPForTextbox
+ 0000:0002349E       TestIfInventoryIsOpen
+ 0000:000234A8       ClearTextbox
+ 0000:000234B2       LoadTextboxTilemap
  0000:000234E6       loc_234E6
  0000:000234F8       loc_234F8
  0000:000234FC       loc_234FC
- 0000:00023510       sub_23510
+ 0000:00023510       ReloadTextboxSprites
  0000:0002351E       loc_2351E
- 0000:00023526       sub_23526
+ 0000:00023526       ClearTextboxTiles
  0000:0002353A       loc_2353A
  0000:0002354C       loc_2354C
  0000:00023550       loc_23550
- 0000:0002355A       sub_2355A
+ 0000:0002355A       DMACopyTextboxTiles
  0000:00023566       loc_23566
  0000:0002356A       loc_2356A
  0000:00023582       sub_23582
@@ -3868,94 +3867,6 @@
  0000:00023B80       InventoryTextBoxTilemap
  0000:00023D60       HuffTableOffsets
  0000:00023E38       HuffTables
- 0000:00023E7B       HuffTableSp
- 0000:00023E95       HuffTable0
- 0000:00023EA3       HuffTable1
- 0000:00023EB5       HuffTable2
- 0000:00023EBF       HuffTable3
- 0000:00023EC6       HuffTable4
- 0000:00023ECC       HuffTable5
- 0000:00023ED2       HuffTable6
- 0000:00023EDA       HuffTable7
- 0000:00023EDF       HuffTable8
- 0000:00023EE5       HuffTable9
- 0000:00023F12       HuffTableA
- 0000:00023F30       HuffTableB
- 0000:00023F44       HuffTableC
- 0000:00023F5F       HuffTableD
- 0000:00023F8F       HuffTableE
- 0000:00023FAB       HuffTableF
- 0000:00023FC4       HuffTableG
- 0000:00023FE0       HuffTableH
- 0000:00024006       HuffTableI
- 0000:00024018       HuffTableJ
- 0000:0002402E       HuffTableK
- 0000:00024049       HuffTableL
- 0000:00024067       HuffTableM
- 0000:00024089       HuffTableN
- 0000:000240AE       HuffTableO
- 0000:000240D0       HuffTableP
- 0000:000240D9       HuffTableQ
- 0000:00024100       HuffTableR
- 0000:0002412D       HuffTableS
- 0000:00024152       HuffTableT
- 0000:00024172       HuffTableU
- 0000:00024180       HuffTableV
- 0000:00024195       HuffTableW
- 0000:0002419B       HuffTableX
- 0000:000241AD       HuffTableY
- 0000:000241B7       HuffTableZ
- 0000:000241DB       HuffTable_a
- 0000:000241F5       HuffTable_b
- 0000:00024210       HuffTable_c
- 0000:00024232       HuffTable_d
- 0000:0002425E       HuffTable_e
- 0000:0002427A       HuffTable_f
- 0000:00024295       HuffTable_g
- 0000:000242B2       HuffTable_h
- 0000:000242D3       HuffTable_i
- 0000:000242DF       HuffTable_j
- 0000:000242F7       HuffTable_k
- 0000:0002431A       HuffTable_l
- 0000:00024337       HuffTable_m
- 0000:00024361       HuffTable_n
- 0000:0002438D       HuffTable_o
- 0000:000243AF       HuffTable_p
- 0000:000243B7       HuffTable_q
- 0000:000243DA       HuffTable_r
- 0000:00024401       HuffTable_s
- 0000:00024422       HuffTable_t
- 0000:00024446       HuffTable_u
- 0000:00024453       HuffTable_v
- 0000:0002446C       HuffTable_w
- 0000:0002447D       HuffTable_x
- 0000:0002449C       HuffTable_y
- 0000:000244AD       HuffTable_z
- 0000:000244E4       HuffTable_Fullstop
- 0000:000244F6       HuffTable_Comma
- 0000:00024503       HuffTable_QuestionMark
- 0000:00024511       HuffTable_ExclamationMark
- 0000:00024516       HuffTable_Colon
- 0000:00024538       HuffTable_Dash
- 0000:00024557       HuffTable_Apostrophe
- 0000:00024575       HuffTable_DoubleQuote
- 0000:0002457D       HuffTable_Percent
- 0000:00024587       HuffTable_Hash
- 0000:0002458C       HuffTable_NWArrow
- 0000:00024592       HuffTable_NEArrow
- 0000:00024595       HuffTable_SEArrow
- 0000:0002459A       HuffTable_SWArrow
- 0000:000245BF       HuffTable_C55
- 0000:000245CC       HuffTable_C56
- 0000:0002460F       HuffTable_C57
- 0000:00024622       HuffTable_C58
- 0000:00024637       HuffTable_C59
- 0000:00024640       HuffTable_C5A
- 0000:00024677       HuffTable_C5B
- 0000:00024686       HuffTable_C5E
- 0000:0002468D       HuffTable_C5F
- 0000:00024691       HuffTable_C62
- 0000:0002469A       HuffTable_C64
  0000:0002469C       InitHuffmanDecomp
  0000:000246B2       DecodeChar
  0000:000246DE       loc_246DE
@@ -3965,7 +3876,7 @@
  0000:00024700       loc_24700
  0000:00024708       loc_24708
  0000:00024710       loc_24710
- 0000:00024724       sub_24724
+ 0000:00024724       YesNoPrompt
  0000:00024778       loc_24778
  0000:0002478C       loc_2478C
  0000:000247AE       loc_247AE
@@ -3986,7 +3897,7 @@
  0000:00024952       loc_24952
  0000:0002498E       loc_2498E
  0000:00024998       sub_24998
- 0000:000249B4       Gfx_RightArrow
+ 0000:000249B4       RightArrowGfx
  0000:00024A34       sub_24A34
  0000:00024A3C       sub_24A3C
  0000:00024A4C       sub_24A4C
@@ -3998,7 +3909,7 @@
  0000:00024A98       sub_24A98
  0000:00024ABE       loc_24ABE
  0000:00024ACA       loc_24ACA
- 0000:00024AD0       loc_24AD0
+ 0000:00024AD0       GainItem
  0000:00024AF4       loc_24AF4
  0000:00024B16       loc_24B16
  0000:00024B36       loc_24B36
@@ -4009,8 +3920,8 @@
  0000:00024B74       loc_24B74
  0000:00024B7E       loc_24B7E
  0000:00024B84       loc_24B84
- 0000:00024B8A       ShopTextScript
- 0000:00024CC2       sub_24CC2
+ 0000:00024B8A       ShopSpecialItemsScript
+ 0000:00024CC2       GetItemShopSellPrice
  0000:00024CE4       loc_24CE4
  0000:00024CE8       loc_24CE8
  0000:00024CF6       loc_24CF6
@@ -4019,35 +3930,44 @@
  0000:00024D1A       loc_24D1A
  0000:00024D28       loc_24D28
  0000:00024D2E       loc_24D2E
- 0000:00024D34       ShopTextScript2
- 0000:00024EBE       sub_24EBE
+ 0000:00024D34       ShopScript
+ 0000:00024EBE       GetSpriteDialogue
  0000:00024EC8       loc_24EC8
  0000:00024EE4       loc_24EE4
  0000:00024EEA       loc_24EEA
- 0000:00024EF0       sub_24EF0
- 0000:00024F0A       sub_24F0A
+ 0000:00024EF0       DisplayItemPriceMessage
+ 0000:00024F06       loc_24F06
+ 0000:00024F0A       HandleShopInterraction
  0000:00024F2A       loc_24F2A
  0000:00024F3E       loc_24F3E
  0000:00024F50       loc_24F50
+ 0000:00024F60       HandleStatusCure
  0000:00024F78       loc_24F78
  0000:00024F88       loc_24F88
  0000:00024FA0       loc_24FA0
  0000:00024FDA       loc_24FDA
+ 0000:00024FE0       HandleRecordBookUse
  0000:00024FF8       loc_24FF8
  0000:00025022       loc_25022
  0000:0002503A       loc_2503A
+ 0000:00025044       HandleInnStay
  0000:0002505C       loc_2505C
  0000:00025074       loc_25074
  0000:000250AC       loc_250AC
+ 0000:000250B2       HandleMap
  0000:000250CA       loc_250CA
  0000:000250FA       loc_250FA
+ 0000:00025100       HandleSpellbook
  0000:00025112       loc_25112
  0000:00025142       loc_25142
+ 0000:00025146       ShopLeave_08
  0000:00025158       loc_25158
  0000:0002515C       loc_2515C
+ 0000:00025160       ShopPrice_08
+ 0000:00025178       Shop_08
  0000:00025190       loc_25190
  0000:00025194       locret_25194
- 0000:00025196       sub_25196
+ 0000:00025196       PlayerTalk
  0000:000251B8       loc_251B8
  0000:000251CA       loc_251CA
  0000:000251D0       loc_251D0
@@ -4056,19 +3976,19 @@
  0000:00025212       loc_25212
  0000:00025218       loc_25218
  0000:00025222       loc_25222
- 0000:00025228       loc_25228
+ 0000:00025228       LoadNextCharacterFromRoomTbl
  0000:00025234       loc_25234
  0000:00025244       loc_25244
  0000:00025256       loc_25256
  0000:0002525C       loc_2525C
  0000:00025262       loc_25262
  0000:0002526C       loc_2526C
- 0000:00025272       loc_25272
+ 0000:00025272       GetDialogueForRoom
  0000:00025280       loc_25280
  0000:0002529A       loc_2529A
  0000:000252A0       loc_252A0
  0000:000252AA       loc_252AA
- 0000:000252B0       HandleScriptCmd
+ 0000:000252B0       HandleProgressDependentDialogue
  0000:000252C6       loc_252C6
  0000:000252D0       loc_252D0
  0000:000252DA       loc_252DA
@@ -4076,9 +3996,10 @@
  0000:000252EA       loc_252EA
  0000:00025304       loc_25304
  0000:0002530C       loc_2530C
+ 0000:00025312       loc_25312
  0000:00025316       loc_25316
- 0000:00025318       loc_25318
- 0000:000253CA       sub_253CA
+ 0000:00025318       GetFlagProgress
+ 0000:000253CA       PickValueBasedOnFlags
  0000:000253D4       loc_253D4
  0000:000253E2       loc_253E2
  0000:000253E6       loc_253E6
@@ -4086,177 +4007,645 @@
  0000:000253F8       RunTextCmd
  0000:0002540E       loc_2540E
  0000:00025412       loc_25412
- 0000:00025418       sub_25418
- 0000:0002542E       word_2542E
+ 0000:00025418       PlayCutsceneScript
+ 0000:0002542E       CutsceneScriptTable
  0000:000256D6       RoomDialogueTable
- 0000:00025B0E       DialogueScriptTable
- 0000:00025D96       sub_25D96
+ 0000:00025B0C       word_25B0C
+ 0000:00025B0E       CharacterScriptTable
+ 0000:00025D96       CheckFlagAndDisplayMessage
  0000:00025DAC       loc_25DAC
  0000:00025DB0       loc_25DB0
- 0000:00025DBE       sub_25DBE
+ 0000:00025DBE       SetFlagBitOnTalking
  0000:00025DD8       loc_25DD8
  0000:00025DDC       loc_25DDC
- 0000:00025DEA       sub_25DEA
+ 0000:00025DEA       HandleYesNoPrompt
  0000:00025E04       loc_25E04
  0000:00025E08       loc_25E08
- 0000:00025F5A       off_25F5A
- 0000:00025F60       sub_25F60
+ 0000:00025E16       ShopPrice_01
+ 0000:00025E1C       Shop_01
+ 0000:00025E28       ShopPrice_02
+ 0000:00025E2E       Shop_02
+ 0000:00025E3A       ShopPrice_03
+ 0000:00025E40       Shop_03
+ 0000:00025E4C       ShopPrice_04
+ 0000:00025E52       Shop_04
+ 0000:00025E5E       ShopPrice_05
+ 0000:00025E64       Shop_05
+ 0000:00025E70       ShopPrice_06
+ 0000:00025E76       Shop_06
+ 0000:00025E82       loc_25E82
+ 0000:00025E8E       ShopPrice_07
+ 0000:00025E94       Shop_07
+ 0000:00025EA0       ShopEnter_07
+ 0000:00025EAC       ShopLeave_07
+ 0000:00025EB8       ShopSteal_07
+ 0000:00025EC4       loc_25EC4
+ 0000:00025ED0       ShopSalePrompt_07
+ 0000:00025EDC       ShopSaleConfirm_07
+ 0000:00025EE8       ShopNoMoney_07
+ 0000:00025EF4       ShopSaleDeclined_07
+ 0000:00025F00       ShopMap_07
+ 0000:00025F0C       ShopConfirmMap_07
+ 0000:00025F18       HandleIdentifyRecordBook
+ 0000:00025F20       RequestGameSaveMsg
+ 0000:00025F28       InitiateGameSaveMsg
+ 0000:00025F30       GameSaveCompleteMsg
+ 0000:00025F38       GameSaveRefusedMsg
+ 0000:00025F40       RequestGameContineMsg
+ 0000:00025F48       ConfirmGameContinueMsg
+ 0000:00025F50       ConfirmGameStopMsg
+ 0000:00025F58       HandleRecordBookTheft
+ 0000:00025F60       HandleChurchInterraction
  0000:00025F7C       loc_25F7C
  0000:00025F7E       loc_25F7E
+ 0000:00025F8C       CS_0143
+ 0000:00025F98       CS_0000
+ 0000:00025FB2       CS_0001
+ 0000:00025FC8       CS_007B
+ 0000:00025FDE       CS_007C
+ 0000:00025FF0       CS_0002
+ 0000:00026006       loc_26006
+ 0000:00026012       CS_007D
+ 0000:0002602C       CS_007E
+ 0000:0002603E       CS_007F
+ 0000:00026050       CS_0080
+ 0000:00026066       CS_0003
+ 0000:00026084       loc_26084
+ 0000:00026090       loc_26090
+ 0000:0002609C       loc_2609C
+ 0000:000260A8       CS_0081
+ 0000:000260BA       CS_0082
+ 0000:000260D0       loc_260D0
+ 0000:000260DC       CS_0083
+ 0000:000260EE       CS_0084
+ 0000:00026100       CS_0085
+ 0000:00026112       loc_26112
+ 0000:0002611E       CS_0004
+ 0000:00026130       loc_26130
+ 0000:0002613C       CS_0086
+ 0000:00026142       CS_0087
+ 0000:00026148       CS_0005
+ 0000:0002614E       CS_0006
+ 0000:00026154       CS_0088
+ 0000:00026166       CS_0007
+ 0000:0002616C       CS_0089
+ 0000:0002617A       CS_0008
+ 0000:000261A8       loc_261A8
+ 0000:000261B4       CS_008B
+ 0000:000261C2       CS_008C
+ 0000:000261D0       CS_008D
+ 0000:000261D6       CS_0009
+ 0000:000261E2       CS_000A
+ 0000:000261E8       CS_008E
+ 0000:000261EE       CS_008F
+ 0000:000261FC       CS_0090
+ 0000:00026202       CS_0091
+ 0000:00026210       CS_0092
+ 0000:0002621E       CS_0093
+ 0000:0002622C       loc_2622C
+ 0000:00026238       CS_0094
+ 0000:00026246       CS_0095
+ 0000:0002624C       CS_000B
+ 0000:0002625A       CS_000C
+ 0000:00026268       CS_0096
+ 0000:00026276       loc_26276
+ 0000:00026282       CS_0097
+ 0000:000262A0       CS_0098
+ 0000:000262BA       CS_0099
+ 0000:000262CC       CS_009A
+ 0000:000262DA       CS_000D
+ 0000:000262F4       CS_009B
+ 0000:00026306       CS_009C
+ 0000:0002631C       CS_009D
+ 0000:00026322       CS_000E
+ 0000:00026338       CS_009E
+ 0000:00026352       CS_009F
+ 0000:0002636C       CS_000F
+ 0000:0002637A       CS_00A0
+ 0000:00026390       CS_00A1
+ 0000:000263AA       CS_00A2
+ 0000:000263BC       loc_263BC
+ 0000:000263C8       CS_0010
+ 0000:000263E2       CS_00A3
+ 0000:000263F4       CS_00A4
+ 0000:0002640E       CS_00A5
+ 0000:0002642C       CS_00A6
+ 0000:0002644A       loc_2644A
+ 0000:00026456       loc_26456
+ 0000:00026462       CS_00A7
+ 0000:00026468       CS_00A8
+ 0000:0002647E       CS_00A9
+ 0000:0002648C       CS_0011
+ 0000:0002649E       CS_008A
+ 0000:000264B0       CS_00AA
+ 0000:000264C2       CS_00AB
+ 0000:000264D4       CS_0012
+ 0000:000264DA       CS_00AC
+ 0000:000264EC       CS_00AD
+ 0000:0002650E       CS_00AE
+ 0000:00026520       CS_0013
+ 0000:00026542       loc_26542
+ 0000:0002654E       CS_00AF
+ 0000:0002655C       CS_00B0
+ 0000:0002656A       CS_00B1
+ 0000:0002657C       CS_00B2
+ 0000:00026582       CS_00B3
+ 0000:00026588       CS_00B4
+ 0000:0002658E       CS_00B5
+ 0000:00026594       CS_00B6
+ 0000:000265A6       CS_00B7
+ 0000:000265BC       CS_00B8
+ 0000:000265CA       CS_00B9
+ 0000:000265E0       CS_0014
+ 0000:000265E6       CS_00BA
+ 0000:000265F4       CS_00BB
+ 0000:000265FA       CS_00BC
+ 0000:00026600       CS_0015
+ 0000:00026616       loc_26616
+ 0000:00026622       CS_0016
+ 0000:00026638       loc_26638
  0000:00026640       loc_26640
  0000:0002664E       locret_2664E
+ 0000:00026650       loc_26650
+ 0000:0002665C       CS_0017
+ 0000:00026672       CS_00BD
+ 0000:00026676       word_26676
+ 0000:0002668C       CS_00BE
+ 0000:00026692       CS_00BF
+ 0000:00026698       CS_00C0
+ 0000:000266B2       loc_266B2
+ 0000:000266BE       loc_266BE
+ 0000:000266C8       loc_266C8
  0000:000266CE       loc_266CE
  0000:000266DE       loc_266DE
+ 0000:000266E8       loc_266E8
  0000:000266EE       loc_266EE
  0000:000266F4       loc_266F4
  0000:000266F8       locret_266F8
+ 0000:000266FA       loc_266FA
+ 0000:00026706       loc_26706
+ 0000:00026712       CS_00C1
+ 0000:0002672C       loc_2672C
+ 0000:00026738       loc_26738
+ 0000:00026744       CS_0018
+ 0000:00026750       CS_00C2
+ 0000:00026772       CS_00C3
+ 0000:00026790       CS_00C4
+ 0000:000267B2       CS_0019
+ 0000:000267CC       loc_267CC
+ 0000:000267D8       CS_001A
+ 0000:000267E6       loc_267E6
  0000:000267EA       loc_267EA
+ 0000:000267F0       loc_267F0
  0000:000267F6       loc_267F6
  0000:000267FC       locret_267FC
+ 0000:000267FE       CS_00C5
+ 0000:00026814       CS_00C6
+ 0000:00026826       CS_00C7
+ 0000:0002683C       CS_00C8
+ 0000:0002684E       loc_2684E
+ 0000:0002685A       CS_00C9
+ 0000:00026868       loc_26868
+ 0000:00026874       CS_00CA
+ 0000:0002688A       CS_00CB
+ 0000:000268AC       loc_268AC
+ 0000:000268B8       CS_00CC
+ 0000:000268CA       loc_268CA
+ 0000:000268D6       CS_001B
+ 0000:000268E0       loc_268E0
  0000:000268EC       loc_268EC
  0000:000268F6       locret_268F6
+ 0000:000268F8       CS_00CD
+ 0000:0002690A       CS_00CE
+ 0000:00026918       CS_00CF
+ 0000:0002692A       CS_00D0
+ 0000:0002693E       loc_2693E
  0000:00026944       loc_26944
  0000:00026948       loc_26948
  0000:0002694A       loc_2694A
+ 0000:00026954       loc_26954
  0000:0002695A       loc_2695A
  0000:0002695E       locret_2695E
+ 0000:00026960       CS_00D1
+ 0000:0002697E       CS_00D2
+ 0000:0002699C       CS_001C
+ 0000:000269A2       CS_00D3
+ 0000:000269A8       CS_00D4
+ 0000:000269AE       CS_00D5
+ 0000:000269D4       CS_00D6
+ 0000:000269EA       CS_00D7
+ 0000:00026A08       CS_00D8
+ 0000:00026A22       CS_00D9
+ 0000:00026A28       CS_00DA
+ 0000:00026A3A       CS_00DB
+ 0000:00026A40       CS_00DC
+ 0000:00026A4E       CS_001D
+ 0000:00026A6C       loc_26A6C
+ 0000:00026A78       CS_00DD
+ 0000:00026A8A       CS_00DE
+ 0000:00026AA0       CS_00DF
+ 0000:00026AA6       CS_00E0
+ 0000:00026AB4       CS_00E1
+ 0000:00026AC2       CS_00E2
+ 0000:00026AD0       CS_00E3
+ 0000:00026AD6       CS_00E4
+ 0000:00026ADC       CS_00E5
+ 0000:00026AFA       loc_26AFA
  0000:00026AFE       loc_26AFE
+ 0000:00026B06       loc_26B06
+ 0000:00026B12       CS_00E6
+ 0000:00026B30       loc_26B30
+ 0000:00026B36       loc_26B36
+ 0000:00026B42       CS_00E7
+ 0000:00026B48       CS_00E8
+ 0000:00026B54       CS_001E
+ 0000:00026B72       loc_26B72
+ 0000:00026B7E       loc_26B7E
+ 0000:00026B8A       loc_26B8A
+ 0000:00026B96       loc_26B96
+ 0000:00026BA2       loc_26BA2
+ 0000:00026BAE       loc_26BAE
+ 0000:00026BBA       loc_26BBA
+ 0000:00026BC4       loc_26BC4
  0000:00026BCA       loc_26BCA
  0000:00026BCE       locret_26BCE
+ 0000:00026BD0       CS_00EA
+ 0000:00026BDE       CS_001F
+ 0000:00026BF0       CS_00EB
+ 0000:00026C02       CS_00EC
+ 0000:00026C08       CS_00ED
+ 0000:00026C0E       CS_00EE
+ 0000:00026C20       CS_00EF
+ 0000:00026C32       CS_00F0
+ 0000:00026C44       CS_00F1
+ 0000:00026C5A       loc_26C5A
+ 0000:00026C66       loc_26C66
+ 0000:00026C72       CS_00F2
+ 0000:00026C78       CS_00F3
+ 0000:00026C86       CS_00F4
+ 0000:00026C92       loc_26C92
+ 0000:00026C9E       CS_00F5
+ 0000:00026CB0       CS_00F6
+ 0000:00026CB6       CS_0020
+ 0000:00026CBC       CS_00F7
+ 0000:00026CCA       loc_26CCA
+ 0000:00026CD6       CS_00F8
+ 0000:00026CDC       CS_00F9
+ 0000:00026CFA       loc_26CFA
+ 0000:00026D06       loc_26D06
+ 0000:00026D12       CS_00FA
+ 0000:00026D2C       CS_00FB
+ 0000:00026D46       CS_00FC
+ 0000:00026D60       CS_00FD
+ 0000:00026D7A       CS_00FE
+ 0000:00026D88       loc_26D88
+ 0000:00026D94       CS_00FF
+ 0000:00026DA0       CS_0100
+ 0000:00026DAE       loc_26DAE
+ 0000:00026DBA       CS_0101
+ 0000:00026DC8       CS_0102
+ 0000:00026DD6       CS_0103
+ 0000:00026DDC       CS_0021
+ 0000:00026DEA       loc_26DEA
+ 0000:00026DF6       CS_0104
+ 0000:00026E0C       CS_0105
+ 0000:00026E22       CS_0106
+ 0000:00026E38       CS_0107
+ 0000:00026E46       CS_0108
+ 0000:00026E58       CS_0109
+ 0000:00026E6A       CS_010A
+ 0000:00026E7C       CS_010B
+ 0000:00026E8E       CS_010C
+ 0000:00026EA0       CS_010D
+ 0000:00026EB2       CS_010E
+ 0000:00026EC4       loc_26EC4
+ 0000:00026ED0       CS_010F
+ 0000:00026EE6       CS_0110
+ 0000:00026EF4       CS_0111
+ 0000:00026F02       CS_0112
+ 0000:00026F14       loc_26F14
+ 0000:00026F20       CS_0113
+ 0000:00026F26       CS_0114
+ 0000:00026F2C       CS_0115
+ 0000:00026F32       CS_0116
+ 0000:00026F44       CS_0117
+ 0000:00026F4A       CS_0118
+ 0000:00026F50       CS_0119
+ 0000:00026F56       CS_011A
+ 0000:00026F5C       CS_011B
+ 0000:00026F62       CS_011C
+ 0000:00026F68       CS_011D
+ 0000:00026F6E       CS_0022
+ 0000:00026F7C       CS_011E
+ 0000:00026F88       CS_011F
+ 0000:00026F96       CS_0023
+ 0000:00026FA4       CS_0024
+ 0000:00026FB2       CS_0120
+ 0000:00026FC0       loc_26FC0
+ 0000:00026FCC       CS_0121
+ 0000:00026FDA       loc_26FDA
+ 0000:00026FE6       CS_0122
+ 0000:00026FF4       loc_26FF4
+ 0000:00027000       CS_0123
+ 0000:0002700E       loc_2700E
+ 0000:0002701A       CS_0124
+ 0000:00027028       CS_0125
+ 0000:00027036       loc_27036
+ 0000:00027042       CS_0126
+ 0000:00027050       loc_27050
+ 0000:0002705C       CS_0127
+ 0000:0002706A       loc_2706A
+ 0000:00027076       CS_0128
+ 0000:00027084       loc_27084
+ 0000:00027090       loc_27090
+ 0000:0002709C       CS_0129
+ 0000:000270AA       CS_012A
+ 0000:000270B8       CS_012B
+ 0000:000270BE       CS_012C
+ 0000:000270C4       CS_0025
+ 0000:000270D2       CS_012D
+ 0000:000270D8       CS_012E
+ 0000:000270E6       CS_0026
+ 0000:000270EC       CS_0027
+ 0000:000270F2       CS_012F
+ 0000:000270F8       CS_0028
+ 0000:000270FE       CS_0130
+ 0000:00027104       CS_0131
+ 0000:00027112       CS_0132
+ 0000:00027118       CS_0133
+ 0000:0002711E       CS_0134
+ 0000:0002712C       CS_0029
+ 0000:00027132       CS_002A
+ 0000:00027138       CS_002B
+ 0000:0002713E       CS_0135
+ 0000:00027144       CS_0136
+ 0000:0002714A       CS_002C
+ 0000:00027150       CS_0137
+ 0000:00027156       CS_0138
+ 0000:0002715C       CS_002D
+ 0000:00027162       CS_0139
+ 0000:0002716C       loc_2716C
  0000:00027172       loc_27172
+ 0000:0002717C       loc_2717C
  0000:00027182       loc_27182
  0000:0002718A       locret_2718A
+ 0000:0002718C       CS_013A
+ 0000:00027196       loc_27196
  0000:0002719C       loc_2719C
+ 0000:000271A6       loc_271A6
  0000:000271AC       loc_271AC
  0000:000271B4       locret_271B4
+ 0000:000271B6       CS_013B
+ 0000:000271C0       loc_271C0
  0000:000271C6       loc_271C6
+ 0000:000271D0       loc_271D0
  0000:000271D6       loc_271D6
  0000:000271DE       locret_271DE
+ 0000:000271E0       CS_013C
+ 0000:000271EE       loc_271EE
  0000:00027202       loc_27202
  0000:00027206       locret_27206
+ 0000:00027208       CS_013D
+ 0000:0002720C       word_2720C
+ 0000:00027214       CS_013E
+ 0000:00027220       CS_NULL
+ 0000:00027222       CS_002E
+ 0000:00027230       loc_27230
+ 0000:0002723C       CS_002F
+ 0000:0002724E       CS_0030
+ 0000:00027260       CS_0031
+ 0000:00027266       CS_0032
+ 0000:0002727C       loc_2727C
+ 0000:00027288       loc_27288
+ 0000:00027294       CS_0033
+ 0000:000272A6       CS_0034
+ 0000:000272B0       CS_0035
+ 0000:000272B2       CS_0036
+ 0000:000272B4       CS_0037
+ 0000:000272C2       CS_0038
+ 0000:000272D0       CS_0039
+ 0000:000272DC       loc_272DC
+ 0000:000272E8       CS_003A
  0000:000272F8       loc_272F8
  0000:0002730C       locret_2730C
+ 0000:0002730E       CS_013F
+ 0000:00027314       CS_0140
+ 0000:0002731A       CS_003B
+ 0000:00027320       CS_003C
+ 0000:00027336       CS_0141
+ 0000:00027340       CS_0142
+ 0000:0002734C       loc_2734C
+ 0000:00027358       XS_001B
  0000:0002736E       loc_2736E
  0000:00027378       locret_27378
+ 0000:0002737A       XS_001C
+ 0000:00027386       XS_002A
+ 0000:00027390       XS_002E
+ 0000:0002739A       XS_0036
+ 0000:000273A4       loc_273A4
+ 0000:000273A8       loc_273A8
  0000:000273AE       loc_273AE
+ 0000:000273B0       loc_273B0
+ 0000:000273D4       loc_273D4
  0000:000273DA       loc_273DA
  0000:000273DE       loc_273DE
  0000:000273E0       loc_273E0
  0000:000273E4       loc_273E4
  0000:000273E6       locret_273E6
+ 0000:000273E8       XS_0037
+ 0000:000273EA       loc_273EA
+ 0000:000273F4       loc_273F4
+ 0000:0002740C       loc_2740C
  0000:00027418       loc_27418
+ 0000:00027422       loc_27422
  0000:00027424       word_27424
  0000:00027428       loc_27428
  0000:0002742C       loc_2742C
  0000:00027432       loc_27432
  0000:00027436       loc_27436
+ 0000:0002743C       XS_0038
+ 0000:00027448       XS_0039
+ 0000:00027454       XS_003A
+ 0000:00027460       XS_003B
+ 0000:0002746C       XS_003C
+ 0000:00027478       XS_003F
+ 0000:0002747A       word_2747A
+ 0000:00027482       loc_27482
  0000:00027488       loc_27488
+ 0000:00027496       loc_27496
  0000:000274A2       loc_274A2
+ 0000:000274AC       loc_274AC
  0000:000274B2       loc_274B2
  0000:000274B6       loc_274B6
  0000:000274BC       locret_274BC
+ 0000:000274BE       XS_0042
+ 0000:000274C8       loc_274C8
  0000:000274CE       loc_274CE
  0000:000274D2       locret_274D2
+ 0000:000274D4       XS_0043
+ 0000:000274DA       XS_0046
+ 0000:000274F2       XS_0048
+ 0000:000274FA       loc_274FA
  0000:00027506       loc_27506
  0000:00027510       locret_27510
- 0000:0002752A       loc_2752A
+ 0000:00027512       XS_005D
+ 0000:0002751E       XS_005E
+ 0000:0002752A       XS_0064
+ 0000:00027534       loc_27534
+ 0000:0002753A       XS_0069
+ 0000:00027546       XS_0073
+ 0000:0002755E       loc_2755E
  0000:00027568       locret_27568
  0000:0002756A       loc_2756A
+ 0000:00027576       XS_0075
+ 0000:00027580       loc_27580
+ 0000:00027586       XS_0076
+ 0000:00027592       XS_0077
+ 0000:0002759E       XS_0079
+ 0000:000275A8       loc_275A8
  0000:000275B4       loc_275B4
  0000:000275BE       locret_275BE
+ 0000:000275C0       XS_007A
+ 0000:000275CA       loc_275CA
  0000:000275D0       loc_275D0
  0000:000275D4       locret_275D4
+ 0000:000275D6       XS_007D
+ 0000:000275E2       XS_007E
+ 0000:000275EE       XS_007F
+ 0000:000275FA       XS_0089
+ 0000:00027608       XS_0091
+ 0000:00027612       XS_00A5
+ 0000:0002761C       loc_2761C
+ 0000:0002762A       loc_2762A
  0000:00027630       loc_27630
+ 0000:00027634       loc_27634
  0000:00027638       locret_27638
  0000:0002763A       sub_2763A
+ 0000:00027646       loc_27646
  0000:00027650       locret_27650
+ 0000:00027652       XS_00AC
+ 0000:00027670       locret_27670
  0000:00027672       word_27672
+ 0000:0002767A       XS_00AD
+ 0000:00027698       locret_27698
  0000:0002769A       word_2769A
+ 0000:000276A2       XS_00B2
+ 0000:000276B0       loc_276B0
  0000:000276B6       loc_276B6
  0000:000276BA       locret_276BA
+ 0000:000276BC       XS_00B3
  0000:000276D0       loc_276D0
  0000:000276D6       loc_276D6
+ 0000:000276DE       XS_00C1
+ 0000:000276EA       XS_00E5
+ 0000:000276EE       loc_276EE
+ 0000:000276F4       XS_00E9
+ 0000:00027706       loc_27706
+ 0000:00027710       XS_00EB
+ 0000:00027714       loc_27714
+ 0000:0002771A       XS_00F0
+ 0000:00027722       loc_27722
+ 0000:00027728       XS_00F2
+ 0000:0002772C       loc_2772C
+ 0000:00027732       XS_00FE
+ 0000:00027736       loc_27736
+ 0000:0002773E       XS_0122
  0000:00027744       loc_27744
+ 0000:00027752       loc_27752
  0000:00027758       loc_27758
  0000:00027762       loc_27762
  0000:00027764       loc_27764
  0000:00027768       locret_27768
- 0000:00027774       loc_27774
+ 0000:0002776A       XS_0123
+ 0000:00027774       XS_0127
+ 0000:0002777A       XS_0125
+ 0000:00027782       XS_0128
+ 0000:0002778A       XS_0129
+ 0000:00027796       XS_012A
+ 0000:0002779E       loc_2779E
+ 0000:000277AC       loc_277AC
  0000:000277B2       loc_277B2
  0000:000277B6       loc_277B6
  0000:000277B8       loc_277B8
  0000:000277C2       locret_277C2
+ 0000:000277C4       XS_012B
+ 0000:000277DE       loc_277DE
  0000:000277E4       loc_277E4
+ 0000:000277EA       loc_277EA
  0000:000277EE       loc_277EE
  0000:000277F0       loc_277F0
  0000:000277F4       locret_277F4
- 0000:000277F6       DialogueScriptIdxTable
- 0000:00028D64       sub_28D64
+ 0000:000277F6       Script
+ 0000:00028D64       ProcessScriptWord
  0000:00028D68       loc_28D68
  0000:00028D74       loc_28D74
  0000:00028D86       loc_28D86
  0000:00028D90       loc_28D90
- 0000:00028D9C       off_28D9C
- 0000:00028DAC       sub_28DAC
- 0000:00028DBE       sub_28DBE
+ 0000:00028D9C       ActionTable
+ 0000:00028DAC       DisplayTextFromScriptWord
+ 0000:00028DBE       LoadValueIntoFF1196
  0000:00028DD8       loc_28DD8
  0000:00028DDE       loc_28DDE
- 0000:00028DE4       sub_28DE4
+ 0000:00028DE4       LoadValueIntoFF1198
  0000:00028DFE       loc_28DFE
  0000:00028E04       loc_28E04
- 0000:00028E0A       sub_28E0A
+ 0000:00028E0A       LoadValueIntoFF119A
  0000:00028E24       loc_28E24
  0000:00028E2A       loc_28E2A
- 0000:00028E30       sub_28E30
+ 0000:00028E30       LoadValueIntoFF119C
  0000:00028E4A       loc_28E4A
  0000:00028E50       loc_28E50
- 0000:00028E56       sub_28E56
+ 0000:00028E56       GetNumericValue
  0000:00028E70       loc_28E70
  0000:00028E76       loc_28E76
- 0000:00028E7C       sub_28E7C
+ 0000:00028E7C       DoSpecialAction
  0000:00028E8E       loc_28E8E
  0000:00028E9A       loc_28E9A
  0000:00028EAC       loc_28EAC
- 0000:00028EB2       word_28EB2
- 0000:00028F14       loc_28F14
+ 0000:00028EB2       ActionPointerList
+ 0000:00028EBA       ReceiveItem
+ 0000:00028EE0       ReceiveGold
+ 0000:00028F08       PlayMusicTrack36
+ 0000:00028F0E       PlayMusicTrack14
+ 0000:00028F14       SwitchCharacter
  0000:00028F26       loc_28F26
  0000:00028F42       loc_28F42
  0000:00028F46       loc_28F46
- 0000:00028F50       loc_28F50
+ 0000:00028F50       LoadNextCharacter
  0000:00028F62       loc_28F62
  0000:00028F6E       LoadTextboxGraphics
  0000:00028F98       loc_28F98
- 0000:00028F9E       sub_28F9E
- 0000:00028FB8       sub_28FB8
+ 0000:00028F9E       OpenTextbox
+ 0000:00028FB8       ClearTextbox_0
  0000:00028FD2       loc_28FD2
  0000:00028FD8       DisplayText
- 0000:00028FE8       sub_28FE8
+ 0000:00028FE8       GetYesNoAnswer
  0000:00029000       loc_29000
- 0000:0002900A       loc_2900A
+ 0000:0002900A       NoMoneyEffect
  0000:00029024       locret_29024
  0000:00029026       sub_29026
  0000:00029044       locret_29044
- 0000:00029046       sub_29046
- 0000:00029060       loc_29060
- 0000:00029072       sub_29072
+ 0000:00029046       Sleep_0
+ 0000:00029060       RestoreBGM_1
+ 0000:00029072       UpdateEkeEke
  0000:0002908E       GetSpeakerSfx
  0000:000290AC       loc_290AC
  0000:000290BC       loc_290BC
  0000:000290C2       loc_290C2
  0000:000290CA       SpriteIdToTalkSfx
- 0000:0002912C       sub_2912C
- 0000:0002913E       byte_2913E
- 0000:0002914E       sub_2914E
- 0000:00029162       sub_29162
+ 0000:0002912C       SetSpecialCharacter
+ 0000:0002913E       SpecialCharacterSfxList
+ 0000:0002914E       TestPlayerStatus
+ 0000:00029162       RemoveStatus
  0000:0002916A       loc_2916A
  0000:00029174       loc_29174
  0000:0002918C       loc_2918C
  0000:00029192       GetItemQtyAndMaxQty
  0000:000291AE       loc_291AE
  0000:000291B2       loc_291B2
- 0000:000291B6       sub_291B6
+ 0000:000291B6       AddItem
  0000:000291C8       loc_291C8
- 0000:000291D6       sub_291D6
+ 0000:000291D6       GetItem
  0000:00029202       loc_29202
  0000:0002920A       loc_2920A
  0000:00029212       loc_29212
@@ -4266,7 +4655,7 @@
  0000:0002922C       loc_2922C
  0000:00029232       GetRemainingItemAllowedCount
  0000:00029240       loc_29240
- 0000:0002924C       sub_2924C
+ 0000:0002924C       CheckIfItemIsOwned
  0000:0002925A       loc_2925A
  0000:00029260       GetItemInventoryQty
  0000:0002927A       loc_2927A
@@ -4277,47 +4666,49 @@
  0000:000292B8       GetItemMaxQty
  0000:000292C6       GetItemUseStringIdx
  0000:000292DA       GetItemEquipSlot
- 0000:000292E8       GetItemSellPrice
+ 0000:000292E8       GetItemRSP
  0000:000292F4       GetItemProperties
- 0000:00029304       ItemLookup_0
+ 0000:00029304       ItemProperties
  0000:00029404       DebugGetAllItems
  0000:0002940C       loc_2940C
  0000:00029418       loc_29418
- 0000:00029422       sub_29422
- 0000:0002944C       sub_2944C
- 0000:0002945A       sub_2945A
+ 0000:00029422       SetFlagBit
+ 0000:00029430       ClearFlagBit
+ 0000:0002943E       ToggleFlagBit
+ 0000:0002944C       TestFlagBit
+ 0000:0002945A       ConvertFlagNumberToBit
  0000:00029470       sub_29470
  0000:00029482       loc_29482
  0000:00029490       loc_29490
  0000:00029494       loc_29494
- 0000:0002949A       sub_2949A
+ 0000:0002949A       LoadUncompressedString
  0000:000294A8       loc_294A8
  0000:000294B0       loc_294B0
  0000:000294B6       sub_294B6
  0000:000294BA       loc_294BA
  0000:000294C4       loc_294C4
- 0000:000294CA       sub_294CA
+ 0000:000294CA       GetSaveLocationString
  0000:000294D0       loc_294D0
  0000:000294DE       loc_294DE
- 0000:000294E6       SaveGameLocationStringLookup
+ 0000:000294E6       SaveGameLocations
  0000:00029516       sub_29516
  0000:0002951E       loc_2951E
  0000:0002952E       loc_2952E
  0000:00029536       IslandMapLocations
  0000:00029552       CharacterNameTable
- 0000:000296E0       CharacterNameTable2
+ 0000:000296E0       SpecialCharacterNameTable
  0000:00029730       DefaultName
  0000:00029732       ItemNameTable
  0000:00029A0A       MenuStringTable
- 0000:00029ACC       sub_29ACC
- 0000:00029ADC       sub_29ADC
+ 0000:00029ACC       FadeToBlack_0
+ 0000:00029ADC       FadeFromBlack_0
  0000:00029B08       loc_29B08
  0000:00029B10       loc_29B10
  0000:00029B4C       loc_29B4C
  0000:00029B56       loc_29B56
  0000:00029B98       loc_29B98
  0000:00029BA2       loc_29BA2
- 0000:00029BE0       sub_29BE0
+ 0000:00029BE0       SpellBook
  0000:00029BF0       loc_29BF0
  0000:00029C32       loc_29C32
  0000:00029C3E       loc_29C3E
@@ -4390,7 +4781,7 @@
  0000:0002A20C       loc_2A20C
  0000:0002A228       sub_2A228
  0000:0002A22C       sub_2A22C
- 0000:0002A242       word_2A242
+ 0000:0002A242       SineTable
  0000:0002A442       DebugMenu
  0000:0002A45A       DebugMenuActionTable
  0000:0002A464       DebugMenuOpen
@@ -4415,8 +4806,8 @@
  0000:0002A5EA       MapMenuOpen
  0000:0002A604       MapMenuEnter
  0000:0002A64E       MapMenuExit
- 0000:0002A65C       DebugMapRoomOptions
- 0000:0002A6C4       FlagMenu_0
+ 0000:0002A65C       MapList
+ 0000:0002A6C4       FlagMenu
  0000:0002A6D6       loc_2A6D6
  0000:0002A6DC       FlagMenuActionJmpTable
  0000:0002A6E6       FlagMenuOpen
@@ -4450,31 +4841,31 @@
  0000:00036087       StringBank7
  0000:000377E3       StringBank8
  0000:00038368       StringBankPtr
- 0000:00038600       sub_38600
- 0000:00038604       sub_38604
+ 0000:00038600       j_DisplaySegaLogo
+ 0000:00038604       j_DisplayTitle
  0000:00038608       j_DecompTilemap
- 0000:0003860C       sub_3860C
- 0000:00038610       sub_38610
- 0000:00038614       sub_38614
+ 0000:0003860C       j_DisplayLithograph
+ 0000:00038610       j_DisplayIslandMap
+ 0000:00038614       DisplaySegaLogo
  0000:00038634       loc_38634
- 0000:00038654       sub_38654
- 0000:0003868A       sub_3868A
+ 0000:00038654       LoadSegaLogoTilemap
+ 0000:0003868A       FillAscendingTileNums
  0000:0003868E       loc_3868E
- 0000:0003869C       sub_3869C
+ 0000:0003869C       LoadSegaLogoPalette
  0000:000386AA       loc_386AA
  0000:000386C2       SegaLogoPalette
- 0000:000386D0       sub_386D0
- 0000:000386E4       SegaLogoCompressed
- 0000:000389D4       sub_389D4
- 0000:00038A12       sub_38A12
- 0000:00038A2E       sub_38A2E
+ 0000:000386D0       LoadSegaLogoTiles
+ 0000:000386E4       SegaLogo
+ 0000:000389D4       DisplayLithograph
+ 0000:00038A12       LoadLithographTiles
+ 0000:00038A2E       LoadLithographTilemap
  0000:00038A7E       loc_38A7E
  0000:00038A88       loc_38A88
- 0000:00038AA2       sub_38AA2
- 0000:00038AAC       LithographGfxPalette
- 0000:00038ACC       LithographGfxCompressed
- 0000:00039752       LithographTilemapCompressed
- 0000:00039762       sub_39762
+ 0000:00038AA2       LoadLithographPalette
+ 0000:00038AAC       LithographPalette
+ 0000:00038ACC       Lithograph
+ 0000:00039752       LithographTilemap
+ 0000:00039762       DisplayTitle
  0000:0003976A       DecompTilemap
  0000:00039774       loc_39774
  0000:00039782       loc_39782
@@ -4498,11 +4889,10 @@
  0000:00039824       loc_39824
  0000:0003982C       DecompTM_IncrementalFill
  0000:00039838       loc_39838
- 0000:00039848       loc_39848
  0000:00039920       loc_39920
  0000:00039948       loc_39948
  0000:0003997C       loc_3997C
- 0000:00039988       sub_39988
+ 0000:00039988       WaitForStartGame
  0000:0003998C       loc_3998C
  0000:000399AA       loc_399AA
  0000:000399C2       loc_399C2
@@ -4547,8 +4937,8 @@
  0000:00039C6C       loc_39C6C
  0000:00039C7E       loc_39C7E
  0000:00039C9A       loc_39C9A
- 0000:00039CA0       word_39CA0
- 0000:00039CA2       word_39CA2
+ 0000:00039CA0       Blue
+ 0000:00039CA2       Yellow
  0000:00039CA4       sub_39CA4
  0000:00039CAC       loc_39CAC
  0000:00039CB4       loc_39CB4
@@ -4585,19 +4975,19 @@
  0000:00039E92       GetTilePointer
  0000:00039EBE       loc_39EBE
  0000:00039EC4       loc_39EC4
- 0000:00039ED8       Title1GfxCompressed
- 0000:0003A564       Title2GfxCompressed
- 0000:0003BCAE       Title3GfxCompressed
- 0000:0003DD92       byte_3DD92
- 0000:0003DDFE       byte_3DDFE
- 0000:0003DE52       Title3TilemapCmp
- 0000:0003DECA       TitlePalette1
- 0000:0003DEEA       TitlePalette2
- 0000:0003DF0A       sub_3DF0A
- 0000:0003DF8A       ClimaxLogoGfxCmp
- 0000:0003E621       ClimaxLogoTilemapCmp
+ 0000:00039ED8       Title1
+ 0000:0003A564       Title2
+ 0000:0003BCAE       Title3
+ 0000:0003DD92       Title1Map
+ 0000:0003DDFE       Title2Map
+ 0000:0003DE52       Title3Map
+ 0000:0003DECA       TitlePalette2
+ 0000:0003DEEA       TitlePalette3
+ 0000:0003DF0A       DisplayClimaxLogo
+ 0000:0003DF8A       ClimaxLogo
+ 0000:0003E621       ClimaxLogoMap
  0000:0003E64C       ClimaxLogoPalette
- 0000:0003E654       sub_3E654
+ 0000:0003E654       DisplayIslandMap
  0000:0003E682       loc_3E682
  0000:0003E7DC       loc_3E7DC
  0000:0003E7F6       loc_3E7F6
@@ -4639,8 +5029,8 @@
  0000:0003EAAA       loc_3EAAA
  0000:0003EAD4       loc_3EAD4
  0000:0003EAD8       loc_3EAD8
- 0000:0003EADE       word_3EADE
- 0000:0003EAF6       word_3EAF6
+ 0000:0003EADE       MapFridayCoords
+ 0000:0003EAF6       MapTextCoords
  0000:0003EB0E       sub_3EB0E
  0000:0003EB30       loc_3EB30
  0000:0003EB46       loc_3EB46
@@ -4678,52 +5068,52 @@
  0000:0003ED18       sub_3ED18
  0000:0003ED1C       loc_3ED1C
  0000:0003ED2E       loc_3ED2E
- 0000:0003ED3C       word_3ED3C
- 0000:0003ED46       word_3ED46
+ 0000:0003ED3C       byte_3ED3C
+ 0000:0003ED46       byte_3ED46
  0000:0003ED64       sub_3ED64
  0000:0003ED78       loc_3ED78
  0000:0003ED7C       loc_3ED7C
- 0000:0003ED9A       IslandMapFgGfxCmp
- 0000:00041B01       IslandMapFgTilemapCmp
- 0000:00041B41       IslandMapBgGfxCmp
- 0000:00043C84       IslandMapBgTilemapCmp
- 0000:00043D2A       byte_43D2A
- 0000:00043D4C       byte_43D4C
+ 0000:0003ED9A       IslandMapFg
+ 0000:00041B01       IslandMapFgMap
+ 0000:00041B41       IslandMapBg
+ 0000:00043C84       IslandMapBgMap
+ 0000:00043D2A       MapDots
+ 0000:00043D4C       MapFriday
  0000:00043E2E       IslandMapPals
  0000:00044010       TilesetPointers
- 0000:00044014       AnimTileset1Ptr
- 0000:00044018       AnimTileset2Ptr
- 0000:0004401C       AnimTileset3Ptr
- 0000:00044020       AnimTileset4Ptr
- 0000:00044024       AnimTileset5Ptr
- 0000:00044028       AnimTileset6Ptr
- 0000:0004402C       AnimTileset7Ptr
- 0000:00044030       AnimTileset8Ptr
- 0000:00044034       AnimTileset9Ptr
- 0000:00044038       AnimTileset10Ptr
- 0000:0004403C       AnimTileset11Ptr
- 0000:00044040       AnimTileset12Ptr
- 0000:00044044       AnimTileset13Ptr
- 0000:00044048       AnimTileset14Ptr
- 0000:0004404C       AnimTileset15Ptr
- 0000:00044050       AnimTileset16Ptr
- 0000:00044054       AnimTileset17Ptr
- 0000:00044058       AnimTileset18Ptr
- 0000:0004405C       AnimTileset19Ptr
- 0000:00044060       AnimTileset20Ptr
- 0000:00044064       AnimTileset21Ptr
- 0000:00044068       AnimTileset22Ptr
+ 0000:00044014       Tileset01Anim01Ptr
+ 0000:00044018       Tileset13Anim01Ptr
+ 0000:0004401C       Tileset13Anim02Ptr
+ 0000:00044020       Tileset03Anim01Ptr
+ 0000:00044024       Tileset03Anim02Ptr
+ 0000:00044028       Tileset05Anim01Ptr
+ 0000:0004402C       Tileset06Anim01Ptr
+ 0000:00044030       Tileset07Anim01Ptr
+ 0000:00044034       Tileset07Anim02Ptr
+ 0000:00044038       Tileset08Anim01Ptr
+ 0000:0004403C       Tileset08Anim02Ptr
+ 0000:00044040       Tileset10Anim01Ptr
+ 0000:00044044       Tileset14Anim01Ptr
+ 0000:00044048       Tileset15Anim01Ptr
+ 0000:0004404C       Tileset02Anim01Ptr
+ 0000:00044050       Tileset16Anim01Ptr
+ 0000:00044054       Tileset14Anim02Ptr
+ 0000:00044058       Tileset04Anim01Ptr
+ 0000:0004405C       Tileset04Anim02Ptr
+ 0000:00044060       Tileset18Anim01Ptr
+ 0000:00044064       Tileset09Anim01Ptr
+ 0000:00044068       Tileset17Anim01Ptr
  0000:0004406C       IntroFontPtr
  0000:00044070       Tilesets
- 0000:000440F0       Tileset1
- 0000:00048B8C       Tileset2
- 0000:0004C9DA       Tileset3
- 0000:00050BD9       Tileset4
- 0000:00054B97       Tileset5
- 0000:000599C6       Tileset6
- 0000:0005E5A6       Tileset7
- 0000:00062867       Tileset8
- 0000:000683E2       Tileset9
+ 0000:000440F0       Tileset01
+ 0000:00048B8C       Tileset02
+ 0000:0004C9DA       Tileset03
+ 0000:00050BD9       Tileset04
+ 0000:00054B97       Tileset05
+ 0000:000599C6       Tileset06
+ 0000:0005E5A6       Tileset07
+ 0000:00062867       Tileset08
+ 0000:000683E2       Tileset09
  0000:0006CA97       Tileset10
  0000:00070290       Tileset11
  0000:00073B7A       Tileset12
@@ -4733,31 +5123,31 @@
  0000:00088812       Tileset16
  0000:0008C046       Tileset17
  0000:0008FD75       Tileset18
- 0000:00094F2A       AnimTileset1
- 0000:0009552A       AnimTileset2
- 0000:000957EA       AnimTileset3
- 0000:00095BAA       AnimTileset4
- 0000:0009608A       AnimTileset5
- 0000:0009614A       AnimTileset6
- 0000:000968CA       AnimTileset7
- 0000:00096E8A       AnimTileset8
- 0000:0009700A       AnimTileset9
- 0000:0009760A       AnimTileset10
- 0000:00097B4A       AnimTileset11
- 0000:00097CCA       AnimTileset12
- 0000:0009820A       AnimTileset13
- 0000:0009838A       AnimTileset14
- 0000:00098AAA       AnimTileset15
- 0000:00098CAA       AnimTileset16
- 0000:00098EAA       AnimTileset17
- 0000:0009906A       AnimTileset18
- 0000:0009912A       AnimTileset19
- 0000:0009960A       AnimTileset20
- 0000:00099C0A       AnimTileset21
- 0000:00099E8A       AnimTileset22
+ 0000:00094F2A       Tileset01Anim01
+ 0000:0009552A       Tileset13Anim01
+ 0000:000957EA       Tileset13Anim02
+ 0000:00095BAA       Tileset03Anim01
+ 0000:0009608A       Tileset03Anim02
+ 0000:0009614A       Tileset05Anim01
+ 0000:000968CA       Tileset06Anim01
+ 0000:00096E8A       Tileset07Anim01
+ 0000:0009700A       Tileset07Anim02
+ 0000:0009760A       Tileset08Anim01
+ 0000:00097B4A       Tileset08Anim02
+ 0000:00097CCA       Tileset10Anim01
+ 0000:0009820A       Tileset14Anim01
+ 0000:0009838A       Tileset15Anim01
+ 0000:00098AAA       Tileset02Anim01
+ 0000:00098CAA       Tileset16Anim01
+ 0000:00098EAA       Tileset14Anim02
+ 0000:0009906A       Tileset04Anim01
+ 0000:0009912A       Tileset04Anim02
+ 0000:0009960A       Tileset18Anim01
+ 0000:00099C0A       Tileset09Anim01
+ 0000:00099E8A       Tileset17Anim01
  0000:0009A4EA       IntroFont
  0000:0009B000       j_LoadSpriteBehaviour
- 0000:0009B004       sub_9B004
+ 0000:0009B004       j_PlayEndCredits
  0000:0009B008       j_LookupChestContents
  0000:0009B00C       sub_9B00C
  0000:0009B010       j_CheckIfChestOpened
@@ -4766,15 +5156,15 @@
  0000:0009B02C       LoadSpriteBehaviour
  0000:0009B03A       loc_9B03A
  0000:0009B044       loc_9B044
- 0000:0009B058       OffsetTable
- 0000:0009B458       LookupTable
+ 0000:0009B058       SpriteBehaviourOffsets
+ 0000:0009B458       SpriteBehaviourTable
  0000:0009E75E       LookupChestContents
- 0000:0009E78E       RoomChestOffsetLookup
+ 0000:0009E78E       RoomChestOffsets
  0000:0009EABE       ChestContents
  0000:0009EB9C       loc_9EB9C
  0000:0009EBC4       locret_9EBC4
  0000:0009EBC6       CheckIfChestOpened
- 0000:0009EBE0       loc_9EBE0
+ 0000:0009EBE0       PlayEndCredits
  0000:0009EC06       loc_9EC06
  0000:0009EC9A       loc_9EC9A
  0000:0009ECBC       loc_9ECBC
@@ -4834,9 +5224,9 @@
  0000:0009FA0A       loc_9FA0A
  0000:0009FA10       loc_9FA10
  0000:0009FA3A       EndCreditPal
- 0000:0009FA42       EndCreditFontGfxCmp
- 0000:000A0033       EndCreditLogoGfxCmp
- 0000:000A086F       EndCreditLogoTilemapCmp
+ 0000:0009FA42       EndCreditFont
+ 0000:000A0033       EndCreditLogos
+ 0000:000A086F       EndCreditLogoMap
  0000:000A0A00       RoomDataPtr
  0000:000A0A04       RoomPalPtr
  0000:000A0A08       RoomExitsPtr
@@ -4924,6 +5314,7 @@
  0000:000B310E       Map080
  0000:000B32E6       Map081
  0000:000B3909       Map082
+ 0000:000B3D69       Map083
  0000:000B3EB0       Map084
  0000:000B4101       Map085
  0000:000B457C       Map086
@@ -5288,205 +5679,205 @@
  0000:000F0965       Map445
  0000:000F1076       Map446
  0000:000F13AF       Map447
- 0000:000F1A9E       Map449
- 0000:000F1CFA       Map450
- 0000:000F209C       Map451
- 0000:000F257D       Map452
- 0000:000F2A00       Map453
- 0000:000F2BEF       Map454
- 0000:000F2DC8       Map455
- 0000:000F2F24       Map456
- 0000:000F313D       Map457
- 0000:000F33B2       Map458
- 0000:000F3779       Map459
- 0000:000F391E       Map460
- 0000:000F3C49       Map461
- 0000:000F3F7C       Map462
- 0000:000F415B       Map463
- 0000:000F4325       Map464
- 0000:000F4408       Map465
- 0000:000F4561       Map466
- 0000:000F46F9       Map467
- 0000:000F49DC       Map468
- 0000:000F4F52       Map469
- 0000:000F512A       Map470
- 0000:000F576D       Map471
- 0000:000F5BBD       Map472
- 0000:000F612B       Map473
- 0000:000F6377       Map474
- 0000:000F65F6       Map475
- 0000:000F6A1E       Map476
- 0000:000F6E7A       Map477
- 0000:000F796B       Map478
- 0000:000F7D15       Map479
- 0000:000F7FBD       Map480
- 0000:000F85AF       Map481
- 0000:000F86EB       Map482
- 0000:000F88C6       Map483
- 0000:000F89EA       Map484
- 0000:000F8BE9       Map485
- 0000:000F8F1B       Map486
- 0000:000F9019       Map487
- 0000:000F9403       Map488
- 0000:000F9764       Map489
- 0000:000F9B37       Map490
- 0000:000FAB97       Map491
- 0000:000FAD38       Map492
- 0000:000FAF30       Map493
- 0000:000FB256       Map494
- 0000:000FB765       Map495
- 0000:000FB8A8       Map496
- 0000:000FBEAB       Map497
- 0000:000FC155       Map498
- 0000:000FC38B       Map499
- 0000:000FC731       Map500
- 0000:000FC882       Map501
- 0000:000FC9D0       Map502
- 0000:000FCAEE       Map503
- 0000:000FCC3B       Map504
- 0000:000FCD8A       Map505
- 0000:000FD250       Map506
- 0000:000FD61D       Map507
- 0000:000FD9A5       Map508
- 0000:000FE406       Map509
- 0000:000FE507       Map510
- 0000:000FE82C       Map511
- 0000:000FEC65       Map512
- 0000:000FEF25       Map513
- 0000:000FF442       Map514
- 0000:000FF949       Map515
- 0000:0010042C       Map516
- 0000:00100D40       Map517
- 0000:00100E2C       Map518
- 0000:00100FC0       Map519
- 0000:0010138A       Map520
- 0000:00101727       Map521
- 0000:00101B32       Map522
- 0000:00101CEE       Map523
- 0000:00101E10       Map524
- 0000:00101F64       Map525
- 0000:0010206B       Map526
- 0000:00102269       Map527
- 0000:001025DC       Map528
- 0000:001027F3       Map529
- 0000:00102D09       Map530
- 0000:00102E3C       Map531
- 0000:00102FED       Map532
- 0000:001032FE       Map533
- 0000:0010375C       Map534
- 0000:00103A35       Map535
- 0000:00103BE7       Map536
- 0000:00103D76       Map537
- 0000:00103EB4       Map538
- 0000:0010411A       Map539
- 0000:001043A7       Map540
- 0000:00104669       Map541
- 0000:001047EC       Map542
- 0000:0010491A       Map543
- 0000:00104B74       Map544
- 0000:00104CFB       Map545
- 0000:00104EB5       Map546
- 0000:0010559B       Map547
- 0000:00105973       Map548
- 0000:00105F5B       Map549
- 0000:001060D9       Map550
- 0000:0010628D       Map551
- 0000:001063DA       Map552
- 0000:0010652F       Map553
- 0000:00106763       Map554
- 0000:001068E6       Map555
- 0000:00106AB5       Map556
- 0000:00106C2D       Map557
- 0000:00106DAE       Map558
- 0000:00106F19       Map559
- 0000:00107192       Map560
- 0000:00107473       Map561
- 0000:0010769D       Map562
- 0000:00107786       Map563
- 0000:00107A0B       Map564
- 0000:00107B7E       Map565
- 0000:00107DF2       Map566
- 0000:00107F07       Map567
- 0000:00108712       Map568
- 0000:001089AD       Map569
- 0000:00108B86       Map570
- 0000:00108D50       Map571
- 0000:00108F80       Map572
- 0000:00109291       Map573
- 0000:001094A5       Map574
- 0000:00109A5B       Map575
- 0000:00109C84       Map576
- 0000:00109EBD       Map577
- 0000:0010A0D2       Map578
- 0000:0010A231       Map579
- 0000:0010AA97       Map580
- 0000:0010B861       Map581
- 0000:0010B9A7       Map582
- 0000:0010C4BA       Map583
- 0000:0010CDEC       Map584
- 0000:0010CEC1       Map585
- 0000:0010D235       Map586
- 0000:0010D8AC       Map587
- 0000:0010DB35       Map588
- 0000:0010E302       Map589
- 0000:0010E5EE       Map590
- 0000:0010E9A6       Map591
- 0000:0010F558       Map592
- 0000:0010F8AA       Map593
- 0000:0010FC52       Map594
- 0000:00110088       Map595
- 0000:00110475       Map596
- 0000:00110907       Map597
- 0000:00110CBE       Map598
- 0000:00111074       Map599
- 0000:00111429       Map600
- 0000:00111631       Map601
- 0000:001118AE       Map602
- 0000:00111B54       Map603
- 0000:00111CBC       Map604
- 0000:00111F0F       Map605
- 0000:00112274       Map606
- 0000:00112502       Map607
- 0000:00112F6C       Map608
- 0000:001131DD       Map609
- 0000:0011339E       Map610
- 0000:0011361E       Map611
- 0000:001138E0       Map612
- 0000:00113B2B       Map613
- 0000:00113C9A       Map614
- 0000:00113FCE       Map615
- 0000:001141D7       Map616
- 0000:00114398       Map617
- 0000:00114DBE       Map618
- 0000:00114EFC       Map619
- 0000:00115394       Map620
- 0000:00115A25       Map621
- 0000:00115DE7       Map622
- 0000:00116071       Map623
- 0000:0011676C       Map624
- 0000:00116988       Map625
- 0000:00116E09       Map626
- 0000:0011728A       Map627
- 0000:0011759C       Map628
- 0000:001177D4       Map629
- 0000:00118245       Map630
- 0000:001185FF       Map631
- 0000:00118D23       Map632
- 0000:00118F92       Map633
- 0000:00119A00       Map634
- 0000:00119EB1       Map635
- 0000:0011A15A       Map636
- 0000:0011A9C0       Map637
- 0000:0011B034       Map638
- 0000:0011B10F       Map639
- 0000:0011B28B       Map640
- 0000:0011B40C       Map641
- 0000:0011B65F       Map642
- 0000:0011B8C6       Map643
- 0000:0011BA54       Map644
- 0000:0011BBE6       Map645
- 0000:0011BCD2       Map646
- 0000:0011C4C1       Map647
+ 0000:000F1A9E       Map448
+ 0000:000F1CFA       Map449
+ 0000:000F209C       Map450
+ 0000:000F257D       Map451
+ 0000:000F2A00       Map452
+ 0000:000F2BEF       Map453
+ 0000:000F2DC8       Map454
+ 0000:000F2F24       Map455
+ 0000:000F313D       Map456
+ 0000:000F33B2       Map457
+ 0000:000F3779       Map458
+ 0000:000F391E       Map459
+ 0000:000F3C49       Map460
+ 0000:000F3F7C       Map461
+ 0000:000F415B       Map462
+ 0000:000F4325       Map463
+ 0000:000F4408       Map464
+ 0000:000F4561       Map465
+ 0000:000F46F9       Map466
+ 0000:000F49DC       Map467
+ 0000:000F4F52       Map468
+ 0000:000F512A       Map469
+ 0000:000F576D       Map470
+ 0000:000F5BBD       Map471
+ 0000:000F612B       Map472
+ 0000:000F6377       Map473
+ 0000:000F65F6       Map474
+ 0000:000F6A1E       Map475
+ 0000:000F6E7A       Map476
+ 0000:000F796B       Map477
+ 0000:000F7D15       Map478
+ 0000:000F7FBD       Map479
+ 0000:000F85AF       Map480
+ 0000:000F86EB       Map481
+ 0000:000F88C6       Map482
+ 0000:000F89EA       Map483
+ 0000:000F8BE9       Map484
+ 0000:000F8F1B       Map485
+ 0000:000F9019       Map486
+ 0000:000F9403       Map487
+ 0000:000F9764       Map488
+ 0000:000F9B37       Map489
+ 0000:000FAB97       Map490
+ 0000:000FAD38       Map491
+ 0000:000FAF30       Map492
+ 0000:000FB256       Map493
+ 0000:000FB765       Map494
+ 0000:000FB8A8       Map495
+ 0000:000FBEAB       Map496
+ 0000:000FC155       Map497
+ 0000:000FC38B       Map498
+ 0000:000FC731       Map499
+ 0000:000FC882       Map500
+ 0000:000FC9D0       Map501
+ 0000:000FCAEE       Map502
+ 0000:000FCC3B       Map503
+ 0000:000FCD8A       Map504
+ 0000:000FD250       Map505
+ 0000:000FD61D       Map506
+ 0000:000FD9A5       Map507
+ 0000:000FE406       Map508
+ 0000:000FE507       Map509
+ 0000:000FE82C       Map510
+ 0000:000FEC65       Map511
+ 0000:000FEF25       Map512
+ 0000:000FF442       Map513
+ 0000:000FF949       Map514
+ 0000:0010042C       Map515
+ 0000:00100D40       Map516
+ 0000:00100E2C       Map517
+ 0000:00100FC0       Map518
+ 0000:0010138A       Map519
+ 0000:00101727       Map520
+ 0000:00101B32       Map521
+ 0000:00101CEE       Map522
+ 0000:00101E10       Map523
+ 0000:00101F64       Map524
+ 0000:0010206B       Map525
+ 0000:00102269       Map526
+ 0000:001025DC       Map527
+ 0000:001027F3       Map528
+ 0000:00102D09       Map529
+ 0000:00102E3C       Map530
+ 0000:00102FED       Map531
+ 0000:001032FE       Map532
+ 0000:0010375C       Map533
+ 0000:00103A35       Map534
+ 0000:00103BE7       Map535
+ 0000:00103D76       Map536
+ 0000:00103EB4       Map537
+ 0000:0010411A       Map538
+ 0000:001043A7       Map539
+ 0000:00104669       Map540
+ 0000:001047EC       Map541
+ 0000:0010491A       Map542
+ 0000:00104B74       Map543
+ 0000:00104CFB       Map544
+ 0000:00104EB5       Map545
+ 0000:0010559B       Map546
+ 0000:00105973       Map547
+ 0000:00105F5B       Map548
+ 0000:001060D9       Map549
+ 0000:0010628D       Map550
+ 0000:001063DA       Map551
+ 0000:0010652F       Map552
+ 0000:00106763       Map553
+ 0000:001068E6       Map554
+ 0000:00106AB5       Map555
+ 0000:00106C2D       Map556
+ 0000:00106DAE       Map557
+ 0000:00106F19       Map558
+ 0000:00107192       Map559
+ 0000:00107473       Map560
+ 0000:0010769D       Map561
+ 0000:00107786       Map562
+ 0000:00107A0B       Map563
+ 0000:00107B7E       Map564
+ 0000:00107DF2       Map565
+ 0000:00107F07       Map566
+ 0000:00108712       Map567
+ 0000:001089AD       Map568
+ 0000:00108B86       Map569
+ 0000:00108D50       Map570
+ 0000:00108F80       Map571
+ 0000:00109291       Map572
+ 0000:001094A5       Map573
+ 0000:00109A5B       Map574
+ 0000:00109C84       Map575
+ 0000:00109EBD       Map576
+ 0000:0010A0D2       Map577
+ 0000:0010A231       Map578
+ 0000:0010AA97       Map579
+ 0000:0010B861       Map580
+ 0000:0010B9A7       Map581
+ 0000:0010C4BA       Map582
+ 0000:0010CDEC       Map583
+ 0000:0010CEC1       Map584
+ 0000:0010D235       Map585
+ 0000:0010D8AC       Map586
+ 0000:0010DB35       Map587
+ 0000:0010E302       Map588
+ 0000:0010E5EE       Map589
+ 0000:0010E9A6       Map590
+ 0000:0010F558       Map591
+ 0000:0010F8AA       Map592
+ 0000:0010FC52       Map593
+ 0000:00110088       Map594
+ 0000:00110475       Map595
+ 0000:00110907       Map596
+ 0000:00110CBE       Map597
+ 0000:00111074       Map598
+ 0000:00111429       Map599
+ 0000:00111631       Map600
+ 0000:001118AE       Map601
+ 0000:00111B54       Map602
+ 0000:00111CBC       Map603
+ 0000:00111F0F       Map604
+ 0000:00112274       Map605
+ 0000:00112502       Map606
+ 0000:00112F6C       Map607
+ 0000:001131DD       Map608
+ 0000:0011339E       Map609
+ 0000:0011361E       Map610
+ 0000:001138E0       Map611
+ 0000:00113B2B       Map612
+ 0000:00113C9A       Map613
+ 0000:00113FCE       Map614
+ 0000:001141D7       Map615
+ 0000:00114398       Map616
+ 0000:00114DBE       Map617
+ 0000:00114EFC       Map618
+ 0000:00115394       Map619
+ 0000:00115A25       Map620
+ 0000:00115DE7       Map621
+ 0000:00116071       Map622
+ 0000:0011676C       Map623
+ 0000:00116988       Map624
+ 0000:00116E09       Map625
+ 0000:0011728A       Map626
+ 0000:0011759C       Map627
+ 0000:001177D4       Map628
+ 0000:00118245       Map629
+ 0000:001185FF       Map630
+ 0000:00118D23       Map631
+ 0000:00118F92       Map632
+ 0000:00119A00       Map633
+ 0000:00119EB1       Map634
+ 0000:0011A15A       Map635
+ 0000:0011A9C0       Map636
+ 0000:0011B034       Map637
+ 0000:0011B10F       Map638
+ 0000:0011B28B       Map639
+ 0000:0011B40C       Map640
+ 0000:0011B65F       Map641
+ 0000:0011B8C6       Map642
+ 0000:0011BA54       Map643
+ 0000:0011BBE6       Map644
+ 0000:0011BCD2       Map645
+ 0000:0011C4C1       Map646
  0000:0011C926       RoomPals
  0000:0011CEA2       RoomExits
  0000:0011EA64       CheckRegion
@@ -6875,8 +7266,8 @@
  0000:001A453A       SpritePaletteLUT
  0000:001A47E0       SpritePaletteLo
  0000:001A4BA0       SpritePaletteHi
- 0000:001A4C8E       loc_1A4C8E
- 0000:001A4C90       loc_1A4C90
+ 0000:001A4C8E       EnemyAI_Orc1_B
+ 0000:001A4C90       EnemyAI_Orc1_A
  0000:001A4CA8       loc_1A4CA8
  0000:001A4CAE       loc_1A4CAE
  0000:001A4CD6       loc_1A4CD6
@@ -6897,8 +7288,8 @@
  0000:001A4E78       loc_1A4E78
  0000:001A4E7E       loc_1A4E7E
  0000:001A4EB2       locret_1A4EB2
- 0000:001A4EB4       loc_1A4EB4
- 0000:001A4EB6       loc_1A4EB6
+ 0000:001A4EB4       EnemyAI_Orc2_B
+ 0000:001A4EB6       EnemyAI_Orc2_A
  0000:001A4ECE       loc_1A4ECE
  0000:001A4ED4       loc_1A4ED4
  0000:001A4EFC       loc_1A4EFC
@@ -6921,8 +7312,8 @@
  0000:001A50DE       locret_1A50DE
  0000:001A50E0       loc_1A50E0
  0000:001A5114       loc_1A5114
- 0000:001A511A       loc_1A511A
- 0000:001A511C       loc_1A511C
+ 0000:001A511A       EnemyAI_Orc3_B
+ 0000:001A511C       EnemyAI_Orc3_A
  0000:001A5134       loc_1A5134
  0000:001A513A       loc_1A513A
  0000:001A5162       loc_1A5162
@@ -6944,8 +7335,8 @@
  0000:001A533E       locret_1A533E
  0000:001A5340       loc_1A5340
  0000:001A5374       loc_1A5374
- 0000:001A537A       loc_1A537A
- 0000:001A537C       loc_1A537C
+ 0000:001A537A       EnemyAI_Worm1_B
+ 0000:001A537C       EnemyAI_Worm1_A
  0000:001A5394       loc_1A5394
  0000:001A539A       loc_1A539A
  0000:001A53C8       loc_1A53C8
@@ -6978,8 +7369,8 @@
  0000:001A56BA       loc_1A56BA
  0000:001A56CA       loc_1A56CA
  0000:001A570C       locret_1A570C
- 0000:001A570E       loc_1A570E
- 0000:001A5710       loc_1A5710
+ 0000:001A570E       EnemyAI_Worm2_B
+ 0000:001A5710       EnemyAI_Worm2_A
  0000:001A5728       loc_1A5728
  0000:001A572E       loc_1A572E
  0000:001A575C       loc_1A575C
@@ -7017,8 +7408,8 @@
  0000:001A5AD8       loc_1A5AD8
  0000:001A5B08       loc_1A5B08
  0000:001A5B1A       locret_1A5B1A
- 0000:001A5B1C       loc_1A5B1C
- 0000:001A5B1E       loc_1A5B1E
+ 0000:001A5B1C       EnemyAI_Worm3_B
+ 0000:001A5B1E       EnemyAI_Worm3_A
  0000:001A5B36       loc_1A5B36
  0000:001A5B3C       loc_1A5B3C
  0000:001A5B6A       loc_1A5B6A
@@ -7057,8 +7448,8 @@
  0000:001A5EF4       loc_1A5EF4
  0000:001A5F24       loc_1A5F24
  0000:001A5F36       locret_1A5F36
- 0000:001A5F38       loc_1A5F38
- 0000:001A5F3A       loc_1A5F3A
+ 0000:001A5F38       EnemyAI_Ninja1_B
+ 0000:001A5F3A       EnemyAI_Ninja1_A
  0000:001A5F52       loc_1A5F52
  0000:001A5F58       loc_1A5F58
  0000:001A5F80       loc_1A5F80
@@ -7080,8 +7471,8 @@
  0000:001A6152       loc_1A6152
  0000:001A6158       loc_1A6158
  0000:001A618C       loc_1A618C
- 0000:001A6192       loc_1A6192
- 0000:001A6194       loc_1A6194
+ 0000:001A6192       EnemyAI_Ninja2_B
+ 0000:001A6194       EnemyAI_Ninja2_A
  0000:001A61AC       loc_1A61AC
  0000:001A61B2       loc_1A61B2
  0000:001A61DA       loc_1A61DA
@@ -7109,8 +7500,8 @@
  0000:001A6432       loc_1A6432
  0000:001A645C       loc_1A645C
  0000:001A6490       loc_1A6490
- 0000:001A6496       loc_1A6496
- 0000:001A6498       loc_1A6498
+ 0000:001A6496       EnemyAI_Ninja3_B
+ 0000:001A6498       EnemyAI_Ninja3_A
  0000:001A64B0       loc_1A64B0
  0000:001A64B6       loc_1A64B6
  0000:001A64DE       loc_1A64DE
@@ -7139,8 +7530,8 @@
  0000:001A673E       loc_1A673E
  0000:001A676A       loc_1A676A
  0000:001A679E       loc_1A679E
- 0000:001A67A4       loc_1A67A4
- 0000:001A67A6       loc_1A67A6
+ 0000:001A67A4       EnemyAI_Lizard1_B
+ 0000:001A67A6       EnemyAI_Lizard1_A
  0000:001A67BE       loc_1A67BE
  0000:001A67C4       loc_1A67C4
  0000:001A67EC       loc_1A67EC
@@ -7165,8 +7556,8 @@
  0000:001A69D4       locret_1A69D4
  0000:001A69D6       loc_1A69D6
  0000:001A6A0A       locret_1A6A0A
- 0000:001A6A0C       loc_1A6A0C
- 0000:001A6A0E       loc_1A6A0E
+ 0000:001A6A0C       EnemyAI_Lizard2_B
+ 0000:001A6A0E       EnemyAI_Lizard2_A
  0000:001A6A26       loc_1A6A26
  0000:001A6A2C       loc_1A6A2C
  0000:001A6A54       loc_1A6A54
@@ -7189,8 +7580,8 @@
  0000:001A6BF6       loc_1A6BF6
  0000:001A6BFC       loc_1A6BFC
  0000:001A6C30       locret_1A6C30
- 0000:001A6C32       loc_1A6C32
- 0000:001A6C34       loc_1A6C34
+ 0000:001A6C32       EnemyAI_Lizard3_B
+ 0000:001A6C34       EnemyAI_Lizard3_A
  0000:001A6C4C       loc_1A6C4C
  0000:001A6C52       loc_1A6C52
  0000:001A6C7A       loc_1A6C7A
@@ -7214,8 +7605,8 @@
  0000:001A6E60       loc_1A6E60
  0000:001A6E66       loc_1A6E66
  0000:001A6E9A       locret_1A6E9A
- 0000:001A6E9C       loc_1A6E9C
- 0000:001A6E9E       loc_1A6E9E
+ 0000:001A6E9C       EnemyAI_Knight1_B
+ 0000:001A6E9E       EnemyAI_Knight1_A
  0000:001A6EB6       loc_1A6EB6
  0000:001A6EBC       loc_1A6EBC
  0000:001A6EE4       loc_1A6EE4
@@ -7237,8 +7628,8 @@
  0000:001A7086       loc_1A7086
  0000:001A708E       loc_1A708E
  0000:001A70C2       loc_1A70C2
- 0000:001A70C8       loc_1A70C8
- 0000:001A70CA       loc_1A70CA
+ 0000:001A70C8       EnemyAI_Knight2_B
+ 0000:001A70CA       EnemyAI_Knight2_A
  0000:001A70E2       loc_1A70E2
  0000:001A70E8       loc_1A70E8
  0000:001A7110       loc_1A7110
@@ -7260,8 +7651,8 @@
  0000:001A72B2       loc_1A72B2
  0000:001A72BA       loc_1A72BA
  0000:001A72EE       loc_1A72EE
- 0000:001A72F4       loc_1A72F4
- 0000:001A72F6       loc_1A72F6
+ 0000:001A72F4       EnemyAI_Knight3_B
+ 0000:001A72F6       EnemyAI_Knight3_A
  0000:001A730E       loc_1A730E
  0000:001A7314       loc_1A7314
  0000:001A733C       loc_1A733C
@@ -7282,8 +7673,8 @@
  0000:001A74D6       loc_1A74D6
  0000:001A74E2       loc_1A74E2
  0000:001A7516       loc_1A7516
- 0000:001A751C       loc_1A751C
- 0000:001A751E       loc_1A751E
+ 0000:001A751C       EnemyAI_Ghost1_B
+ 0000:001A751E       EnemyAI_Ghost1_A
  0000:001A7536       loc_1A7536
  0000:001A753C       loc_1A753C
  0000:001A753E       loc_1A753E
@@ -7299,8 +7690,8 @@
  0000:001A765C       loc_1A765C
  0000:001A76A4       loc_1A76A4
  0000:001A76AE       loc_1A76AE
- 0000:001A76B8       loc_1A76B8
- 0000:001A76BA       loc_1A76BA
+ 0000:001A76B8       EnemyAI_Ghost2_B
+ 0000:001A76BA       EnemyAI_Ghost2_A
  0000:001A76D2       loc_1A76D2
  0000:001A76D8       loc_1A76D8
  0000:001A76DA       loc_1A76DA
@@ -7320,8 +7711,8 @@
  0000:001A7882       loc_1A7882
  0000:001A78B2       locret_1A78B2
  0000:001A78B4       loc_1A78B4
- 0000:001A78BC       loc_1A78BC
- 0000:001A78BE       loc_1A78BE
+ 0000:001A78BC       EnemyAI_Ghost3_B
+ 0000:001A78BE       EnemyAI_Ghost3_A
  0000:001A78D6       loc_1A78D6
  0000:001A78DC       loc_1A78DC
  0000:001A78DE       loc_1A78DE
@@ -7341,8 +7732,8 @@
  0000:001A7A86       loc_1A7A86
  0000:001A7AB6       locret_1A7AB6
  0000:001A7AB8       loc_1A7AB8
- 0000:001A7AC0       loc_1A7AC0
- 0000:001A7AC2       loc_1A7AC2
+ 0000:001A7AC0       EnemyAI_Mummy1_B
+ 0000:001A7AC2       EnemyAI_Mummy1_A
  0000:001A7ADA       loc_1A7ADA
  0000:001A7AE0       loc_1A7AE0
  0000:001A7B08       loc_1A7B08
@@ -7371,8 +7762,8 @@
  0000:001A7DBA       loc_1A7DBA
  0000:001A7DC4       loc_1A7DC4
  0000:001A7DF8       locret_1A7DF8
- 0000:001A7DFA       loc_1A7DFA
- 0000:001A7DFC       loc_1A7DFC
+ 0000:001A7DFA       EnemyAI_Mummy2_B
+ 0000:001A7DFC       EnemyAI_Mummy2_A
  0000:001A7E14       loc_1A7E14
  0000:001A7E1A       loc_1A7E1A
  0000:001A7E42       loc_1A7E42
@@ -7401,8 +7792,8 @@
  0000:001A80F4       loc_1A80F4
  0000:001A80FE       loc_1A80FE
  0000:001A8132       locret_1A8132
- 0000:001A8134       loc_1A8134
- 0000:001A8136       loc_1A8136
+ 0000:001A8134       EnemyAI_Mummy3_B
+ 0000:001A8136       EnemyAI_Mummy3_A
  0000:001A814E       loc_1A814E
  0000:001A8154       loc_1A8154
  0000:001A817C       loc_1A817C
@@ -7430,13 +7821,13 @@
  0000:001A83F0       sub_1A83F0
  0000:001A83FC       loc_1A83FC
  0000:001A840E       loc_1A840E
- 0000:001A8418       word_1A8418
+ 0000:001A8418       EnemyTable
  0000:001A84A6       loc_1A84A6
  0000:001A86D6       sub_1A86D6
- 0000:001A86E2       loc_1A86E2
- 0000:001A86E4       loc_1A86E4
- 0000:001A86F0       loc_1A86F0
- 0000:001A86F2       loc_1A86F2
+ 0000:001A86E2       EnemyAI_SmallFireball_B
+ 0000:001A86E4       EnemyAI_SmallFireball_A
+ 0000:001A86F0       EnemyAI_GhostGen_B
+ 0000:001A86F2       EnemyAI_GhostGen_A
  0000:001A86FC       loc_1A86FC
  0000:001A870E       loc_1A870E
  0000:001A8716       locret_1A8716
@@ -7464,14 +7855,14 @@
  0000:001A8AA2       loc_1A8AA2
  0000:001A8AA6       loc_1A8AA6
  0000:001A8AB6       loc_1A8AB6
- 0000:001A8ACE       sub_1A8ACE
- 0000:001A8AD4       sub_1A8AD4
- 0000:001A8ADA       sub_1A8ADA
+ 0000:001A8ACE       j_j_RemoveHealth
+ 0000:001A8AD4       j_j_AddStatusEffect
+ 0000:001A8ADA       LoadSpecialAI
  0000:001A8AE0       j_j_LoadSpriteBehaviour
  0000:001A8AE6       sub_1A8AE6
  0000:001A8AEC       loc_1A8AEC
- 0000:001A8AF2       loc_1A8AF2
- 0000:001A8AF4       loc_1A8AF4
+ 0000:001A8AF2       EnemyAI_Unicorn1_B
+ 0000:001A8AF4       EnemyAI_Unicorn1_A
  0000:001A8B12       loc_1A8B12
  0000:001A8B18       loc_1A8B18
  0000:001A8B40       sub_1A8B40
@@ -7494,8 +7885,8 @@
  0000:001A8D7A       loc_1A8D7A
  0000:001A8DA0       loc_1A8DA0
  0000:001A8DA6       loc_1A8DA6
- 0000:001A8DB2       loc_1A8DB2
- 0000:001A8DB4       loc_1A8DB4
+ 0000:001A8DB2       EnemyAI_Unicorn2_B
+ 0000:001A8DB4       EnemyAI_Unicorn2_A
  0000:001A8DD2       loc_1A8DD2
  0000:001A8DD8       loc_1A8DD8
  0000:001A8E00       sub_1A8E00
@@ -7518,8 +7909,8 @@
  0000:001A903A       loc_1A903A
  0000:001A9060       loc_1A9060
  0000:001A9066       loc_1A9066
- 0000:001A9072       loc_1A9072
- 0000:001A9074       loc_1A9074
+ 0000:001A9072       EnemyAI_Unicorn3_B
+ 0000:001A9074       EnemyAI_Unicorn3_A
  0000:001A9092       loc_1A9092
  0000:001A9098       loc_1A9098
  0000:001A90C0       sub_1A90C0
@@ -7542,8 +7933,8 @@
  0000:001A92FA       loc_1A92FA
  0000:001A9320       loc_1A9320
  0000:001A9326       loc_1A9326
- 0000:001A9332       loc_1A9332
- 0000:001A9334       loc_1A9334
+ 0000:001A9332       EnemyAI_Skeleton1_B
+ 0000:001A9334       EnemyAI_Skeleton1_A
  0000:001A934C       loc_1A934C
  0000:001A9352       loc_1A9352
  0000:001A937A       loc_1A937A
@@ -7569,8 +7960,8 @@
  0000:001A959E       loc_1A959E
  0000:001A95A0       loc_1A95A0
  0000:001A95D4       loc_1A95D4
- 0000:001A95D8       loc_1A95D8
- 0000:001A95DA       loc_1A95DA
+ 0000:001A95D8       EnemyAI_Skeleton2_B
+ 0000:001A95DA       EnemyAI_Skeleton2_A
  0000:001A95F2       loc_1A95F2
  0000:001A95FE       loc_1A95FE
  0000:001A9626       loc_1A9626
@@ -7594,8 +7985,8 @@
  0000:001A9824       loc_1A9824
  0000:001A9858       loc_1A9858
  0000:001A985E       loc_1A985E
- 0000:001A9884       loc_1A9884
- 0000:001A9886       loc_1A9886
+ 0000:001A9884       EnemyAI_Skeleton3_B
+ 0000:001A9886       EnemyAI_Skeleton3_A
  0000:001A989E       loc_1A989E
  0000:001A98AA       loc_1A98AA
  0000:001A98D2       loc_1A98D2
@@ -7618,8 +8009,8 @@
  0000:001A9AA6       loc_1A9AA6
  0000:001A9ADA       loc_1A9ADA
  0000:001A9AE0       loc_1A9AE0
- 0000:001A9B06       loc_1A9B06
- 0000:001A9B08       loc_1A9B08
+ 0000:001A9B06       EnemyAI_Mimic1_B
+ 0000:001A9B08       EnemyAI_Mimic1_A
  0000:001A9B20       loc_1A9B20
  0000:001A9B26       loc_1A9B26
  0000:001A9B4E       loc_1A9B4E
@@ -7658,8 +8049,8 @@
  0000:001A9EF6       loc_1A9EF6
  0000:001A9F02       locret_1A9F02
  0000:001A9F04       loc_1A9F04
- 0000:001A9F0E       loc_1A9F0E
- 0000:001A9F10       loc_1A9F10
+ 0000:001A9F0E       EnemyAI_Mimic2_B
+ 0000:001A9F10       EnemyAI_Mimic2_A
  0000:001A9F28       loc_1A9F28
  0000:001A9F2E       loc_1A9F2E
  0000:001A9F56       loc_1A9F56
@@ -7699,8 +8090,8 @@
  0000:001AA32C       loc_1AA32C
  0000:001AA338       locret_1AA338
  0000:001AA33A       loc_1AA33A
- 0000:001AA344       loc_1AA344
- 0000:001AA346       loc_1AA346
+ 0000:001AA344       EnemyAI_Mimic3_B
+ 0000:001AA346       EnemyAI_Mimic3_A
  0000:001AA35E       loc_1AA35E
  0000:001AA364       loc_1AA364
  0000:001AA38C       loc_1AA38C
@@ -7740,8 +8131,8 @@
  0000:001AA762       loc_1AA762
  0000:001AA76E       locret_1AA76E
  0000:001AA770       loc_1AA770
- 0000:001AA77A       loc_1AA77A
- 0000:001AA77C       loc_1AA77C
+ 0000:001AA77A       EnemyAI_Mushroom1_B
+ 0000:001AA77C       EnemyAI_Mushroom1_A
  0000:001AA794       loc_1AA794
  0000:001AA79A       loc_1AA79A
  0000:001AA7C2       loc_1AA7C2
@@ -7774,8 +8165,8 @@
  0000:001AAAE2       locret_1AAAE2
  0000:001AAAE4       loc_1AAAE4
  0000:001AAB16       locret_1AAB16
- 0000:001AAB18       loc_1AAB18
- 0000:001AAB1A       loc_1AAB1A
+ 0000:001AAB18       EnemyAI_Mushroom2_B
+ 0000:001AAB1A       EnemyAI_Mushroom2_A
  0000:001AAB32       loc_1AAB32
  0000:001AAB38       loc_1AAB38
  0000:001AAB60       loc_1AAB60
@@ -7808,8 +8199,8 @@
  0000:001AAE82       locret_1AAE82
  0000:001AAE84       loc_1AAE84
  0000:001AAEB6       locret_1AAEB6
- 0000:001AAEB8       loc_1AAEB8
- 0000:001AAEBA       loc_1AAEBA
+ 0000:001AAEB8       EnemyAI_Mushroom3_B
+ 0000:001AAEBA       EnemyAI_Mushroom3_A
  0000:001AAED2       loc_1AAED2
  0000:001AAED8       loc_1AAED8
  0000:001AAF00       loc_1AAF00
@@ -7842,8 +8233,8 @@
  0000:001AB22C       locret_1AB22C
  0000:001AB22E       loc_1AB22E
  0000:001AB260       locret_1AB260
- 0000:001AB262       loc_1AB262
- 0000:001AB264       loc_1AB264
+ 0000:001AB262       EnemyAI_Giant1_B
+ 0000:001AB264       EnemyAI_Giant1_A
  0000:001AB27C       loc_1AB27C
  0000:001AB282       loc_1AB282
  0000:001AB2AA       loc_1AB2AA
@@ -7866,8 +8257,8 @@
  0000:001AB45E       loc_1AB45E
  0000:001AB464       loc_1AB464
  0000:001AB498       locret_1AB498
- 0000:001AB49A       loc_1AB49A
- 0000:001AB49C       loc_1AB49C
+ 0000:001AB49A       EnemyAI_Giant2_B
+ 0000:001AB49C       EnemyAI_Giant2_A
  0000:001AB4B4       loc_1AB4B4
  0000:001AB4BA       loc_1AB4BA
  0000:001AB4E2       loc_1AB4E2
@@ -7892,8 +8283,8 @@
  0000:001AB6CA       locret_1AB6CA
  0000:001AB6CC       loc_1AB6CC
  0000:001AB6F8       loc_1AB6F8
- 0000:001AB704       loc_1AB704
- 0000:001AB706       loc_1AB706
+ 0000:001AB704       EnemyAI_Giant3_B
+ 0000:001AB706       EnemyAI_Giant3_A
  0000:001AB71E       loc_1AB71E
  0000:001AB724       loc_1AB724
  0000:001AB74C       loc_1AB74C
@@ -7919,8 +8310,8 @@
  0000:001AB964       locret_1AB964
  0000:001AB966       loc_1AB966
  0000:001AB992       loc_1AB992
- 0000:001AB99E       loc_1AB99E
- 0000:001AB9A0       loc_1AB9A0
+ 0000:001AB99E       EnemyAI_Bubble1_B
+ 0000:001AB9A0       EnemyAI_Bubble1_A
  0000:001AB9B4       loc_1AB9B4
  0000:001AB9BA       loc_1AB9BA
  0000:001AB9D8       loc_1AB9D8
@@ -7929,8 +8320,8 @@
  0000:001AB9F4       loc_1AB9F4
  0000:001ABA0C       loc_1ABA0C
  0000:001ABA38       locret_1ABA38
- 0000:001ABA3A       loc_1ABA3A
- 0000:001ABA3C       loc_1ABA3C
+ 0000:001ABA3A       EnemyAI_Bubble2_B
+ 0000:001ABA3C       EnemyAI_Bubble2_A
  0000:001ABA52       loc_1ABA52
  0000:001ABA58       loc_1ABA58
  0000:001ABA70       loc_1ABA70
@@ -7942,8 +8333,8 @@
  0000:001ABADC       loc_1ABADC
  0000:001ABAE8       loc_1ABAE8
  0000:001ABB14       locret_1ABB14
- 0000:001ABB16       loc_1ABB16
- 0000:001ABB18       loc_1ABB18
+ 0000:001ABB16       EnemyAI_Bubble3_B
+ 0000:001ABB18       EnemyAI_Bubble3_A
  0000:001ABB2E       loc_1ABB2E
  0000:001ABB34       loc_1ABB34
  0000:001ABB4C       loc_1ABB4C
@@ -7955,8 +8346,8 @@
  0000:001ABBDA       loc_1ABBDA
  0000:001ABBE6       loc_1ABBE6
  0000:001ABC12       locret_1ABC12
- 0000:001ABC14       loc_1ABC14
- 0000:001ABC16       loc_1ABC16
+ 0000:001ABC14       EnemyAI_Miro_B
+ 0000:001ABC16       EnemyAI_Miro_A
  0000:001ABC2E       loc_1ABC2E
  0000:001ABC34       loc_1ABC34
  0000:001ABC4C       loc_1ABC4C
@@ -7983,8 +8374,8 @@
  0000:001ABEDA       loc_1ABEDA
  0000:001ABEE6       loc_1ABEE6
  0000:001ABF26       loc_1ABF26
- 0000:001ABF34       loc_1ABF34
- 0000:001ABF36       loc_1ABF36
+ 0000:001ABF34       EnemyAI_Mir_B
+ 0000:001ABF36       EnemyAI_Mir_A
  0000:001ABF5A       loc_1ABF5A
  0000:001ABF72       loc_1ABF72
  0000:001ABFF2       loc_1ABFF2
@@ -7999,8 +8390,8 @@
  0000:001AC0FC       loc_1AC0FC
  0000:001AC108       loc_1AC108
  0000:001AC11E       locret_1AC11E
- 0000:001AC120       loc_1AC120
- 0000:001AC122       loc_1AC122
+ 0000:001AC120       EnemyAI_Reaper1_B
+ 0000:001AC122       EnemyAI_Reaper1_A
  0000:001AC13A       loc_1AC13A
  0000:001AC140       loc_1AC140
  0000:001AC168       loc_1AC168
@@ -8029,17 +8420,17 @@
  0000:001AC3DA       loc_1AC3DA
  0000:001AC3EA       locret_1AC3EA
  0000:001AC3EC       loc_1AC3EC
- 0000:001AC3F4       sub_1AC3F4
- 0000:001AC468       word_1AC468
- 0000:001AC46A       word_1AC46A
+ 0000:001AC3F4       LoadProjectilePalette
+ 0000:001AC468       ProjectilePalette1
  0000:001AC474       sub_1AC474
  0000:001AC49C       loc_1AC49C
  0000:001AC4A0       loc_1AC4A0
  0000:001AC4A6       loc_1AC4A6
  0000:001AC4A8       loc_1AC4A8
  0000:001AC4FC       loc_1AC4FC
- 0000:001AC50A       loc_1AC50A
- 0000:001AC50C       loc_1AC50C
+ 0000:001AC504       locret_1AC504
+ 0000:001AC50A       EnemyAI_Reaper2_B
+ 0000:001AC50C       EnemyAI_Reaper2_A
  0000:001AC524       loc_1AC524
  0000:001AC52A       loc_1AC52A
  0000:001AC552       loc_1AC552
@@ -8068,8 +8459,8 @@
  0000:001AC7C4       loc_1AC7C4
  0000:001AC7D4       locret_1AC7D4
  0000:001AC7D6       loc_1AC7D6
- 0000:001AC7DE       loc_1AC7DE
- 0000:001AC7E0       loc_1AC7E0
+ 0000:001AC7DE       EnemyAI_Reaper3_B
+ 0000:001AC7E0       EnemyAI_Reaper3_A
  0000:001AC7F8       loc_1AC7F8
  0000:001AC7FE       loc_1AC7FE
  0000:001AC826       loc_1AC826
@@ -8098,8 +8489,8 @@
  0000:001ACA98       loc_1ACA98
  0000:001ACAA8       locret_1ACAA8
  0000:001ACAAA       loc_1ACAAA
- 0000:001ACAB2       loc_1ACAB2
- 0000:001ACAB4       loc_1ACAB4
+ 0000:001ACAB2       EnemyAI_Duke_B
+ 0000:001ACAB4       EnemyAI_Duke_A
  0000:001ACAD2       loc_1ACAD2
  0000:001ACADE       loc_1ACADE
  0000:001ACB06       loc_1ACB06
@@ -8121,8 +8512,8 @@
  0000:001ACCBE       loc_1ACCBE
  0000:001ACCDA       loc_1ACCDA
  0000:001ACCE0       loc_1ACCE0
- 0000:001ACD06       loc_1ACD06
- 0000:001ACD08       loc_1ACD08
+ 0000:001ACD06       EnemyAI_Zak_B_0
+ 0000:001ACD08       EnemyAI_Zak_A_0
  0000:001ACD20       loc_1ACD20
  0000:001ACD26       loc_1ACD26
  0000:001ACD4E       loc_1ACD4E
@@ -8156,8 +8547,8 @@
  0000:001AD04E       loc_1AD04E
  0000:001AD09C       locret_1AD09C
  0000:001AD09E       loc_1AD09E
- 0000:001AD0B0       loc_1AD0B0
- 0000:001AD0B2       loc_1AD0B2
+ 0000:001AD0B0       EnemyAI_Golem1_B_0
+ 0000:001AD0B2       EnemyAI_Golem1_A_0
  0000:001AD0CA       loc_1AD0CA
  0000:001AD0D0       loc_1AD0D0
  0000:001AD0F8       loc_1AD0F8
@@ -8171,8 +8562,8 @@
  0000:001AD194       loc_1AD194
  0000:001AD1D2       locret_1AD1D2
  0000:001AD1D4       loc_1AD1D4
- 0000:001AD1DA       loc_1AD1DA
- 0000:001AD1DC       loc_1AD1DC
+ 0000:001AD1DA       EnemyAI_Golem2_B_0
+ 0000:001AD1DC       EnemyAI_Golem2_A_0
  0000:001AD1F4       loc_1AD1F4
  0000:001AD1FA       loc_1AD1FA
  0000:001AD222       loc_1AD222
@@ -8186,8 +8577,8 @@
  0000:001AD2BE       loc_1AD2BE
  0000:001AD2FC       locret_1AD2FC
  0000:001AD2FE       loc_1AD2FE
- 0000:001AD304       loc_1AD304
- 0000:001AD306       loc_1AD306
+ 0000:001AD304       EnemyAI_Spectre1_B
+ 0000:001AD306       EnemyAI_Spectre1_A
  0000:001AD324       loc_1AD324
  0000:001AD32A       loc_1AD32A
  0000:001AD352       loc_1AD352
@@ -8214,8 +8605,8 @@
  0000:001AD54C       loc_1AD54C
  0000:001AD554       loc_1AD554
  0000:001AD588       locret_1AD588
- 0000:001AD58A       loc_1AD58A
- 0000:001AD58C       loc_1AD58C
+ 0000:001AD58A       EnemyAI_Spectre2_B
+ 0000:001AD58C       EnemyAI_Spectre2_A
  0000:001AD5AA       loc_1AD5AA
  0000:001AD5B0       loc_1AD5B0
  0000:001AD5D8       loc_1AD5D8
@@ -8242,8 +8633,8 @@
  0000:001AD7D2       loc_1AD7D2
  0000:001AD7DA       loc_1AD7DA
  0000:001AD80E       locret_1AD80E
- 0000:001AD810       loc_1AD810
- 0000:001AD812       loc_1AD812
+ 0000:001AD810       EnemyAI_Spectre3_B
+ 0000:001AD812       EnemyAI_Spectre3_A
  0000:001AD830       loc_1AD830
  0000:001AD836       loc_1AD836
  0000:001AD85E       loc_1AD85E
@@ -8270,8 +8661,8 @@
  0000:001ADA58       loc_1ADA58
  0000:001ADA60       loc_1ADA60
  0000:001ADA94       locret_1ADA94
- 0000:001ADA96       loc_1ADA96
- 0000:001ADA98       loc_1ADA98
+ 0000:001ADA96       EnemyAI_Bird1_B
+ 0000:001ADA98       EnemyAI_Bird1_A
  0000:001ADAB0       loc_1ADAB0
  0000:001ADAB6       loc_1ADAB6
  0000:001ADADC       loc_1ADADC
@@ -8292,8 +8683,8 @@
  0000:001ADC92       loc_1ADC92
  0000:001ADC98       loc_1ADC98
  0000:001ADCCC       locret_1ADCCC
- 0000:001ADCCE       loc_1ADCCE
- 0000:001ADCD0       loc_1ADCD0
+ 0000:001ADCCE       EnemyAI_Bird2_B
+ 0000:001ADCD0       EnemyAI_Bird2_A
  0000:001ADCE8       loc_1ADCE8
  0000:001ADCEE       loc_1ADCEE
  0000:001ADD14       loc_1ADD14
@@ -8314,8 +8705,8 @@
  0000:001ADECA       loc_1ADECA
  0000:001ADED0       loc_1ADED0
  0000:001ADF04       locret_1ADF04
- 0000:001ADF06       loc_1ADF06
- 0000:001ADF08       loc_1ADF08
+ 0000:001ADF06       EnemyAI_Bird3_B
+ 0000:001ADF08       EnemyAI_Bird3_A
  0000:001ADF20       loc_1ADF20
  0000:001ADF26       loc_1ADF26
  0000:001ADF4C       loc_1ADF4C
@@ -8336,8 +8727,8 @@
  0000:001AE102       loc_1AE102
  0000:001AE108       loc_1AE108
  0000:001AE13C       locret_1AE13C
- 0000:001AE13E       loc_1AE13E
- 0000:001AE140       loc_1AE140
+ 0000:001AE13E       EnemyAI_Spinner_B
+ 0000:001AE140       EnemyAI_Spinner_A
  0000:001AE156       loc_1AE156
  0000:001AE15C       loc_1AE15C
  0000:001AE180       loc_1AE180
@@ -8357,8 +8748,8 @@
  0000:001AE33C       loc_1AE33C
  0000:001AE35A       loc_1AE35A
  0000:001AE398       loc_1AE398
- 0000:001AE39E       loc_1AE39E
- 0000:001AE3A0       loc_1AE3A0
+ 0000:001AE39E       EnemyAI_Ifrit_B
+ 0000:001AE3A0       EnemyAI_Ifrit_A
  0000:001AE3B8       loc_1AE3B8
  0000:001AE3C2       loc_1AE3C2
  0000:001AE3C8       sub_1AE3C8
@@ -8384,7 +8775,7 @@
  0000:001AE606       loc_1AE606
  0000:001AE612       loc_1AE612
  0000:001AE660       loc_1AE660
- 0000:001AE672       word_1AE672
+ 0000:001AE672       IfritCoordinates
  0000:001AE67A       loc_1AE67A
  0000:001AE690       loc_1AE690
  0000:001AE6A2       locret_1AE6A2
@@ -8406,8 +8797,8 @@
  0000:001AE80C       loc_1AE80C
  0000:001AE822       loc_1AE822
  0000:001AE876       loc_1AE876
- 0000:001AE87C       loc_1AE87C
- 0000:001AE87E       loc_1AE87E
+ 0000:001AE87C       EnemyAI_Nole_B
+ 0000:001AE87E       EnemyAI_Nole_A
  0000:001AE896       loc_1AE896
  0000:001AE89C       loc_1AE89C
  0000:001AE8C4       loc_1AE8C4
@@ -8444,8 +8835,8 @@
  0000:001AEBFC       loc_1AEBFC
  0000:001AEC22       loc_1AEC22
  0000:001AEC52       loc_1AEC52
- 0000:001AEC58       loc_1AEC58
- 0000:001AEC5A       loc_1AEC5A
+ 0000:001AEC58       EnemyAI_StoneWarrior_B
+ 0000:001AEC5A       EnemyAI_StoneWarrior_A
  0000:001AEC72       loc_1AEC72
  0000:001AEC78       loc_1AEC78
  0000:001AECA0       loc_1AECA0
@@ -8473,8 +8864,8 @@
  0000:001AEE74       loc_1AEE74
  0000:001AEEC4       loc_1AEEC4
  0000:001AEED6       locret_1AEED6
- 0000:001AEED8       loc_1AEED8
- 0000:001AEEDA       loc_1AEEDA
+ 0000:001AEED8       EnemyAI_Gola_B
+ 0000:001AEEDA       EnemyAI_Gola_A
  0000:001AEEF8       loc_1AEEF8
  0000:001AEEFE       loc_1AEEFE
  0000:001AEF04       sub_1AEF04
@@ -8536,11 +8927,8 @@
  0000:001AF56C       loc_1AF56C
  0000:001AF57C       locret_1AF57C
  0000:001AF57E       loc_1AF57E
- 0000:001AF586       sub_1AF586
- 0000:001AF5F2       word_1AF5F2
- 0000:001AF5F4       word_1AF5F4
- 0000:001AF5F6       word_1AF5F6
- 0000:001AF5F8       word_1AF5F8
+ 0000:001AF586       LoadPal3Low
+ 0000:001AF5F2       ProjectilePalette2
  0000:001AF800       BigTilesListPtr
  0000:001AF804       BigTilesList
  0000:001AF904       BTPtr1
@@ -8689,12 +9077,14 @@
  0000:001F0000       SoundBank3
  0000:001F6000       SoundDriver
  0000:001F8000       SoundBank4
+ 0000:001FFAB4       Pad_0
  0000:00200001       SRAM_Begin
  0000:00200011       SRAM_MagicWord
  0000:00200031       SaveSlot1
- 0000:00201031       SaveSlot2
- 0000:00202031       SaveSlot3
- 0000:00203031       SaveSlot4
+ 0000:00200831       SaveSlot2
+ 0000:00201031       SaveSlot3
+ 0000:00201831       SaveSlot4
+ 0000:00202031       SRAM_Unused
  0000:00203FFF       SRAM_End
  0001:00A00000       Z80_MEM
  0001:00A10000       SEGA_VERSION_REG0
@@ -8770,88 +9160,427 @@
  0001:00C0001C       VDP_DEBUG_REG
  0000:00FF0000       RAM_Start
  0000:00FF0010       g_SaveSlot
- 0000:00FF0080       g_PalletteArr
- 0000:00FF00A0       unk_FF00A0
- 0000:00FF00A2       unk_FF00A2
- 0000:00FF00A4       unk_FF00A4
- 0000:00FF00AC       unk_FF00AC
- 0000:00FF00B0       unk_FF00B0
- 0000:00FF00BA       word_FF00BA
- 0000:00FF00BC       word_FF00BC
- 0000:00FF00C0       unk_FF00C0
- 0000:00FF00D6       unk_FF00D6
- 0000:00FF00DA       word_FF00DA
- 0000:00FF00DC       word_FF00DC
- 0000:00FF00E0       unk_FF00E0
- 0000:00FF00E4       word_FF00E4
- 0000:00FF00E6       word_FF00E6
- 0000:00FF00E8       word_FF00E8
- 0000:00FF00EA       word_FF00EA
- 0000:00FF00F0       word_FF00F0
- 0000:00FF00F2       word_FF00F2
- 0000:00FF00F4       unk_FF00F4
- 0000:00FF00F6       word_FF00F6
- 0000:00FF00FE       word_FF00FE
- 0000:00FF0100       dword_FF0100
- 0000:00FF0160       unk_FF0160
- 0000:00FF0500       word_FF0500
- 0000:00FF0550       g_VDPSprites
- 0000:00FF0552       word_FF0552
- 0000:00FF0554       word_FF0554
- 0000:00FF0556       word_FF0556
- 0000:00FF0558       unk_FF0558
- 0000:00FF0560       word_FF0560
- 0000:00FF0562       byte_FF0562
- 0000:00FF0564       word_FF0564
- 0000:00FF0566       word_FF0566
- 0000:00FF0568       unk_FF0568
- 0000:00FF0570       unk_FF0570
- 0000:00FF0576       word_FF0576
- 0000:00FF0586       word_FF0586
- 0000:00FF0588       word_FF0588
- 0000:00FF058E       word_FF058E
- 0000:00FF0590       unk_FF0590
- 0000:00FF05B0       unk_FF05B0
- 0000:00FF05CB       byte_FF05CB
- 0000:00FF05D0       unk_FF05D0
- 0000:00FF0640       unk_FF0640
- 0000:00FF07C3       byte_FF07C3
- 0000:00FF07C8       word_FF07C8
- 0000:00FF07CA       byte_FF07CA
- 0000:00FF07CC       word_FF07CC
- 0000:00FF07CE       word_FF07CE
- 0000:00FF07D0       unk_FF07D0
- 0000:00FF0CD0       unk_FF0CD0
- 0000:00FF0ED0       word_FF0ED0
- 0000:00FF0ED2       word_FF0ED2
- 0000:00FF0ED4       dword_FF0ED4
- 0000:00FF0ED8       dword_FF0ED8
- 0000:00FF0EDC       dword_FF0EDC
- 0000:00FF0EE0       dword_FF0EE0
- 0000:00FF0EE4       dword_FF0EE4
- 0000:00FF0EE8       dword_FF0EE8
- 0000:00FF0EEC       dword_FF0EEC
- 0000:00FF0F0A       word_FF0F0A
- 0000:00FF0F0C       word_FF0F0C
- 0000:00FF0F2A       word_FF0F2A
- 0000:00FF0F2C       word_FF0F2C
- 0000:00FF0F34       word_FF0F34
- 0000:00FF0F36       word_FF0F36
- 0000:00FF0F38       word_FF0F38
- 0000:00FF0F3A       word_FF0F3A
- 0000:00FF0F40       word_FF0F40
- 0000:00FF0F42       word_FF0F42
- 0000:00FF0F46       word_FF0F46
- 0000:00FF0F4E       word_FF0F4E
- 0000:00FF0F50       word_FF0F50
- 0000:00FF0F52       word_FF0F52
- 0000:00FF0F54       word_FF0F54
+ 0000:00FF0080       g_Pal0Base
+ 0000:00FF00A0       g_Pal1Base
+ 0000:00FF00C0       g_Pal2Base
+ 0000:00FF00E0       g_Pal3Base
+ 0000:00FF0100       g_HorizontalScrollData
+ 0000:00FF0500       g_VSRAMData
+ 0000:00FF0550       g_VDPSpr00_Y
+ 0000:00FF0552       g_VDPSpr00_Size
+ 0000:00FF0553       g_VDPSpr00_Link
+ 0000:00FF0554       g_VDPSpr00_TileSource
+ 0000:00FF0556       g_VDPSpr00_X
+ 0000:00FF0558       g_VDPSpr01_Y
+ 0000:00FF055A       g_VDPSpr01_Size
+ 0000:00FF055B       g_VDPSpr01_Link
+ 0000:00FF055C       g_VDPSpr01_TileSource
+ 0000:00FF055E       g_VDPSpr01_X
+ 0000:00FF0560       g_VDPSpr02_Y
+ 0000:00FF0562       g_VDPSpr02_Size
+ 0000:00FF0563       g_VDPSpr02_Link
+ 0000:00FF0564       g_VDPSpr02_TileSource
+ 0000:00FF0566       g_VDPSpr02_X
+ 0000:00FF0568       g_VDPSpr03_Y
+ 0000:00FF056A       g_VDPSpr03_Size
+ 0000:00FF056B       g_VDPSpr03_Link
+ 0000:00FF056C       g_VDPSpr03_TileSource
+ 0000:00FF056E       g_VDPSpr03_X
+ 0000:00FF0570       g_VDPSpr04_Y
+ 0000:00FF0572       g_VDPSpr04_Size
+ 0000:00FF0573       g_VDPSpr04_Link
+ 0000:00FF0574       g_VDPSpr04_TileSource
+ 0000:00FF0576       g_VDPSpr04_X
+ 0000:00FF0578       g_VDPSpr05_Y
+ 0000:00FF057A       g_VDPSpr05_Size
+ 0000:00FF057B       g_VDPSpr05_Link
+ 0000:00FF057C       g_VDPSpr05_TileSource
+ 0000:00FF057E       g_VDPSpr05_X
+ 0000:00FF0580       g_VDPSpr06_Y
+ 0000:00FF0582       g_VDPSpr06_Size
+ 0000:00FF0583       g_VDPSpr06_Link
+ 0000:00FF0584       g_VDPSpr06_TileSource
+ 0000:00FF0586       g_VDPSpr06_X
+ 0000:00FF0588       gVDPSprFriday_Y
+ 0000:00FF058A       gVDPSprFriday_Size
+ 0000:00FF058B       gVDPSprFriday_Link
+ 0000:00FF058C       gVDPSprFriday_TileSource
+ 0000:00FF058E       gVDPSprFriday_X
+ 0000:00FF0590       g_VDPSpr08_Y
+ 0000:00FF0592       g_VDPSpr08_Size
+ 0000:00FF0593       g_VDPSpr08_Link
+ 0000:00FF0594       g_VDPSpr08_TileSource
+ 0000:00FF0596       g_VDPSpr08_X
+ 0000:00FF0598       g_VDPSpr09_Y
+ 0000:00FF059A       g_VDPSpr09_Size
+ 0000:00FF059B       g_VDPSpr09_Link
+ 0000:00FF059C       g_VDPSpr09_TileSource
+ 0000:00FF059E       g_VDPSpr09_X
+ 0000:00FF05A0       g_VDPSpr10_Y
+ 0000:00FF05A2       g_VDPSpr10_Size
+ 0000:00FF05A3       g_VDPSpr10_Link
+ 0000:00FF05A4       g_VDPSpr10_TileSource
+ 0000:00FF05A6       g_VDPSpr10_X
+ 0000:00FF05A8       g_VDPSpr11_Y
+ 0000:00FF05AA       g_VDPSpr11_Size
+ 0000:00FF05AB       g_VDPSpr11_Link
+ 0000:00FF05AC       g_VDPSpr11_TileSource
+ 0000:00FF05AE       g_VDPSpr11_X
+ 0000:00FF05B0       g_VDPSpr12_Y
+ 0000:00FF05B2       g_VDPSpr12_Size
+ 0000:00FF05B3       g_VDPSpr12_Link
+ 0000:00FF05B4       g_VDPSpr12_TileSource
+ 0000:00FF05B6       g_VDPSpr12_X
+ 0000:00FF05B8       g_VDPSpr13_Y
+ 0000:00FF05BA       g_VDPSpr13_Size
+ 0000:00FF05BB       g_VDPSpr13_Link
+ 0000:00FF05BC       g_VDPSpr13_TileSource
+ 0000:00FF05BE       g_VDPSpr13_X
+ 0000:00FF05C0       g_VDPSpr14_Y
+ 0000:00FF05C2       g_VDPSpr14_Size
+ 0000:00FF05C3       g_VDPSpr14_Link
+ 0000:00FF05C4       g_VDPSpr14_TileSource
+ 0000:00FF05C6       g_VDPSpr14_X
+ 0000:00FF05C8       g_VDPSpr15_Y
+ 0000:00FF05CA       g_VDPSpr15_Size
+ 0000:00FF05CB       g_VDPSpr15_Link
+ 0000:00FF05CC       g_VDPSpr15_TileSource
+ 0000:00FF05CE       g_VDPSpr15_X
+ 0000:00FF05D0       g_VDPSpr16_Y
+ 0000:00FF05D2       g_VDPSpr16_Size
+ 0000:00FF05D3       g_VDPSpr16_Link
+ 0000:00FF05D4       g_VDPSpr16_TileSource
+ 0000:00FF05D6       g_VDPSpr16_X
+ 0000:00FF05D8       g_VDPSpr17_Y
+ 0000:00FF05DA       g_VDPSpr17_Size
+ 0000:00FF05DB       g_VDPSpr17_Link
+ 0000:00FF05DC       g_VDPSpr17_TileSource
+ 0000:00FF05DE       g_VDPSpr17_X
+ 0000:00FF05E0       g_VDPSpr18_Y
+ 0000:00FF05E2       g_VDPSpr18_Size
+ 0000:00FF05E3       g_VDPSpr18_Link
+ 0000:00FF05E4       g_VDPSpr18_TileSource
+ 0000:00FF05E6       g_VDPSpr18_X
+ 0000:00FF05E8       g_VDPSpr19_Y
+ 0000:00FF05EA       g_VDPSpr19_Size
+ 0000:00FF05EB       g_VDPSpr19_Link
+ 0000:00FF05EC       g_VDPSpr19_TileSource
+ 0000:00FF05EE       g_VDPSpr19_X
+ 0000:00FF05F0       g_VDPSpr20_Y
+ 0000:00FF05F2       g_VDPSpr20_Size
+ 0000:00FF05F3       g_VDPSpr20_Link
+ 0000:00FF05F4       g_VDPSpr20_TileSource
+ 0000:00FF05F6       g_VDPSpr20_X
+ 0000:00FF05F8       g_VDPSpr21_Y
+ 0000:00FF05FA       g_VDPSpr21_Size
+ 0000:00FF05FB       g_VDPSpr21_Link
+ 0000:00FF05FC       g_VDPSpr21_TileSource
+ 0000:00FF05FE       g_VDPSpr21_X
+ 0000:00FF0600       g_VDPSpr22_Y
+ 0000:00FF0602       g_VDPSpr22_Size
+ 0000:00FF0603       g_VDPSpr22_Link
+ 0000:00FF0604       g_VDPSpr22_TileSource
+ 0000:00FF0606       g_VDPSpr22_X
+ 0000:00FF0608       g_VDPSpr23_Y
+ 0000:00FF060A       g_VDPSpr23_Size
+ 0000:00FF060B       g_VDPSpr23_Link
+ 0000:00FF060C       g_VDPSpr23_TileSource
+ 0000:00FF060E       g_VDPSpr23_X
+ 0000:00FF0610       g_VDPSpr24_Y
+ 0000:00FF0612       g_VDPSpr24_Size
+ 0000:00FF0613       g_VDPSpr24_Link
+ 0000:00FF0614       g_VDPSpr24_TileSource
+ 0000:00FF0616       g_VDPSpr24_X
+ 0000:00FF0618       g_VDPSpr25_Y
+ 0000:00FF061A       g_VDPSpr25_Size
+ 0000:00FF061B       g_VDPSpr25_Link
+ 0000:00FF061C       g_VDPSpr25_TileSource
+ 0000:00FF061E       g_VDPSpr25_X
+ 0000:00FF0620       g_VDPSpr26_Y
+ 0000:00FF0622       g_VDPSpr26_Size
+ 0000:00FF0623       g_VDPSpr26_Link
+ 0000:00FF0624       g_VDPSpr26_TileSource
+ 0000:00FF0626       g_VDPSpr26_X
+ 0000:00FF0628       g_VDPSpr27_Y
+ 0000:00FF062A       g_VDPSpr27_Size
+ 0000:00FF062B       g_VDPSpr27_Link
+ 0000:00FF062C       g_VDPSpr27_TileSource
+ 0000:00FF062E       g_VDPSpr27_X
+ 0000:00FF0630       g_VDPSpr28_Y
+ 0000:00FF0632       g_VDPSpr28_Size
+ 0000:00FF0633       g_VDPSpr28_Link
+ 0000:00FF0634       g_VDPSpr28_TileSource
+ 0000:00FF0636       g_VDPSpr28_X
+ 0000:00FF0638       g_VDPSpr29_Y
+ 0000:00FF063A       g_VDPSpr29_Size
+ 0000:00FF063B       g_VDPSpr29_Link
+ 0000:00FF063C       g_VDPSpr29_TileSource
+ 0000:00FF063E       g_VDPSpr29_X
+ 0000:00FF0640       g_VDPSpr30_Y
+ 0000:00FF0642       g_VDPSpr30_Size
+ 0000:00FF0643       g_VDPSpr30_Link
+ 0000:00FF0644       g_VDPSpr30_TileSource
+ 0000:00FF0646       g_VDPSpr30_X
+ 0000:00FF0648       g_VDPSpr31_Y
+ 0000:00FF064A       g_VDPSpr31_Size
+ 0000:00FF064B       g_VDPSpr31_Link
+ 0000:00FF064C       g_VDPSpr31_TileSource
+ 0000:00FF064E       g_VDPSpr31_X
+ 0000:00FF0650       g_VDPSpr32_Y
+ 0000:00FF0652       g_VDPSpr32_Size
+ 0000:00FF0653       g_VDPSpr32_Link
+ 0000:00FF0654       g_VDPSpr32_TileSource
+ 0000:00FF0656       g_VDPSpr32_X
+ 0000:00FF0658       g_VDPSpr33_Y
+ 0000:00FF065A       g_VDPSpr33_Size
+ 0000:00FF065B       g_VDPSpr33_Link
+ 0000:00FF065C       g_VDPSpr33_TileSource
+ 0000:00FF065E       g_VDPSpr33_X
+ 0000:00FF0660       g_VDPSpr34_Y
+ 0000:00FF0662       g_VDPSpr34_Size
+ 0000:00FF0663       g_VDPSpr34_Link
+ 0000:00FF0664       g_VDPSpr34_TileSource
+ 0000:00FF0666       g_VDPSpr34_X
+ 0000:00FF0668       g_VDPSpr35_Y
+ 0000:00FF066A       g_VDPSpr35_Size
+ 0000:00FF066B       g_VDPSpr35_Link
+ 0000:00FF066C       g_VDPSpr35_TileSource
+ 0000:00FF066E       g_VDPSpr35_X
+ 0000:00FF0670       g_VDPSpr36_Y
+ 0000:00FF0672       g_VDPSpr36_Size
+ 0000:00FF0673       g_VDPSpr36_Link
+ 0000:00FF0674       g_VDPSpr36_TileSource
+ 0000:00FF0676       g_VDPSpr36_X
+ 0000:00FF0678       g_VDPSpr37_Y
+ 0000:00FF067A       g_VDPSpr37_Size
+ 0000:00FF067B       g_VDPSpr37_Link
+ 0000:00FF067C       g_VDPSpr37_TileSource
+ 0000:00FF067E       g_VDPSpr37_X
+ 0000:00FF0680       g_VDPSpr38_Y
+ 0000:00FF0682       g_VDPSpr38_Size
+ 0000:00FF0683       g_VDPSpr38_Link
+ 0000:00FF0684       g_VDPSpr38_TileSource
+ 0000:00FF0686       g_VDPSpr38_X
+ 0000:00FF0688       g_VDPSpr39_Y
+ 0000:00FF068A       g_VDPSpr39_Size
+ 0000:00FF068B       g_VDPSpr39_Link
+ 0000:00FF068C       g_VDPSpr39_TileSource
+ 0000:00FF068E       g_VDPSpr39_X
+ 0000:00FF0690       g_VDPSpr40_Y
+ 0000:00FF0692       g_VDPSpr40_Size
+ 0000:00FF0693       g_VDPSpr40_Link
+ 0000:00FF0694       g_VDPSpr40_TileSource
+ 0000:00FF0696       g_VDPSpr40_X
+ 0000:00FF0698       g_VDPSpr41_Y
+ 0000:00FF069A       g_VDPSpr41_Size
+ 0000:00FF069B       g_VDPSpr41_Link
+ 0000:00FF069C       g_VDPSpr41_TileSource
+ 0000:00FF069E       g_VDPSpr41_X
+ 0000:00FF06A0       g_VDPSpr42_Y
+ 0000:00FF06A2       g_VDPSpr42_Size
+ 0000:00FF06A3       g_VDPSpr42_Link
+ 0000:00FF06A4       g_VDPSpr42_TileSource
+ 0000:00FF06A6       g_VDPSpr42_X
+ 0000:00FF06A8       g_VDPSpr43_Y
+ 0000:00FF06AA       g_VDPSpr43_Size
+ 0000:00FF06AB       g_VDPSpr43_Link
+ 0000:00FF06AC       g_VDPSpr43_TileSource
+ 0000:00FF06AE       g_VDPSpr43_X
+ 0000:00FF06B0       g_VDPSpr44_Y
+ 0000:00FF06B2       g_VDPSpr44_Size
+ 0000:00FF06B3       g_VDPSpr44_Link
+ 0000:00FF06B4       g_VDPSpr44_TileSource
+ 0000:00FF06B6       g_VDPSpr44_X
+ 0000:00FF06B8       g_VDPSpr45_Y
+ 0000:00FF06BA       g_VDPSpr45_Size
+ 0000:00FF06BB       g_VDPSpr45_Link
+ 0000:00FF06BC       g_VDPSpr45_TileSource
+ 0000:00FF06BE       g_VDPSpr45_X
+ 0000:00FF06C0       g_VDPSpr46_Y
+ 0000:00FF06C2       g_VDPSpr46_Size
+ 0000:00FF06C3       g_VDPSpr46_Link
+ 0000:00FF06C4       g_VDPSpr46_TileSource
+ 0000:00FF06C6       g_VDPSpr46_X
+ 0000:00FF06C8       g_VDPSpr47_Y
+ 0000:00FF06CA       g_VDPSpr47_Size
+ 0000:00FF06CB       g_VDPSpr47_Link
+ 0000:00FF06CC       g_VDPSpr47_TileSource
+ 0000:00FF06CE       g_VDPSpr47_X
+ 0000:00FF06D0       g_VDPSpr48_Y
+ 0000:00FF06D2       g_VDPSpr48_Size
+ 0000:00FF06D3       g_VDPSpr48_Link
+ 0000:00FF06D4       g_VDPSpr48_TileSource
+ 0000:00FF06D6       g_VDPSpr48_X
+ 0000:00FF06D8       g_VDPSpr49_Y
+ 0000:00FF06DA       g_VDPSpr49_Size
+ 0000:00FF06DB       g_VDPSpr49_Link
+ 0000:00FF06DC       g_VDPSpr49_TileSource
+ 0000:00FF06DE       g_VDPSpr49_X
+ 0000:00FF06E0       g_VDPSpr50_Y
+ 0000:00FF06E2       g_VDPSpr50_Size
+ 0000:00FF06E3       g_VDPSpr50_Link
+ 0000:00FF06E4       g_VDPSpr50_TileSource
+ 0000:00FF06E6       g_VDPSpr50_X
+ 0000:00FF06E8       g_VDPSpr51_Y
+ 0000:00FF06EA       g_VDPSpr51_Size
+ 0000:00FF06EB       g_VDPSpr51_Link
+ 0000:00FF06EC       g_VDPSpr51_TileSource
+ 0000:00FF06EE       g_VDPSpr51_X
+ 0000:00FF06F0       g_VDPSpr52_Y
+ 0000:00FF06F2       g_VDPSpr52_Size
+ 0000:00FF06F3       g_VDPSpr52_Link
+ 0000:00FF06F4       g_VDPSpr52_TileSource
+ 0000:00FF06F6       g_VDPSpr52_X
+ 0000:00FF06F8       g_VDPSpr53_Y
+ 0000:00FF06FA       g_VDPSpr53_Size
+ 0000:00FF06FB       g_VDPSpr53_Link
+ 0000:00FF06FC       g_VDPSpr53_TileSource
+ 0000:00FF06FE       g_VDPSpr53_X
+ 0000:00FF0700       g_VDPSpr54_Y
+ 0000:00FF0702       g_VDPSpr54_Size
+ 0000:00FF0703       g_VDPSpr54_Link
+ 0000:00FF0704       g_VDPSpr54_TileSource
+ 0000:00FF0706       g_VDPSpr54_X
+ 0000:00FF0708       g_VDPSpr55_Y
+ 0000:00FF070A       g_VDPSpr55_Size
+ 0000:00FF070B       g_VDPSpr55_Link
+ 0000:00FF070C       g_VDPSpr55_TileSource
+ 0000:00FF070E       g_VDPSpr55_X
+ 0000:00FF0710       g_VDPSpr56_Y
+ 0000:00FF0712       g_VDPSpr56_Size
+ 0000:00FF0713       g_VDPSpr56_Link
+ 0000:00FF0714       g_VDPSpr56_TileSource
+ 0000:00FF0716       g_VDPSpr56_X
+ 0000:00FF0718       g_VDPSpr57_Y
+ 0000:00FF071A       g_VDPSpr57_Size
+ 0000:00FF071B       g_VDPSpr57_Link
+ 0000:00FF071C       g_VDPSpr57_TileSource
+ 0000:00FF071E       g_VDPSpr57_X
+ 0000:00FF0720       g_VDPSpr58_Y
+ 0000:00FF0722       g_VDPSpr58_Size
+ 0000:00FF0723       g_VDPSpr58_Link
+ 0000:00FF0724       g_VDPSpr58_TileSource
+ 0000:00FF0726       g_VDPSpr58_X
+ 0000:00FF0728       g_VDPSpr59_Y
+ 0000:00FF072A       g_VDPSpr59_Size
+ 0000:00FF072B       g_VDPSpr59_Link
+ 0000:00FF072C       g_VDPSpr59_TileSource
+ 0000:00FF072E       g_VDPSpr59_X
+ 0000:00FF0730       g_VDPSpr60_Y
+ 0000:00FF0732       g_VDPSpr60_Size
+ 0000:00FF0733       g_VDPSpr60_Link
+ 0000:00FF0734       g_VDPSpr60_TileSource
+ 0000:00FF0736       g_VDPSpr60_X
+ 0000:00FF0738       g_VDPSpr61_Y
+ 0000:00FF073A       g_VDPSpr61_Size
+ 0000:00FF073B       g_VDPSpr61_Link
+ 0000:00FF073C       g_VDPSpr61_TileSource
+ 0000:00FF073E       g_VDPSpr61_X
+ 0000:00FF0740       g_VDPSpr62_Y
+ 0000:00FF0742       g_VDPSpr62_Size
+ 0000:00FF0743       g_VDPSpr62_Link
+ 0000:00FF0744       g_VDPSpr62_TileSource
+ 0000:00FF0746       g_VDPSpr62_X
+ 0000:00FF0748       g_VDPSpr63_Y
+ 0000:00FF074A       g_VDPSpr63_Size
+ 0000:00FF074B       g_VDPSpr63_Link
+ 0000:00FF074C       g_VDPSpr63_TileSource
+ 0000:00FF074E       g_VDPSpr63_X
+ 0000:00FF0750       g_VDPSpr64_Y
+ 0000:00FF0752       g_VDPSpr64_Size
+ 0000:00FF0753       g_VDPSpr64_Link
+ 0000:00FF0754       g_VDPSpr64_TileSource
+ 0000:00FF0756       g_VDPSpr64_X
+ 0000:00FF0758       g_VDPSpr65_Y
+ 0000:00FF075A       g_VDPSpr65_Size
+ 0000:00FF075B       g_VDPSpr65_Link
+ 0000:00FF075C       g_VDPSpr65_TileSource
+ 0000:00FF075E       g_VDPSpr65_X
+ 0000:00FF0760       g_VDPSpr66_Y
+ 0000:00FF0762       g_VDPSpr66_Size
+ 0000:00FF0763       g_VDPSpr66_Link
+ 0000:00FF0764       g_VDPSpr66_TileSource
+ 0000:00FF0766       g_VDPSpr66_X
+ 0000:00FF0768       g_VDPSpr67_Y
+ 0000:00FF076A       g_VDPSpr67_Size
+ 0000:00FF076B       g_VDPSpr67_Link
+ 0000:00FF076C       g_VDPSpr67_TileSource
+ 0000:00FF076E       g_VDPSpr67_X
+ 0000:00FF0770       g_VDPSpr68_Y
+ 0000:00FF0772       g_VDPSpr68_Size
+ 0000:00FF0773       g_VDPSpr68_Link
+ 0000:00FF0774       g_VDPSpr68_TileSource
+ 0000:00FF0776       g_VDPSpr68_X
+ 0000:00FF0778       g_VDPSpr69_Y
+ 0000:00FF077A       g_VDPSpr69_Size
+ 0000:00FF077B       g_VDPSpr69_Link
+ 0000:00FF077C       g_VDPSpr69_TileSource
+ 0000:00FF077E       g_VDPSpr69_X
+ 0000:00FF0780       g_VDPSpr70_Y
+ 0000:00FF0782       g_VDPSpr70_Size
+ 0000:00FF0783       g_VDPSpr70_Link
+ 0000:00FF0784       g_VDPSpr70_TileSource
+ 0000:00FF0786       g_VDPSpr70_X
+ 0000:00FF0788       g_VDPSpr71_Y
+ 0000:00FF078A       g_VDPSpr71_Size
+ 0000:00FF078B       g_VDPSpr71_Link
+ 0000:00FF078C       g_VDPSpr71_TileSource
+ 0000:00FF078E       g_VDPSpr71_X
+ 0000:00FF0790       g_VDPSpr72_Y
+ 0000:00FF0792       g_VDPSpr72_Size
+ 0000:00FF0793       g_VDPSpr72_Link
+ 0000:00FF0794       g_VDPSpr72_TileSource
+ 0000:00FF0796       g_VDPSpr72_X
+ 0000:00FF0798       g_VDPSpr73_Y
+ 0000:00FF079A       g_VDPSpr73_Size
+ 0000:00FF079B       g_VDPSpr73_Link
+ 0000:00FF079C       g_VDPSpr73_TileSource
+ 0000:00FF079E       g_VDPSpr73_X
+ 0000:00FF07A0       g_VDPSpr74_Y
+ 0000:00FF07A2       g_VDPSpr74_Size
+ 0000:00FF07A3       g_VDPSpr74_Link
+ 0000:00FF07A4       g_VDPSpr74_TileSource
+ 0000:00FF07A6       g_VDPSpr74_X
+ 0000:00FF07A8       g_VDPSpr75_Y
+ 0000:00FF07AA       g_VDPSpr75_Size
+ 0000:00FF07AB       g_VDPSpr75_Link
+ 0000:00FF07AC       g_VDPSpr75_TileSource
+ 0000:00FF07AE       g_VDPSpr75_X
+ 0000:00FF07B0       g_VDPSpr76_Y
+ 0000:00FF07B2       g_VDPSpr76_Size
+ 0000:00FF07B3       g_VDPSpr76_Link
+ 0000:00FF07B4       g_VDPSpr76_TileSource
+ 0000:00FF07B6       g_VDPSpr76_X
+ 0000:00FF07B8       g_VDPSpr77_Y
+ 0000:00FF07BA       g_VDPSpr77_Size
+ 0000:00FF07BB       g_VDPSpr77_Link
+ 0000:00FF07BC       g_VDPSpr77_TileSource
+ 0000:00FF07BE       g_VDPSpr77_X
+ 0000:00FF07C0       g_VDPSpr78_Y
+ 0000:00FF07C2       g_VDPSpr78_Size
+ 0000:00FF07C3       g_VDPSpr78_Link
+ 0000:00FF07C4       g_VDPSpr78_TileSource
+ 0000:00FF07C6       g_VDPSpr78_X
+ 0000:00FF07C8       g_VDPSpr79_Y
+ 0000:00FF07CA       g_VDPSpr79_Size
+ 0000:00FF07CB       g_VDPSpr79_Link
+ 0000:00FF07CC       g_VDPSpr79_TileSource
+ 0000:00FF07CE       g_VDPSpr79_X
+ 0000:00FF07D0       g_DMAOpQueue
+ 0000:00FF0CD0       g_VRAMCopyQueue
+ 0000:00FF0ED0       g_Pal0Active
+ 0000:00FF0EF0       g_Pal1Active
+ 0000:00FF0F10       g_Pal2Active
+ 0000:00FF0F30       g_Pal3Active
+ 0000:00FF0F50       g_PaletteDarkenCurrentBrightness
+ 0000:00FF0F52       g_PaletteDarkenExtent
+ 0000:00FF0F54       g_PaletteDarkenTargetBrightness
  0000:00FF0F7F       byte_FF0F7F
  0000:00FF0F80       byte_FF0F80
  0000:00FF0F81       byte_FF0F81
- 0000:00FF0F8B       byte_FF0F8B
- 0000:00FF0F8C       byte_FF0F8C
- 0000:00FF0F8D       byte_FF0F8D
+ 0000:00FF0F8B       g_InterruptFlags
+ 0000:00FF0F8C       g_VRAMCopyQueueLen
+ 0000:00FF0F8D       g_NumQueuedDMAOps
  0000:00FF0F8E       g_Controller1State
  0000:00FF0F8F       g_Controller2State
  0000:00FF0F90       byte_FF0F90
@@ -8866,27 +9595,41 @@
  0000:00FF0F9C       unk_FF0F9C
  0000:00FF0F9D       byte_FF0F9D
  0000:00FF0FA0       unk_FF0FA0
- 0000:00FF0FA4       dword_FF0FA4
- 0000:00FF0FA8       word_FF0FA8
+ 0000:00FF0FA8       g_DMADestHi
  0000:00FF0FAA       g_RNG
  0000:00FF0FAC       word_FF0FAC
  0000:00FF0FAE       word_FF0FAE
- 0000:00FF0FB0       word_FF0FB0
- 0000:00FF0FB2       VDPReg1
- 0000:00FF0FC4       word_FF0FC4
- 0000:00FF0FD4       word_FF0FD4
- 0000:00FF0FD6       dword_FF0FD6
- 0000:00FF0FDA       dword_FF0FDA
+ 0000:00FF0FB0       g_VDPReg00_ModeSet1
+ 0000:00FF0FB2       g_VDPReg01_ModeSet2
+ 0000:00FF0FB4       g_VDPReg02_PatternBaseScrollA
+ 0000:00FF0FB6       g_VDPReg03_PatternBaseWindow
+ 0000:00FF0FB8       g_VDPReg04_PatternBaseScrollB
+ 0000:00FF0FBA       g_VDPReg05_SpriteTableBase
+ 0000:00FF0FBC       g_VDPReg06_Reserved
+ 0000:00FF0FBE       g_VDPReg07_BGColour
+ 0000:00FF0FC0       g_VDPReg08_Reserved
+ 0000:00FF0FC2       g_VDPReg09_Reserved
+ 0000:00FF0FC4       g_VDPReg10_HIntLine
+ 0000:00FF0FC6       g_VDPReg11_ModeSet3
+ 0000:00FF0FC8       g_VDPReg12_ModeSet4
+ 0000:00FF0FCA       g_VDPReg13_HScrollBase
+ 0000:00FF0FCC       g_VDPReg14_Reserved
+ 0000:00FF0FCE       g_VDPReg15_AutoIncrement
+ 0000:00FF0FD0       g_VDPReg16_ScrollSize
+ 0000:00FF0FD2       g_VDPReg17_WindowHPos
+ 0000:00FF0FD4       g_VDPReg18_WindowVPos
+ 0000:00FF0FD6       g_VRAMCopyQueuePtr
+ 0000:00FF0FDA       g_DMAOpQueuePtr
  0000:00FF0FDE       g_FrameCount
  0000:00FF0FE0       g_MinuteCount
  0000:00FF0FE2       g_HourCount
  0000:00FF1000       g_Flags
- 0000:00FF1020       g_Flags2
+ 0000:00FF1020       g_Vars
  0000:00FF1040       g_Inventory
  0000:00FF1080       g_ChestOpenFlags
  0000:00FF10C0       g_RoomVisitedFlags
- 0000:00FF1124       byte_FF1124
- 0000:00FF1125       byte_FF1125
+ 0000:00FF1124       g_PlayerXFlattened
+ 0000:00FF1125       g_PlayerYFlattened
  0000:00FF1126       word_FF1126
  0000:00FF1128       byte_FF1128
  0000:00FF1129       byte_FF1129
@@ -8898,12 +9641,12 @@
  0000:00FF112F       g_CurPalIdx
  0000:00FF1130       g_RoomMinHeight
  0000:00FF1131       g_RoomMaxHeight
- 0000:00FF1132       byte_FF1132
+ 0000:00FF1132       g_UpdateHUDFlag
  0000:00FF1133       byte_FF1133
  0000:00FF1134       unk_FF1134
- 0000:00FF113C       byte_FF113C
- 0000:00FF113D       byte_FF113D
- 0000:00FF113E       byte_FF113E
+ 0000:00FF113C       g_PlayerMoving
+ 0000:00FF113D       g_SwordButtonMask
+ 0000:00FF113E       g_LadderClimbJumpState
  0000:00FF113F       byte_FF113F
  0000:00FF1140       g_RoomBGM
  0000:00FF1141       g_currentSpeakerScriptID
@@ -8916,25 +9659,25 @@
  0000:00FF1148       byte_FF1148
  0000:00FF1149       byte_FF1149
  0000:00FF114A       byte_FF114A
- 0000:00FF114B       byte_FF114B
- 0000:00FF114C       byte_FF114C
- 0000:00FF114D       byte_FF114D
+ 0000:00FF114B       g_FridayAnimation1
+ 0000:00FF114C       g_FridayAnimFramecount
+ 0000:00FF114D       g_FridayAnimation2
  0000:00FF114E       g_EquippedSword
  0000:00FF114F       g_EquippedArmour
  0000:00FF1150       g_EquippedBoots
  0000:00FF1151       g_EquippedRing
  0000:00FF1152       byte_FF1152
- 0000:00FF1153       byte_FF1153
+ 0000:00FF1153       g_LockPlayerActions
  0000:00FF1154       g_TalkSoundEffect
  0000:00FF1155       byte_FF1155
  0000:00FF1156       g_BGM
  0000:00FF1157       byte_FF1157
- 0000:00FF1158       byte_FF1158
+ 0000:00FF1158       g_StepCounter
  0000:00FF1159       byte_FF1159
  0000:00FF115A       byte_FF115A
  0000:00FF1180       word_FF1180
  0000:00FF1182       g_PlayerSpeed
- 0000:00FF1184       word_FF1184
+ 0000:00FF1184       g_BlockTableIndex
  0000:00FF1186       unk_FF1186
  0000:00FF1192       word_FF1192
  0000:00FF1194       word_FF1194
@@ -8960,7 +9703,7 @@
  0000:00FF12DF       g_ControllerPlaybackTimer
  0000:00FF12E0       word_FF12E0
  0000:00FF12E2       word_FF12E2
- 0000:00FF12E4       unk_FF12E4
+ 0000:00FF12E4       g_MagicSwordEffect
  0000:00FF12E5       g_SwordCharge
  0000:00FF12E6       word_FF12E6
  0000:00FF12E8       word_FF12E8
@@ -8976,7 +9719,7 @@
  0000:00FF180C       word_FF180C
  0000:00FF1838       byte_FF1838
  0000:00FF183C       g_chestCount
- 0000:00FF1840       dword_FF1840
+ 0000:00FF1840       g_ScreenBufferPtr
  0000:00FF1844       dword_FF1844
  0000:00FF1848       dword_FF1848
  0000:00FF184C       dword_FF184C
@@ -8988,19 +9731,21 @@
  0000:00FF1878       g_PrintNumericDwordValue
  0000:00FF187B       g_PrintNumericByteValue
  0000:00FF187C       dword_FF187C
- 0000:00FF1880       dword_FF1880
+ 0000:00FF1880       g_FridayAnimPtr
  0000:00FF1900       g_curDecomprChar
  0000:00FF1902       byte_FF1902
  0000:00FF1903       byte_FF1903
- 0000:00FF1904       byte_FF1904
- 0000:00FF1906       unk_FF1906
+ 0000:00FF1904       g_YesNoPromptResult
+ 0000:00FF1906       g_GameFlagProgress1
+ 0000:00FF1907       g_GameFlagProgress2
+ 0000:00FF1908       g_GameFlagProgress3
  0000:00FF190E       unk_FF190E
  0000:00FF1916       byte_FF1916
  0000:00FF1917       byte_FF1917
  0000:00FF1920       word_FF1920
  0000:00FF1922       word_FF1922
  0000:00FF1924       word_FF1924
- 0000:00FF1926       word_FF1926
+ 0000:00FF1926       g_Character
  0000:00FF1928       g_speakerSpriteId
  0000:00FF192A       unk_FF192A
  0000:00FF193E       unk_FF193E
@@ -9016,17 +9761,22 @@
  0000:00FF1BF4       unk_FF1BF4
  0000:00FF1BFA       byte_FF1BFA
  0000:00FF1BFB       unk_FF1BFB
- 0000:00FF1C00       word_FF1C00
- 0000:00FF1C80       word_FF1C80
- 0000:00FF1D00       word_FF1D00
- 0000:00FF1D80       word_FF1D80
- 0000:00FF1E04       unk_FF1E04
- 0000:00FF2600       unk_FF2600
- 0000:00FF2700       unk_FF2700
+ 0000:00FF1C00       g_HUD_Row1
+ 0000:00FF1C80       g_HUD_Row2
+ 0000:00FF1D00       g_HUD_Row3
+ 0000:00FF1D80       g_InventoryTilemap
+ 0000:00FF2600       g_TextBoxLine1
+ 0000:00FF2680       g_TextBoxLine2
+ 0000:00FF2700       g_TextBoxLine3
+ 0000:00FF2780       g_TextBoxLine4
+ 0000:00FF2800       g_TextBoxLine5
+ 0000:00FF2880       g_TextBoxLine6
+ 0000:00FF2900       g_TextBoxLine7
+ 0000:00FF2980       g_TextBoxLine8
  0000:00FF2C00       g_Buffer
  0000:00FF34C2       unk_FF34C2
  0000:00FF3562       unk_FF3562
- 0000:00FF3900       g_TextboxBuffer
+ 0000:00FF3900       g_ScreenBuffer
  0000:00FF5400       Player_X
  0000:00FF5401       Player_Y
  0000:00FF5402       Player_SubX
@@ -9061,7 +9811,7 @@
  0000:00FF542A       Player_Unk2A
  0000:00FF542B       Player_Unk2B
  0000:00FF542C       Player_Action
- 0000:00FF542E       Player_Unk2E
+ 0000:00FF542E       Player_AnimAction
  0000:00FF542F       Player_Unk2F
  0000:00FF5430       Player_SpriteUnderneath
  0000:00FF5432       Player_BehaviourLUTPtr

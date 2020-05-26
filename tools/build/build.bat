@@ -1,0 +1,1 @@
+build\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+ landstalker.asm,landstalker.bin
