@@ -36,6 +36,8 @@ sub_3FD4:					  ; CODE XREF: sub_3AAj
 		add.w	d1,Z(a5)
 		add.w	d1,HitBoxZEnd(a5)
 		andi.b	#$E0,JumpRate(a5)
+
+loc_3FF0:
 		addq.b	#$01,d0
 		cmpi.b	#$0C,d0
 		bcs.s	loc_4000

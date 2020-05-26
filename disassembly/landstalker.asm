@@ -3,7 +3,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; To build, run:
-;; ..\tools\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+ landstalker.asm,landstalker.bin
+;; .\build\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+ landstalker.asm,landstalker.bin
 
                             include "code\include\landstalker.inc"
                             include "code\include\ram.inc"
@@ -396,16 +396,16 @@ MenuStringTable:            incbin  "assets_packed\strings\names\system.bin"
 SineTable:                  incbin  "assets_packed\misc\data\sinetable.bin"
                             Align   $2
                             include "code\misc\debugmenu.asm"
-MainFont:                   incbin  "assets_packed\graphics\fonts\mainfont.bin"
-StringBank0:                incbin  "assets_packed\strings\main\strings0.bin"
-StringBank1:                incbin  "assets_packed\strings\main\strings1.bin"
-StringBank2:                incbin  "assets_packed\strings\main\strings2.bin"
-StringBank3:                incbin  "assets_packed\strings\main\strings3.bin"
-StringBank4:                incbin  "assets_packed\strings\main\strings4.bin"
-StringBank5:                incbin  "assets_packed\strings\main\strings5.bin"
-StringBank6:                incbin  "assets_packed\strings\main\strings6.bin"
-StringBank7:                incbin  "assets_packed\strings\main\strings7.bin"
-StringBank8:                incbin  "assets_packed\strings\main\strings8.bin"
+MainFont:                   incbin  "assets_packed\graphics\fonts\mainfont.1bpp"
+StringBank0:                incbin  "assets_packed\strings\main\strings0.huf"
+StringBank1:                incbin  "assets_packed\strings\main\strings1.huf"
+StringBank2:                incbin  "assets_packed\strings\main\strings2.huf"
+StringBank3:                incbin  "assets_packed\strings\main\strings3.huf"
+StringBank4:                incbin  "assets_packed\strings\main\strings4.huf"
+StringBank5:                incbin  "assets_packed\strings\main\strings5.huf"
+StringBank6:                incbin  "assets_packed\strings\main\strings6.huf"
+StringBank7:                incbin  "assets_packed\strings\main\strings7.huf"
+StringBank8:                incbin  "assets_packed\strings\main\strings8.huf"
                             Align   $2
 StringBankPtrs:             include "code\pointertables\strings\stringptrs.asm"
                             PadTo   $038600

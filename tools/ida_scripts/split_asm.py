@@ -111,7 +111,7 @@ with open(".\\disassembly\\landstalker.asm", 'w') as asmfile:
     asmfile.write(";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n")
     asmfile.write(";;\n")
     asmfile.write(";; To build, run:\n")
-    asmfile.write(";; ..\\tools\\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+ landstalker.asm,landstalker.bin\n")
+    asmfile.write(";; .\\build\\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+ landstalker.asm,landstalker.bin\n")
     asmfile.write("\n")
     asmfile.write("%-26s  include \"%s\"\n" % ("","code\\include\\landstalker.inc"))
     asmfile.write("%-26s  include \"%s\"\n" % ("","code\\include\\ram.inc"))
