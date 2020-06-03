@@ -37,4 +37,4 @@ Enjoy!
 - - - - Action 6: If the parameter is below 1000, set the current speaker to the character indicated by the parameter.
 - - - - - Otherwise, set the current speaker to a special character - e.g. 1000 - Nigel, 1001 - Friday, etc.
 - - - - Action 7: Jump to the function CSA_XXXX, where XXXX is the value of the parameter in hex.
-- Maps: my other project - Landstalker Graphics Viewer (github.com/thomasamendt/landstalker_gfx) can be used to view the various maps and sprites in the game. There will be enhancements made to the viewer in the future to turn it into a full editor.
+- Maps: my other project - Landstalker Graphics Viewer (github.com/lordmir/landstalker_gfx) can be used to view the various maps and sprites in the game. There will be enhancements made to the viewer in the future to turn it into a full editor.
