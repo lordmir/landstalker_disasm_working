@@ -567,7 +567,7 @@ loc_D9B2:					  ; CODE XREF: sub_D996+24j
 		bsr.w	Expand2BPPGfx
 		bsr.w	Expand2BPPGfx
 		lea	((g_Buffer+$84)).l,a0
-		lea	(loc_1500).w,a1
+		lea	($00001500).w,a1
 		move.w	#$0140,d0
 		move.w	#$0002,d1
 		jsr	(DoDMACopy).l		  ; d0 = DMA Length

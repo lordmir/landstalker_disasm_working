@@ -447,6 +447,7 @@ TitlePalette3:              incbin  "assets_packed\graphics\static\titlescreen\t
                             include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogo:                 incbin  "assets_packed\graphics\static\logos\climax.lz77"
 ClimaxLogoMap:              incbin  "assets_packed\graphics\static\logos\climax.rle"
+                            Align   $2
 ClimaxLogoPalette:          incbin  "assets_packed\graphics\static\logos\climax.pal"
                             Align   $2
                             include "code\graphics\staticimages\islandmap.asm"

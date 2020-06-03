@@ -303,8 +303,8 @@ sub_EC34:					  ; CODE XREF: ROM:0000EAD0p
 						  ; DATA XREF: sub_39Et
 		bsr.w	sub_EA4A
 		bsr.s	sub_EC06
-		lea	($00FF2C00).l,a1
-		lea	g_Buffer+$84-g_Buffer(a1),a0
+		lea	(g_Buffer).l,a1
+		lea	$00000084(a1),a0
 		move.w	#$A000,d0
 		ori.w	#$0000,d0
 		move.w	#$0B63,d7

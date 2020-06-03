@@ -678,7 +678,7 @@ loc_E686:					  ; CODE XREF: sub_E56A+11Ej
 		clr.l	(a0)+
 		dbf	d7,loc_E686
 		lea	(g_Buffer).l,a0
-		lea	(loc_2000).w,a1
+		lea	($00002000).w,a1
 		moveq	#$00000020,d0
 		moveq	#$00000002,d1
 		jsr	(QueueDMAOp).l		  ; d0 - DMA Length

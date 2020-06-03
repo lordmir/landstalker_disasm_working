@@ -378,9 +378,9 @@
  0000:000014F0       nullsub_2
  0000:000014F2       CheckSRAM
  0000:000014FE       loc_14FE
- 0000:00001500       loc_1500
  0000:00001516       CheckSaveCSums
  0000:0000151C       loc_151C
+ 0000:00001520       SetSRAMMagicWord
  0000:0000152C       loc_152C
  0000:0000154C       sub_154C
  0000:00001552       EraseSaveslot
@@ -393,7 +393,7 @@
  0000:000015A2       loc_15A2
  0000:000015AE       loc_15AE
  0000:000015B8       loc_15B8
- 0000:000015C2       sub_15C2
+ 0000:000015C2       LoadSavedGame
  0000:000015CE       loc_15CE
  0000:000015DA       loc_15DA
  0000:000015E4       locret_15E4
@@ -426,10 +426,15 @@
  0000:0000192A       loc_192A
  0000:00001936       HandleDirectionalControl
  0000:000019B6       locret_19B6
+ 0000:000019B8       HandleUpButton
  0000:000019CE       loc_19CE
+ 0000:000019DC       HandleRightButton
  0000:000019F2       loc_19F2
+ 0000:00001A00       HandleDownButton
  0000:00001A16       loc_1A16
+ 0000:00001A24       HandleLeftButton
  0000:00001A3A       loc_1A3A
+ 0000:00001A48       HandleRightUp
  0000:00001A58       loc_1A58
  0000:00001A98       loc_1A98
  0000:00001AC4       loc_1AC4
@@ -449,6 +454,7 @@
  0000:00001C30       loc_1C30
  0000:00001C38       loc_1C38
  0000:00001C5A       locret_1C5A
+ 0000:00001C5C       HandleRightDown
  0000:00001C6C       loc_1C6C
  0000:00001CB0       loc_1CB0
  0000:00001CD6       loc_1CD6
@@ -464,6 +470,7 @@
  0000:00001DBE       loc_1DBE
  0000:00001DC6       loc_1DC6
  0000:00001DF0       locret_1DF0
+ 0000:00001DF2       HandleDownLeft
  0000:00001E02       loc_1E02
  0000:00001E58       loc_1E58
  0000:00001E62       loc_1E62
@@ -478,9 +485,9 @@
  0000:00001F48       loc_1F48
  0000:00001F50       loc_1F50
  0000:00001F7A       locret_1F7A
+ 0000:00001F7C       HandleUpLeft
  0000:00001F8C       loc_1F8C
  0000:00001FE4       loc_1FE4
- 0000:00002000       loc_2000
  0000:00002006       loc_2006
  0000:00002024       loc_2024
  0000:0000202A       loc_202A
@@ -781,7 +788,6 @@
  0000:00003FAC       loc_3FAC
  0000:00003FCE       loc_3FCE
  0000:00003FD4       sub_3FD4
- 0000:00003FF0       loc_3FF0
  0000:00003FF8       loc_3FF8
  0000:00004000       loc_4000
  0000:0000400A       locret_400A
@@ -823,7 +829,7 @@
  0000:0000434E       loc_434E
  0000:00004356       loc_4356
  0000:0000436A       loc_436A
- 0000:0000436E       loc_436E
+ 0000:0000436E       j_QueueDMAOp_0
  0000:00004374       sub_4374
  0000:0000437A       loc_437A
  0000:000043A6       loc_43A6
@@ -861,6 +867,7 @@
  0000:000046DA       sub_46DA
  0000:000046DC       sub_46DC
  0000:000046EE       sub_46EE
+ 0000:0000471C       LoadSprite
  0000:00004736       loc_4736
  0000:0000473E       LoadSpriteTiles
  0000:00004744       loc_4744
@@ -968,10 +975,14 @@
  0000:0000603C       ProcessFloorType
  0000:0000604C       sub_604C
  0000:00006108       locret_6108
+ 0000:0000610A       HandleFloorDoorNE
  0000:00006124       loc_6124
+ 0000:0000613E       HandleFloorDoorSE
  0000:00006182       locret_6182
+ 0000:00006184       HandleFloorDoorSW
  0000:000061B6       loc_61B6
  0000:000061C8       locret_61C8
+ 0000:000061CA       HandleFloorDoorNW
  0000:000061E2       loc_61E2
  0000:000061EC       loc_61EC
  0000:00006208       locret_6208
@@ -1017,6 +1028,7 @@
  0000:0000667A       locret_667A
  0000:0000667C       loc_667C
  0000:00006694       loc_6694
+ 0000:00006698       CheckBell
  0000:000066AA       locret_66AA
  0000:000066AC       sub_66AC
  0000:000066FE       loc_66FE
@@ -1107,6 +1119,7 @@
  0000:00007078       loc_7078
  0000:0000709C       loc_709C
  0000:000070A4       loc_70A4
+ 0000:00007116       GoldAmounts
  0000:0000711E       loc_711E
  0000:00007132       loc_7132
  0000:00007176       loc_7176
@@ -1448,13 +1461,13 @@
  0000:0000C4B4       loc_C4B4
  0000:0000C4C6       loc_C4C6
  0000:0000C4E0       locret_C4E0
- 0000:0000C4E2       sub_C4E2
+ 0000:0000C4E2       CopyIntroString
  0000:0000C4EA       loc_C4EA
  0000:0000C4F4       loc_C4F4
- 0000:0000C50A       sub_C50A
+ 0000:0000C50A       ClearIntroStringBuffer
  0000:0000C514       loc_C514
- 0000:0000C51C       sub_C51C
- 0000:0000C520       sub_C520
+ 0000:0000C51C       GetNextIntroChar
+ 0000:0000C520       LoadIntroChar
  0000:0000C56E       sub_C56E
  0000:0000C57A       loc_C57A
  0000:0000C584       loc_C584
@@ -1937,6 +1950,8 @@
  0000:0000F296       off_F296
  0000:0000F2A6       sub_F2A6
  0000:0000F2BE       word_F2BE
+ 0000:0000F2CE       byte_F2CE
+ 0000:0000F2D1       byte_F2D1
  0000:0000F2DB       byte_F2DB
  0000:0000F2E2       sub_F2E2
  0000:0000F2FA       loc_F2FA
@@ -3492,6 +3507,7 @@
  0000:0001953A       InitialiseSprites
  0000:0001956C       loc_1956C
  0000:000195CE       loc_195CE
+ 0000:000195F0       SpeedLUT
  0000:000195F6       loc_195F6
  0000:00019606       loc_19606
  0000:0001961A       loc_1961A
@@ -3587,6 +3603,7 @@
  0000:0001A00E       loc_1A00E
  0000:0001A034       loc_1A034
  0000:0001A04C       loc_1A04C
+ 0000:0001A058       BigTreeLocations
  0000:0001A06C       loc_1A06C
  0000:0001A080       loc_1A080
  0000:0001A09A       loc_1A09A
@@ -3744,6 +3761,8 @@
  0000:000231CA       loc_231CA
  0000:000231D4       loc_231D4
  0000:000231DA       loc_231DA
+ 0000:000231E2       HandleItemName
+ 0000:000231EE       HandleSpeakerName
  0000:0002320A       locret_2320A
  0000:0002320C       locret_2320C
  0000:0002320E       loc_2320E
@@ -3753,11 +3772,14 @@
  0000:00023238       loc_23238
  0000:0002323E       loc_2323E
  0000:00023244       loc_23244
+ 0000:0002324E       HandleNumericVariable
  0000:0002326E       loc_2326E
  0000:00023276       loc_23276
+ 0000:00023280       HandleEndOfString
  0000:00023284       loc_23284
  0000:0002328E       loc_2328E
  0000:0002329A       loc_2329A
+ 0000:0002329E       HandleContinuePrompt
  0000:000232AC       loc_232AC
  0000:000232B8       loc_232B8
  0000:000232CE       sub_232CE
@@ -4890,6 +4912,7 @@
  0000:00039824       loc_39824
  0000:0003982C       DecompTM_IncrementalFill
  0000:00039838       loc_39838
+ 0000:00039848       DisplayTitleScreen
  0000:00039920       loc_39920
  0000:00039948       loc_39948
  0000:0003997C       loc_3997C

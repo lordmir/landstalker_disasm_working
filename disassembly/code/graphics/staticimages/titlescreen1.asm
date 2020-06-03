@@ -194,7 +194,7 @@ DisplayTitleScreen:				  ; CODE XREF: DisplayTitle+4j
 		jsr	(j_DoDMAFill).l
 		lea	Title1(pc),a0
 		lea	(g_Buffer).l,a1
-		lea	(ResetSP).w,a2
+		lea	(0000000000).w,a2
 		jsr	(j_LoadCompressedGfx).l	  ; a0 - compressed graphics source
 						  ; a1 - decompressed graphics buffer
 						  ; a2 - VDP tile graphics destination
@@ -207,7 +207,7 @@ DisplayTitleScreen:				  ; CODE XREF: DisplayTitle+4j
 		bsr.w	CopyTilemapToVDP
 		lea	Title2(pc),a0
 		lea	(g_Buffer).l,a1
-		lea	(loc_2000).w,a2
+		lea	($00002000).w,a2
 		jsr	(j_LoadCompressedGfx).l	  ; a0 - compressed graphics source
 						  ; a1 - decompressed graphics buffer
 						  ; a2 - VDP tile graphics destination

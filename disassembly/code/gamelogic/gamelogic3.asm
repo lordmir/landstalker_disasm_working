@@ -36,8 +36,6 @@ sub_3FD4:					  ; CODE XREF: sub_3AAj
 		add.w	d1,Z(a5)
 		add.w	d1,HitBoxZEnd(a5)
 		andi.b	#$E0,JumpRate(a5)
-
-loc_3FF0:
 		addq.b	#$01,d0
 		cmpi.b	#$0C,d0
 		bcs.s	loc_4000
@@ -48,7 +46,6 @@ loc_3FF8:					  ; CODE XREF: sub_3FD4+Cj
 ; ---------------------------------------------------------------------------
 
 loc_4000:					  ; CODE XREF: sub_3FD4+22j
-						  ; DATA XREF: ROM:0009EC28o
 		or.b	d0,JumpRate(a5)
 		ori.b	#$80,FallRate(a5)
 
@@ -86,8 +83,8 @@ loc_403C:					  ; DATA XREF: sub_401Ct
 
 sub_4042:					  ; CODE XREF: LoadRoom_0+54p
 						  ; LoadRoom+46p
-		move.l	(loc_436E,pc),(JmpInstr1).l
-		move.w	((loc_436E+4),pc),(JmpInstr1+4).l
+		move.l	(j_QueueDMAOp_0,pc),(JmpInstr1).l
+		move.w	((j_QueueDMAOp_0+4),pc),(JmpInstr1+4).l
 		move.l	(loc_409E,pc),(JumpInstr2).l
 		move.w	((loc_409E+4),pc),(JumpInstr2+4).l
 		bsr.s	sub_40A4
@@ -104,8 +101,8 @@ loc_4074:					  ; CODE XREF: sub_4042+3Ej
 		dbmi	d7,loc_4074
 		move.w	#$FFFF,(a1)
 		bsr.w	sub_4266
-		move.l	(loc_436E,pc),(JmpInstr1).l
-		move.w	((loc_436E+4),pc),(JmpInstr1+4).l
+		move.l	(j_QueueDMAOp_0,pc),(JmpInstr1).l
+		move.w	((j_QueueDMAOp_0+4),pc),(JmpInstr1+4).l
 		rts
 ; End of function sub_4042
 
@@ -460,7 +457,7 @@ loc_436A:					  ; CODE XREF: ROM:00004354j
 		rts
 ; ---------------------------------------------------------------------------
 
-loc_436E:					  ; DATA XREF: sub_4042t
+j_QueueDMAOp_0:					  ; DATA XREF: sub_4042t
 						  ; sub_4042+8t ...
 		jmp	(QueueDMAOp).l		  ; d0 - DMA Length
 						  ; a0 - DMA Source
@@ -830,8 +827,8 @@ MultTable:	dc.b $01, $02, $03, $04
 
 
 LoadSpriteGfx:					  ; CODE XREF: sub_F13A+40p
-		move.l	(loc_436E,pc),(JmpInstr1).l
-		move.w	((loc_436E+4),pc),(JmpInstr1+4).l
+		move.l	(j_QueueDMAOp_0,pc),(JmpInstr1).l
+		move.w	((j_QueueDMAOp_0+4),pc),(JmpInstr1+4).l
 		lea	(SpriteGfxPtrPtr).l,a4
 		movea.l	(a4),a0
 		lsl.w	#$02,d0
@@ -873,8 +870,8 @@ sub_46DC:					  ; CODE XREF: sub_3890+Ap
 
 ; FUNCTION CHUNK AT 0000471C SIZE 00000022 BYTES
 
-		move.l	(loc_436E,pc),(JmpInstr1).l
-		move.w	((loc_436E+4),pc),(JmpInstr1+4).l
+		move.l	(j_QueueDMAOp_0,pc),(JmpInstr1).l
+		move.w	((j_QueueDMAOp_0+4),pc),(JmpInstr1+4).l
 		bra.s	LoadSprite
 ; End of function sub_46DC
 

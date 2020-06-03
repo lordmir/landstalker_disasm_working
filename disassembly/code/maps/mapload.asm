@@ -676,7 +676,7 @@ GetTileset:					  ; CODE XREF: ROM:00002BA8p
 		movea.l	a2,a0
 		movem.l	(sp)+,a1
 		lea	(g_BackgroundBlocks).l,a0
-		lea	(ResetSP).w,a1
+		lea	(0000000000).w,a1
 		move.w	#$3A80,d0
 		bsr.w	FlushDMACopyQueue
 		bsr.w	DoDMACopy		  ; d0 = DMA Length

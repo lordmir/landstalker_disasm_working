@@ -155,8 +155,8 @@ loc_EE0C:					  ; CODE XREF: ROM:0000EDF8j
 ; START	OF FUNCTION CHUNK FOR sub_EAD4
 
 loc_EE12:					  ; CODE XREF: sub_EAD4+5Ej
-		lea	($00FF2C00).l,a1
-		lea	g_Buffer+$18-g_Buffer(a1),a0
+		lea	(g_Buffer).l,a1
+		lea	$00000018(a1),a0
 		lea	$0000001A(a1),a1
 		lea	EquipInventoryLayout(pc),a2
 		move.w	(a0),d0
@@ -173,8 +173,8 @@ loc_EE12:					  ; CODE XREF: sub_EAD4+5Ej
 loc_EE44:					  ; CODE XREF: sub_EAD4+360j
 		move.w	(a1),d1
 		add.w	d1,d1
-		lea	($00FF2C00).l,a2
-		lea	g_Buffer+$10-g_Buffer(a2,d1.w),a2
+		lea	(g_Buffer).l,a2
+		lea	$00000010(a2,d1.w),a2
 		move.w	(a0),(a2)
 		lea	((g_Buffer+$10)).l,a0
 		clr.w	d0
@@ -254,7 +254,7 @@ loc_EEF6:					  ; CODE XREF: ROM:0000EF16j
 		jsr	(j_FadeToBlack).l
 		move.w	-$00000004(a6),d0
 		move.b	d0,(g_SaveSlot).l
-		jsr	(sub_15C2).l
+		jsr	(LoadSavedGame).l
 		unlk	a6
 		rts
 ; ---------------------------------------------------------------------------
@@ -321,7 +321,7 @@ loc_EFF0:					  ; CODE XREF: ROM:0000EF10p
 		jsr	(j_WaitUntilVBlank).l
 		bsr.w	sub_F306
 		clr.b	-$00000019(a6)
-		move.l	#$0000F2D1,-$00000016(a6)
+		move.l	#byte_F2D1,-$00000016(a6)
 		move.b	(g_Controller1State).l,d0
 		move.b	d0,-$00000008(a6)
 
@@ -466,7 +466,7 @@ sub_F0F8:					  ; CODE XREF: ROM:loc_F086p
 		movea.l	-$00000016(a6),a0
 		cmpi.b	#$0F,(a0)
 		beq.s	loc_F116
-		move.l	#$0000F2DB,-$00000016(a6)
+		move.l	#byte_F2DB,-$00000016(a6)
 		clr.b	-$00000017(a6)
 		clr.b	-$00000018(a6)
 		clr.b	-$00000019(a6)
@@ -524,8 +524,8 @@ sub_F13A:					  ; CODE XREF: ROM:0000F092p
 		movem.l	d2-d3/a4-a6,-(sp)
 		jsr	(LoadSpriteGfx).l
 
-loc_F180:					  ; DATA XREF: LoadMagicSwordGfx+3Eo
-						  ; sub_C4E2+18o ...
+loc_F180:					  ; DATA XREF: ROM:00014462o
+						  ; ROM:000154A6o
 		jsr	(EnableDMAQueueProcessing).l
 		movem.l	(sp)+,d2-d3/a4-a6
 		rts
@@ -556,7 +556,7 @@ loc_F1A2:					  ; CODE XREF: sub_F18C+46j
 		nop
 		cmpa.l	-$00000016(a6),a0
 		bne.s	loc_F1C8
-		move.l	#$0000F2D1,-$00000016(a6)
+		move.l	#byte_F2D1,-$00000016(a6)
 
 loc_F1C8:					  ; CODE XREF: sub_F18C+32j
 		bra.s	sub_F18C
@@ -584,7 +584,7 @@ loc_F1D4:					  ; CODE XREF: sub_F18C+40j
 
 sub_F1E4:					  ; CODE XREF: sub_F1FAp
 						  ; sub_FFE2+26p
-		move.l	#$0000F2CE,-$00000016(a6)
+		move.l	#byte_F2CE,-$00000016(a6)
 		clr.b	-$00000019(a6)
 		clr.b	-$00000017(a6)
 		clr.b	-$00000018(a6)
@@ -723,11 +723,11 @@ word_F2BE:	dc.w $00A4,$00CC		  ; DATA XREF: sub_F2A6+4o
 		dc.w $0134,$00CC
 		dc.w $00A4,$011C
 		dc.w $0134,$011C
-		dc.w $0101,$0003
-		dc.w $0A0A,$0A0A
-		dc.w $0A0A,$0A0A
-		dc.b $00
-byte_F2DB:	dc.b $0F,$06,$06,$06,$06,$00,$FF  ; DATA XREF: sub_F18C+28o
+byte_F2CE:	dc.b $01,$01,$00		  ; DATA XREF: sub_F1E4o
+byte_F2D1:	dc.b $03,$0A,$0A,$0A,$0A,$0A,$0A,$0A,$0A,$00 ; DATA XREF: ROM:0000F008o
+						  ; sub_F18C+34o
+byte_F2DB:	dc.b $0F,$06,$06,$06,$06,$00,$FF  ; DATA XREF: sub_F0F8+Ao
+						  ; sub_F18C+28o
 
 ; =============== S U B	R O U T	I N E =======================================
 

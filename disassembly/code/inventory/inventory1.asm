@@ -183,7 +183,7 @@ LoadMagicSwordGfx:				  ; CODE XREF: j_LoadMagicSwordGfxj
 loc_77DE:					  ; CODE XREF: LoadMagicSwordGfx+14j
 						  ; LoadMagicSwordGfx+1Ej ...
 		lea	(g_Buffer).l,a1
-		lea	(loc_F180).l,a2
+		lea	($0000F180).l,a2
 		bsr.w	DecompressAndQueueGfxCopy
 		bsr.w	FlushDMACopyQueue
 

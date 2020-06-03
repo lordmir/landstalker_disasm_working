@@ -282,10 +282,7 @@ loc_2498E:					  ; CODE XREF: sub_2488A+40j
 sub_24998:					  ; CODE XREF: YesNoPromptp
 						  ; sub_2482Cp
 		lea	RightArrowGfx(pc),a0
-		lea	((RoomTransitionLookup+$A8)).l,a1 ; WORD 0: Orig Room Num
-						  ; WORD 1: Dest Room Num
-						  ; BYTE 4: Flags byte
-						  ; BYTE 5: Flags bit
+		lea	($0000A480).l,a1
 		move.w	#$0040,d0
 		jsr	(j_QueueDMAOp).l
 		jsr	(j_EnableDMAQueueProcessing).l

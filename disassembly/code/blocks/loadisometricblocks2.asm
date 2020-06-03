@@ -94,7 +94,7 @@ sub_C46A:					  ; CODE XREF: ROM:00008DFEp
 		move.w	(a2)+,(word_FF12EE).l
 		movem.l	d2-d3,-(sp)
 		movem.l	d0-d1,-(sp)
-		bsr.s	sub_C4E2
+		bsr.s	CopyIntroString
 		movem.l	(sp)+,d0-d1
 		bsr.w	sub_C56E
 		movem.l	(sp)+,d0-d1
@@ -128,53 +128,53 @@ locret_C4E0:					  ; CODE XREF: sub_C46A+52j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_C4E2:					  ; CODE XREF: sub_C46A+36p
-		bsr.s	sub_C50A
+CopyIntroString:				  ; CODE XREF: sub_C46A+36p
+		bsr.s	ClearIntroStringBuffer
 		lea	(g_Buffer).l,a1
 
-loc_C4EA:					  ; CODE XREF: sub_C4E2+10j
-		bsr.s	sub_C51C
+loc_C4EA:					  ; CODE XREF: CopyIntroString+10j
+		bsr.s	GetNextIntroChar
 		tst.b	d0
 		bmi.s	loc_C4F4
-		bsr.s	sub_C520
+		bsr.s	LoadIntroChar
 		bra.s	loc_C4EA
 ; ---------------------------------------------------------------------------
 
-loc_C4F4:					  ; CODE XREF: sub_C4E2+Cj
+loc_C4F4:					  ; CODE XREF: CopyIntroString+Cj
 		lea	(g_Buffer).l,a0
-		lea	(loc_F180).l,a1
+		lea	($0000F180).l,a1
 		move.w	#$0400,d0
 		jmp	(QueueDMAOp).l		  ; d0 - DMA Length
-; End of function sub_C4E2			  ; a0 - DMA Source
+; End of function CopyIntroString		  ; a0 - DMA Source
 						  ; a1 - DMA Copy
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_C50A:					  ; CODE XREF: sub_C4E2p
+ClearIntroStringBuffer:				  ; CODE XREF: CopyIntroStringp
 		lea	(g_Buffer).l,a1
 		move.w	#$01FF,d7
 
-loc_C514:					  ; CODE XREF: sub_C50A+Cj
+loc_C514:					  ; CODE XREF: ClearIntroStringBuffer+Cj
 		clr.l	(a1)+
 		dbf	d7,loc_C514
 		rts
-; End of function sub_C50A
+; End of function ClearIntroStringBuffer
 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_C51C:					  ; CODE XREF: sub_C4E2:loc_C4EAp
+GetNextIntroChar:				  ; CODE XREF: CopyIntroString:loc_C4EAp
 		move.b	(a2)+,d0
 		rts
-; End of function sub_C51C
+; End of function GetNextIntroChar
 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_C520:					  ; CODE XREF: sub_C4E2+Ep
+LoadIntroChar:					  ; CODE XREF: CopyIntroString+Ep
 		andi.w	#$00FF,d0
 		lsl.w	#$06,d0
 		movea.l	(IntroFontPtr).l,a0
@@ -195,7 +195,7 @@ sub_C520:					  ; CODE XREF: sub_C4E2+Ep
 		move.l	$00000038(a0,d0.w),(a1)+
 		move.l	$0000003C(a0,d0.w),(a1)+
 		rts
-; End of function sub_C520
+; End of function LoadIntroChar
 
 
 ; =============== S U B	R O U T	I N E =======================================

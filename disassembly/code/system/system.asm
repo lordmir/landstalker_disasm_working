@@ -1240,7 +1240,7 @@ loc_DCE:					  ; CODE XREF: DoDMACopy+9Aj
 ; a1 - DMA Copy
 
 QueueDMAOp:					  ; CODE XREF: j_QueueDMAOpj
-						  ; ROM:loc_436Ej ...
+						  ; ROM:j_QueueDMAOp_0j ...
 		movem.l	d2/d7,-(sp)
 
 loc_DDA:					  ; CODE XREF: QueueDMAOp+84j

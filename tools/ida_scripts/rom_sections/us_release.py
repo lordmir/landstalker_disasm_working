@@ -248,7 +248,7 @@ def get_sections():
     sections.append(Section(types["ASM"], 0x3DF0A, 0x3DF8A, "code\\graphics\\staticimages\\climaxlogo.asm", ""))
     sections.append(Section(types["BIN"], 0x3DF8A, 0x3E621, "assets_packed\\graphics\\static\\logos\\climax.lz77", "ClimaxLogo",1))
     sections.append(Section(types["BIN"], 0x3E621, 0x3E64C, "assets_packed\\graphics\\static\\logos\\climax.rle", "ClimaxLogoMap",1))
-    sections.append(Section(types["BIN"], 0x3E64C, 0x3E654, "assets_packed\\graphics\\static\\logos\\climax.pal", "ClimaxLogoPalette",1))
+    sections.append(Section(types["BIN"], 0x3E64C, 0x3E654, "assets_packed\\graphics\\static\\logos\\climax.pal", "ClimaxLogoPalette"))
     sections.append(Section(types["ASM"], 0x3E654, 0x3ED9A, "code\\graphics\\staticimages\\islandmap.asm", ""))
     sections.append(Section(types["BIN"], 0x3ED9A, 0x41B01, "assets_packed\\graphics\\static\\islandmap\\foreground.lz77", "IslandMapFg",1))
     sections.append(Section(types["BIN"], 0x41B01, 0x41B41, "assets_packed\\graphics\\static\\islandmap\\foreground.rle", "IslandMapFgMap",1))

@@ -12,8 +12,6 @@ CheckSRAM:					  ; CODE XREF: ROM:0000050Cp
 
 loc_14FE:					  ; CODE XREF: CheckSRAM+14j
 		move.b	(a1)+,d0
-
-loc_1500:					  ; DATA XREF: sub_D996+52o
 		cmp.b	(a0),d0
 		bne.s	SetSRAMMagicWord
 		addq.w	#$02,a0
@@ -157,28 +155,28 @@ loc_15B8:					  ; CODE XREF: SaveGame+18j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_15C2:					  ; CODE XREF: ROM:0000EF46p
+LoadSavedGame:					  ; CODE XREF: ROM:0000EF46p
 						  ; sub_F78E+2p ...
 		move.b	(g_SaveSlot).l,d0
 		bsr.s	GetSaveSlotAddress
 		lea	SaveGameRamPtrs(pc),a1
 
-loc_15CE:					  ; CODE XREF: sub_15C2+20j
+loc_15CE:					  ; CODE XREF: LoadSavedGame+20j
 		movea.l	(a1)+,a2
 		cmpa.l	#$00000000,a2
 		beq.s	locret_15E4
 		move.w	(a1)+,d7
 
-loc_15DA:					  ; CODE XREF: sub_15C2+1Cj
+loc_15DA:					  ; CODE XREF: LoadSavedGame+1Cj
 		move.b	(a0),(a2)+
 		addq.w	#$02,a0
 		dbf	d7,loc_15DA
 		bra.s	loc_15CE
 ; ---------------------------------------------------------------------------
 
-locret_15E4:					  ; CODE XREF: sub_15C2+14j
+locret_15E4:					  ; CODE XREF: LoadSavedGame+14j
 		rts
-; End of function sub_15C2
+; End of function LoadSavedGame
 
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -221,7 +219,7 @@ loc_1618:					  ; CODE XREF: ROM:0000160Cj
 		rts
 ; ---------------------------------------------------------------------------
 SaveGameRamPtrs:dc.l g_Flags			  ; Address ; DATA XREF: SaveGame+Co
-						  ; sub_15C2+8o ...
+						  ; LoadSavedGame+8o ...
 		dc.w $001F			  ; Length
 		dc.l g_Inventory		  ; Address
 		dc.w $003F			  ; Length

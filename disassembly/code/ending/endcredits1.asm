@@ -24,13 +24,13 @@ loc_9EC06:					  ; CODE XREF: ROM:0009EC08j
 		jsr	(j_DoDMAFill).l
 		lea	EndCreditFont(pc),a0
 		lea	(g_Buffer).l,a1
-		lea	(loc_4000).w,a2
+		lea	($00004000).w,a2
 		jsr	(j_LoadCompressedGfx).l	  ; a0 - compressed graphics source
 						  ; a1 - decompressed graphics buffer
 						  ; a2 - VDP tile graphics destination
 		lea	EndCreditLogos(pc),a0
 		lea	(g_Blockset).l,a1
-		lea	(loc_2000).w,a2
+		lea	($00002000).w,a2
 		jsr	(j_LoadCompressedGfx).l	  ; a0 - compressed graphics source
 						  ; a1 - decompressed graphics buffer
 						  ; a2 - VDP tile graphics destination

@@ -91,7 +91,7 @@ loc_F780:					  ; CODE XREF: sub_F736+1Ej
 
 sub_F78E:					  ; CODE XREF: sub_F736:loc_F780p
 		move.l	d0,-(sp)
-		jsr	(sub_15C2).l
+		jsr	(LoadSavedGame).l
 		lea	(unk_FF3562).l,a0
 		lea	(a5),a1
 		moveq	#$00000011,d6
@@ -527,7 +527,7 @@ sub_FAF0:					  ; CODE XREF: ROM:0000EFF2p
 						  ; sub_F0F8:loc_F116p
 		move.w	-$00000002(a6),d0
 		move.b	d0,(g_SaveSlot).l
-		jsr	(sub_15C2).l
+		jsr	(LoadSavedGame).l
 		lea	(g_Pal2Base).l,a1
 		bsr.w	LoadInitialPlayerPalette
 		jsr	(UpdateEquipPal).l

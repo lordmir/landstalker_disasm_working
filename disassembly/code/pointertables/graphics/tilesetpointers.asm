@@ -21,7 +21,7 @@ Tileset04Anim02Ptr:dc.l	Tileset04Anim02		  ; DATA XREF: ROM:00009ED6o
 Tileset18Anim01Ptr:dc.l	Tileset18Anim01		  ; DATA XREF: ROM:00009EE0o
 Tileset09Anim01Ptr:dc.l	Tileset09Anim01		  ; DATA XREF: ROM:00009EEAo
 Tileset17Anim01Ptr:dc.l	Tileset17Anim01		  ; DATA XREF: ROM:00009EF4o
-IntroFontPtr:	dc.l IntroFont			  ; DATA XREF: sub_C520+6r
+IntroFontPtr:	dc.l IntroFont			  ; DATA XREF: LoadIntroChar+6r
 Tilesets:	dc.l Tileset01			  ; DATA XREF: ROM:TilesetPointerso
 		dc.l Tileset02
 		dc.l Tileset03

@@ -25,7 +25,7 @@ DisplayLithograph:				  ; DATA XREF: j_DisplayLithographo
 LoadLithographTiles:				  ; CODE XREF: DisplayLithograph+2Ep
 		lea	Lithograph(pc),a0
 		lea	(g_Buffer).l,a1
-		lea	(loc_2000).w,a2
+		lea	($00002000).w,a2
 		jsr	(j_DecompressAndQueueGfxCopy).l
 		jsr	(j_FlushDMACopyQueue).l
 		rts
