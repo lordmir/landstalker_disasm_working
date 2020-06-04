@@ -406,7 +406,7 @@ j_ConvertToBase10:				  ; CODE XREF: sub_F346+12p
 
 j_WaitForZ80:					  ; CODE XREF: sub_F2E2p
 						  ; HandleControlChars:loc_23216p ...
-		jmp	(WaitForZ80).l
+		jmp	(UpdateControllerInputs).l
 ; End of function j_WaitForZ80
 
 ; ---------------------------------------------------------------------------

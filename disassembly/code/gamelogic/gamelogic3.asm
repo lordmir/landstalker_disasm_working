@@ -46,6 +46,7 @@ loc_3FF8:					  ; CODE XREF: sub_3FD4+Cj
 ; ---------------------------------------------------------------------------
 
 loc_4000:					  ; CODE XREF: sub_3FD4+22j
+						  ; DATA XREF: ROM:0009EC28o
 		or.b	d0,JumpRate(a5)
 		ori.b	#$80,FallRate(a5)
 

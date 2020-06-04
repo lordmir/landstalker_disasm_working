@@ -207,7 +207,7 @@ DisplayTitleScreen:				  ; CODE XREF: DisplayTitle+4j
 		bsr.w	CopyTilemapToVDP
 		lea	Title2(pc),a0
 		lea	(g_Buffer).l,a1
-		lea	($00002000).w,a2
+		lea	(loc_2000).w,a2
 		jsr	(j_LoadCompressedGfx).l	  ; a0 - compressed graphics source
 						  ; a1 - decompressed graphics buffer
 						  ; a2 - VDP tile graphics destination
@@ -262,9 +262,9 @@ loc_39920:					  ; CODE XREF: DisplayTitle+1C0j
 
 loc_39948:					  ; CODE XREF: DisplayTitle+1E2j
 		bsr.w	sub_39D76
-		lea	TitlePalette2(pc),a0
+		lea	Title3Palette(pc),a0
 		jsr	(j_LoadPaletteToRAM).l
-		lea	TitlePalette2(pc),a0
+		lea	Title3Palette(pc),a0
 		jsr	(j_CopyPalette).l
 		jsr	(j_CopyBasePalleteToActivePalette).l
 		jsr	(j_FlushDMACopyQueue).l
@@ -417,7 +417,7 @@ loc_39AA8:					  ; CODE XREF: sub_39A98+Cj
 		move.w	-$00000006(a6),d0
 		ext.l	d0
 		lea	((g_Pal0Base+2)).l,a0
-		lea	TitlePaletteRoll(pc),a1
+		lea	TitlePaletteBlueFade(pc),a1
 		clr.b	d6
 		moveq	#$0000000E,d7
 

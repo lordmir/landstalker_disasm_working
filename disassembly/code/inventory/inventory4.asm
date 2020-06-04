@@ -430,7 +430,7 @@ sub_D86C:					  ; CODE XREF: sub_D50C+1Ap
 sub_D88A:					  ; CODE XREF: ROM:0000D3C8p
 						  ; sub_EAD4+44p
 		movem.w	d0,-(sp)
-		jsr	(WaitForZ80).l
+		jsr	(UpdateControllerInputs).l
 		movem.w	(sp)+,d4
 		move.w	(unk_FF0F9C).l,d2
 		lea	(g_Buffer).l,a1
@@ -515,7 +515,7 @@ loc_D92C:					  ; CODE XREF: sub_D902+Aj
 loc_D948:					  ; CODE XREF: ROM:0000D966j
 		movem.w	d0,-(sp)
 		jsr	(WaitUntilVBlank).l
-		jsr	(WaitForZ80).l
+		jsr	(UpdateControllerInputs).l
 		movem.w	(sp)+,d0
 		move.b	(g_Controller1State).l,d1
 		andi.b	#$F0,d1
@@ -527,12 +527,12 @@ loc_D948:					  ; CODE XREF: ROM:0000D966j
 
 sub_D96A:					  ; CODE XREF: ROM:0000D3C2p
 						  ; sub_D96A+10j ...
-		jsr	(WaitForZ80).l
+		jsr	(UpdateControllerInputs).l
 		move.b	(g_Controller1State).l,d0
 		andi.b	#CTRLBF_BUTTONS,d0
 		bne.s	sub_D96A
 		jsr	(WaitUntilVBlank).l
-		jsr	(WaitForZ80).l
+		jsr	(UpdateControllerInputs).l
 		move.b	(g_Controller1State).l,d0
 		andi.b	#CTRLBF_BUTTONS,d0
 		bne.s	sub_D96A
@@ -567,7 +567,7 @@ loc_D9B2:					  ; CODE XREF: sub_D996+24j
 		bsr.w	Expand2BPPGfx
 		bsr.w	Expand2BPPGfx
 		lea	((g_Buffer+$84)).l,a0
-		lea	($00001500).w,a1
+		lea	(loc_1500).w,a1
 		move.w	#$0140,d0
 		move.w	#$0002,d1
 		jsr	(DoDMACopy).l		  ; d0 = DMA Length
@@ -831,7 +831,7 @@ loc_DBBC:					  ; CODE XREF: ROM:0000DB56j
 
 sub_DBC4:					  ; CODE XREF: ROM:0000DB92p
 		lea	(g_RoomVisitedFlags).l,a0
-		move.w	#$0282,d0
+		move.w	#00642,d0
 		clr.b	d1
 		moveq	#$00000003,d7
 
@@ -848,12 +848,12 @@ loc_DBD8:					  ; CODE XREF: sub_DBC4+10j
 
 loc_DBE2:					  ; CODE XREF: sub_DBC4+1Aj
 		dbf	d0,loc_DBD2
-		mulu.w	#$0064,d7
-		divu.w	#$0282,d7
+		mulu.w	#00100,d7
+		divu.w	#00642,d7
 		andi.l	#$0000FFFF,d7
-		cmpi.l	#$00000064,d7
+		cmpi.l	#0000000100,d7
 		bcs.s	loc_DBFE
-		moveq	#$00000064,d7
+		moveq	#0000000100,d7
 
 loc_DBFE:					  ; CODE XREF: sub_DBC4+36j
 		move.l	d7,(g_PrintNumericDwordValue).l

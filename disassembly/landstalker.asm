@@ -111,12 +111,12 @@ LightableRooms:             incbin  "assets_packed\roomdata\flagactions\lanternf
                             Align   $2
 DefaultPlayerPal:           incbin  "assets_packed\graphics\miscpalettes\defaultplayer.pal"
                             Align   $2
-StatusBarPal:               incbin  "assets_packed\graphics\miscpalettes\statusbar.pal"
+StatusBarPal:               incbin  "assets_packed\graphics\static\hud\hud.pal"
                             Align   $2
                             include "code\gamelogic\gamelogic6.asm"
                             Align   $2
 StatusBarTilemap:           incbin  "assets_packed\graphics\static\hud\hudtilemap.map"
-StatusBarGfx:               incbin  "assets_packed\graphics\static\hud\hudtiles.lz77"
+StatusBarGfx:               incbin  "assets_packed\graphics\static\hud\hud.lz77"
                             Align   $2
                             include "code\maps\doors.asm"
                             Align   $2
@@ -207,7 +207,11 @@ InvPalette1:                incbin  "assets_packed\graphics\static\inventory\inv
                             Align   $2
 InvPalette2_GreyedOut:      incbin  "assets_packed\graphics\static\inventory\invitemgreyedout.pal"
                             Align   $2
-                            include "code\graphics\visualeffects.asm"
+                            include "code\graphics\visualeffects1.asm"
+                            Align   $2
+KazaltWarpPalette:          incbin  "assets_packed\graphics\miscpalettes\kazaltwarp.pal"
+                            Align   $2
+                            include "code\graphics\visualeffects2.asm"
                             Align   $2
                             include "code\inventory\inventory5.asm"
                             Align   $2
@@ -426,11 +430,11 @@ LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\li
                             Align   $2
                             include "code\graphics\staticimages\titlescreen1.asm"
                             Align   $2
-TitlePaletteRoll:           incbin  "assets_packed\graphics\static\titlescreen\titlepaletteroll.pal"
+TitlePaletteBlueFade:       incbin  "assets_packed\graphics\static\titlescreen\blues.pal"
                             Align   $2
                             include "code\graphics\staticimages\titlescreen2.asm"
                             Align   $2
-TitlePalette:               incbin  "assets_packed\graphics\static\titlescreen\titlepalette1.pal"
+TitlePaletteYellowFade:     incbin  "assets_packed\graphics\static\titlescreen\yellows.pal"
                             Align   $2
                             include "code\graphics\staticimages\titlescreen3.asm"
 Title1:                     incbin  "assets_packed\graphics\static\titlescreen\title1.lz77"
@@ -440,9 +444,9 @@ Title1Map:                  incbin  "assets_packed\graphics\static\titlescreen\t
 Title2Map:                  incbin  "assets_packed\graphics\static\titlescreen\title2.rle"
 Title3Map:                  incbin  "assets_packed\graphics\static\titlescreen\title3.rle"
                             Align   $2
-TitlePalette2:              incbin  "assets_packed\graphics\static\titlescreen\titlepalette2.pal"
+Title3Palette:              incbin  "assets_packed\graphics\static\titlescreen\title3.pal"
                             Align   $2
-TitlePalette3:              incbin  "assets_packed\graphics\static\titlescreen\titlepalette3.pal"
+Title3PaletteHighlight:     incbin  "assets_packed\graphics\static\titlescreen\title3_highlight.pal"
                             Align   $2
                             include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogo:                 incbin  "assets_packed\graphics\static\logos\climax.lz77"
@@ -458,7 +462,9 @@ IslandMapBgMap:             incbin  "assets_packed\graphics\static\islandmap\bac
 MapDots:                    incbin  "assets_packed\graphics\static\islandmap\dots.lz77"
 MapFriday:                  incbin  "assets_packed\graphics\static\islandmap\friday.lz77"
                             Align   $2
-IslandMapPals:              incbin  "assets_packed\graphics\static\islandmap\palette.pal"
+IslandMapPals:              incbin  "assets_packed\graphics\static\islandmap\foreground.pal"
+                            Align   $2
+                            incbin  "assets_packed\graphics\static\islandmap\background.pal"
                             PadTo   $044010
                             include "code\pointertables\graphics\tilesetpointers.asm"
 Tileset01:                  incbin  "assets_packed\graphics\tilesets\tileset01.lz77"

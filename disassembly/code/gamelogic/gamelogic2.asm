@@ -87,19 +87,19 @@ loc_2EB8:					  ; CODE XREF: ROM:00002E52j
 
 loc_2EC2:					  ; CODE XREF: CheckForDebugSaveGame-3Aj
 		bsr.w	WaitUntilVBlank
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		btst	#CTRL_B,(g_Controller2State).l
 		bne.s	loc_2EC2
 
 loc_2ED4:					  ; CODE XREF: CheckForDebugSaveGame-28j
 		bsr.w	WaitUntilVBlank
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		btst	#CTRL_B,(g_Controller2State).l
 		beq.s	loc_2ED4
 
 loc_2EE6:					  ; CODE XREF: CheckForDebugSaveGame-16j
 		bsr.w	WaitUntilVBlank
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		btst	#CTRL_B,(g_Controller2State).l
 		bne.s	loc_2EE6
 

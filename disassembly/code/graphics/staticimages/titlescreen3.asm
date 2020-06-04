@@ -71,7 +71,7 @@ loc_39CB4:					  ; CODE XREF: sub_39CA4+Cj
 		andi.b	#$03,d0
 		bne.s	loc_39CE6
 		lea	(g_Pal0Base).l,a0
-		lea	TitlePalette2(pc),a1
+		lea	Title3Palette(pc),a1
 		moveq	#$0000000F,d7
 
 loc_39CCE:					  ; CODE XREF: sub_39CA4+2Ej
@@ -161,7 +161,7 @@ loc_39D42:					  ; CODE XREF: sub_39D3A+4j
 ; ---------------------------------------------------------------------------
 
 loc_39D4A:					  ; CODE XREF: sub_39D3A+Cj
-		lea	TitlePalette3(pc),a0
+		lea	Title3PaletteHighlight(pc),a0
 		jsr	(j_LoadPaletteToRAM).l
 		lea	(g_Pal1Base).l,a0
 		moveq	#$0000000F,d7
@@ -241,7 +241,7 @@ loc_39DE8:					  ; CODE XREF: sub_39DD8+Cj
 		move.w	-$00000010(a6),d0
 		ext.l	d0
 		lea	(g_Pal1Base).l,a0
-		lea	TitlePalette2(pc),a1
+		lea	Title3Palette(pc),a1
 		clr.b	d6
 		andi.b	#$07,d0
 		bne.s	loc_39E1A

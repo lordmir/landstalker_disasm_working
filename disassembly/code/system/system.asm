@@ -646,7 +646,7 @@ LoadPaletteToRAM:				  ; CODE XREF: j_LoadPaletteToRAMj
 
 
 CopyPalette:					  ; CODE XREF: j_CopyPalettej
-						  ; sub_7862+1Ep
+						  ; InitInvDisplay+1Ep
 		move.w	#$000F,d0
 ; End of function CopyPalette
 
@@ -1508,14 +1508,14 @@ PowersOf10:	dc.l 1000000000			  ; DATA XREF: ConvertToBase10+4o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-WaitForZ80:					  ; CODE XREF: j_WaitForZ80j
+UpdateControllerInputs:				  ; CODE XREF: j_WaitForZ80j
 						  ; ROM:WaitForButtonPushp ...
 		movem.l	d5-d7/a5-a6,-(sp)
 		move	sr,d5
 		bsr.w	DisableInterrupts
 		move.w	#$0100,(Z80_BUSREQ_REG0).l
 
-loc_1052:					  ; CODE XREF: WaitForZ80+1Aj
+loc_1052:					  ; CODE XREF: UpdateControllerInputs+1Aj
 		btst	#$00,(Z80_BUSREQ_REG0).l
 		bne.s	loc_1052
 		bsr.s	ReadControllerInput
@@ -1523,13 +1523,13 @@ loc_1052:					  ; CODE XREF: WaitForZ80+1Aj
 		move	d5,sr
 		movem.l	(sp)+,d5-d7/a5-a6
 		rts
-; End of function WaitForZ80
+; End of function UpdateControllerInputs
 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ReadControllerInput:				  ; CODE XREF: WaitForZ80+1Cp
+ReadControllerInput:				  ; CODE XREF: UpdateControllerInputs+1Cp
 		lea	(g_Controller1State).l,a5
 		lea	(SEGA_CTRL1_DATA_REG).l,a6
 		bsr.s	ReadControllerReg
@@ -1565,7 +1565,7 @@ ReadControllerReg:				  ; CODE XREF: ReadControllerInput+Cp
 
 WaitForButtonPush:				  ; CODE XREF: ROM:00000344j
 						  ; ROM:000010C2j
-		bsr.s	WaitForZ80
+		bsr.s	UpdateControllerInputs
 		andi.b	#CTRLBF_ANYBUTTON,(g_Controller1State).l
 		bne.s	locret_10C4
 		bsr.w	WaitUntilVBlank
@@ -1580,7 +1580,7 @@ locret_10C4:					  ; CODE XREF: ROM:000010BCj
 
 WaitForNextButtonPress:				  ; CODE XREF: j_WaitForNextButtonPressj
 						  ; WaitForNextButtonPress+12j
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		andi.b	#CTRLBF_ANYBUTTON,(g_Controller1State).l
 		beq.s	loc_10DA
 		bsr.w	WaitUntilVBlank
@@ -1589,7 +1589,7 @@ WaitForNextButtonPress:				  ; CODE XREF: j_WaitForNextButtonPressj
 
 loc_10DA:					  ; CODE XREF: WaitForNextButtonPress+Cj
 						  ; WaitForNextButtonPress+26j
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		andi.b	#CTRLBF_ANYBUTTON,(g_Controller1State).l
 		bne.s	locret_10EE
 		bsr.w	WaitUntilVBlank
@@ -1604,7 +1604,7 @@ locret_10EE:					  ; CODE XREF: WaitForNextButtonPress+20j
 
 loc_10F0:					  ; CODE XREF: ROM:00000350j
 		movem.l	d7,-(sp)
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		move.b	(g_Controller1State).l,d7
 		and.b	(byte_FF0F90).l,d7
 		beq.s	loc_1124
@@ -1632,7 +1632,7 @@ Wait1SecondOrUntilButtonPushed:			  ; CODE XREF: ROM:00000356j
 
 loc_113C:					  ; CODE XREF: Wait3SecondsOrUntilButtonPushed-Aj
 						  ; Wait3SecondsOrUntilButtonPushed+Aj
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		andi.b	#CTRLBF_ANYBUTTON,(g_Controller1State).l
 		bne.s	loc_1152
 		bsr.w	WaitUntilVBlank

@@ -101,7 +101,7 @@ sub_EAD4:					  ; CODE XREF: CheckForMenuOpen+A6p
 
 		tst.w	(DebugModeEnable).w
 		bne.s	loc_EAF2
-		jsr	(WaitForZ80).l
+		jsr	(UpdateControllerInputs).l
 		btst	#CTRL_START,(g_Controller1State).l
 		beq.s	loc_EAF2
 
@@ -273,27 +273,27 @@ loc_EBFA:					  ; CODE XREF: sub_EBEE+12j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_EC06:					  ; CODE XREF: sub_EC34+4p
+InitEquipGreyedOutPal:				  ; CODE XREF: sub_EC34+4p
 		lea	(g_Pal1Base).l,a0
 		lea	(g_Pal2Base).l,a1
 		moveq	#$0000000F,d7
 
-loc_EC14:					  ; CODE XREF: sub_EC06+22j
-		move.b	(a0)+,d0
+loc_EC14:					  ; CODE XREF: InitEquipGreyedOutPal+22j
+		move.b	(a0)+,d0		  ; Only keep blue component, and darken
 		subq.b	#$02,d0
 		bpl.s	loc_EC1C
 		clr.b	d0
 
-loc_EC1C:					  ; CODE XREF: sub_EC06+12j
+loc_EC1C:					  ; CODE XREF: InitEquipGreyedOutPal+12j
 		move.b	d0,(a1)+
 		move.b	(a0)+,d0
 		lsr.b	#$03,d0
 		andi.b	#$22,d0
 		move.b	d0,(a1)+
-		dbf	d7,loc_EC14
+		dbf	d7,loc_EC14		  ; Only keep blue component, and darken
 		jsr	(CopyBasePalleteToActivePalette).l
 		rts
-; End of function sub_EC06
+; End of function InitEquipGreyedOutPal
 
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -302,9 +302,9 @@ loc_EC1C:					  ; CODE XREF: sub_EC06+12j
 sub_EC34:					  ; CODE XREF: ROM:0000EAD0p
 						  ; DATA XREF: sub_39Et
 		bsr.w	sub_EA4A
-		bsr.s	sub_EC06
+		bsr.s	InitEquipGreyedOutPal
 		lea	(g_Buffer).l,a1
-		lea	$00000084(a1),a0
+		lea	g_Buffer+$84-g_Buffer(a1),a0
 		move.w	#$A000,d0
 		ori.w	#$0000,d0
 		move.w	#$0B63,d7

@@ -99,7 +99,7 @@ loc_17C0:					  ; CODE XREF: ProcessControlScript+24j
 loc_17C6:					  ; CODE XREF: ProcessControlScript+6j
 		tst.b	(byte_FF1145).l
 		bne.s	loc_17E6
-		bsr.w	WaitForZ80
+		bsr.w	UpdateControllerInputs
 		btst	#$02,(g_PlayerStatus).l
 		beq.s	locret_17E4
 		andi.b	#CTRLBF_START,(g_Controller1State).l
@@ -1019,6 +1019,9 @@ loc_1FE4:					  ; CODE XREF: HandleDirectionalControl+6AAj
 		bne.s	loc_2006
 		clr.w	AnimationFrame(a5)
 		move.b	#$FF,Unk0D(a5)
+
+loc_2000:					  ; DATA XREF: sub_E56A+128o
+						  ; LoadGameSelectMenu+2Eo ...
 		andi.w	#$60E0,FallRate(a5)
 
 loc_2006:					  ; CODE XREF: HandleDirectionalControl+6BEj

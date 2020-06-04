@@ -32,7 +32,7 @@ loc_D2AE:					  ; CODE XREF: sub_D25C+4Aj
 		movem.w	(sp)+,d7
 		dbf	d7,loc_D28A
 		lea	(g_Pal1Base).l,a0
-		lea	($00FF2C00).l,a1
+		lea	(g_Buffer).l,a1
 		lea	g_Buffer+$1C-g_Buffer(a1),a2
 		moveq	#$0000001F,d7
 
@@ -130,7 +130,7 @@ loc_D38A:					  ; CODE XREF: sub_EAD4-8j
 ; ---------------------------------------------------------------------------
 
 loc_D39A:					  ; CODE XREF: sub_EAD4-1740j
-		btst	#$04,d1
+		btst	#CTRL_B,d1
 		beq.s	loc_D3A4
 		moveq	#$00000001,d1
 		bra.s	locret_D3A6

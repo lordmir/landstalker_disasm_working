@@ -156,7 +156,7 @@ loc_EE0C:					  ; CODE XREF: ROM:0000EDF8j
 
 loc_EE12:					  ; CODE XREF: sub_EAD4+5Ej
 		lea	(g_Buffer).l,a1
-		lea	$00000018(a1),a0
+		lea	g_Buffer+$18-g_Buffer(a1),a0
 		lea	$0000001A(a1),a1
 		lea	EquipInventoryLayout(pc),a2
 		move.w	(a0),d0
@@ -174,7 +174,7 @@ loc_EE44:					  ; CODE XREF: sub_EAD4+360j
 		move.w	(a1),d1
 		add.w	d1,d1
 		lea	(g_Buffer).l,a2
-		lea	$00000010(a2,d1.w),a2
+		lea	g_Buffer+$10-g_Buffer(a2,d1.w),a2
 		move.w	(a0),(a2)
 		lea	((g_Buffer+$10)).l,a0
 		clr.w	d0
@@ -524,8 +524,8 @@ sub_F13A:					  ; CODE XREF: ROM:0000F092p
 		movem.l	d2-d3/a4-a6,-(sp)
 		jsr	(LoadSpriteGfx).l
 
-loc_F180:					  ; DATA XREF: ROM:00014462o
-						  ; ROM:000154A6o
+loc_F180:					  ; DATA XREF: LoadMagicSwordGfx+3Eo
+						  ; CopyIntroString+18o ...
 		jsr	(EnableDMAQueueProcessing).l
 		movem.l	(sp)+,d2-d3/a4-a6
 		rts

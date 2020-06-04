@@ -27,7 +27,7 @@ loc_7654:					  ; CODE XREF: CheckForMenuOpen+26j
 		bsr.w	FadeOutToDarkness
 		bsr.w	sub_7816
 		bsr.w	sub_D25C
-		bsr.w	sub_7862
+		bsr.w	InitInvDisplay
 		jsr	(j_RefreshAndClearTextbox).l
 		bsr.w	QueueTextboxTilemapDMA
 		bsr.w	FlushDMACopyQueue
@@ -183,7 +183,7 @@ LoadMagicSwordGfx:				  ; CODE XREF: j_LoadMagicSwordGfxj
 loc_77DE:					  ; CODE XREF: LoadMagicSwordGfx+14j
 						  ; LoadMagicSwordGfx+1Ej ...
 		lea	(g_Buffer).l,a1
-		lea	($0000F180).l,a2
+		lea	(loc_F180).l,a2
 		bsr.w	DecompressAndQueueGfxCopy
 		bsr.w	FlushDMACopyQueue
 
@@ -249,12 +249,12 @@ loc_7858:					  ; CODE XREF: sub_7816+46j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_7862:					  ; CODE XREF: CheckForMenuOpen+40p
+InitInvDisplay:					  ; CODE XREF: CheckForMenuOpen+40p
 		lea	((g_Pal3Base+$14)).l,a0
 		lea	((g_Pal0Base+$14)).l,a1
 		moveq	#$00000004,d7
 
-loc_7870:					  ; CODE XREF: sub_7862+10j
+loc_7870:					  ; CODE XREF: InitInvDisplay+10j
 		move.w	(a0)+,(a1)+
 		dbf	d7,loc_7870
 		lea	InvItemPal(pc),a0
@@ -265,6 +265,6 @@ loc_7870:					  ; CODE XREF: sub_7862+10j
 		move.w	#$921C,d0
 		bsr.w	SetVDPReg
 		rts
-; End of function sub_7862
+; End of function InitInvDisplay
 
 ; ---------------------------------------------------------------------------

@@ -3,7 +3,7 @@
 
 
 QueueInventoryWinTilemapDMA:			  ; CODE XREF: ROM:00000452j
-						  ; sub_7862+26p ...
+						  ; InitInvDisplay+26p	...
 		movea.l	(g_DMAOpQueuePtr).l,a6
 		move.l	#$8F029404,(a6)+	  ; Auto-increment 2, DMA Length Hi 0x04
 		move.l	#$93C0968E,(a6)+	  ; DMA	Length Low 0xC0, DMA Source Mid	0x8E

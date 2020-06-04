@@ -81,7 +81,7 @@ loc_39BBA:					  ; CODE XREF: sub_39BAA+Cj
 		move.w	-$0000000A(a6),d0
 		ext.l	d0
 		lea	((g_Pal1Base+2)).l,a0
-		lea	TitlePalette(pc),a1
+		lea	TitlePaletteYellowFade(pc),a1
 		clr.b	d6
 		andi.b	#$07,d0
 		bne.s	loc_39BEC
