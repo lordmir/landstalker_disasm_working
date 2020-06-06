@@ -21,68 +21,72 @@ DecompTilemap:					  ; CODE XREF: LoadLithographTilemap+3Ap
 		move.b	(a0)+,(a1)+
 		move.l	a1,-(sp)
 
-loc_39774:					  ; CODE XREF: DecompTilemap:loc_3978Cj
+_GetTileAttrs:					  ; CODE XREF: DecompTilemap:_Continuej
 		move.b	(a0)+,d0
 		btst	#$02,d0
-		beq.s	loc_39782
+		beq.s	_Get16BitRunLength
 		bsr.w	DecompTM_8bitRLEFill
-		bra.s	loc_3978C
+		bra.s	_Continue
 ; ---------------------------------------------------------------------------
 
-loc_39782:					  ; CODE XREF: DecompTilemap+10j
+_Get16BitRunLength:				  ; CODE XREF: DecompTilemap+10j
 		bsr.w	DecompTM_16bitRLEFill
 		tst.w	d7
-		beq.w	loc_3978E
+		beq.w	_GetTileValues
 
-loc_3978C:					  ; CODE XREF: DecompTilemap+16j
-		bra.s	loc_39774
+_Continue:					  ; CODE XREF: DecompTilemap+16j
+		bra.s	_GetTileAttrs
 ; ---------------------------------------------------------------------------
 
-loc_3978E:					  ; CODE XREF: DecompTilemap+1Ej
+_GetTileValues:					  ; CODE XREF: DecompTilemap+1Ej
 		movea.l	(sp)+,a1
 		move.b	(a0)+,d0
 		bsr.w	DecompTM_RLEFillOR
-		move.w	d0,d4
-		move.w	d0,d5
+		move.w	d0,d4			  ; d4 - incremental value
+		move.w	d0,d5			  ; d5 - last value
 
-loc_3979A:					  ; CODE XREF: DecompTilemap:loc_397D0j
+_Loop:						  ; CODE XREF: DecompTilemap:_Continue2j
 		move.b	(a0)+,d0
-		bmi.s	loc_397BA
+		bmi.s	_Bit7Set		  ; Bit	7 set
 		btst	#$06,d0
-		bne.s	loc_397B2
+		bne.s	_Bit7Clear6Set		  ; Bit	6 set
+
+_Bit7Clear6Clear:
 		bsr.w	DecompTM_CopySingleWord
 		cmpi.w	#$07FF,d0
-		beq.w	loc_397D2
-		bra.s	loc_397B8
+		beq.w	_Return
+		bra.s	_Continue1
 ; ---------------------------------------------------------------------------
 
-loc_397B2:					  ; CODE XREF: DecompTilemap+38j
+_Bit7Clear6Set:					  ; CODE XREF: DecompTilemap+38j
 		bsr.w	DecompTM_RLEFillOR
-		move.w	d0,d5
+		move.w	d0,d5			  ; d5 - last value
 
-loc_397B8:					  ; CODE XREF: DecompTilemap+46j
-		bra.s	loc_397D0
+_Continue1:					  ; CODE XREF: DecompTilemap+46j
+		bra.s	_Continue2
 ; ---------------------------------------------------------------------------
 
-loc_397BA:					  ; CODE XREF: DecompTilemap+32j
+_Bit7Set:					  ; CODE XREF: DecompTilemap+32j
 		btst	#$06,d0
-		bne.s	loc_397C8
+		bne.s	_Bit7Set6Set		  ; Bit	6 set
+
+_Bit7Set6Clear:					  ; d5 - last value
 		move.w	d5,d1
 		bsr.w	DecompTM_FillWithLast
-		bra.s	loc_397D0
+		bra.s	_Continue2
 ; ---------------------------------------------------------------------------
 
-loc_397C8:					  ; CODE XREF: DecompTilemap+54j
-		move.w	d4,d1
+_Bit7Set6Set:					  ; CODE XREF: DecompTilemap+54j
+		move.w	d4,d1			  ; d4 - incremental fill
 		bsr.w	DecompTM_IncrementalFill
 		move.w	d0,d4
 
-loc_397D0:					  ; CODE XREF: DecompTilemap:loc_397B8j
+_Continue2:					  ; CODE XREF: DecompTilemap:_Continue1j
 						  ; DecompTilemap+5Cj
-		bra.s	loc_3979A
+		bra.s	_Loop
 ; ---------------------------------------------------------------------------
 
-loc_397D2:					  ; CODE XREF: DecompTilemap+42j
+_Return:					  ; CODE XREF: DecompTilemap+42j
 		movem.l	(sp)+,d0-a6
 		rts
 ; End of function DecompTilemap
@@ -101,7 +105,7 @@ DecompTM_8bitRLEFill:				  ; CODE XREF: DecompTilemap+12p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-DecompTM_16bitRLEFill:				  ; CODE XREF: DecompTilemap:loc_39782p
+DecompTM_16bitRLEFill:				  ; CODE XREF: DecompTilemap:_Get16BitRunLengthp
 		move.b	d0,d7
 		lsl.w	#$08,d7
 		move.b	(a0)+,d7
@@ -114,10 +118,10 @@ loc_397F0:					  ; CODE XREF: DecompTM_8bitRLEFill+6j
 						  ; DecompTM_16bitRLEFill+Aj
 		andi.b	#$F8,d0
 
-loc_397F4:					  ; CODE XREF: DecompTM_16bitRLEFill+16j
+_Loop:						  ; CODE XREF: DecompTM_16bitRLEFill+16j
 		move.b	d0,(a1)+
 		clr.b	(a1)+
-		dbf	d7,loc_397F4
+		dbf	d7,_Loop
 		rts
 ; End of function DecompTM_16bitRLEFill
 
@@ -125,7 +129,7 @@ loc_397F4:					  ; CODE XREF: DecompTM_16bitRLEFill+16j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-DecompTM_CopySingleWord:			  ; CODE XREF: DecompTilemap+3Ap
+DecompTM_CopySingleWord:			  ; CODE XREF: DecompTilemap:_Bit7Clear6Clearp
 		lsl.w	#$08,d0
 		move.b	(a0)+,d0
 		andi.w	#$07FF,d0
@@ -138,7 +142,7 @@ DecompTM_CopySingleWord:			  ; CODE XREF: DecompTilemap+3Ap
 
 
 DecompTM_RLEFillOR:				  ; CODE XREF: DecompTilemap+28p
-						  ; DecompTilemap:loc_397B2p
+						  ; DecompTilemap:_Bit7Clear6Setp
 		move.b	d0,d7
 		lsr.b	#$03,d7
 		andi.w	#$0007,d7
@@ -159,9 +163,9 @@ DecompTM_FillWithLast:				  ; CODE XREF: DecompTilemap+58p
 loc_39820:					  ; CODE XREF: DecompTM_RLEFillOR+Cj
 		andi.w	#$07FF,d0
 
-loc_39824:					  ; CODE XREF: DecompTM_FillWithLast+Ej
+_Loop:						  ; CODE XREF: DecompTM_FillWithLast+Ej
 		or.w	d0,(a1)+
-		dbf	d7,loc_39824
+		dbf	d7,_Loop
 		rts
 ; End of function DecompTM_FillWithLast
 
@@ -175,10 +179,10 @@ DecompTM_IncrementalFill:			  ; CODE XREF: DecompTilemap+60p
 		move.w	d1,d0
 		andi.w	#$07FF,d0
 
-loc_39838:					  ; CODE XREF: DecompTM_IncrementalFill+10j
+_Loop:						  ; CODE XREF: DecompTM_IncrementalFill+10j
 		addq.w	#$01,d0
 		or.w	d0,(a1)+
-		dbf	d7,loc_39838
+		dbf	d7,_Loop
 		rts
 ; End of function DecompTM_IncrementalFill
 

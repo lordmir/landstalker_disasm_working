@@ -228,7 +228,7 @@ GameStartPalette:           incbin  "assets_packed\graphics\static\loadgame\load
 InitialPlayerPal:           incbin  "assets_packed\graphics\static\loadgame\nigel.pal"
 LoadGameScreenCharsCmp:     incbin  "assets_packed\graphics\static\loadgame\chars.lz77"
 LoadGameScreenGfxCmp:       incbin  "assets_packed\graphics\static\loadgame\tiles.lz77"
-LoadGameScreenTilemapCmp:   incbin  "assets_packed\graphics\static\loadgame\tilemap.cmap"
+LoadGameScreenTilemapCmp:   incbin  "assets_packed\graphics\static\loadgame\tilemap.rle"
                             Align   $2
                             include "code\title\gameloadscreen3.asm"
                             PadTo   $010300
@@ -553,6 +553,7 @@ EndCreditFont:              incbin  "assets_packed\graphics\fonts\credits.lz77"
 EndCreditLogos:             incbin  "assets_packed\graphics\static\ending\logos.lz77"
 EndCreditLogoMap:           incbin  "assets_packed\graphics\static\ending\logos.rle"
                             PadTo   $0A0A00
+                            Align   $2
                             include "code\pointertables\maps\mappointers.asm"
                             Align   $2
                             include "code\system\regioncheckjump.asm"

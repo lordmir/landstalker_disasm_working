@@ -803,7 +803,7 @@
  0000:0000420E       loc_420E
  0000:00004212       locret_4212
  0000:00004214       sub_4214
- 0000:00004230       sub_4230
+ 0000:00004230       LoadSpriteFrame
  0000:00004266       sub_4266
  0000:00004268       loc_4268
  0000:0000427A       locret_427A
@@ -854,7 +854,7 @@
  0000:00004612       loc_4612
  0000:0000464A       loc_464A
  0000:00004674       loc_4674
- 0000:0000467A       MultTable
+ 0000:0000467A       VDPSpriteTileCount
  0000:0000468A       LoadSpriteGfx
  0000:000046C8       loc_46C8
  0000:000046DA       sub_46DA
@@ -4869,28 +4869,14 @@
  0000:00039752       LithographTilemap
  0000:00039762       DisplayTitle
  0000:0003976A       DecompTilemap
- 0000:00039774       loc_39774
- 0000:00039782       loc_39782
- 0000:0003978C       loc_3978C
- 0000:0003978E       loc_3978E
- 0000:0003979A       loc_3979A
- 0000:000397B2       loc_397B2
- 0000:000397B8       loc_397B8
- 0000:000397BA       loc_397BA
- 0000:000397C8       loc_397C8
- 0000:000397D0       loc_397D0
- 0000:000397D2       loc_397D2
  0000:000397D8       DecompTM_8bitRLEFill
  0000:000397E2       DecompTM_16bitRLEFill
  0000:000397F0       loc_397F0
- 0000:000397F4       loc_397F4
  0000:000397FE       DecompTM_CopySingleWord
  0000:0003980A       DecompTM_RLEFillOR
  0000:00039818       DecompTM_FillWithLast
  0000:00039820       loc_39820
- 0000:00039824       loc_39824
  0000:0003982C       DecompTM_IncrementalFill
- 0000:00039838       loc_39838
  0000:00039920       loc_39920
  0000:00039948       loc_39948
  0000:0003997C       loc_3997C

@@ -271,7 +271,7 @@ loc_41F8:					  ; CODE XREF: sub_41F6:loc_420Ej
 		adda.w	d0,a1
 		btst	#$00,Flags1(a1)
 		bne.s	loc_420E
-		bsr.s	sub_4230
+		bsr.s	LoadSpriteFrame
 
 loc_420E:					  ; CODE XREF: sub_41F6+14j
 		dbf	d7,loc_41F8
@@ -299,7 +299,7 @@ sub_4214:					  ; CODE XREF: sub_41F6p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_4230:					  ; CODE XREF: sub_41F6+16p
+LoadSpriteFrame:				  ; CODE XREF: sub_41F6+16p
 						  ; sub_4266+Ep
 		movea.l	(a4),a0
 		moveq	#$00000000,d0
@@ -317,7 +317,7 @@ sub_4230:					  ; CODE XREF: sub_41F6+16p
 		jsr	(JumpInstr2).l
 		movem.l	(sp)+,d7/a1/a3
 		rts
-; End of function sub_4230
+; End of function LoadSpriteFrame
 
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -331,7 +331,7 @@ loc_4268:					  ; CODE XREF: sub_4266+10j
 		bmi.s	locret_427A
 		lea	(Player_X).l,a1
 		adda.w	d0,a1
-		bsr.s	sub_4230
+		bsr.s	LoadSpriteFrame
 		dbf	d7,loc_4268
 
 locret_427A:					  ; CODE XREF: sub_4266+4j
@@ -802,7 +802,7 @@ loc_464A:					  ; CODE XREF: LoadObjectVDPSprites+32j
 		andi.w	#$8000,$00000002(a3)
 		or.w	d0,$00000002(a3)
 		or.b	d6,$00000002(a3)
-		move.b	MultTable(pc,d5.w),d5	  ; Sprite Width/Height	to num tiles
+		move.b	VDPSpriteTileCount(pc,d5.w),d5 ; Sprite	Width/Height to	num tiles
 		ext.w	d5
 		add.w	d5,d0
 		move.w	d3,$00000004(a3)
@@ -819,7 +819,7 @@ loc_4674:					  ; CODE XREF: LoadObjectVDPSprites+60j
 ; End of function LoadObjectVDPSprites
 
 ; ---------------------------------------------------------------------------
-MultTable:	dc.b $01, $02, $03, $04
+VDPSpriteTileCount:dc.b	$01, $02, $03, $04
 		dc.b $02, $04, $06, $08
 		dc.b $03, $06, $09, $0C
 		dc.b $04, $08, $0C, $10
