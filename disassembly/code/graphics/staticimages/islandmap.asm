@@ -100,7 +100,7 @@ loc_3E682:					  ; CODE XREF: DisplayIslandMap+30j
 loc_3E7DC:					  ; CODE XREF: DisplayIslandMap+18Aj
 		move.l	(a0)+,(a1)+
 		dbf	d7,loc_3E7DC
-		jsr	(sub_48E).l
+		jsr	(j_LoadInitialPlayerPalette).l
 		jsr	(j_CopyBasePalleteToActivePalette).l
 		lea	(g_Pal0Active).l,a0
 		moveq	#$0000000F,d7

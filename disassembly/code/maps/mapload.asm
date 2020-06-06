@@ -290,7 +290,7 @@ locret_2994:					  ; CODE XREF: sub_295E+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-LoadRoom:					  ; CODE XREF: j_BlankAllButHUDj
+LoadRoom:					  ; CODE XREF: j_LoadRoomj
 						  ; sub_7766+28p
 		move.w	#$8A18,(g_VDPReg10_HIntLine).l
 		move.w	#$8A18,(VDP_CTRL_REG).l	  ; Enable HINT	on line	24

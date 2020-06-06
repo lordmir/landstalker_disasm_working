@@ -142,7 +142,7 @@ loc_C4EA:					  ; CODE XREF: CopyIntroString+10j
 
 loc_C4F4:					  ; CODE XREF: CopyIntroString+Cj
 		lea	(g_Buffer).l,a0
-		lea	(loc_F180).l,a1
+		lea	($0000F180).l,a1
 		move.w	#$0400,d0
 		jmp	(QueueDMAOp).l		  ; d0 - DMA Length
 ; End of function CopyIntroString		  ; a0 - DMA Source

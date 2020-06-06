@@ -2832,8 +2832,8 @@ CSA_00E2:					  ; CODE XREF: ROM:00012484j
 CSA_00E3:					  ; CODE XREF: ROM:00012488j
 		movem.l	a5,-(sp)
 		move.b	#$01,d0
-		lea	(loc_F180).l,a2
-		jsr	(sub_488).l
+		lea	($0000F180).l,a2
+		jsr	(j_LoadMagicSwordEffect).l
 		move.l	#$C03A0000,(VDP_CTRL_REG).l
 		move.w	#$008C,d1
 		move.w	d1,(VDP_DATA_REG).l
@@ -2848,7 +2848,7 @@ CSA_00E3:					  ; CODE XREF: ROM:00012488j
 		move.w	#$002C,(VDP_DATA_REG).l
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jsr	(sub_488).l
+		jsr	(j_LoadMagicSwordEffect).l
 		movem.l	(sp)+,a5
 		bset	#$00,$00000048(a5)
 		bset	#$01,$0000000C(a5)
@@ -4165,9 +4165,9 @@ CSA_0153:					  ; CODE XREF: ROM:00012648j
 		jsr	(sub_3F8).l
 		movem.l	(sp)+,a5
 		jsr	(j_FlushDMACopyQueue).l
-		lea	(loc_F180).l,a2
+		lea	($0000F180).l,a2
 		move.b	#$01,d0
-		jsr	(sub_488).l
+		jsr	(j_LoadMagicSwordEffect).l
 		move.l	#$C05A0000,(VDP_CTRL_REG).l
 		move.w	#$008C,d1
 		move.w	d1,(VDP_DATA_REG).l

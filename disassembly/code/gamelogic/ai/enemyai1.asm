@@ -11992,7 +11992,7 @@ loc_1AC04E:					  ; CODE XREF: ROM:001ABF54j
 		bne.s	loc_1AC0AE
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AC0AE:					  ; CODE XREF: ROM:001AC09Cj
@@ -12286,7 +12286,7 @@ loc_1AC368:					  ; CODE XREF: ROM:001AC260j
 		move.w	#$0100,$0000002C(a5)
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AC3A2:					  ; CODE XREF: ROM:001AC38Aj

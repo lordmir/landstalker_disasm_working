@@ -1718,11 +1718,13 @@ static Bytes_0(void) {
 	MakeCode	(x=0X488);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeName	(0X488,	"j_LoadMagicSwordEffect");
 	MakeCode	(x=0X48E);
+	MakeName	(0X48E,	"j_LoadInitialPlayerPalette");
 	MakeCode	(x=0X494);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
-	MakeName	(0X494,	"j_BlankAllButHUD");
+	MakeName	(0X494,	"j_LoadRoom");
 	MakeCode	(x=0X49A);
 	MakeName	(0X49A,	"j_SetLifestockSoldFlag");
 	MakeCode	(x=0X4A0);
@@ -4613,10 +4615,6 @@ static Bytes_0(void) {
 	OpEnumEx		(x,	0,	GetEnum("SpriteStructOffsets"),0);
 	MakeCode	(x=0X754E);
 	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
-	MakeCode	(x=0X7554);
-	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
-	MakeCode	(x=0X755C);
-	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
 }
 
 //------------------------------------------------------------------------
@@ -4626,6 +4624,10 @@ static Bytes_1(void) {
         auto x;
 #define id x
 
+	MakeCode	(x=0X7554);
+	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
+	MakeCode	(x=0X755C);
+	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
 	MakeCode	(x=0X7562);
 	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
 	MakeCode	(x=0X756A);
@@ -4737,11 +4739,10 @@ static Bytes_1(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0X77E4);
-	OpOff		(x,	0,	0);
-	OpOff		(x,	128,	0);
 	MakeCode	(x=0X77F4);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeName	(0X77F4,	"LoadMagicSwordEffect");
 	MakeCode	(x=0X77F8);
 	OpEnumEx		(x,	0,	GetEnum("Items"),0);
 	MakeCode	(x=0X77FE);
@@ -6033,8 +6034,6 @@ static Bytes_1(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0XC4FA);
-	OpOff		(x,	0,	0);
-	OpOff		(x,	128,	0);
 	MakeCode	(x=0XC504);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -9160,9 +9159,6 @@ static Bytes_1(void) {
 	MakeCode	(0X12A22);
 	MakeName	(0X12A22,	"CSA_001F");
 	MakeComm	(0X12A26,	"Cutscene 0x01D: 0x025468");
-	MakeComm	(0X12A48,	"Cutscene 0x01E: 0x02546A");
-	MakeCode	(0X12A48);
-	MakeName	(0X12A48,	"CSA_0020");
 }
 
 //------------------------------------------------------------------------
@@ -9172,6 +9168,9 @@ static Bytes_2(void) {
         auto x;
 #define id x
 
+	MakeComm	(0X12A48,	"Cutscene 0x01E: 0x02546A");
+	MakeCode	(0X12A48);
+	MakeName	(0X12A48,	"CSA_0020");
 	MakeComm	(0X12A50,	"Cutscene 0x020: 0x02546E");
 	MakeCode	(0X12A50);
 	MakeName	(0X12A50,	"CSA_0021");
@@ -10504,8 +10503,6 @@ static Bytes_2(void) {
 	MakeCode	(0X1445A);
 	MakeName	(0X1445A,	"CSA_00E3");
 	MakeCode	(x=0X14462);
-	OpOff		(x,	0,	0);
-	OpOff		(x,	128,	0);
 	MakeCode	(x=0X14468);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -11253,8 +11250,6 @@ static Bytes_2(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0X154A6);
-	OpOff		(x,	0,	0);
-	OpOff		(x,	128,	0);
 	MakeCode	(x=0X154B0);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);

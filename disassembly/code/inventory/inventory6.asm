@@ -523,9 +523,6 @@ sub_F13A:					  ; CODE XREF: ROM:0000F092p
 		move.w	d7,$00000018(a3)
 		movem.l	d2-d3/a4-a6,-(sp)
 		jsr	(LoadSpriteGfx).l
-
-loc_F180:					  ; DATA XREF: LoadMagicSwordGfx+3Eo
-						  ; CopyIntroString+18o ...
 		jsr	(EnableDMAQueueProcessing).l
 		movem.l	(sp)+,d2-d3/a4-a6
 		rts

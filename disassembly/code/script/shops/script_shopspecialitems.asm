@@ -229,7 +229,7 @@ loc_250CA:					  ; CODE XREF: ROM:000250C2j
 		movem.l	d0-a6,-(sp)
 		moveq	#$00000003,d0
 		jsr	(j_DisplayIslandMap).l
-		jsr	(j_BlankAllButHUD).l
+		jsr	(j_LoadRoom).l
 		jsr	(sub_3E0).l
 		movem.l	(sp)+,d0-a6
 		bsr.w	RestoreBGM_1

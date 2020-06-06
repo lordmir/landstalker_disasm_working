@@ -177,9 +177,9 @@
  0000:00000476       j_FadeFromWhite
  0000:0000047C       j_FadeToWhite
  0000:00000482       j_EkeEkeHealthRecover
- 0000:00000488       sub_488
- 0000:0000048E       sub_48E
- 0000:00000494       j_BlankAllButHUD
+ 0000:00000488       j_LoadMagicSwordEffect
+ 0000:0000048E       j_LoadInitialPlayerPalette
+ 0000:00000494       j_LoadRoom
  0000:0000049A       j_SetLifestockSoldFlag
  0000:000004A0       j_CheckIfLifestockSold
  0000:000004A6       sub_4A6
@@ -1181,7 +1181,7 @@
  0000:000077A6       LoadMagicSwordGfx
  0000:000077DE       loc_77DE
  0000:000077F2       locret_77F2
- 0000:000077F4       sub_77F4
+ 0000:000077F4       LoadMagicSwordEffect
  0000:0000780C       loc_780C
  0000:00007816       sub_7816
  0000:00007834       loc_7834
@@ -1914,7 +1914,6 @@
  0000:0000F11E       loc_F11E
  0000:0000F122       loc_F122
  0000:0000F13A       sub_F13A
- 0000:0000F180       loc_F180
  0000:0000F18C       sub_F18C
  0000:0000F1A2       loc_F1A2
  0000:0000F1C8       loc_F1C8

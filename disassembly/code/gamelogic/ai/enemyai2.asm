@@ -319,7 +319,7 @@ loc_1AC752:					  ; CODE XREF: ROM:001AC64Aj
 		move.w	#$0100,$0000002C(a5)
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AC78C:					  ; CODE XREF: ROM:001AC774j
@@ -606,7 +606,7 @@ loc_1ACA26:					  ; CODE XREF: ROM:001AC91Ej
 		move.w	#$0100,$0000002C(a5)
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1ACA60:					  ; CODE XREF: ROM:001ACA48j
@@ -1762,7 +1762,7 @@ loc_1AD4E0:					  ; CODE XREF: ROM:001AD4CAj
 		move.w	#$0300,$0000002C(a5)
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AD502:					  ; CODE XREF: ROM:001AD4EAj
@@ -2044,7 +2044,7 @@ loc_1AD766:					  ; CODE XREF: ROM:001AD750j
 		move.w	#$0300,$0000002C(a5)
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AD788:					  ; CODE XREF: ROM:001AD770j
@@ -2326,7 +2326,7 @@ loc_1AD9EC:					  ; CODE XREF: ROM:001AD9D6j
 		move.w	#$0300,$0000002C(a5)
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1ADA0E:					  ; CODE XREF: ROM:001AD9F6j
@@ -3678,7 +3678,7 @@ loc_1AE6A4:					  ; CODE XREF: ROM:001AE57Aj
 		bne.s	loc_1AE6C6
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AE6C6:					  ; CODE XREF: ROM:001AE6B4j
@@ -3721,7 +3721,7 @@ loc_1AE714:					  ; CODE XREF: ROM:001AE57Ej
 		bne.s	loc_1AE736
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AE736:					  ; CODE XREF: ROM:001AE724j
@@ -4934,7 +4934,7 @@ loc_1AF29E:					  ; CODE XREF: sub_1A4414+ADF8j
 		bne.s	loc_1AF2F4
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jsr	(sub_488).l
+		jsr	(j_LoadMagicSwordEffect).l
 		move.b	#$01,d0
 		bsr.w	LoadProjectilePalette
 		bsr.w	LoadPal3Low
@@ -4998,7 +4998,7 @@ loc_1AF372:					  ; CODE XREF: sub_1A4414+AE00j
 		bne.s	loc_1AF398
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jsr	(sub_488).l
+		jsr	(j_LoadMagicSwordEffect).l
 		bra.w	loc_1AF3E4
 ; ---------------------------------------------------------------------------
 
@@ -5151,7 +5151,7 @@ loc_1AF4FE:					  ; CODE XREF: sub_1A4414+AE1Cj
 		bne.s	loc_1AF520
 		lea	($00009880).l,a2
 		move.b	#$01,d0
-		jmp	(sub_488).l
+		jmp	(j_LoadMagicSwordEffect).l
 ; ---------------------------------------------------------------------------
 
 loc_1AF520:					  ; CODE XREF: sub_1A4414+B0FAj

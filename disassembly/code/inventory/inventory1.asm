@@ -183,7 +183,7 @@ LoadMagicSwordGfx:				  ; CODE XREF: j_LoadMagicSwordGfxj
 loc_77DE:					  ; CODE XREF: LoadMagicSwordGfx+14j
 						  ; LoadMagicSwordGfx+1Ej ...
 		lea	(g_Buffer).l,a1
-		lea	(loc_F180).l,a2
+		lea	($0000F180).l,a2
 		bsr.w	DecompressAndQueueGfxCopy
 		bsr.w	FlushDMACopyQueue
 
@@ -195,7 +195,7 @@ locret_77F2:					  ; CODE XREF: LoadMagicSwordGfx+Aj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_77F4:					  ; CODE XREF: sub_488j
+LoadMagicSwordEffect:				  ; CODE XREF: j_LoadMagicSwordEffectj
 		lea	MagicSwordGfx(pc),a0
 		cmpi.b	#ITM_MAGICSWORD,d0
 		beq.s	loc_780C
@@ -204,11 +204,11 @@ sub_77F4:					  ; CODE XREF: sub_488j
 		beq.s	loc_780C
 		lea	IceSwordGfx(pc),a0
 
-loc_780C:					  ; CODE XREF: sub_77F4+8j
-						  ; sub_77F4+12j
+loc_780C:					  ; CODE XREF: LoadMagicSwordEffect+8j
+						  ; LoadMagicSwordEffect+12j
 		lea	(g_Buffer).l,a1
 		bra.w	DecompressAndQueueGfxCopy
-; End of function sub_77F4
+; End of function LoadMagicSwordEffect
 
 
 ; =============== S U B	R O U T	I N E =======================================

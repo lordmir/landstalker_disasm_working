@@ -872,28 +872,28 @@ j_EkeEkeHealthRecover:				  ; CODE XREF: sub_10ACE+198p
 
 ; Attributes: thunk
 
-sub_488:					  ; CODE XREF: ROM:00014468p
+j_LoadMagicSwordEffect:				  ; CODE XREF: ROM:00014468p
 						  ; ROM:000144C8p ...
-		jmp	(sub_77F4).l
-; End of function sub_488
+		jmp	(LoadMagicSwordEffect).l
+; End of function j_LoadMagicSwordEffect
 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 ; Attributes: thunk
 
-sub_48E:					  ; CODE XREF: DisplayIslandMap+18Ep
+j_LoadInitialPlayerPalette:			  ; CODE XREF: DisplayIslandMap+18Ep
 		jmp	(LoadInitialPlayerPalette).l
-; End of function sub_48E
+; End of function j_LoadInitialPlayerPalette
 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 ; Attributes: thunk
 
-j_BlankAllButHUD:				  ; CODE XREF: ROM:000250DEp
+j_LoadRoom:					  ; CODE XREF: ROM:000250DEp
 		jmp	(LoadRoom).l
-; End of function j_BlankAllButHUD
+; End of function j_LoadRoom
 
 
 ; =============== S U B	R O U T	I N E =======================================

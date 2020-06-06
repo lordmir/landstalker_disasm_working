@@ -541,7 +541,7 @@ sub_FAF0:					  ; CODE XREF: ROM:0000EFF2p
 
 
 LoadInitialPlayerPalette:			  ; CODE XREF: sub_FAF0+16p
-						  ; DATA XREF: sub_48Et
+						  ; DATA XREF: j_LoadInitialPlayerPalettet
 		lea	InitialPlayerPal(pc),a0
 		lea	(g_Pal2Base).l,a1
 		moveq	#$0000000F,d7
