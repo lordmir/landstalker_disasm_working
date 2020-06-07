@@ -1019,9 +1019,6 @@ loc_1FE4:					  ; CODE XREF: HandleDirectionalControl+6AAj
 		bne.s	loc_2006
 		clr.w	AnimationFrame(a5)
 		move.b	#$FF,Unk0D(a5)
-
-loc_2000:					  ; DATA XREF: sub_E56A+128o
-						  ; LoadGameSelectMenu+2Eo ...
 		andi.w	#$60E0,FallRate(a5)
 
 loc_2006:					  ; CODE XREF: HandleDirectionalControl+6BEj

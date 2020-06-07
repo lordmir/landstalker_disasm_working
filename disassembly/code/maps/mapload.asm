@@ -666,7 +666,7 @@ GetTileset:					  ; CODE XREF: ROM:00002BA8p
 		movea.l	(a0,d3.w),a0
 		movem.w	d2-d4,-(sp)
 		lea	(g_BackgroundBlocks).l,a1
-		lea	(ResetSP).w,a2
+		lea	(0000000000).w,a2
 		movem.l	a2,-(sp)
 		movea.l	a1,a2
 		bsr.w	DecompressLZ77Gfx

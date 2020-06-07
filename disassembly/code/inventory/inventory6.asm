@@ -291,7 +291,7 @@ loc_EF84:					  ; CODE XREF: ROM:0000EF7Cj
 		bne.w	loc_EEF6
 		move.w	-$00000004(a6),d0
 		move.w	-$00000006(a6),d1
-		jsr	(sub_15E6).l
+		jsr	(CopySaveGame).l
 		move.w	-$00000006(a6),d0
 		bsr.w	sub_F72E
 		bra.w	loc_EEF6

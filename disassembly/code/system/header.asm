@@ -87,10 +87,10 @@ Reserved11:	dc.l HandleGenericError
 Reserved12:	dc.l HandleGenericError
 Reserved13:	dc.l HandleGenericError
 Reserved14:	dc.l HandleGenericError
-Reserved15:	dc.l HandleGenericError		  ; DATA XREF: sub_3456+16r
+Reserved15:	dc.l HandleGenericError
 ConsoleName:	dc.b 'SEGA GENESIS    '
 Copyright:	dc.b '(C)SEGA 1993.JUL'
-DomesticName:	dc.b 'Landstalker                                ' ; DATA XREF: sub_E56A+A4r
+DomesticName:	dc.b 'Landstalker                                '
 		dc.b '     '
 OverseasName:	dc.b 'Landstalker                                '
 		dc.b '     '
@@ -98,7 +98,7 @@ SerialNumber:	dc.b 'GM MK-1353 -00'
 Checksum:	dc.w $F37C
 IOSupport:	dc.b 'J               '
 RomStart:	dc.l $00000000
-RomEnd:		dc.l $001FFFFF
+RomEnd:		ROM_End
 RamStart:	dc.l RAM_Start
 RamEnd:		dc.l ExceptAddr+3
 SRamFormat:	dc.l $5241F820

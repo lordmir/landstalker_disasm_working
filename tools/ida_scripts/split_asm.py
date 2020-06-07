@@ -50,6 +50,10 @@ def ensure_dir(file_path):
     directory = os.path.dirname(file_path)
     if not os.path.exists(directory):
         os.makedirs(directory)
+        
+def copy_file(src, dst):
+    ensure_dir(dst)
+    shutil.copyfile(src, dst)
 
 if os.path.exists(".\\disassembly"):
     response = -1
@@ -84,24 +88,19 @@ with open("landstalker.inc", 'r') as incfile:
 ensure_dir(".\\disassembly\\code\\include\\landstalker.inc")
 with open(".\\disassembly\\code\\include\\landstalker.inc", 'w') as iw:
     strip_struct_defs(inctext, iw)
-ensure_dir(".\\disassembly\\code\\include\\macros.inc")
-shutil.copyfile(".\\include\\macros.inc", ".\\disassembly\\code\\include\\macros.inc")
-ensure_dir(".\\disassembly\\build\\asm68k.exe")
-shutil.copyfile(".\\tools\\build\\asm68k.exe", ".\\disassembly\\build\\asm68k.exe")
-ensure_dir(".\\disassembly\\build.bat")
-shutil.copyfile(".\\tools\\build\\build.bat", ".\\disassembly\\build.bat")
-ensure_dir(".\\disassembly\\tools\\decode\\lz77.exe")
-shutil.copyfile(".\\tools\\decode\\lz77.exe", ".\\disassembly\\tools\\decode\\lz77.exe")
-ensure_dir(".\\disassembly\\tools\\decode\\pal2tpl.exe")
-shutil.copyfile(".\\tools\\decode\\pal2tpl.exe", ".\\disassembly\\tools\\decode\\pal2tpl.exe")
-ensure_dir(".\\disassembly\\tools\\decode\\map2d.exe")
-shutil.copyfile(".\\tools\\decode\\map2d.exe", ".\\disassembly\\tools\\decode\\map2d.exe")
-ensure_dir(".\\disassembly\\tools\\decode\\map3d.exe")
-shutil.copyfile(".\\tools\\decode\\map3d.exe", ".\\disassembly\\tools\\decode\\map3d.exe")
-ensure_dir(".\\disassembly\\compress.bat")
-shutil.copyfile(".\\tools\\decode\\compress.bat", ".\\disassembly\\compress.bat")
-ensure_dir(".\\disassembly\\expand.bat")
-shutil.copyfile(".\\tools\\decode\\expand.bat", ".\\disassembly\\expand.bat")
+
+copy_file(".\\include\\macros.inc", ".\\disassembly\\code\\include\\macros.inc")
+copy_file(".\\tools\\build\\asm68k.exe", ".\\disassembly\\build\\asm68k.exe")
+copy_file(".\\tools\\build\\build.bat", ".\\disassembly\\build.bat")
+copy_file(".\\tools\\build\\build_expanded.bat", ".\\disassembly\\build_expanded.bat")
+copy_file(".\\tools\\decode\\lz77.exe", ".\\disassembly\\tools\\decode\\lz77.exe")
+copy_file(".\\tools\\decode\\pal2tpl.exe", ".\\disassembly\\tools\\decode\\pal2tpl.exe")
+copy_file(".\\tools\\decode\\map2d.exe", ".\\disassembly\\tools\\decode\\map2d.exe")
+copy_file(".\\tools\\decode\\map3d.exe", ".\\disassembly\\tools\\decode\\map3d.exe")
+copy_file(".\\tools\\decode\\compress.bat", ".\\disassembly\\compress.bat")
+copy_file(".\\tools\\decode\\expand.bat", ".\\disassembly\\expand.bat")
+copy_file(".\\expanded\\landstalker_expanded.asm", ".\\disassembly\\landstalker_expanded.asm")
+copy_file(".\\expanded\\sounddrv_expanded.z80", ".\\disassembly\\sounddrv_expanded.z80")
 
 execfile(".\\tools\\ida_scripts\\rom_sections\\us_release.py")
 sections = get_sections()
@@ -123,7 +122,7 @@ with open(".\\disassembly\\landstalker.asm", 'w') as asmfile:
     asmfile.write(";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n")
     asmfile.write(";;\n")
     asmfile.write(";; To build, run:\n")
-    asmfile.write(";; .\\build\\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+ landstalker.asm,landstalker.bin\n")
+    asmfile.write(";; .\\build\\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+,l_ landstalker.asm,landstalker.bin\n")
     asmfile.write("\n")
     asmfile.write("%-26s  include \"%s\"\n" % ("","code\\include\\landstalker.inc"))
     asmfile.write("%-26s  include \"%s\"\n" % ("","code\\include\\ram.inc"))

@@ -9,6 +9,7 @@ CheckSRAM:					  ; CODE XREF: ROM:0000050Cp
 		lea	(SRAM_MagicWord).l,a0
 		lea	SRAM_ExpectedMagicWord(pc),a1 ;	"KAN&MAKIKO"
 		moveq	#$00000009,d7
+		UnlockSRAM
 
 loc_14FE:					  ; CODE XREF: CheckSRAM+14j
 		move.b	(a1)+,d0
@@ -18,6 +19,7 @@ loc_1500:					  ; DATA XREF: sub_D996+52o
 		bne.s	SetSRAMMagicWord
 		addq.w	#$02,a0
 		dbf	d7,loc_14FE
+		LockSRAM
 		clr.b	d0
 		bsr.s	CheckSaveCSums
 		bsr.s	CheckSaveCSums
@@ -32,7 +34,7 @@ loc_1500:					  ; DATA XREF: sub_D996+52o
 
 CheckSaveCSums:					  ; CODE XREF: CheckSRAM+1Ap
 						  ; CheckSRAM+1Cp ...
-		bsr.s	VerifySaveslotCSum
+		ExpandBsr  VerifySaveslotCSum
 		beq.s	loc_151C
 		bsr.s	EraseSaveslot
 
@@ -48,11 +50,13 @@ SetSRAMMagicWord:				  ; CODE XREF: CheckSRAM+10j
 		lea	(SRAM_MagicWord).l,a0
 		lea	SRAM_ExpectedMagicWord(pc),a1 ;	"KAN&MAKIKO"
 		moveq	#$00000009,d7
+		UnlockSRAM
 
 loc_152C:					  ; CODE XREF: CheckSRAM+3Ej
 		move.b	(a1)+,(a0)
 		addq.w	#$02,a0
 		dbf	d7,loc_152C
+		LockSRAM
 		clr.b	d0
 		bsr.s	EraseSaveslot
 		move.b	#$01,d0
@@ -79,11 +83,13 @@ EraseSaveslot:					  ; CODE XREF: CheckSaveCSums+4p
 						  ; CheckSRAM+44p ...
 		bsr.s	GetSaveSlotAddress
 		move.w	#$03FF,d7
+		UnlockSRAM
 
 loc_1558:					  ; CODE XREF: EraseSaveslot+Aj
 		clr.b	(a0)
 		addq.w	#$02,a0
 		dbf	d7,loc_1558
+		LockSRAM
 		rts
 ; End of function EraseSaveslot
 
@@ -99,12 +105,14 @@ VerifySaveslotCSum:				  ; CODE XREF: CheckSaveCSumsp
 		bsr.s	GetSaveSlotAddress
 		clr.w	d1
 		move.w	#$03FE,d7
+		UnlockSRAM
 
 loc_1574:					  ; CODE XREF: VerifySaveslotCSum+Cj
 		add.b	(a0),d1
 		addq.w	#$02,a0
 		dbf	d7,loc_1574
 		cmp.b	(a0),d1
+		LockSRAM
 		rts
 ; End of function VerifySaveslotCSum
 
@@ -138,11 +146,13 @@ loc_15A2:					  ; CODE XREF: SaveGame+24j
 		cmpa.l	#$00000000,a2
 		beq.s	loc_15B8
 		move.w	(a1)+,d7
+		UnlockSRAM
 
 loc_15AE:					  ; CODE XREF: SaveGame+20j
 		move.b	(a2)+,(a0)
 		addq.w	#$02,a0
 		dbf	d7,loc_15AE
+		LockSRAM
 		bra.s	loc_15A2
 ; ---------------------------------------------------------------------------
 
@@ -168,11 +178,13 @@ loc_15CE:					  ; CODE XREF: LoadSavedGame+20j
 		cmpa.l	#$00000000,a2
 		beq.s	locret_15E4
 		move.w	(a1)+,d7
+		UnlockSRAM
 
 loc_15DA:					  ; CODE XREF: LoadSavedGame+1Cj
 		move.b	(a0),(a2)+
 		addq.w	#$02,a0
 		dbf	d7,loc_15DA
+		LockSRAM
 		bra.s	loc_15CE
 ; ---------------------------------------------------------------------------
 
@@ -184,21 +196,23 @@ locret_15E4:					  ; CODE XREF: LoadSavedGame+14j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_15E6:					  ; CODE XREF: ROM:0000EFA6p
+CopySaveGame:					  ; CODE XREF: ROM:0000EFA6p
 		movem.w	d1,-(sp)
-		bsr.s	GetSaveSlotAddress
+		ExpandBsr  GetSaveSlotAddress
 		movea.l	a0,a1
 		movem.w	(sp)+,d0
-		bsr.s	GetSaveSlotAddress
+		ExpandBsr  GetSaveSlotAddress
 		move.w	#$03FF,d7
+		UnlockSRAM
 
-loc_15F8:					  ; CODE XREF: sub_15E6+18j
+loc_15F8:					  ; CODE XREF: CopySaveGame+18j
 		move.b	(a1),(a0)
 		addq.w	#$02,a0
 		addq.w	#$02,a1
 		dbf	d7,loc_15F8
+		LockSRAM
 		rts
-; End of function sub_15E6
+; End of function CopySaveGame
 
 ; ---------------------------------------------------------------------------
 		lea	SaveGameRamPtrs(pc),a1

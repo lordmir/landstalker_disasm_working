@@ -639,7 +639,7 @@ loc_E5AA:					  ; CODE XREF: sub_E56A+48j
 
 loc_E608:					  ; CODE XREF: sub_E56A+52j
 		move.w	#$0168,var_128(a6)
-		move.w	((DomesticName+$C)).w,var_134(a6) ; "					 "
+		move.w	(0000000300).w,var_134(a6)
 		clr.w	var_132(a6)
 		move.w	#$001C,var_130(a6)
 		bsr.w	sub_E852
@@ -678,7 +678,7 @@ loc_E686:					  ; CODE XREF: sub_E56A+11Ej
 		clr.l	(a0)+
 		dbf	d7,loc_E686
 		lea	(g_Buffer).l,a0
-		lea	(loc_2000).w,a1
+		lea	($00002000).w,a1
 		moveq	#$00000020,d0
 		moveq	#$00000002,d1
 		jsr	(QueueDMAOp).l		  ; d0 - DMA Length

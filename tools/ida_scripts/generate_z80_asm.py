@@ -1,0 +1,1 @@
+idc.GenerateFile(idc.OFILE_ASM, ".\\disassembly\\sounddrv.s", 0x0, 0x1F80, 0 )
