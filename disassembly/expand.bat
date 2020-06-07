@@ -8,6 +8,7 @@ set DST="assets_unpacked\"
 set LZ77="tools\decode\lz77.exe"
 set PAL2TPL="tools\decode\pal2tpl.exe"
 set MAP2D="tools\decode\map2d.exe"
+set MAP3D="tools\decode\map3d.exe"
 goto :MAIN
 
 :GETSIZE
@@ -61,6 +62,21 @@ set OPTS=%OPTS:"=%
 echo f | xcopy /y %TEMP%\extracted.csv %OUT% > nul
 EXIT /B 0
 
+:EXTRACT_MAP3D
+echo ===== EXPANDING %1% =====
+set FAIL=0
+set IN=%PREFIX%%SRC%%1%.cmp
+set IN=%IN:"=%
+set OUT=%PREFIX%%DST%%1%
+set OUT=%OUT:"=%
+set OPTS=%2
+set OPTS=%OPTS:"=%
+%MAP3D% -f -d -b %TEMP%\background.csv -g %TEMP%\foreground.csv -m %TEMP%\heightmap.csv %OPTS% %IN%
+echo f | xcopy /y %TEMP%\background.csv %OUT%\ > nul
+echo f | xcopy /y %TEMP%\foreground.csv %OUT%\ > nul
+echo f | xcopy /y %TEMP%\heightmap.csv %OUT%\ > nul
+EXIT /B 0
+
 :MAIN
 set LZ77_FILES="graphics\static\lithograph\lithograph.lz77","graphics\static\islandmap\background.lz77","graphics\static\islandmap\foreground.lz77","graphics\static\islandmap\dots.lz77","graphics\static\islandmap\friday.lz77","graphics\static\ending\logos.lz77","graphics\static\hud\hud.lz77","graphics\static\loadgame\chars.lz77","graphics\static\loadgame\tiles.lz77","graphics\static\logos\sega.lz77","graphics\static\logos\climax.lz77","graphics\static\titlescreen\title1.lz77","graphics\static\titlescreen\title2.lz77","graphics\static\titlescreen\title3.lz77","graphics\static\statuseffects\confusion1.lz77","graphics\static\statuseffects\confusion2.lz77","graphics\static\statuseffects\confusion3.lz77","graphics\static\statuseffects\confusion4.lz77","graphics\static\statuseffects\curse1.lz77","graphics\static\statuseffects\curse2.lz77","graphics\static\statuseffects\paralysis1.lz77","graphics\static\statuseffects\paralysis2.lz77","graphics\static\statuseffects\paralysis3.lz77","graphics\static\statuseffects\paralysis4.lz77","graphics\static\statuseffects\poison1.lz77","graphics\static\statuseffects\poison2.lz77","graphics\static\statuseffects\poison3.lz77","graphics\static\statuseffects\poison4.lz77","graphics\static\swordeffects\magic.lz77","graphics\static\swordeffects\thunder.lz77","graphics\static\swordeffects\ice.lz77","graphics\static\swordeffects\gaia.lz77","graphics\static\swordeffects\coinfall.lz77","graphics\fonts\credits.lz77","graphics\tilesets\tileset01.lz77","graphics\tilesets\tileset02.lz77","graphics\tilesets\tileset03.lz77","graphics\tilesets\tileset04.lz77","graphics\tilesets\tileset05.lz77","graphics\tilesets\tileset06.lz77","graphics\tilesets\tileset07.lz77","graphics\tilesets\tileset08.lz77","graphics\tilesets\tileset09.lz77","graphics\tilesets\tileset10.lz77","graphics\tilesets\tileset11.lz77","graphics\tilesets\tileset12.lz77","graphics\tilesets\tileset13.lz77","graphics\tilesets\tileset14.lz77","graphics\tilesets\tileset15.lz77","graphics\tilesets\tileset16.lz77","graphics\tilesets\tileset17.lz77","graphics\tilesets\tileset18.lz77"
 
@@ -71,6 +87,7 @@ set CBS_FILES="graphics\blocksets\blockset1_0.cbs","graphics\blocksets\blockset1
 set ROOM_PAL_PREFIX="graphics\roompalettes\pal"
 set SPRITE_HI_PAL_PREFIX="graphics\spritepalettes\hi"
 set SPRITE_LO_PAL_PREFIX="graphics\spritepalettes\lo"
+set MAP_PREFIX="maps\map"
 
 (for %%i in (%LZ77_FILES%) do (
 	call :EXTRACT_LZ77 %%i ""
@@ -82,6 +99,16 @@ set SPRITE_LO_PAL_PREFIX="graphics\spritepalettes\lo"
 
 (for %%i in (%CBS_FILES%) do (
 	call :EXTRACT_MAP2D %%i "" cbs
+))
+
+REM Room Maps
+(for /L %%i in (1,1,642) do (
+    REM Add leading zeros
+    set IDX=000%%i
+    set IDX=!IDX:~-3!
+    set FNAME=%MAP_PREFIX%!IDX!
+    set FNAME=!FNAME:"=!
+    call :EXTRACT_MAP3D !FNAME! ""
 ))
 
 call :EXTRACT_MAP2D "graphics\static\hud\hudtilemap.map" "--width 40" map
