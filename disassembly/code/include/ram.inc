@@ -593,7 +593,7 @@ byte_FF1155:         equ $00FF1155
 g_BGM:               equ $00FF1156
 byte_FF1157:         equ $00FF1157
 g_StepCounter:       equ $00FF1158
-byte_FF1159:         equ $00FF1159
+g_IntroStringToDisplay: equ $00FF1159
 byte_FF115A:         equ $00FF115A
 word_FF1180:         equ $00FF1180
 g_PlayerSpeed:       equ $00FF1182
@@ -629,7 +629,7 @@ word_FF12E6:         equ $00FF12E6
 word_FF12E8:         equ $00FF12E8
 word_FF12EA:         equ $00FF12EA
 g_GoldenStatueTimer: equ $00FF12EC
-word_FF12EE:         equ $00FF12EE
+g_IntroStringDisplayTime: equ $00FF12EE
 word_FF12F0:         equ $00FF12F0
 unk_FF1400:          equ $00FF1400
 unk_FF1440:          equ $00FF1440

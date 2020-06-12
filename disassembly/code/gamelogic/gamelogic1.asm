@@ -55,7 +55,7 @@ sub_16DC:					  ; CODE XREF: ROM:loc_16D2p
 		jsr	(sub_10380).l
 		jsr	CheckAndDoLavaPaletteFx(pc)
 		nop
-		jsr	(sub_C46A).l
+		jsr	(CheckAndDisplayIntroString).l
 		jsr	(j_RefreshHUD).l
 		bsr.w	sub_249A
 		bsr.w	EnableVRAMCopyQueueProcessing

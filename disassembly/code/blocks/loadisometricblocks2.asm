@@ -77,12 +77,12 @@ Mult148tbl:	dc.w  00000, 00148, 00296, 00444, 00592, 00740,	00888, 01036
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_C46A:					  ; CODE XREF: ROM:00008DFEp
+CheckAndDisplayIntroString:			  ; CODE XREF: ROM:00008DFEp
 						  ; DATA XREF: sub_16DC+82t
-		move.b	(byte_FF1159).l,d0
-		beq.s	locret_C4B2
-		move.w	(word_FF12EE).l,d1
-		bne.w	loc_C4B4
+		move.b	(g_IntroStringToDisplay).l,d0
+		beq.s	_Return
+		move.w	(g_IntroStringDisplayTime).l,d1
+		bne.w	CheckIntroStringTimer
 		andi.w	#$00FF,d0
 		lsl.b	#$02,d0
 		lea	IntroStringPointers(pc),a2
@@ -91,73 +91,73 @@ sub_C46A:					  ; CODE XREF: ROM:00008DFEp
 		move.w	(a2)+,d1
 		move.w	(a2)+,d2
 		move.w	(a2)+,d3
-		move.w	(a2)+,(word_FF12EE).l
+		move.w	(a2)+,(g_IntroStringDisplayTime).l
 		movem.l	d2-d3,-(sp)
 		movem.l	d0-d1,-(sp)
-		bsr.s	CopyIntroString
+		bsr.s	CopyIntroStringToVDP
 		movem.l	(sp)+,d0-d1
-		bsr.w	sub_C56E
+		bsr.w	LoadIntroStringLine1Sprites
 		movem.l	(sp)+,d0-d1
-		bsr.w	loc_C57A
+		bsr.w	LoadIntroStringLine2Sprites
 
-locret_C4B2:					  ; CODE XREF: sub_C46A+6j
+_Return:					  ; CODE XREF: CheckAndDisplayIntroString+6j
 		rts
 ; ---------------------------------------------------------------------------
 
-loc_C4B4:					  ; CODE XREF: sub_C46A+Ej
+CheckIntroStringTimer:				  ; CODE XREF: CheckAndDisplayIntroString+Ej
 		subq.w	#$01,d1
-		move.w	d1,(word_FF12EE).l
-		bne.s	locret_C4E0
+		move.w	d1,(g_IntroStringDisplayTime).l
+		bne.s	_Return1
 		lea	(g_VDPSpr08_Y).l,a0
 		moveq	#$00000007,d7
 
-loc_C4C6:					  ; CODE XREF: sub_C46A+6Cj
+_Loop:						  ; CODE XREF: CheckAndDisplayIntroString+6Cj
 		clr.w	(a0)
 		clr.b	$00000002(a0)
 		clr.w	$00000004(a0)
 		clr.w	$00000006(a0)
 		addq.w	#$08,a0
-		dbf	d7,loc_C4C6
-		clr.b	(byte_FF1159).l
+		dbf	d7,_Loop
+		clr.b	(g_IntroStringToDisplay).l
 
-locret_C4E0:					  ; CODE XREF: sub_C46A+52j
+_Return1:					  ; CODE XREF: CheckAndDisplayIntroString+52j
 		rts
-; End of function sub_C46A
+; End of function CheckAndDisplayIntroString
 
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-CopyIntroString:				  ; CODE XREF: sub_C46A+36p
+CopyIntroStringToVDP:				  ; CODE XREF: CheckAndDisplayIntroString+36p
 		bsr.s	ClearIntroStringBuffer
 		lea	(g_Buffer).l,a1
 
-loc_C4EA:					  ; CODE XREF: CopyIntroString+10j
+_loop:						  ; CODE XREF: CopyIntroStringToVDP+10j
 		bsr.s	GetNextIntroChar
 		tst.b	d0
-		bmi.s	loc_C4F4
+		bmi.s	_break
 		bsr.s	LoadIntroChar
-		bra.s	loc_C4EA
+		bra.s	_loop
 ; ---------------------------------------------------------------------------
 
-loc_C4F4:					  ; CODE XREF: CopyIntroString+Cj
+_break:						  ; CODE XREF: CopyIntroStringToVDP+Cj
 		lea	(g_Buffer).l,a0
 		lea	($0000F180).l,a1
 		move.w	#$0400,d0
 		jmp	(QueueDMAOp).l		  ; d0 - DMA Length
-; End of function CopyIntroString		  ; a0 - DMA Source
+; End of function CopyIntroStringToVDP		  ; a0 - DMA Source
 						  ; a1 - DMA Copy
 
 ; =============== S U B	R O U T	I N E =======================================
 
 
-ClearIntroStringBuffer:				  ; CODE XREF: CopyIntroStringp
+ClearIntroStringBuffer:				  ; CODE XREF: CopyIntroStringToVDPp
 		lea	(g_Buffer).l,a1
 		move.w	#$01FF,d7
 
-loc_C514:					  ; CODE XREF: ClearIntroStringBuffer+Cj
+_Loop:						  ; CODE XREF: ClearIntroStringBuffer+Cj
 		clr.l	(a1)+
-		dbf	d7,loc_C514
+		dbf	d7,_Loop
 		rts
 ; End of function ClearIntroStringBuffer
 
@@ -165,7 +165,7 @@ loc_C514:					  ; CODE XREF: ClearIntroStringBuffer+Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-GetNextIntroChar:				  ; CODE XREF: CopyIntroString:loc_C4EAp
+GetNextIntroChar:				  ; CODE XREF: CopyIntroStringToVDP:_loopp
 		move.b	(a2)+,d0
 		rts
 ; End of function GetNextIntroChar
@@ -174,7 +174,7 @@ GetNextIntroChar:				  ; CODE XREF: CopyIntroString:loc_C4EAp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-LoadIntroChar:					  ; CODE XREF: CopyIntroString+Ep
+LoadIntroChar:					  ; CODE XREF: CopyIntroStringToVDP+Ep
 		andi.w	#$00FF,d0
 		lsl.w	#$06,d0
 		movea.l	(IntroFontPtr).l,a0
@@ -201,29 +201,29 @@ LoadIntroChar:					  ; CODE XREF: CopyIntroString+Ep
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_C56E:					  ; CODE XREF: sub_C46A+3Cp
+LoadIntroStringLine1Sprites:			  ; CODE XREF: CheckAndDisplayIntroString+3Cp
 		move.w	#$E78C,d2
 		lea	(g_VDPSpr08_Y).l,a0
 		bra.s	loc_C584
 ; ---------------------------------------------------------------------------
 
-loc_C57A:					  ; CODE XREF: sub_C46A+44p
+LoadIntroStringLine2Sprites:			  ; CODE XREF: CheckAndDisplayIntroString+44p
 		move.w	#$E7AC,d2
 		lea	(g_VDPSpr12_Y).l,a0
 
-loc_C584:					  ; CODE XREF: sub_C56E+Aj
+loc_C584:					  ; CODE XREF: LoadIntroStringLine1Sprites+Aj
 		moveq	#$00000003,d7
 
-loc_C586:					  ; CODE XREF: sub_C56E+2Aj
-		move.w	d1,(a0)+
-		move.b	#$0D,(a0)
+_loop:						  ; CODE XREF: LoadIntroStringLine1Sprites+2Aj
+		move.w	d1,(a0)+		  ; Y
+		move.b	#$0D,(a0)		  ; Size
 		addq.l	#$02,a0
-		move.w	d2,(a0)+
-		move.w	d0,(a0)+
+		move.w	d2,(a0)+		  ; TileSource
+		move.w	d0,(a0)+		  ; X
 		addq.w	#$08,d2
 		addi.w	#$0020,d0
-		dbf	d7,loc_C586
+		dbf	d7,_loop		  ; Y
 		rts
-; End of function sub_C56E
+; End of function LoadIntroStringLine1Sprites
 
 ; ---------------------------------------------------------------------------

@@ -93,7 +93,7 @@ sub_9ECDC:					  ; CODE XREF: ROM:loc_9ECBCp
 		jsr	(j_EnableDMAQueueProcessing).l
 
 loc_9ECF8:					  ; CODE XREF: sub_9ECDC+Aj
-		bsr.w	sub_9F644
+		bsr.w	UpdateCreditScroll
 		jsr	(j_WaitUntilVBlank).l
 		addq.w	#$01,-$00000002(a6)
 		addq.w	#$01,-$00000010(a6)

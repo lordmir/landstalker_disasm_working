@@ -24,11 +24,11 @@ loc_17AC2:					  ; CODE XREF: sub_178FE+21Cj
 
 sub_17ACA:					  ; CODE XREF: sub_178FE+1BEp
 						  ; sub_178FE+1C6p ...
-		movea.l	$00000032(a5),a6
+		movea.l	BehaviourLUTPtr(a5),a6
 		adda.l	d0,a6
-		move.l	a6,$00000032(a5)
-		move.b	(a6)+,$0000002B(a5)
-		move.b	(a6),$0000002A(a5)
+		move.l	a6,BehaviourLUTPtr(a5)
+		move.b	(a6)+,Unk2B(a5)
+		move.b	(a6),Unk2A(a5)
 		rts
 ; End of function sub_17ACA
 
@@ -47,20 +47,20 @@ locret_17AE8:					  ; CODE XREF: sub_178FE+1E4j
 
 loc_17AEA:					  ; CODE XREF: sub_178FE+C2j
 		clr.w	d6
-		move.b	$0000002A(a5),d6
+		move.b	Unk2A(a5),d6
 		jsr	(j_GenerateRandomNumber).l
-		movea.l	$00000032(a5),a6
+		movea.l	BehaviourLUTPtr(a5),a6
 		clr.w	d6
-		move.b	$00000002(a6),d6
+		move.b	SubX(a6),d6
 		sub.w	d7,d6
 		addq.b	#$01,d6
-		move.b	d6,$0000002A(a5)
-		addq.l	#$01,$00000032(a5)
-		move.b	#$01,$0000002B(a5)
+		move.b	d6,Unk2A(a5)
+		addq.l	#$01,BehaviourLUTPtr(a5)
+		move.b	#$01,Unk2B(a5)
 
 loc_17B12:					  ; CODE XREF: sub_178FE+1Ej
 		bsr.s	sub_17B50
-		subq.b	#$01,$0000002A(a5)
+		subq.b	#$01,Unk2A(a5)
 		bne.s	locret_17B1E
 		bra.w	loc_17AC2
 ; ---------------------------------------------------------------------------
@@ -72,7 +72,7 @@ locret_17B1E:					  ; CODE XREF: sub_178FE+21Aj
 loc_17B20:					  ; CODE XREF: sub_178FE+5Ej
 		bsr.s	sub_17B50
 		bcs.s	locret_17B2E
-		subq.b	#$01,$0000002A(a5)
+		subq.b	#$01,Unk2A(a5)
 		bne.s	locret_17B2E
 		moveq	#$00000002,d0
 		bsr.s	sub_17ACA
@@ -85,7 +85,7 @@ locret_17B2E:					  ; CODE XREF: sub_178FE+224j
 loc_17B30:					  ; CODE XREF: sub_178FE+156j
 		bsr.s	sub_17B40
 		bcs.s	locret_17B3E
-		subq.b	#$01,$0000002A(a5)
+		subq.b	#$01,Unk2A(a5)
 		bne.s	locret_17B3E
 		moveq	#$00000002,d0
 		bsr.s	sub_17ACA
@@ -99,9 +99,9 @@ locret_17B3E:					  ; CODE XREF: sub_178FE+234j
 
 
 sub_17B40:					  ; CODE XREF: sub_178FE:loc_17B30p
-		bset	#$06,$00000048(a5)
+		bset	#$06,Unk48(a5)
 		bsr.s	loc_17B56
-		bclr	#$06,$00000048(a5)
+		bclr	#$06,Unk48(a5)
 		rts
 ; End of function sub_17B40
 
@@ -111,10 +111,10 @@ sub_17B40:					  ; CODE XREF: sub_178FE:loc_17B30p
 
 sub_17B50:					  ; CODE XREF: sub_178FE:loc_17B12p
 						  ; sub_178FE:loc_17B20p ...
-		bclr	#$06,$00000048(a5)
+		bclr	#$06,Unk48(a5)
 
 loc_17B56:					  ; CODE XREF: sub_17B40+6p
-		move.b	$00000004(a5),d0
+		move.b	RotationAndSize(a5),d0
 		andi.b	#$C0,d0
 		beq.s	loc_17B70
 		cmpi.b	#$80,d0
@@ -127,14 +127,14 @@ loc_17B56:					  ; CODE XREF: sub_17B40+6p
 
 loc_17B70:					  ; CODE XREF: sub_17B50+Ej
 						  ; sub_1914C+Ej
-		move.w	$0000001C(a5),d1
-		move.w	$00000008(a5),d0
+		move.w	HitBoxYStart(a5),d1
+		move.w	Flags1(a5),d0
 		andi.w	#$000F,d0
-		sub.w	d0,$0000001C(a5)
-		sub.w	d0,$0000001E(a5)
-		btst	#$06,$00000048(a5)
+		sub.w	d0,HitBoxYStart(a5)
+		sub.w	d0,HitBoxYEnd(a5)
+		btst	#$06,Unk48(a5)
 		bne.w	loc_17BDA
-		move.w	$0000001C(a5),d0
+		move.w	HitBoxYStart(a5),d0
 		andi.b	#$08,d0
 		andi.b	#$08,d1
 		cmp.b	d0,d1
@@ -152,10 +152,10 @@ loc_17BAE:					  ; CODE XREF: sub_1914C-1574j
 		bcs.s	loc_17BDA
 
 loc_17BB4:					  ; CODE XREF: sub_1914C-15A0j
-		move.w	$00000008(a5),d0
+		move.w	Flags1(a5),d0
 		andi.w	#$000F,d0
-		add.w	d0,$0000001C(a5)
-		add.w	d0,$0000001E(a5)
+		add.w	d0,HitBoxYStart(a5)
+		add.w	d0,HitBoxYEnd(a5)
 		ori	#$01,ccr
 		rts
 ; ---------------------------------------------------------------------------
@@ -169,28 +169,28 @@ loc_17BCA:					  ; CODE XREF: sub_1914C-15B0j
 
 loc_17BDA:					  ; CODE XREF: sub_1914C-15C2j
 						  ; sub_1914C-159Aj
-		move.w	$00000016(a5),d0
+		move.w	CentreY(a5),d0
 		move.w	d0,d1
-		move.w	$00000008(a5),d2
+		move.w	Flags1(a5),d2
 		andi.w	#$000F,d2
 		sub.w	d2,d0
-		move.w	d0,$00000016(a5)
+		move.w	d0,CentreY(a5)
 		andi.b	#$0F,d0
-		move.b	d0,$00000003(a5)
+		move.b	d0,SubY(a5)
 		andi.b	#$08,d0
 		andi.b	#$08,d1
 		cmp.b	d0,d1
 		bcc.s	loc_17C14
-		subq.b	#$01,$00000001(a5)
-		subi.w	#$0094,$00000028(a5)
-		movea.w	$00000028(a5),a6
-		move.w	(a6),$00000022(a5)
+		subq.b	#$01,Y(a5)
+		subi.w	#$0094,HeightmapOffset(a5)
+		movea.w	HeightmapOffset(a5),a6
+		move.w	(a6),GroundHeight(a5)
 
 loc_17C14:					  ; CODE XREF: sub_1914C-154Cj
-		btst	#$03,$0000002C(a5)
+		btst	#$03,Action(a5)
 		bne.s	loc_17C28
-		bset	#$00,$0000002D(a5)
-		bset	#$00,$0000006D(a5)
+		bset	#$00,Action1(a5)
+		bset	#$00,Unk6D(a5)
 
 loc_17C28:					  ; CODE XREF: sub_1914C-1532j
 		tst.b	d0

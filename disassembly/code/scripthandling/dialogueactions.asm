@@ -166,7 +166,7 @@ CSA_0010:					  ; CODE XREF: ROM:0001213Cj
 		move.w	#$0007,d0		  ; Cutscene 0x007: 0x02543C
 		bsr.w	LoadCutsceneDialogue
 		bsr.w	sub_1584A
-		move.w	#$0027,d7
+		move.w	#00039,d7
 
 loc_1281E:					  ; CODE XREF: ROM:00012852j
 		movem.w	d7,-(sp)
@@ -3582,27 +3582,27 @@ CSA_0116:					  ; CODE XREF: ROM:00012554j
 ; ---------------------------------------------------------------------------
 
 CSA_0117:					  ; CODE XREF: ROM:00012558j
-		move.b	#$02,(byte_FF1159).l
+		move.b	#$02,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_0118:					  ; CODE XREF: ROM:0001255Cj
-		move.b	#$03,(byte_FF1159).l
+		move.b	#$03,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_0119:					  ; CODE XREF: ROM:00012560j
-		move.b	#$04,(byte_FF1159).l
+		move.b	#$04,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_011A:					  ; CODE XREF: ROM:00012564j
-		move.b	#$05,(byte_FF1159).l
+		move.b	#$05,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_011B:					  ; CODE XREF: ROM:00012568j
-		move.b	#$06,(byte_FF1159).l
+		move.b	#$06,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
@@ -3631,32 +3631,32 @@ CSA_011C:					  ; CODE XREF: ROM:0001256Cj
 ; ---------------------------------------------------------------------------
 
 CSA_011D:					  ; CODE XREF: ROM:00012570j
-		move.b	#$07,(byte_FF1159).l
+		move.b	#$07,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_011E:					  ; CODE XREF: ROM:00012574j
-		move.b	#$08,(byte_FF1159).l
+		move.b	#$08,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_011F:					  ; CODE XREF: ROM:00012578j
-		move.b	#$09,(byte_FF1159).l
+		move.b	#$09,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_0120:					  ; CODE XREF: ROM:0001257Cj
-		move.b	#$0A,(byte_FF1159).l
+		move.b	#$0A,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_0121:					  ; CODE XREF: ROM:00012580j
-		move.b	#$0B,(byte_FF1159).l
+		move.b	#$0B,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 
 CSA_0122:					  ; CODE XREF: ROM:00012584j
-		move.b	#$0C,(byte_FF1159).l
+		move.b	#$0C,(g_IntroStringToDisplay).l
 		rts
 ; ---------------------------------------------------------------------------
 

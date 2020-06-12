@@ -1,4 +1,4 @@
-IntroStringPointers:dc.l IntroString1		  ; DATA XREF: sub_C46A+18o
+IntroStringPointers:dc.l IntroString1		  ; DATA XREF: CheckAndDisplayIntroString+18o
 		dc.l IntroString2
 		dc.l IntroString3
 		dc.l IntroString4

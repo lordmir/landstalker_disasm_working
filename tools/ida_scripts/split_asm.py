@@ -97,6 +97,7 @@ copy_file(".\\tools\\decode\\lz77.exe", ".\\disassembly\\tools\\decode\\lz77.exe
 copy_file(".\\tools\\decode\\pal2tpl.exe", ".\\disassembly\\tools\\decode\\pal2tpl.exe")
 copy_file(".\\tools\\decode\\map2d.exe", ".\\disassembly\\tools\\decode\\map2d.exe")
 copy_file(".\\tools\\decode\\map3d.exe", ".\\disassembly\\tools\\decode\\map3d.exe")
+copy_file(".\\tools\\decode\\strings.exe", ".\\disassembly\\tools\\decode\\strings.exe")
 copy_file(".\\tools\\decode\\compress.bat", ".\\disassembly\\compress.bat")
 copy_file(".\\tools\\decode\\expand.bat", ".\\disassembly\\expand.bat")
 copy_file(".\\expanded\\landstalker_expanded.asm", ".\\disassembly\\landstalker_expanded.asm")

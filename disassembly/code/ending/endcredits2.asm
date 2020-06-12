@@ -2,20 +2,20 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_9F644:					  ; CODE XREF: sub_9ECDC:loc_9ECF8p
+UpdateCreditScroll:				  ; CODE XREF: sub_9ECDC:loc_9ECF8p
 		move.w	-$00000002(a6),d0
 		andi.b	#$0F,d0
 		cmpi.b	#$0F,d0
-		beq.s	loc_9F654
+		beq.s	ScrollCredits1Tile
 		rts
 ; ---------------------------------------------------------------------------
 
-loc_9F654:					  ; CODE XREF: sub_9F644+Cj
+ScrollCredits1Tile:				  ; CODE XREF: UpdateCreditScroll+Cj
 		lea	(g_HUD_Row1).l,a0
 		lea	g_HUD_Row2-g_HUD_Row1(a0),a1
 		move.w	#$013F,d7
 
-loc_9F662:					  ; CODE XREF: sub_9F644+20j
+loc_9F662:					  ; CODE XREF: UpdateCreditScroll+20j
 		move.l	(a1)+,(a0)+
 		dbf	d7,loc_9F662
 		lea	(g_HUD_Row1).l,a0
@@ -31,7 +31,7 @@ loc_9F662:					  ; CODE XREF: sub_9F644+20j
 		jsr	(j_QueueDMAOp).l
 		jsr	(j_EnableDMAQueueProcessing).l
 		rts
-; End of function sub_9F644
+; End of function UpdateCreditScroll
 
 
 ; =============== S U B	R O U T	I N E =======================================

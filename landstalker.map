@@ -1441,22 +1441,14 @@
  0000:0000C3B4       MultiplyD3By148
  0000:0000C3BE       Mult148negTbl
  0000:0000C3CE       Mult148tbl
- 0000:0000C46A       sub_C46A
- 0000:0000C4B2       locret_C4B2
- 0000:0000C4B4       loc_C4B4
- 0000:0000C4C6       loc_C4C6
- 0000:0000C4E0       locret_C4E0
- 0000:0000C4E2       CopyIntroString
- 0000:0000C4EA       loc_C4EA
- 0000:0000C4F4       loc_C4F4
+ 0000:0000C46A       CheckAndDisplayIntroString
+ 0000:0000C4E2       CopyIntroStringToVDP
  0000:0000C50A       ClearIntroStringBuffer
- 0000:0000C514       loc_C514
  0000:0000C51C       GetNextIntroChar
  0000:0000C520       LoadIntroChar
- 0000:0000C56E       sub_C56E
- 0000:0000C57A       loc_C57A
+ 0000:0000C56E       LoadIntroStringLine1Sprites
+ 0000:0000C57A       LoadIntroStringLine2Sprites
  0000:0000C584       loc_C584
- 0000:0000C586       loc_C586
  0000:0000C59E       IntroStringPointers
  0000:0000C5CE       IntroString1
  0000:0000C5F4       IntroString2
@@ -5159,8 +5151,7 @@
  0000:0009ECF8       loc_9ECF8
  0000:0009ED10       sub_9ED10
  0000:0009ED1A       EndCreditText
- 0000:0009F644       sub_9F644
- 0000:0009F654       loc_9F654
+ 0000:0009F644       UpdateCreditScroll
  0000:0009F662       loc_9F662
  0000:0009F694       sub_9F694
  0000:0009F6C8       loc_9F6C8
@@ -9655,7 +9646,7 @@
  0000:00FF1156       g_BGM
  0000:00FF1157       byte_FF1157
  0000:00FF1158       g_StepCounter
- 0000:00FF1159       byte_FF1159
+ 0000:00FF1159       g_IntroStringToDisplay
  0000:00FF115A       byte_FF115A
  0000:00FF1180       word_FF1180
  0000:00FF1182       g_PlayerSpeed
@@ -9691,7 +9682,7 @@
  0000:00FF12E8       word_FF12E8
  0000:00FF12EA       word_FF12EA
  0000:00FF12EC       g_GoldenStatueTimer
- 0000:00FF12EE       word_FF12EE
+ 0000:00FF12EE       g_IntroStringDisplayTime
  0000:00FF12F0       word_FF12F0
  0000:00FF1400       unk_FF1400
  0000:00FF1440       unk_FF1440

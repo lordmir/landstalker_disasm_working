@@ -25,8 +25,8 @@ loc_8D84:					  ; CODE XREF: ROM:000016CEp
 ; ---------------------------------------------------------------------------
 
 Intro:						  ; CODE XREF: ROM:00008DE2j
-		move.b	#$01,(byte_FF1159).l
-		bsr.w	sub_C46A
+		move.b	#$01,(g_IntroStringToDisplay).l
+		bsr.w	CheckAndDisplayIntroString
 		jsr	(EnableDMAQueueProcessing).l
 		move.w	#$0222,d1
 		move.w	#$0005,d7
@@ -51,7 +51,7 @@ loc_8E10:					  ; CODE XREF: ROM:00008E3Aj
 		dc.w SND_MusicLabrynth
 ; ---------------------------------------------------------------------------
 		move.b	#SND_MusicLabrynth,(g_BGM).l
-		move.w	#$0078,d0
+		move.w	#00120,d0
 		jsr	(Sleep).l		  ; Sleeps for d0 frames
 		lea	StatusBarPal(pc),a0
 		lea	((g_Pal3Base+$14)).l,a1
