@@ -1,0 +1,29 @@
+AP
+DP
+New Game
+Start
+Copy
+Delete
+Yes
+No
+Start?
+Copy?
+Delete?
+To?
+Massan
+Gumi
+Ryuma
+Mercator
+Verla
+Destel
+Mir's Tower
+Castle
+Massan
+Gumi
+Ryuma
+Mercator
+Verla
+Destel
+Lake Shrine
+Under Cave
+Kazalt

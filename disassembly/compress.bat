@@ -137,11 +137,11 @@ call :EXTRACT_MAP2D "graphics\static\inventory\invtilemap.lz77" "" "lz77"
 call :EXTRACT_MAP2D "graphics\static\textbox\threelinetextbox.map" "" "map" 
 call :EXTRACT_MAP2D "graphics\static\textbox\twolinetextbox.map" "" "map" 
 
-call :EXTRACT_STRINGS "strings\names\characternames.tsv" "-r names" characternames.bin
-call :EXTRACT_STRINGS "strings\names\defaultname.tsv" "-r names" defaultname.bin
-call :EXTRACT_STRINGS "strings\names\itemnames.tsv" "-r names" itemnames.bin
-call :EXTRACT_STRINGS "strings\names\specialcharacternames.tsv" "-r names" specialcharacternames.bin
-call :EXTRACT_STRINGS "strings\names\system.tsv" "-r names" system.bin
+call :EXTRACT_STRINGS "strings\names\characternames.txt" "-r names" characternames.bin
+call :EXTRACT_STRINGS "strings\names\defaultname.txt" "-r names" defaultname.bin
+call :EXTRACT_STRINGS "strings\names\itemnames.txt" "-r names" itemnames.bin
+call :EXTRACT_STRINGS "strings\names\specialcharacternames.txt" "-r names" specialcharacternames.bin
+call :EXTRACT_STRINGS "strings\names\system.txt" "-r names" system.bin
 call :EXTRACT_STRINGS "strings\intro\intro.tsv" "-r intro -p" string
 call :EXTRACT_STRINGS "strings\ending\credits.tsv" "-r ending" credits.bin
 
