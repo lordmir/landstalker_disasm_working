@@ -90,7 +90,8 @@ with open(".\\disassembly\\code\\include\\landstalker.inc", 'w') as iw:
     strip_struct_defs(inctext, iw)
 
 copy_file(".\\include\\macros.inc", ".\\disassembly\\code\\include\\macros.inc")
-copy_file(".\\tools\\build\\asm68k.exe", ".\\disassembly\\build\\asm68k.exe")
+copy_file(".\\tools\\build\\asm68k.exe", ".\\disassembly\\tools\\build\\asm68k.exe")
+copy_file(".\\tools\\build\\fix_checksum.py", ".\\disassembly\\tools\\build\\fix_checksum.py")
 copy_file(".\\tools\\build\\build.bat", ".\\disassembly\\build.bat")
 copy_file(".\\tools\\build\\build_expanded.bat", ".\\disassembly\\build_expanded.bat")
 copy_file(".\\tools\\decode\\lz77.exe", ".\\disassembly\\tools\\decode\\lz77.exe")

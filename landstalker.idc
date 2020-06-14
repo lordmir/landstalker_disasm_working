@@ -2976,7 +2976,6 @@ static Bytes_0(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0X2D46);
-	OpDecimal	(x,	0);
 	MakeCode	(0X2D64);
 	MakeName	(0X2D64,	"SetRoomPal");
 	MakeCode	(x=0X2D68);
@@ -4601,6 +4600,8 @@ static Bytes_0(void) {
 	OpEnumEx		(x,	0,	GetEnum("SpriteStructOffsets"),0);
 	MakeCode	(x=0X74D8);
 	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
+	MakeCode	(x=0X74DE);
+	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
 }
 
 //------------------------------------------------------------------------
@@ -4610,8 +4611,6 @@ static Bytes_1(void) {
         auto x;
 #define id x
 
-	MakeCode	(x=0X74DE);
-	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
 	MakeCode	(x=0X74E6);
 	OpEnumEx		(x,	1,	GetEnum("SpriteStructOffsets"),0);
 	MakeCode	(x=0X74EC);
@@ -6462,8 +6461,6 @@ static Bytes_1(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0XD9E8);
-	OpOff		(x,	0,	0);
-	OpOff		(x,	128,	0);
 	MakeCode	(x=0XD9F4);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -7343,7 +7340,7 @@ static Bytes_1(void) {
 	OpOff		(x,	128,	0);
 	MakeCode	(0XF2FA);
 	MakeCode	(0XF306);
-	MakeCode	(0XF30E);
+	MakeCode	(x=0XF30E);
 	MakeCode	(x=0XF314);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -7407,6 +7404,7 @@ static Bytes_1(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeName	(0XF5DC,	"DMACopyTextBuffer");
+	MakeCode	(x=0XF5E2);
 	MakeCode	(x=0XF5EC);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -7473,6 +7471,7 @@ static Bytes_1(void) {
 	MakeArray	(0XF6BC,	0X10);
 	MakeName	(0XF6BC,	"GameStartPalette");
 	MakeCode	(0XF6DC);
+	MakeCode	(x=0XF6E0);
 	MakeCode	(x=0XF6EA);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -9120,6 +9119,9 @@ static Bytes_1(void) {
 	MakeCode	(0X128D6);
 	MakeName	(0X128D6,	"CSA_0016");
 	MakeComm	(0X128DA,	"Cutscene 0x01B: 0x025464");
+	MakeCode	(x=0X128F6);
+	OpOff		(x,	0,	0);
+	OpOff		(x,	128,	0);
 }
 
 //------------------------------------------------------------------------
@@ -9129,9 +9131,6 @@ static Bytes_2(void) {
         auto x;
 #define id x
 
-	MakeCode	(x=0X128F6);
-	OpOff		(x,	0,	0);
-	OpOff		(x,	128,	0);
 	MakeCode	(0X12906);
 	MakeCode	(0X1290E);
 	MakeName	(0X1290E,	"CSA_0017");
@@ -13863,6 +13862,9 @@ static Bytes_3(void) {
 	MakeCode	(0X22FCC);
 	MakeName	(0X22FCC,	"InitCompString");
 	MakeCode	(0X22FD2);
+	MakeCode	(x=0X22FD6);
+	OpNot		(x,	0);
+	OpHex		(x,	0);
 	MakeCode	(0X22FF0);
 	MakeCode	(0X22FF2);
 	MakeName	(0X22FF2,	"InitStringVars");
@@ -14214,13 +14216,14 @@ static Bytes_3(void) {
 	MakeWord	(0X23B80);
 	MakeArray	(0X23B80,	0XF0);
 	MakeName	(0X23B80,	"InventoryTextBoxTilemap");
-	MakeWord	(0X23D60);
-	MakeArray	(0X23D60,	0X6C);
+	MakeWord	(x=0X23D60);
+	MakeArray	(x,	0X6C);
+	OpHex		(x,	0);
 	MakeName	(0X23D60,	"HuffTableOffsets");
 	MakeByte	(0X23E38);
 	MakeArray	(0X23E38,	0X864);
 	MakeName	(0X23E38,	"HuffTables");
-	MakeComm	(0X2469C,	"1st char is always 0x55");
+	MakeComm	(0X2469C,	"1st char is always 55");
 	MakeCode	(x=0X2469C);
 	OpEnumEx		(x,	0,	GetEnum("CHR"),0);
 	MakeName	(0X2469C,	"InitHuffmanDecomp");
@@ -31079,7 +31082,6 @@ static Bytes_12(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0X39868);
-	OpDecimal	(x,	0);
 	MakeCode	(x=0X3986C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -31089,6 +31091,7 @@ static Bytes_12(void) {
 	MakeCode	(x=0X39876);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeCode	(x=0X39888);
 	MakeCode	(x=0X39892);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -31106,7 +31109,6 @@ static Bytes_12(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0X398BC);
-	OpHex		(x,	0);
 	MakeCode	(x=0X398C6);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -31114,7 +31116,6 @@ static Bytes_12(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0X398D0);
-	OpHex		(x,	0);
 	MakeCode	(x=0X398D4);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -31361,7 +31362,6 @@ static Bytes_12(void) {
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
 	MakeCode	(x=0X3DF38);
-	OpDecimal	(x,	0);
 	MakeCode	(x=0X3DF3C);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -31371,6 +31371,7 @@ static Bytes_12(void) {
 	MakeCode	(x=0X3DF46);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
+	MakeCode	(x=0X3DF58);
 	MakeCode	(x=0X3DF62);
 	OpOff		(x,	0,	0);
 	OpOff		(x,	128,	0);
@@ -52501,6 +52502,9 @@ static Functions_0(void) {
 	SetFunctionFlags(0X2469C,0);
 	MakeFunction    (0X246B2,0X24724);
 	SetFunctionFlags(0X246B2,0);
+	MakeNameEx(0X246E6, "_SkipReadingHuffByte", SN_LOCAL);
+	MakeNameEx(0X246F2, "_SkipReadingStringByte", SN_LOCAL);
+	MakeNameEx(0X24700, "_SkipReadingHuffByte1", SN_LOCAL);
 	MakeFunction    (0X24724,0X2482C);
 	SetFunctionFlags(0X24724,0);
 	MakeFunction    (0X2482C,0X2488A);

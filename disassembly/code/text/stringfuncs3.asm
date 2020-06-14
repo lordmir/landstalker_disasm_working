@@ -3,7 +3,7 @@
 
 
 InitHuffmanDecomp:				  ; CODE XREF: PrintString+1Ap
-		move.b	#CHR_55,(g_curDecomprChar).l ; 1st char	is always 0x55
+		move.b	#CHR_55,(g_curDecomprChar).l ; 1st char	is always 55
 		clr.w	(word_FF1922).l
 		clr.w	(word_FF1920).l
 		rts
@@ -31,29 +31,29 @@ DecodeChar:					  ; CODE XREF: GetNextChar+10p
 
 loc_246DE:					  ; CODE XREF: DecodeChar+42j
 						  ; DecodeChar+5Cj
-		dbf	d3,loc_246E6
+		dbf	d3,_SkipReadingHuffByte
 		moveq	#$00000007,d3		  ; D3 - Tree Bit Counter
 		move.b	(a1)+,d2		  ; d2 - Tree byte
 
-loc_246E6:					  ; CODE XREF: DecodeChar:loc_246DEj
+_SkipReadingHuffByte:				  ; CODE XREF: DecodeChar:loc_246DEj
 		add.b	d2,d2
 		bcs.s	loc_24710		  ; Next tree bit set? END
-		dbf	d6,loc_246F2
+		dbf	d6,_SkipReadingStringByte
 		moveq	#$00000007,d6		  ; d6 - Src String Bit	Counter
 		move.b	(a0)+,d7		  ; d7 - Src String Byte
 
-loc_246F2:					  ; CODE XREF: DecodeChar+38j
+_SkipReadingStringByte:				  ; CODE XREF: DecodeChar+38j
 		add.b	d7,d7
 		bcc.s	loc_246DE		  ; Next string	bit clear?
 		clr.w	d4			  ; d4 - tree depth
 
 loc_246F8:					  ; CODE XREF: DecodeChar+54j
 						  ; DecodeChar+58j
-		dbf	d3,loc_24700		  ; Get	next bit
+		dbf	d3,_SkipReadingHuffByte1  ; Get	next bit
 		moveq	#$00000007,d3
 		move.b	(a1)+,d2
 
-loc_24700:					  ; CODE XREF: DecodeChar:loc_246F8j
+_SkipReadingHuffByte1:				  ; CODE XREF: DecodeChar:loc_246F8j
 		add.b	d2,d2			  ; Get	next bit
 		bcs.s	loc_24708		  ; MSB	set?
 		addq.w	#$01,d4			  ; Increment d4 and loop

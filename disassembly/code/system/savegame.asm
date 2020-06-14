@@ -13,8 +13,6 @@ CheckSRAM:					  ; CODE XREF: ROM:0000050Cp
 
 loc_14FE:					  ; CODE XREF: CheckSRAM+14j
 		move.b	(a1)+,d0
-
-loc_1500:					  ; DATA XREF: sub_D996+52o
 		cmp.b	(a0),d0
 		bne.s	SetSRAMMagicWord
 		addq.w	#$02,a0

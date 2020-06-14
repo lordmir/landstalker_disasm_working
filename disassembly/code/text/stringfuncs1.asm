@@ -108,7 +108,7 @@ InitCompString:					  ; CODE XREF: PrintString+Ap
 
 sub_22FD2:					  ; CODE XREF: PrintString+24p
 		bsr.w	GetNextChar
-		cmpi.w	#$FFEA,d0
+		cmpi.w	#~$0015,d0
 		beq.s	locret_22FF0
 		movem.l	d0,-(sp)
 		bsr.w	sub_23314
