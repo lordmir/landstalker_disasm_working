@@ -1,0 +1,617 @@
+<?xml version="1.8"?>
+<rom assembler="asm68k.exe" root="landstalker.asm" options="">
+	<dir name="code">
+		<asm name="landstalker.asm" filename="landstalker.asm" description="root assembler file" />
+	</dir>
+	<dir name="graphics">
+		<dir name="blocksets">
+			<blockset name="Blockset 1:0" description="Blockset 1:0" filename="assets_packed\graphics\blocksets\blockset1_0.cbs" major="1" minor="0">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 1:1" description="Blockset 1:1" filename="assets_packed\graphics\blocksets\blockset1_1.cbs" major="1" minor="1">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 1:2" description="Blockset 1:2" filename="assets_packed\graphics\blocksets\blockset1_2.cbs" major="1" minor="2">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 1:3" description="Blockset 1:3" filename="assets_packed\graphics\blocksets\blockset1_3.cbs" major="1" minor="3">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 1:4" description="Blockset 1:4" filename="assets_packed\graphics\blocksets\blockset1_4.cbs" major="1" minor="4">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 1:5" description="Blockset 1:5" filename="assets_packed\graphics\blocksets\blockset1_5.cbs" major="1" minor="5">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 1:6" description="Blockset 1:6" filename="assets_packed\graphics\blocksets\blockset1_6.cbs" major="1" minor="6">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 2:0" description="Blockset 2:0" filename="assets_packed\graphics\blocksets\blockset2_0.cbs" major="2" minor="0">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 2:1" description="Blockset 2:1" filename="assets_packed\graphics\blocksets\blockset2_1.cbs" major="2" minor="1">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 2:2" description="Blockset 2:2" filename="assets_packed\graphics\blocksets\blockset2_2.cbs" major="2" minor="2">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 2:3" description="Blockset 2:3" filename="assets_packed\graphics\blocksets\blockset2_3.cbs" major="2" minor="3">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 3:0" description="Blockset 3:0" filename="assets_packed\graphics\blocksets\blockset3_0.cbs" major="3" minor="0">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 3:1" description="Blockset 3:1" filename="assets_packed\graphics\blocksets\blockset3_1.cbs" major="3" minor="1">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 3:2" description="Blockset 3:2" filename="assets_packed\graphics\blocksets\blockset3_2.cbs" major="3" minor="2">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 3:3" description="Blockset 3:3" filename="assets_packed\graphics\blocksets\blockset3_3.cbs" major="3" minor="3">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 4:0" description="Blockset 4:0" filename="assets_packed\graphics\blocksets\blockset4_0.cbs" major="4" minor="0">
+				<include type="tileset" name="tileset04" />
+			</blockset>
+			<blockset name="Blockset 4:1" description="Blockset 4:1" filename="assets_packed\graphics\blocksets\blockset4_1.cbs" major="4" minor="1">
+				<include type="tileset" name="tileset04" />
+			</blockset>
+			<blockset name="Blockset 5:0" description="Blockset 5:0" filename="assets_packed\graphics\blocksets\blockset5_0.cbs" major="5" minor="0">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 5:1" description="Blockset 5:1" filename="assets_packed\graphics\blocksets\blockset5_1.cbs" major="5" minor="1">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 5:2" description="Blockset 5:2" filename="assets_packed\graphics\blocksets\blockset5_2.cbs" major="5" minor="2">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 5:3" description="Blockset 5:3" filename="assets_packed\graphics\blocksets\blockset5_3.cbs" major="5" minor="3">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 5:4" description="Blockset 5:4" filename="assets_packed\graphics\blocksets\blockset5_4.cbs" major="5" minor="4">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 5:5" description="Blockset 5:5" filename="assets_packed\graphics\blocksets\blockset5_5.cbs" major="5" minor="5">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 5:6" description="Blockset 5:6" filename="assets_packed\graphics\blocksets\blockset5_6.cbs" major="5" minor="6">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 5:7" description="Blockset 5:7" filename="assets_packed\graphics\blocksets\blockset5_7.cbs" major="5" minor="7">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 6:0" description="Blockset 6:0" filename="assets_packed\graphics\blocksets\blockset6_0.cbs" major="6" minor="0">
+				<include type="tileset" name="tileset06" />
+			</blockset>
+			<blockset name="Blockset 6:1" description="Blockset 6:1" filename="assets_packed\graphics\blocksets\blockset6_1.cbs" major="6" minor="1">
+				<include type="tileset" name="tileset06" />
+			</blockset>
+			<blockset name="Blockset 6:2" description="Blockset 6:2" filename="assets_packed\graphics\blocksets\blockset6_2.cbs" major="6" minor="2">
+				<include type="tileset" name="tileset06" />
+			</blockset>
+			<blockset name="Blockset 6:3" description="Blockset 6:3" filename="assets_packed\graphics\blocksets\blockset6_3.cbs" major="6" minor="3">
+				<include type="tileset" name="tileset06" />
+			</blockset>
+			<blockset name="Blockset 7:0" description="Blockset 7:0" filename="assets_packed\graphics\blocksets\blockset7_0.cbs" major="7" minor="0">
+				<include type="tileset" name="tileset07" />
+			</blockset>
+			<blockset name="Blockset 7:1" description="Blockset 7:1" filename="assets_packed\graphics\blocksets\blockset7_1.cbs" major="7" minor="1">
+				<include type="tileset" name="tileset07" />
+			</blockset>
+			<blockset name="Blockset 7:2" description="Blockset 7:2" filename="assets_packed\graphics\blocksets\blockset7_2.cbs" major="7" minor="2">
+				<include type="tileset" name="tileset07" />
+			</blockset>
+			<blockset name="Blockset 7:3" description="Blockset 7:3" filename="assets_packed\graphics\blocksets\blockset7_3.cbs" major="7" minor="3">
+				<include type="tileset" name="tileset07" />
+			</blockset>
+			<blockset name="Blockset 8:0" description="Blockset 8:0" filename="assets_packed\graphics\blocksets\blockset8_0.cbs" major="8" minor="0">
+				<include type="tileset" name="tileset08" />
+			</blockset>
+			<blockset name="Blockset 8:1" description="Blockset 8:1" filename="assets_packed\graphics\blocksets\blockset8_1.cbs" major="8" minor="1">
+				<include type="tileset" name="tileset08" />
+			</blockset>
+			<blockset name="Blockset 8:2" description="Blockset 8:2" filename="assets_packed\graphics\blocksets\blockset8_2.cbs" major="8" minor="2">
+				<include type="tileset" name="tileset08" />
+			</blockset>
+			<blockset name="Blockset 8:3" description="Blockset 8:3" filename="assets_packed\graphics\blocksets\blockset8_3.cbs" major="8" minor="3">
+				<include type="tileset" name="tileset08" />
+			</blockset>
+			<blockset name="Blockset 8:4" description="Blockset 8:4" filename="assets_packed\graphics\blocksets\blockset8_4.cbs" major="8" minor="4">
+				<include type="tileset" name="tileset08" />
+			</blockset>
+			<blockset name="Blockset 8:5" description="Blockset 8:5" filename="assets_packed\graphics\blocksets\blockset8_5.cbs" major="8" minor="5">
+				<include type="tileset" name="tileset08" />
+			</blockset>
+			<blockset name="Blockset 9:0" description="Blockset 9:0" filename="assets_packed\graphics\blocksets\blockset9_0.cbs" major="9" minor="0">
+				<include type="tileset" name="tileset09" />
+			</blockset>
+			<blockset name="Blockset 9:1" description="Blockset 9:1" filename="assets_packed\graphics\blocksets\blockset9_1.cbs" major="9" minor="1">
+				<include type="tileset" name="tileset09" />
+			</blockset>
+			<blockset name="Blockset 9:2" description="Blockset 9:2" filename="assets_packed\graphics\blocksets\blockset9_2.cbs" major="9" minor="2">
+				<include type="tileset" name="tileset09" />
+			</blockset>
+			<blockset name="Blockset 10:0" description="Blockset 10:0" filename="assets_packed\graphics\blocksets\blockset10_0.cbs" major="10" minor="0">
+				<include type="tileset" name="tileset10" />
+			</blockset>
+			<blockset name="Blockset 10:1" description="Blockset 10:1" filename="assets_packed\graphics\blocksets\blockset10_1.cbs" major="10" minor="1">
+				<include type="tileset" name="tileset10" />
+			</blockset>
+			<blockset name="Blockset 10:2" description="Blockset 10:2" filename="assets_packed\graphics\blocksets\blockset10_2.cbs" major="10" minor="2">
+				<include type="tileset" name="tileset10" />
+			</blockset>
+			<blockset name="Blockset 11:0" description="Blockset 11:0" filename="assets_packed\graphics\blocksets\blockset11_0.cbs" major="11" minor="0">
+				<include type="tileset" name="tileset11" />
+			</blockset>
+			<blockset name="Blockset 11:1" description="Blockset 11:1" filename="assets_packed\graphics\blocksets\blockset11_1.cbs" major="11" minor="1">
+				<include type="tileset" name="tileset11" />
+			</blockset>
+			<blockset name="Blockset 11:2" description="Blockset 11:2" filename="assets_packed\graphics\blocksets\blockset11_2.cbs" major="11" minor="2">
+				<include type="tileset" name="tileset11" />
+			</blockset>
+			<blockset name="Blockset 12:0" description="Blockset 12:0" filename="assets_packed\graphics\blocksets\blockset12_0.cbs" major="12" minor="0">
+				<include type="tileset" name="tileset12" />
+			</blockset>
+			<blockset name="Blockset 12:1" description="Blockset 12:1" filename="assets_packed\graphics\blocksets\blockset12_1.cbs" major="12" minor="1">
+				<include type="tileset" name="tileset12" />
+			</blockset>
+			<blockset name="Blockset 13:0" description="Blockset 13:0" filename="assets_packed\graphics\blocksets\blockset13_0.cbs" major="13" minor="0">
+				<include type="tileset" name="tileset13" />
+			</blockset>
+			<blockset name="Blockset 13:1" description="Blockset 13:1" filename="assets_packed\graphics\blocksets\blockset13_1.cbs" major="13" minor="1">
+				<include type="tileset" name="tileset13" />
+			</blockset>
+			<blockset name="Blockset 13:2" description="Blockset 13:2" filename="assets_packed\graphics\blocksets\blockset13_2.cbs" major="13" minor="2">
+				<include type="tileset" name="tileset13" />
+			</blockset>
+			<blockset name="Blockset 14:0" description="Blockset 14:0" filename="assets_packed\graphics\blocksets\blockset14_0.cbs" major="14" minor="0">
+				<include type="tileset" name="tileset14" />
+			</blockset>
+			<blockset name="Blockset 14:1" description="Blockset 14:1" filename="assets_packed\graphics\blocksets\blockset14_1.cbs" major="14" minor="1">
+				<include type="tileset" name="tileset14" />
+			</blockset>
+			<blockset name="Blockset 14:2" description="Blockset 14:2" filename="assets_packed\graphics\blocksets\blockset14_2.cbs" major="14" minor="2">
+				<include type="tileset" name="tileset14" />
+			</blockset>
+			<blockset name="Blockset 14:3" description="Blockset 14:3" filename="assets_packed\graphics\blocksets\blockset14_3.cbs" major="14" minor="3">
+				<include type="tileset" name="tileset14" />
+			</blockset>
+			<blockset name="Blockset 14:4" description="Blockset 14:4" filename="assets_packed\graphics\blocksets\blockset14_4.cbs" major="14" minor="4">
+				<include type="tileset" name="tileset14" />
+			</blockset>
+			<blockset name="Blockset 15:0" description="Blockset 15:0" filename="assets_packed\graphics\blocksets\blockset15_0.cbs" major="15" minor="0">
+				<include type="tileset" name="tileset15" />
+			</blockset>
+			<blockset name="Blockset 15:1" description="Blockset 15:1" filename="assets_packed\graphics\blocksets\blockset15_1.cbs" major="15" minor="1">
+				<include type="tileset" name="tileset15" />
+			</blockset>
+			<blockset name="Blockset 15:2" description="Blockset 15:2" filename="assets_packed\graphics\blocksets\blockset15_2.cbs" major="15" minor="2">
+				<include type="tileset" name="tileset15" />
+			</blockset>
+			<blockset name="Blockset 15:3" description="Blockset 15:3" filename="assets_packed\graphics\blocksets\blockset15_3.cbs" major="15" minor="3">
+				<include type="tileset" name="tileset15" />
+			</blockset>
+			<blockset name="Blockset 15:4" description="Blockset 15:4" filename="assets_packed\graphics\blocksets\blockset15_4.cbs" major="15" minor="4">
+				<include type="tileset" name="tileset15" />
+			</blockset>
+			<blockset name="Blockset 16:0" description="Blockset 16:0" filename="assets_packed\graphics\blocksets\blockset16_0.cbs" major="16" minor="0">
+				<include type="tileset" name="tileset16" />
+			</blockset>
+			<blockset name="Blockset 16:1" description="Blockset 16:1" filename="assets_packed\graphics\blocksets\blockset16_1.cbs" major="16" minor="1">
+				<include type="tileset" name="tileset16" />
+			</blockset>
+			<blockset name="Blockset 16:2" description="Blockset 16:2" filename="assets_packed\graphics\blocksets\blockset16_2.cbs" major="16" minor="2">
+				<include type="tileset" name="tileset16" />
+			</blockset>
+			<blockset name="Blockset 17:0" description="Blockset 17:0" filename="assets_packed\graphics\blocksets\blockset17_0.cbs" major="17" minor="0">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 17:1" description="Blockset 17:1" filename="assets_packed\graphics\blocksets\blockset17_1.cbs" major="17" minor="1">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 17:2" description="Blockset 17:2" filename="assets_packed\graphics\blocksets\blockset17_2.cbs" major="17" minor="2">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 17:3" description="Blockset 17:3" filename="assets_packed\graphics\blocksets\blockset17_3.cbs" major="17" minor="3">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 17:4" description="Blockset 17:4" filename="assets_packed\graphics\blocksets\blockset17_4.cbs" major="17" minor="4">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 17:5" description="Blockset 17:5" filename="assets_packed\graphics\blocksets\blockset17_5.cbs" major="17" minor="5">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 17:6" description="Blockset 17:6" filename="assets_packed\graphics\blocksets\blockset17_6.cbs" major="17" minor="6">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 17:7" description="Blockset 17:7" filename="assets_packed\graphics\blocksets\blockset17_7.cbs" major="17" minor="7">
+				<include type="tileset" name="tileset17" />
+			</blockset>
+			<blockset name="Blockset 18:0" description="Blockset 18:0" filename="assets_packed\graphics\blocksets\blockset18_0.cbs" major="18" minor="0">
+				<include type="tileset" name="tileset18" />
+			</blockset>
+			<blockset name="Blockset 18:1" description="Blockset 18:1" filename="assets_packed\graphics\blocksets\blockset18_1.cbs" major="18" minor="1">
+				<include type="tileset" name="tileset18" />
+			</blockset>
+			<blockset name="Blockset 18:2" description="Blockset 18:2" filename="assets_packed\graphics\blocksets\blockset18_2.cbs" major="18" minor="2">
+				<include type="tileset" name="tileset18" />
+			</blockset>
+			<blockset name="Blockset 18:3" description="Blockset 18:3" filename="assets_packed\graphics\blocksets\blockset18_3.cbs" major="18" minor="3">
+				<include type="tileset" name="tileset18" />
+			</blockset>
+			<blockset name="Blockset 18:4" description="Blockset 18:4" filename="assets_packed\graphics\blocksets\blockset18_4.cbs" major="18" minor="4">
+				<include type="tileset" name="tileset18" />
+			</blockset>
+			<blockset name="Blockset 18:5" description="Blockset 18:5" filename="assets_packed\graphics\blocksets\blockset18_5.cbs" major="18" minor="5">
+				<include type="tileset" name="tileset18" />
+			</blockset>
+			<blockset name="Blockset 19:0" description="Blockset 19:0" filename="assets_packed\graphics\blocksets\blockset19_0.cbs" major="19" minor="0">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 19:1" description="Blockset 19:1" filename="assets_packed\graphics\blocksets\blockset19_1.cbs" major="19" minor="1">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 19:2" description="Blockset 19:2" filename="assets_packed\graphics\blocksets\blockset19_2.cbs" major="19" minor="2">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 19:3" description="Blockset 19:3" filename="assets_packed\graphics\blocksets\blockset19_3.cbs" major="19" minor="3">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 19:4" description="Blockset 19:4" filename="assets_packed\graphics\blocksets\blockset19_4.cbs" major="19" minor="4">
+				<include type="tileset" name="tileset01" />
+			</blockset>
+			<blockset name="Blockset 20:0" description="Blockset 20:0" filename="assets_packed\graphics\blocksets\blockset20_0.cbs" major="20" minor="0">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 20:1" description="Blockset 20:1" filename="assets_packed\graphics\blocksets\blockset20_1.cbs" major="20" minor="1">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 20:2" description="Blockset 20:2" filename="assets_packed\graphics\blocksets\blockset20_2.cbs" major="20" minor="2">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 20:3" description="Blockset 20:3" filename="assets_packed\graphics\blocksets\blockset20_3.cbs" major="20" minor="3">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 20:4" description="Blockset 20:4" filename="assets_packed\graphics\blocksets\blockset20_4.cbs" major="20" minor="4">
+				<include type="tileset" name="tileset02" />
+			</blockset>
+			<blockset name="Blockset 21:0" description="Blockset 21:0" filename="assets_packed\graphics\blocksets\blockset21_0.cbs" major="21" minor="0">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 21:1" description="Blockset 21:1" filename="assets_packed\graphics\blocksets\blockset21_1.cbs" major="21" minor="1">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 21:2" description="Blockset 21:2" filename="assets_packed\graphics\blocksets\blockset21_2.cbs" major="21" minor="2">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 21:3" description="Blockset 21:3" filename="assets_packed\graphics\blocksets\blockset21_3.cbs" major="21" minor="3">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 21:4" description="Blockset 21:4" filename="assets_packed\graphics\blocksets\blockset21_4.cbs" major="21" minor="4">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 21:5" description="Blockset 21:5" filename="assets_packed\graphics\blocksets\blockset21_5.cbs" major="21" minor="5">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 21:6" description="Blockset 21:6" filename="assets_packed\graphics\blocksets\blockset21_6.cbs" major="21" minor="6">
+				<include type="tileset" name="tileset03" />
+			</blockset>
+			<blockset name="Blockset 22:0" description="Blockset 22:0" filename="assets_packed\graphics\blocksets\blockset22_0.cbs" major="22" minor="0">
+				<include type="tileset" name="tileset04" />
+			</blockset>
+			<blockset name="Blockset 22:1" description="Blockset 22:1" filename="assets_packed\graphics\blocksets\blockset22_1.cbs" major="22" minor="1">
+				<include type="tileset" name="tileset04" />
+			</blockset>
+			<blockset name="Blockset 22:2" description="Blockset 22:2" filename="assets_packed\graphics\blocksets\blockset22_2.cbs" major="22" minor="2">
+				<include type="tileset" name="tileset04" />
+			</blockset>
+			<blockset name="Blockset 23:0" description="Blockset 23:0" filename="assets_packed\graphics\blocksets\blockset23_0.cbs" major="23" minor="0">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:1" description="Blockset 23:1" filename="assets_packed\graphics\blocksets\blockset23_1.cbs" major="23" minor="1">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:2" description="Blockset 23:2" filename="assets_packed\graphics\blocksets\blockset23_2.cbs" major="23" minor="2">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:3" description="Blockset 23:3" filename="assets_packed\graphics\blocksets\blockset23_3.cbs" major="23" minor="3">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:4" description="Blockset 23:4" filename="assets_packed\graphics\blocksets\blockset23_4.cbs" major="23" minor="4">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:5" description="Blockset 23:5" filename="assets_packed\graphics\blocksets\blockset23_5.cbs" major="23" minor="5">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:6" description="Blockset 23:6" filename="assets_packed\graphics\blocksets\blockset23_6.cbs" major="23" minor="6">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:7" description="Blockset 23:7" filename="assets_packed\graphics\blocksets\blockset23_7.cbs" major="23" minor="7">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 23:8" description="Blockset 23:8" filename="assets_packed\graphics\blocksets\blockset23_8.cbs" major="23" minor="8">
+				<include type="tileset" name="tileset05" />
+			</blockset>
+			<blockset name="Blockset 24:0" description="Blockset 24:0" filename="assets_packed\graphics\blocksets\blockset24_0.cbs" major="24" minor="0">
+				<include type="tileset" name="tileset06" />
+			</blockset>
+			<blockset name="Blockset 24:1" description="Blockset 24:1" filename="assets_packed\graphics\blocksets\blockset24_1.cbs" major="24" minor="1">
+				<include type="tileset" name="tileset06" />
+			</blockset>
+			<blockset name="Blockset 24:2" description="Blockset 24:2" filename="assets_packed\graphics\blocksets\blockset24_2.cbs" major="24" minor="2">
+				<include type="tileset" name="tileset06" />
+			</blockset>
+			<blockset name="Blockset 25:0" description="Blockset 25:0" filename="assets_packed\graphics\blocksets\blockset25_0.cbs" major="25" minor="0">
+				<include type="tileset" name="tileset07" />
+			</blockset>
+			<blockset name="Blockset 25:1" description="Blockset 25:1" filename="assets_packed\graphics\blocksets\blockset25_1.cbs" major="25" minor="1">
+				<include type="tileset" name="tileset07" />
+			</blockset>
+			<blockset name="Blockset 25:2" description="Blockset 25:2" filename="assets_packed\graphics\blocksets\blockset25_2.cbs" major="25" minor="2">
+				<include type="tileset" name="tileset07" />
+			</blockset>
+		</dir>
+		<dir name="Fonts">
+			<tileset name="Main Font" description="Main Font" compressed="false" bpp="1" width="16" height="15">
+				<file type="tileset" filename="assets_packed\graphics\fonts\mainfont.1bpp" />
+			</tileset>
+			<tileset name="Inventory Font" description="Inventory Font" compressed="false" bpp="1">
+				<file type="tileset" filename="assets_packed\graphics\fonts\menufont.1bpp" />
+			</tileset>
+			<tileset name="Intro Font" description="Intro Font" compressed="false" bpp="4" width="8" height="16">
+				<file type="tileset" filename="assets_packed\graphics\fonts\introfont.bin" />
+			</tileset>
+			<tileset name="Credits Font" description="Credits Font" compressed="true" bpp="2" width="16" height="8">
+				<file type="tileset" filename="assets_packed\graphics\fonts\credits.lz77" />
+			</tileset>
+			<tileset name="System Font" description="System Font" compressed="false" bpp="4">
+				<file type="tileset" filename="assets_packed\graphics\fonts\system.bin" />
+			</tileset>
+		</dir>
+		<dir name="Tilesets">
+			<tileset name="Tileset 01" description="Tileset 01" compressed="true" bpp="4" index="1">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset01.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 02" description="Tileset 02" compressed="true" bpp="4" index="2">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset02.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 03" description="Tileset 03" compressed="true" bpp="4" index="3">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset03.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 04" description="Tileset 04" compressed="true" bpp="4" index="4">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset04.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 05" description="Tileset 05" compressed="true" bpp="4" index="5">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset05.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 06" description="Tileset 06" compressed="true" bpp="4" index="6">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset06.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 07" description="Tileset 07" compressed="true" bpp="4" index="7">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset07.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 08" description="Tileset 08" compressed="true" bpp="4" index="8">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset08.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 09" description="Tileset 09" compressed="true" bpp="4" index="9">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset09.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 10" description="Tileset 10" compressed="true" bpp="4" index="10">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset10.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 11" description="Tileset 11" compressed="true" bpp="4" index="11">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset11.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 12" description="Tileset 12" compressed="true" bpp="4" index="12">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset12.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 13" description="Tileset 13" compressed="true" bpp="4" index="13">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset13.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 14" description="Tileset 14" compressed="true" bpp="4" index="14">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset14.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 15" description="Tileset 15" compressed="true" bpp="4" index="15">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset15.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 16" description="Tileset 16" compressed="true" bpp="4" index="16">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset16.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 17" description="Tileset 17" compressed="true" bpp="4" index="17">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset17.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+			<tileset name="Tileset 18" description="Tileset 18" compressed="true" bpp="4" index="18">
+				<file type="tileset" filename="assets_packed\graphics\tilesets\tileset18.lz77" />
+				<include type="palette" name="roompal01" />
+			</tileset>
+		</dir>
+		<dir name="Palettes">
+			<dir name="Rooms">
+				<palette name="roompal01" description="Palette for tileset 01" length="13" type="LS" index="1">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal001.pal" />
+				</palette>
+				<palette name="roompal02" description="Palette for tileset 01" length="13" type="LS" index="2">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal002.pal" />
+				</palette>
+				<palette name="roompal03" description="Palette for tileset 01" length="13" type="LS" index="3">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal003.pal" />
+				</palette>
+				<palette name="roompal04" description="Palette for tileset 01" length="13" type="LS" index="4">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal004.pal" />
+				</palette>
+				<palette name="roompal05" description="Palette for tileset 01" length="13" type="LS" index="5">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal005.pal" />
+				</palette>
+				<palette name="roompal06" description="Palette for tileset 01" length="13" type="LS" index="6">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal006.pal" />
+				</palette>
+				<palette name="roompal07" description="Palette for tileset 01" length="13" type="LS" index="7">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal007.pal" />
+				</palette>
+				<palette name="roompal08" description="Palette for tileset 01" length="13" type="LS" index="8">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal008.pal" />
+				</palette>
+				<palette name="roompal09" description="Palette for tileset 01" length="13" type="LS" index="9">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal009.pal" />
+				</palette>
+				<palette name="roompal10" description="Palette for tileset 01" length="13" type="LS" index="10">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal010.pal" />
+				</palette>
+				<palette name="roompal11" description="Palette for tileset 01" length="13" type="LS" index="11">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal011.pal" />
+				</palette>
+				<palette name="roompal12" description="Palette for tileset 01" length="13" type="LS" index="12">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal012.pal" />
+				</palette>
+				<palette name="roompal13" description="Palette for tileset 01" length="13" type="LS" index="13">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal013.pal" />
+				</palette>
+				<palette name="roompal14" description="Palette for tileset 01" length="13" type="LS" index="14">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal014.pal" />
+				</palette>
+				<palette name="roompal15" description="Palette for tileset 01" length="13" type="LS" index="15">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal015.pal" />
+				</palette>
+				<palette name="roompal16" description="Palette for tileset 01" length="13" type="LS" index="16">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal016.pal" />
+				</palette>
+				<palette name="roompal17" description="Palette for tileset 01" length="13" type="LS" index="17">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal017.pal" />
+				</palette>
+				<palette name="roompal18" description="Palette for tileset 01" length="13" type="LS" index="18">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal018.pal" />
+				</palette>
+				<palette name="roompal19" description="Palette for tileset 01" length="13" type="LS" index="19">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal019.pal" />
+				</palette>
+				<palette name="roompal20" description="Palette for tileset 01" length="13" type="LS" index="20">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal020.pal" />
+				</palette>
+				<palette name="roompal21" description="Palette for tileset 01" length="13" type="LS" index="21">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal021.pal" />
+				</palette>
+				<palette name="roompal22" description="Palette for tileset 01" length="13" type="LS" index="22">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal022.pal" />
+				</palette>
+				<palette name="roompal23" description="Palette for tileset 01" length="13" type="LS" index="23">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal023.pal" />
+				</palette>
+				<palette name="roompal24" description="Palette for tileset 01" length="13" type="LS" index="24">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal024.pal" />
+				</palette>
+				<palette name="roompal25" description="Palette for tileset 01" length="13" type="LS" index="25">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal025.pal" />
+				</palette>
+				<palette name="roompal26" description="Palette for tileset 01" length="13" type="LS" index="26">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal026.pal" />
+				</palette>
+				<palette name="roompal27" description="Palette for tileset 01" length="13" type="LS" index="27">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal027.pal" />
+				</palette>
+				<palette name="roompal28" description="Palette for tileset 01" length="13" type="LS" index="28">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal028.pal" />
+				</palette>
+				<palette name="roompal29" description="Palette for tileset 01" length="13" type="LS" index="29">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal029.pal" />
+				</palette>
+				<palette name="roompal30" description="Palette for tileset 01" length="13" type="LS" index="30">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal030.pal" />
+				</palette>
+				<palette name="roompal31" description="Palette for tileset 01" length="13" type="LS" index="31">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal031.pal" />
+				</palette>
+				<palette name="roompal32" description="Palette for tileset 01" length="13" type="LS" index="32">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal032.pal" />
+				</palette>
+				<palette name="roompal33" description="Palette for tileset 01" length="13" type="LS" index="33">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal033.pal" />
+				</palette>
+				<palette name="roompal34" description="Palette for tileset 01" length="13" type="LS" index="34">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal034.pal" />
+				</palette>
+				<palette name="roompal35" description="Palette for tileset 01" length="13" type="LS" index="35">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal035.pal" />
+				</palette>
+				<palette name="roompal36" description="Palette for tileset 01" length="13" type="LS" index="36">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal036.pal" />
+				</palette>
+				<palette name="roompal37" description="Palette for tileset 01" length="13" type="LS" index="37">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal037.pal" />
+				</palette>
+				<palette name="roompal38" description="Palette for tileset 01" length="13" type="LS" index="38">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal038.pal" />
+				</palette>
+				<palette name="roompal39" description="Palette for tileset 01" length="13" type="LS" index="39">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal039.pal" />
+				</palette>
+				<palette name="roompal40" description="Palette for tileset 01" length="13" type="LS" index="40">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal040.pal" />
+				</palette>
+				<palette name="roompal41" description="Palette for tileset 01" length="13" type="LS" index="41">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal041.pal" />
+				</palette>
+				<palette name="roompal42" description="Palette for tileset 01" length="13" type="LS" index="42">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal042.pal" />
+				</palette>
+				<palette name="roompal43" description="Palette for tileset 01" length="13" type="LS" index="43">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal043.pal" />
+				</palette>
+				<palette name="roompal44" description="Palette for tileset 01" length="13" type="LS" index="44">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal044.pal" />
+				</palette>
+				<palette name="roompal45" description="Palette for tileset 01" length="13" type="LS" index="45">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal045.pal" />
+				</palette>
+				<palette name="roompal46" description="Palette for tileset 01" length="13" type="LS" index="46">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal046.pal" />
+				</palette>
+				<palette name="roompal47" description="Palette for tileset 01" length="13" type="LS" index="47">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal047.pal" />
+				</palette>
+				<palette name="roompal48" description="Palette for tileset 01" length="13" type="LS" index="48">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal048.pal" />
+				</palette>
+				<palette name="roompal49" description="Palette for tileset 01" length="13" type="LS" index="49">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal049.pal" />
+				</palette>
+				<palette name="roompal50" description="Palette for tileset 01" length="13" type="LS" index="50">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal050.pal" />
+				</palette>
+				<palette name="roompal51" description="Palette for tileset 01" length="13" type="LS" index="51">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal051.pal" />
+				</palette>
+				<palette name="roompal52" description="Palette for tileset 01" length="13" type="LS" index="52">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal052.pal" />
+				</palette>
+				<palette name="roompal53" description="Palette for tileset 01" length="13" type="LS" index="53">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal053.pal" />
+				</palette>
+				<palette name="roompal54" description="Palette for tileset 01" length="13" type="LS" index="54">
+					<file type="palette" filename="assets_packed\graphics\roompalettes\pal054.pal" />
+				</palette>
+			</dir>
+		</dir>
+	</dir>
+	<dir name="misc">
+		<binary name="Z80 Sound Driver" description="Z80 Sound Driver">
+			<file filename="assets_packed\sound\sounddrv.z80" />
+		</binary>
+	</dir>
+</rom>
