@@ -2,7 +2,7 @@
 REM Landstalker Asset Compression
 REM =============================
 SETLOCAL ENABLEDELAYEDEXPANSION
-set PREFIX="D:\landstalker_disasm\disassembly\"
+set PREFIX=%~dp0
 set SRC="assets_unpacked\"
 set DST="assets_packed\"
 set LZ77="tools\decode\lz77.exe"
