@@ -2,7 +2,7 @@
 REM Landstalker Asset Expansion
 REM ===========================
 SETLOCAL ENABLEDELAYEDEXPANSION
-set PREFIX="D:\landstalker_disasm\disassembly\"
+set PREFIX=%~dp0
 set SRC="assets_packed\"
 set DST="assets_unpacked\"
 set LZ77="tools\decode\lz77.exe"
@@ -135,7 +135,7 @@ set SPRITE_LO_PAL_PREFIX="graphics\spritepalettes\lo"
 set MAP_PREFIX="maps\map"
 
 call :EXTRACT_MAP2D "graphics\static\hud\hudtilemap.map" "--width 40" map
-call :EXTRACT_MAP2D "graphics\static\inventory\invtilemap.lz77" "--width 40" lz77
+call :EXTRACT_MAP2D "graphics\static\inventory\invtilemap.lz77" "--left 80 --top 3" lz77
 call :EXTRACT_MAP2D "graphics\static\textbox\threelinetextbox.map" "--width 40" map
 call :EXTRACT_MAP2D "graphics\static\textbox\twolinetextbox.map" "--width 40" map
 
