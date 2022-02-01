@@ -495,7 +495,7 @@ locret_FABA:					  ; CODE XREF: ROM:0000FAACj
 
 
 sub_FABC:					  ; CODE XREF: sub_FA24+3Ap
-						  ; DATA XREF: sub_FA24+14o
+						  ; DATA XREF: sub_FA24+14t
 		addq.w	#$01,-$0000000A(a6)
 		move.w	-$0000000A(a6),d0
 		andi.b	#$10,d0

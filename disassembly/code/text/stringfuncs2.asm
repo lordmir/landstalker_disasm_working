@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_2343A:					  ; DATA XREF: sub_22EE8o
+sub_2343A:					  ; DATA XREF: sub_22EE8t
 		bsr.s	RefreshAndClearTextbox
 		bsr.s	SetTextboxHInt
 		jsr	(j_QueueTextboxTilemapDMA).l
@@ -15,7 +15,7 @@ sub_2343A:					  ; DATA XREF: sub_22EE8o
 
 
 RefreshAndClearTextbox:				  ; CODE XREF: sub_2343Ap
-						  ; DATA XREF: j_RefreshAndClearTextboxo
+						  ; DATA XREF: j_RefreshAndClearTextboxt
 		movem.l	d0-a6,-(sp)
 		bsr.s	ClearTextbox
 		bsr.w	ReloadTextboxSprites
@@ -27,7 +27,7 @@ RefreshAndClearTextbox:				  ; CODE XREF: sub_2343Ap
 ; =============== S U B	R O U T	I N E =======================================
 
 
-SetUpTextDisplay:				  ; DATA XREF: j_SetUpTextDisplayo
+SetUpTextDisplay:				  ; DATA XREF: j_SetUpTextDisplayt
 		move.w	#$8AB8,d0		  ; HINT on line 184
 		move.w	#$0001,d1
 		bsr.s	SetVDPForTextbox
@@ -40,7 +40,7 @@ SetUpTextDisplay:				  ; DATA XREF: j_SetUpTextDisplayo
 
 
 SetTextboxHInt:					  ; CODE XREF: sub_2343A+2p
-						  ; DATA XREF: j_SetTextboxHInto
+						  ; DATA XREF: j_SetTextboxHIntt
 		bsr.s	TestIfInventoryIsOpen
 		bcs.s	loc_23476		  ; Set	HINT to	line 160
 		move.w	#$8AB0,d0		  ; Set	HINT to	line 176
@@ -288,7 +288,7 @@ sub_235D4:					  ; CODE XREF: sub_235B4+8p
 
 
 sub_235FE:					  ; CODE XREF: ProcessChar+2Cp
-						  ; DATA XREF: sub_22EFCo
+						  ; DATA XREF: sub_22EFCt
 		movem.w	d1,-(sp)
 		move.w	d0,d7
 		move.b	(byte_FF112A).l,d1
@@ -717,7 +717,7 @@ loc_238D8:					  ; CODE XREF: sub_237AC+78j
 		bra.w	loc_23828
 ; END OF FUNCTION CHUNK	FOR sub_237AC
 ; ---------------------------------------------------------------------------
-TextBoxSprites:	dc.w $0121, $0304, $8528, $0001	  ; DATA XREF: ReloadTextboxSpriteso
+TextBoxSprites:	dc.w $0121, $0304, $8528, $0001	  ; DATA XREF: ReloadTextboxSpritest
 		dc.w $0121, $0305, $8528, $0001
 		dc.w $0141, $0306, $8528, $0001
 		dc.w $0141, $0307, $8528, $0001

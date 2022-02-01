@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_103DE:					  ; DATA XREF: sub_10310o
+sub_103DE:					  ; DATA XREF: sub_10310t
 		lea	(Sprite1_X).l,a0
 		moveq	#$0000000E,d7
 
@@ -28,7 +28,7 @@ locret_10402:					  ; CODE XREF: sub_103DE+Aj
 
 
 sub_10404:					  ; CODE XREF: sub_103DE+16p
-						  ; DATA XREF: sub_10314o
+						  ; DATA XREF: sub_10314t
 		move.w	AnimAction(a0),d2
 		move.w	Action(a0),d0
 		move.w	d0,AnimAction(a0)

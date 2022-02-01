@@ -265,7 +265,7 @@ loc_192A:					  ; CODE XREF: sub_17EE+38j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-HandleDirectionalControl:			  ; DATA XREF: HandleDirectionalInput+62o
+HandleDirectionalControl:
 
 ; FUNCTION CHUNK AT 00001B7E SIZE 00000188 BYTES
 ; FUNCTION CHUNK AT 00001D16 SIZE 00000172 BYTES

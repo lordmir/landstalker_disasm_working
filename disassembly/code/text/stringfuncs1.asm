@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_22F1C:					  ; DATA XREF: sub_22EC8o
+sub_22F1C:					  ; DATA XREF: sub_22EC8t
 		move.b	#$01,(byte_FF1144).l
 		bra.s	loc_22F2C
 ; End of function sub_22F1C
@@ -11,7 +11,7 @@ sub_22F1C:					  ; DATA XREF: sub_22EC8o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-PrintString:					  ; DATA XREF: j_PrintStringo
+PrintString:					  ; DATA XREF: j_PrintStringt
 		clr.b	(byte_FF1144).l
 
 loc_22F2C:					  ; CODE XREF: sub_22F1C+8j
@@ -306,7 +306,7 @@ loc_2314A:					  ; CODE XREF: sub_2313C+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-HandleControlChars:				  ; DATA XREF: ProcessChar+8o
+HandleControlChars:				  ; CODE XREF: ProcessChar+8j
 
 ; FUNCTION CHUNK AT 0002332A SIZE 0000000C BYTES
 
@@ -604,7 +604,7 @@ loc_23368:					  ; CODE XREF: sub_2335C+12j
 ; End of function sub_2335C
 
 ; ---------------------------------------------------------------------------
-ControlChars:	dc.w ~$0015			  ; DATA XREF: GetNextChar+2Co
+ControlChars:	dc.w ~$0015			  ; DATA XREF: GetNextChar+2Ct
 		dc.w ~$000E			  ; 57
 		dc.w ~$0001			  ; 58
 		dc.w ~$000B			  ; 59

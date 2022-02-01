@@ -85,8 +85,8 @@ loc_11EB48:					  ; CODE XREF: sub_11EB40+4j
 ; End of function sub_11EB40
 
 ; ---------------------------------------------------------------------------
-aDevelopedForUs:dc.b '  DEVELOPED FOR USE ONLY WITH',0 ; DATA XREF: CheckRegion+1Eo
-aNtscGenesis:	dc.b '         NTSC GENESIS',0    ; DATA XREF: CheckRegion+36o
+aDevelopedForUs:dc.b '  DEVELOPED FOR USE ONLY WITH',0 ; DATA XREF: CheckRegion+1Et
+aNtscGenesis:	dc.b '         NTSC GENESIS',0    ; DATA XREF: CheckRegion+36t
 aPalAndFrenchSe:dc.b 'PAL AND FRENCH SECAM MEGA DRIVE',0
-						  ; DATA XREF: CheckRegion:loc_11EAAAo
-aSystems_:	dc.b '           SYSTEMS.',0      ; DATA XREF: CheckRegion:loc_11EAB8o
+						  ; DATA XREF: CheckRegion:loc_11EAAAt
+aSystems_:	dc.b '           SYSTEMS.',0      ; DATA XREF: CheckRegion:loc_11EAB8t

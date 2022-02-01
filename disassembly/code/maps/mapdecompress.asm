@@ -318,7 +318,7 @@ loc_CFAA:					  ; CODE XREF: DecompressMap1+1F8j
 		move.w	d0,d2
 		lea	loc_CFB4(pc),a1
 
-loc_CFB4:					  ; DATA XREF: DecompressMap1+202o
+loc_CFB4:					  ; DATA XREF: DecompressMap1+202t
 		move.w	(a2,d2.w),(a2)+
 
 loc_CFB8:					  ; CODE XREF: DecompressMap1+222j
@@ -338,7 +338,7 @@ loc_CFD2:					  ; CODE XREF: DecompressMap1:loc_CFAAj
 		lea	loc_CFD8(pc),a1
 		nop
 
-loc_CFD8:					  ; DATA XREF: DecompressMap1:loc_CFD2o
+loc_CFD8:					  ; DATA XREF: DecompressMap1:loc_CFD2t
 		cmpa.l	a2,a3
 		bls.w	loc_D050
 		dbf	d6,loc_CFE6

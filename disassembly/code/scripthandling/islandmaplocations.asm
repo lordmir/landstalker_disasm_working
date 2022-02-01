@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_29516:					  ; DATA XREF: sub_22F10o
+sub_29516:					  ; DATA XREF: sub_22F10t
 		move.l	d1,-(sp)
 		clr.w	d1
 		lea	IslandMapLocations(pc),a2

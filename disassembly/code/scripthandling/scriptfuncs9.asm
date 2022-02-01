@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-DebugGetAllItems:				  ; DATA XREF: j_DebugGetAllItemso
+DebugGetAllItems:				  ; DATA XREF: j_DebugGetAllItemst
 		movem.l	d0-d1,-(sp)
 		move.w	#$003F,d0
 
@@ -157,7 +157,7 @@ loc_294C4:					  ; CODE XREF: sub_294B6+8j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-GetSaveLocationString:				  ; DATA XREF: j_GetSaveLocationStringo
+GetSaveLocationString:				  ; DATA XREF: j_GetSaveLocationStringt
 		move.l	d1,-(sp)
 		lea	SaveGameLocations(pc),a2
 

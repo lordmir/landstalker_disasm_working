@@ -1,6 +1,6 @@
 ; ---------------------------------------------------------------------------
 
-PlayEndCredits:					  ; DATA XREF: j_PlayEndCreditso
+PlayEndCredits:					  ; DATA XREF: j_PlayEndCreditst
 		trap	#$00			  ; Trap00Handler
 ; ---------------------------------------------------------------------------
 		dc.w SND_MusicEnding

@@ -22,7 +22,7 @@ DoVisualEffect:					  ; CODE XREF: sub_620A+ECp
 ; End of function DoVisualEffect
 
 ; ---------------------------------------------------------------------------
-off_E128:	dc.l sub_E154			  ; DATA XREF: DoVisualEffect+4o
+off_E128:	dc.l sub_E154			  ; DATA XREF: DoVisualEffect+4t
 		dc.l sub_E154
 		dc.l sub_E30E
 		dc.l sub_E30E

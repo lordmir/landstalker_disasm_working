@@ -39,13 +39,13 @@ loc_78EA:					  ; CODE XREF: UpdateEquipPalEntries+4j
 ; End of function UpdateEquipPalEntries
 
 ; ---------------------------------------------------------------------------
-SwordPalSwapIdx:dc.b ITM_EKEEKE			  ; DATA XREF: UpdateEquipPal+16o
+SwordPalSwapIdx:dc.b ITM_EKEEKE			  ; DATA XREF: UpdateEquipPal+16t
 		dc.b ITM_MAGICSWORD
 		dc.b ITM_THUNDERSWORD
 		dc.b ITM_ICESWORD
 		dc.b ITM_GAIASWORD
 		dc.b ITM_FIREPROOF
-ArmourPalSwapIdx:dc.b ITM_EKEEKE		  ; DATA XREF: UpdateEquipPalo
+ArmourPalSwapIdx:dc.b ITM_EKEEKE		  ; DATA XREF: UpdateEquipPalt
 		dc.b ITM_STEELBREAST
 		dc.b ITM_CHROMEBREAST
 		dc.b ITM_SHELLBREAST

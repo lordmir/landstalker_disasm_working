@@ -46,8 +46,8 @@ loc_39C9A:					  ; CODE XREF: sub_39C46+1Cj
 ; End of function sub_39C46
 
 ; ---------------------------------------------------------------------------
-Blue:		dc.w $0E00			  ; DATA XREF: sub_39C46:loc_39C6Co
-Yellow:		dc.w $00EE			  ; DATA XREF: sub_39C46:loc_39C7Eo
+Blue:		dc.w $0E00			  ; DATA XREF: sub_39C46:loc_39C6Ct
+Yellow:		dc.w $00EE			  ; DATA XREF: sub_39C46:loc_39C7Et
 
 ; =============== S U B	R O U T	I N E =======================================
 

@@ -3,7 +3,7 @@
 
 
 sub_178FE:					  ; CODE XREF: sub_178C8+1Cp
-						  ; DATA XREF: sub_1039Co
+						  ; DATA XREF: sub_1039Ct
 
 ; FUNCTION CHUNK AT 00017ADE SIZE 00000062 BYTES
 ; FUNCTION CHUNK AT 00017ED4 SIZE 00000024 BYTES
@@ -37,7 +37,7 @@ loc_17906:					  ; CODE XREF: sub_178FE+1C0j
 		jmp	loc_17918(pc,d0.w)
 ; ---------------------------------------------------------------------------
 
-loc_17918:					  ; DATA XREF: sub_178FE+16o
+loc_17918:					  ; CODE XREF: sub_178FE+16j
 		bra.w	loc_17ADE
 ; ---------------------------------------------------------------------------
 		bra.w	loc_17B12

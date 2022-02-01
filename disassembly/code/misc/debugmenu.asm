@@ -13,7 +13,7 @@ DebugMenu:					  ; CODE XREF: PlayerTalk+1Cp
 ; End of function DebugMenu
 
 ; ---------------------------------------------------------------------------
-DebugMenuActionTable:dc.w DebugMenuOpen-DebugMenuActionTable ; DATA XREF: DebugMenu+4o
+DebugMenuActionTable:dc.w DebugMenuOpen-DebugMenuActionTable ; DATA XREF: DebugMenu+4t
 						  ; ROM:DebugMenuActionTableo ...
 		dc.w DebugMenuEnter-DebugMenuActionTable
 		dc.w DebugMenuExit-DebugMenuActionTable
@@ -45,8 +45,8 @@ DebugMenuExit:					  ; DATA XREF: ROM:DebugMenuActionTableo
 		bset	#$01,(byte_FF1917).l
 		rts
 ; ---------------------------------------------------------------------------
-DebugMenuStringTable:dc.w $0021			  ; DATA XREF: ROM:0002A474r
-						  ; ROM:0002A486o ...
+DebugMenuStringTable:dc.w $0021			  ; CODE XREF: ROM:0002A486p
+						  ; DATA XREF: ROM:0002A474r ...
 						  ; "MAP MENU"
 DebugMenuJmpTable:dc.w MapMenu-DebugMenuStringTable ; DATA XREF: ROM:0002A482r
 		dc.w $003C			  ; "FLAG MENU"
@@ -71,7 +71,7 @@ SoundMenu:					  ; DATA XREF: ROM:0002A4A4o
 		rts
 ; ---------------------------------------------------------------------------
 SoundMenuActionJmptable:dc.w SoundMenuOpen-SoundMenuActionJmptable
-						  ; DATA XREF: ROM:0002A4B2o
+						  ; DATA XREF: ROM:0002A4B2t
 						  ; ROM:SoundMenuActionJmptableo ...
 		dc.w SoundMenuEnter-SoundMenuActionJmptable
 		dc.w SoundMenuExit-SoundMenuActionJmptable
@@ -170,7 +170,7 @@ MusicMenu:					  ; DATA XREF: ROM:0002A4A8o
 		rts
 ; ---------------------------------------------------------------------------
 MusicMenuActionJmptable:dc.w MusicMenuLoad-MusicMenuActionJmptable
-						  ; DATA XREF: ROM:0002A544o
+						  ; DATA XREF: ROM:0002A544t
 						  ; ROM:MusicMenuActionJmptableo ...
 		dc.w MusicMenuPlay-MusicMenuActionJmptable
 		dc.w MusicMenuExit-MusicMenuActionJmptable
@@ -256,7 +256,7 @@ MapMenu:					  ; DATA XREF: ROM:DebugMenuJmpTableo
 		movem.l	(sp)+,d0-a6
 		rts
 ; ---------------------------------------------------------------------------
-MapMenuActionJmpTable:dc.w MapMenuOpen-MapMenuActionJmpTable ; DATA XREF: ROM:0002A5CCo
+MapMenuActionJmpTable:dc.w MapMenuOpen-MapMenuActionJmpTable ; DATA XREF: ROM:0002A5CCt
 						  ; ROM:MapMenuActionJmpTableo	...
 		dc.w MapMenuEnter-MapMenuActionJmpTable
 		dc.w MapMenuExit-MapMenuActionJmpTable
@@ -340,7 +340,7 @@ loc_2A6D6:					  ; DATA XREF: ROM:FlagMenuActionJmpTable+2o
 		movem.l	(sp)+,d0-a6
 		rts
 ; ---------------------------------------------------------------------------
-FlagMenuActionJmpTable:dc.w FlagMenuOpen-FlagMenuActionJmpTable	; DATA XREF: ROM:0002A6C8o
+FlagMenuActionJmpTable:dc.w FlagMenuOpen-FlagMenuActionJmpTable	; DATA XREF: ROM:0002A6C8t
 						  ; ROM:FlagMenuActionJmpTableo ...
 		dc.w FlagMenuEnter-FlagMenuActionJmpTable
 		dc.w FlagMenuExit-FlagMenuActionJmpTable
@@ -412,7 +412,7 @@ FlagMenuOpts:	dc.w $FFFF			  ; DATA XREF: ROM:0002A724r
 		dc.w $0150			  ; 29 LAKE SHRINE
 		dc.w $0155			  ; 30 MOUNTAINS
 		dc.w $0156			  ; 31 CAVE AT THE TOP
-FlagsToSet:	dc.w $0007, $0010, $0011, $0000	  ; DATA XREF: ROM:0002A71Eo
+FlagsToSet:	dc.w $0007, $0010, $0011, $0000	  ; DATA XREF: ROM:0002A71Et
 		dc.w $0014, $0006, $0015, $0016
 		dc.w $0022, $0017, $0020, $0021
 		dc.w $0023, $002C, $002D, $002E

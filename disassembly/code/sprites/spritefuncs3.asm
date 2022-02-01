@@ -20,7 +20,7 @@ loc_1A4418:					  ; DATA XREF: sub_12CAE+16t
 		jmp	(EnemyAI_Gola_A).l
 ; ---------------------------------------------------------------------------
 
-loc_1A4422:					  ; DATA XREF: sub_1A4414o
+loc_1A4422:					  ; DATA XREF: sub_1A4414t
 		lea	((g_Pal1Base+4)).l,a0
 		lea	((g_Pal1Base+$10)).l,a1
 		lea	((g_Pal3Base+4)).l,a2
@@ -57,7 +57,7 @@ locret_1A4466:					  ; CODE XREF: sub_1A4414+38j
 
 
 GetSpritePalette:				  ; CODE XREF: sub_1A4414+48p
-						  ; DATA XREF: sub_1A4414:loc_1A4418o
+						  ; DATA XREF: sub_1A4414:loc_1A4418t
 		lea	SpritePaletteLUT(pc),a1
 
 loc_1A446C:					  ; CODE XREF: GetSpritePalette+10j

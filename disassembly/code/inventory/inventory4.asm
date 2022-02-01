@@ -621,11 +621,11 @@ sub_DA62:					  ; CODE XREF: sub_D9FC+30p
 						  ; sub_D9FC+42p
 		lea	Unused1_2BPP(pc),a1
 		bsr.w	Expand2BPPGfx
-		lea	Unused1_2BPP+6(pc),a1
+		lea	(Unused1_2BPP+6)(pc),a1
 		bsr.w	Expand2BPPGfx
 		lea	Unused2_2BPP(pc),a1
 		bsr.w	Expand2BPPGfx
-		lea	Unused2_2BPP+4(pc),a1
+		lea	(Unused2_2BPP+4)(pc),a1
 		bsr.w	Expand2BPPGfx
 		rts
 ; End of function sub_DA62

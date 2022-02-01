@@ -25,7 +25,7 @@ loc_25412:					  ; CODE XREF: RunTextCmd+14j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-PlayCutsceneScript:				  ; DATA XREF: j_PlayCutsceneScripto
+PlayCutsceneScript:				  ; DATA XREF: j_PlayCutsceneScriptt
 		movem.l	d0/a0,-(sp)
 		lea	CutsceneScriptTable(pc),a0
 		add.w	d0,d0

@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-AddStatusEffect:				  ; DATA XREF: j_AddStatusEffecto
+AddStatusEffect:				  ; DATA XREF: j_AddStatusEffectt
 		tst.b	d0
 		beq.s	loc_17776
 		cmpi.b	#STATUS_PARALYSIS,d0
@@ -60,7 +60,7 @@ ClearPlayerStatus:				  ; CODE XREF: sub_16420+66p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-GetPlayerStatus:				  ; DATA XREF: j_GetPlayerStatuso
+GetPlayerStatus:				  ; DATA XREF: j_GetPlayerStatust
 		move.b	(g_PlayerStatus).l,d0
 		rts
 ; End of function GetPlayerStatus
@@ -69,7 +69,7 @@ GetPlayerStatus:				  ; DATA XREF: j_GetPlayerStatuso
 ; =============== S U B	R O U T	I N E =======================================
 
 
-GetGold:					  ; DATA XREF: j_GetGoldo
+GetGold:					  ; DATA XREF: j_GetGoldt
 		move.w	(g_Gold).l,d0
 		rts
 ; End of function GetGold
@@ -79,7 +79,7 @@ GetGold:					  ; DATA XREF: j_GetGoldo
 
 
 AddGold:					  ; CODE XREF: ROM:00012F0Cp
-						  ; DATA XREF: j_AddGoldo ...
+						  ; DATA XREF: j_AddGoldt ...
 		add.w	d0,(g_Gold).l
 		bcc.s	loc_177EC
 		move.w	#$FFFF,(g_Gold).l
@@ -94,7 +94,7 @@ loc_177EC:					  ; CODE XREF: AddGold+6j
 
 
 RemoveGold:					  ; CODE XREF: ROM:00012F56p
-						  ; DATA XREF: j_RemoveGoldo
+						  ; DATA XREF: j_RemoveGoldt
 		cmp.w	(g_Gold).l,d0
 		bhi.s	loc_17808
 		sub.w	d0,(g_Gold).l
@@ -156,7 +156,7 @@ locret_17846:					  ; CODE XREF: RemoveHealth+10j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-AddToMaxHealth:					  ; DATA XREF: j_AddToMaxHealtho
+AddToMaxHealth:					  ; DATA XREF: j_AddToMaxHealtht
 		add.w	d0,MaxHealth(a5)
 		bsr.w	RefreshMaxHealthHUD
 		rts
@@ -166,7 +166,7 @@ AddToMaxHealth:					  ; DATA XREF: j_AddToMaxHealtho
 ; =============== S U B	R O U T	I N E =======================================
 
 
-GetMaxHealth:					  ; DATA XREF: j_GetMaxHealtho
+GetMaxHealth:					  ; DATA XREF: j_GetMaxHealtht
 		move.w	MaxHealth(a5),d0
 		rts
 ; End of function GetMaxHealth
@@ -175,7 +175,7 @@ GetMaxHealth:					  ; DATA XREF: j_GetMaxHealtho
 ; =============== S U B	R O U T	I N E =======================================
 
 
-IncrementSwordCharge:				  ; DATA XREF: j_IncrementSwordChargeo
+IncrementSwordCharge:				  ; DATA XREF: j_IncrementSwordCharget
 		move.w	(g_GoldenStatueTimer).l,d0
 		beq.s	loc_1786C
 		subq.w	#$01,(g_GoldenStatueTimer).l
@@ -212,7 +212,7 @@ locret_178B2:					  ; CODE XREF: IncrementSwordCharge+3Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-DecreaseSwordCharge:				  ; DATA XREF: j_DecreaseSwordChargeo
+DecreaseSwordCharge:				  ; DATA XREF: j_DecreaseSwordCharget
 		sub.w	d0,(g_SwordCharge_0).l
 		bpl.s	locret_178C6
 		clr.w	(g_SwordCharge_0).l
@@ -226,7 +226,7 @@ locret_178C6:					  ; CODE XREF: DecreaseSwordCharge+6j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_178C8:					  ; DATA XREF: sub_10300o
+sub_178C8:					  ; DATA XREF: sub_10300t
 		lea	(Sprite1_X).l,a5
 		moveq	#$0000000E,d7
 

@@ -13,7 +13,7 @@ ProcessDialogueScriptAction:			  ; CODE XREF: sub_10ACE+CAp
 
 ; Attributes: thunk
 
-CustomScriptActionTable:			  ; DATA XREF: ProcessDialogueScriptAction+2o
+CustomScriptActionTable:			  ; CODE XREF: ProcessDialogueScriptAction+2j
 		bra.w	CSA_0000
 ; End of function CustomScriptActionTable
 

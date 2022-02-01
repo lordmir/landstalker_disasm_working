@@ -1,18 +1,19 @@
 ; ---------------------------------------------------------------------------
+; START	OF FUNCTION CHUNK FOR ProcessTriggerAction
 
-loc_10F4C:					  ; CODE XREF: ROM:00010FAEj
+loc_10F4C:					  ; CODE XREF: ProcessTriggerAction+2B0j
 						  ; ROM:00010FB6j ...
 		ori	#$01,ccr
 		rts
 ; ---------------------------------------------------------------------------
 
-loc_10F52:					  ; CODE XREF: ROM:00010F7Ej
+loc_10F52:					  ; CODE XREF: ProcessTriggerAction+280j
 						  ; ROM:00010FCCj ...
 		tst.b	d0
 		rts
 ; ---------------------------------------------------------------------------
 
-loc_10F56:					  ; CODE XREF: ROM:TriggerActionJumpTablej
+loc_10F56:					  ; CODE XREF: ProcessTriggerAction:TriggerActionJumpTablej
 		lea	(Sprite1_X).l,a0	  ; First dungeon: boulder trap
 		tst.b	FallRate(a0)
 		bpl.s	loc_10F82
@@ -27,8 +28,8 @@ loc_10F56:					  ; CODE XREF: ROM:TriggerActionJumpTablej
 		tst.b	$000002A0(a0)
 		bmi.w	loc_10F52
 
-loc_10F82:					  ; CODE XREF: ROM:00010F60j
-						  ; ROM:00010F66j ...
+loc_10F82:					  ; CODE XREF: ProcessTriggerAction+262j
+						  ; ProcessTriggerAction+268j ...
 		bclr	#$07,FallRate(a0)
 		bclr	#$07,$000000A0(a0)
 		bclr	#$07,$00000120(a0)
@@ -38,6 +39,7 @@ loc_10F82:					  ; CODE XREF: ROM:00010F60j
 		btst	#$06,(g_Vars+$A).l
 		bne.w	loc_10F4C
 		trap	#$00			  ; Trap00Handler
+; END OF FUNCTION CHUNK	FOR ProcessTriggerAction
 ; ---------------------------------------------------------------------------
 		dc.w SND_Rumble
 ; ---------------------------------------------------------------------------

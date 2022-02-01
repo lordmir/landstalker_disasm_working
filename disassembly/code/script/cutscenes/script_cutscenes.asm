@@ -918,7 +918,7 @@ locret_27670:
 ; End of function XS_00AC
 
 ; ---------------------------------------------------------------------------
-word_27672:	ScriptID    $852,$0		  ; DATA XREF: XS_00AC+4o
+word_27672:	ScriptID    $852,$0		  ; DATA XREF: XS_00AC+4t
 						  ; Mayor (0x00) : Run text script at offset 0x02889A
 						  ; 0x1BED: LOAD SPECIAL CHARACTER * (0x05)
 						  ; 0xE6BB: PRINT MSG 0x0708, MSGBOX CLEARED, END: "{5B}Oh!!{57}Don't frighten me like that!{5E}"
@@ -946,7 +946,7 @@ XS_00AD:
 locret_27698:
 		rts
 ; ---------------------------------------------------------------------------
-word_2769A:	ScriptID    $85A,$0		  ; DATA XREF: ROM:0002767Eo
+word_2769A:	ScriptID    $85A,$0		  ; DATA XREF: ROM:0002767Et
 						  ; Mayor (0x00) : Run text script at offset 0x0288AA
 						  ; 0x1BED: LOAD SPECIAL CHARACTER * (0x05)
 						  ; 0xE6BF: PRINT MSG 0x070C, MSGBOX CLEARED, END: "{5B}Woah!  That made me dizzy!{5E}"

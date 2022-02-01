@@ -969,7 +969,7 @@ loc_4786:					  ; CODE XREF: LoadSpriteTiles+14j
 ; End of function LoadSpriteTiles
 
 ; ---------------------------------------------------------------------------
-Zeros:		dcb.w $F0,$0000			  ; DATA XREF: LoadSpriteTiles:loc_476Eo
+Zeros:		dcb.w $F0,$0000			  ; DATA XREF: LoadSpriteTiles:loc_476Et
 
 ; =============== S U B	R O U T	I N E =======================================
 

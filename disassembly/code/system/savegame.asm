@@ -92,8 +92,8 @@ loc_1558:					  ; CODE XREF: EraseSaveslot+Aj
 ; End of function EraseSaveslot
 
 ; ---------------------------------------------------------------------------
-SRAM_ExpectedMagicWord:dc.b 'KAN&MAKIKO'          ; DATA XREF: CheckSRAM+6o
-						  ; CheckSRAM+34o
+SRAM_ExpectedMagicWord:dc.b 'KAN&MAKIKO'          ; DATA XREF: CheckSRAM+6t
+						  ; CheckSRAM+34t
 
 ; =============== S U B	R O U T	I N E =======================================
 
@@ -232,8 +232,8 @@ loc_1618:					  ; CODE XREF: ROM:0000160Cj
 		adda.w	d2,a0
 		rts
 ; ---------------------------------------------------------------------------
-SaveGameRamPtrs:dc.l g_Flags			  ; Address ; DATA XREF: SaveGame+Co
-						  ; LoadSavedGame+8o ...
+SaveGameRamPtrs:dc.l g_Flags			  ; Address ; DATA XREF: SaveGame+Ct
+						  ; LoadSavedGame+8t ...
 		dc.w $001F			  ; Length
 		dc.l g_Inventory		  ; Address
 		dc.w $003F			  ; Length

@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_10ACE:					  ; DATA XREF: sub_10350o
+sub_10ACE:					  ; DATA XREF: sub_10350t
 		tst.b	(byte_FF1145).l
 		beq.w	locret_10C84
 		bset	#$00,(Player_Flags2).l

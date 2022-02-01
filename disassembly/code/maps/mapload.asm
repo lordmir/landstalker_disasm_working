@@ -464,7 +464,7 @@ locret_2B46:					  ; CODE XREF: sub_2AF2+8j
 ; End of function sub_2AF2
 
 ; ---------------------------------------------------------------------------
-RoomsPocketsXformReversed:dc.w $0276		  ; DATA XREF: sub_2AF2+Ao
+RoomsPocketsXformReversed:dc.w $0276		  ; DATA XREF: sub_2AF2+At
 		dc.w $027E
 		dc.w $01C6
 ; ---------------------------------------------------------------------------

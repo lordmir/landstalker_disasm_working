@@ -696,7 +696,7 @@ sub_F282:					  ; CODE XREF: ROM:0000F0ECp
 ; End of function sub_F282
 
 ; ---------------------------------------------------------------------------
-off_F296:	dc.l g_Buffer+$56		  ; DATA XREF: sub_F282o
+off_F296:	dc.l g_Buffer+$56		  ; DATA XREF: sub_F282t
 		dc.l g_Buffer+$7A
 		dc.l g_Buffer+$376
 		dc.l g_Buffer+$39A
@@ -716,7 +716,7 @@ sub_F2A6:					  ; CODE XREF: sub_F13A+4p
 ; End of function sub_F2A6
 
 ; ---------------------------------------------------------------------------
-word_F2BE:	dc.w $00A4,$00CC		  ; DATA XREF: sub_F2A6+4o
+word_F2BE:	dc.w $00A4,$00CC		  ; DATA XREF: sub_F2A6+4t
 		dc.w $0134,$00CC
 		dc.w $00A4,$011C
 		dc.w $0134,$011C
@@ -724,7 +724,7 @@ byte_F2CE:	dc.b $01,$01,$00		  ; DATA XREF: sub_F1E4o
 byte_F2D1:	dc.b $03,$0A,$0A,$0A,$0A,$0A,$0A,$0A,$0A,$00 ; DATA XREF: ROM:0000F008o
 						  ; sub_F18C+34o
 byte_F2DB:	dc.b $0F,$06,$06,$06,$06,$00,$FF  ; DATA XREF: sub_F0F8+Ao
-						  ; sub_F18C+28o
+						  ; sub_F18C+28t
 
 ; =============== S U B	R O U T	I N E =======================================
 

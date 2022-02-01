@@ -86,7 +86,7 @@ CheckAndDisplayIntroString:			  ; CODE XREF: ROM:00008DFEp
 		andi.w	#$00FF,d0
 		lsl.b	#$02,d0
 		lea	IntroStringPointers(pc),a2
-		movea.l	-$00000004(a2,d0.w),a2
+		movea.l	loc_C598+2-IntroStringPointers(a2,d0.w),a2
 		move.w	(a2)+,d0
 		move.w	(a2)+,d1
 		move.w	(a2)+,d2
@@ -214,7 +214,7 @@ LoadIntroStringLine2Sprites:			  ; CODE XREF: CheckAndDisplayIntroString+44p
 loc_C584:					  ; CODE XREF: LoadIntroStringLine1Sprites+Aj
 		moveq	#$00000003,d7
 
-_loop:						  ; CODE XREF: LoadIntroStringLine1Sprites+2Aj
+loc_C586:					  ; CODE XREF: LoadIntroStringLine1Sprites:loc_C598j
 		move.w	d1,(a0)+		  ; Y
 		move.b	#$0D,(a0)		  ; Size
 		addq.l	#$02,a0
@@ -222,7 +222,9 @@ _loop:						  ; CODE XREF: LoadIntroStringLine1Sprites+2Aj
 		move.w	d0,(a0)+		  ; X
 		addq.w	#$08,d2
 		addi.w	#$0020,d0
-		dbf	d7,_loop		  ; Y
+
+loc_C598:					  ; DATA XREF: CheckAndDisplayIntroString+1Cr
+		dbf	d7,loc_C586		  ; Y
 		rts
 ; End of function LoadIntroStringLine1Sprites
 

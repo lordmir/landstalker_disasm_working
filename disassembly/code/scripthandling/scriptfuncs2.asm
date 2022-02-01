@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-PlayerTalk:					  ; DATA XREF: sub_22EB8o
+PlayerTalk:					  ; DATA XREF: sub_22EB8t
 		movem.l	d0-a6,-(sp)
 		move.w	#$FFFF,(g_Character).l
 		btst	#CTRL_DOWN,(g_Controller2State).l

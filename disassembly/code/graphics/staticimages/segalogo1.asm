@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-DisplaySegaLogo:				  ; DATA XREF: j_DisplaySegaLogoo
+DisplaySegaLogo:				  ; DATA XREF: j_DisplaySegaLogot
 		jsr	(j_DisableDisplayAndInts).l
 		bsr.w	LoadSegaLogoPalette
 		bsr.w	LoadSegaLogoTiles

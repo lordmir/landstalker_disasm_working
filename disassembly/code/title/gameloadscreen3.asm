@@ -181,7 +181,7 @@ locret_1006C:					  ; CODE XREF: sub_10014+52j
 ; End of function sub_10014
 
 ; ---------------------------------------------------------------------------
-word_1006E:	dc.w $0002,$0001		  ; DATA XREF: sub_10014:loc_10024o
+word_1006E:	dc.w $0002,$0001		  ; DATA XREF: sub_10014:loc_10024t
 		dc.w $FFFE,$0001
 		dc.w $0002,$FFFF
 		dc.w $FFFE,$FFFF

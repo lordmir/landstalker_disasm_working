@@ -5,7 +5,7 @@ loc_4B8:					  ; CODE XREF: ROM:000016C6j
 		bra.s	loc_4CE
 ; ---------------------------------------------------------------------------
 
-EndGame:					  ; DATA XREF: ROM:j_EndGameo
+EndGame:					  ; DATA XREF: ROM:j_EndGamet
 		lea	(ResetSP).w,sp
 		trap	#$00			  ; Trap00Handler
 ; ---------------------------------------------------------------------------
@@ -131,7 +131,7 @@ loc_5A8:					  ; CODE XREF: ClearAndInitGraphics+5Ej
 ; End of function ClearAndInitGraphics
 
 ; ---------------------------------------------------------------------------
-InitVDPRegs00:	dc.w $8004			  ; DATA XREF: ResetVDPAndClearRAM+1Ao
+InitVDPRegs00:	dc.w $8004			  ; DATA XREF: ResetVDPAndClearRAM+1At
 						  ; Disable HInt, Enable HV Counters
 InitVDPRegs01:	dc.w $8124			  ; DATA XREF: ResetVDPAndClearRAMt
 		dc.w $8230			  ; #01	Disable	Display, Enable	VInt, Disable DMA, 28V cells
@@ -225,7 +225,7 @@ loc_664:					  ; CODE XREF: ROM:00000668j
 loc_676:					  ; CODE XREF: ROM:loc_5F8j
 		bra.s	loc_6E4
 ; ---------------------------------------------------------------------------
-SystemInit:	dc.w $8000			  ; DATA XREF: ROM:000005FAo
+SystemInit:	dc.w $8000			  ; DATA XREF: ROM:000005FAt
 		dc.w $3FFF
 		dc.w $0100
 		dc.l Z80_MEM
@@ -304,8 +304,7 @@ WriteAndVerifyReg:				  ; CODE XREF: InitZ80Driver+26p
 
 ; Play sound
 
-Trap00Handler:					  ; CODE XREF: ROM:000004C2p
-						  ; ROM:000004E0p ...
+Trap00Handler:					  ; DATA XREF: ROM:Trap00o
 		movem.l	d0-d1/a0,-(sp)
 		movea.l	$0000000E(sp),a0
 		move.w	(a0),d1
@@ -391,8 +390,7 @@ HandleIRQ7:					  ; CODE XREF: ROM:000007E6j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-Trap01Handler:					  ; CODE XREF: ROM:00024D04p
-						  ; ROM:00025102p ...
+Trap01Handler:					  ; DATA XREF: ROM:Trap01o
 		movem.l	d0/a0,-(sp)
 		movea.l	$0000000A(sp),a0
 		move.w	(a0),d0
@@ -406,8 +404,7 @@ Trap01Handler:					  ; CODE XREF: ROM:00024D04p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-Trap02Handler:					  ; CODE XREF: ROM:00024F72p
-						  ; ROM:loc_24F78p ...
+Trap02Handler:					  ; DATA XREF: ROM:Trap02o
 		movem.l	d0/a1,-(sp)
 		movea.l	$0000000A(sp),a1
 		move.w	(a1),d0
@@ -423,7 +420,7 @@ Trap02Handler:					  ; CODE XREF: ROM:00024F72p
 
 
 WaitUntilZ80Ready:				  ; CODE XREF: ROM:00000856p
-						  ; DATA XREF: ROM:00000470o
+						  ; DATA XREF: ROM:00000470t
 		movem.w	d0,-(sp)
 
 loc_824:					  ; CODE XREF: WaitUntilZ80Ready+2Aj
@@ -1494,7 +1491,7 @@ loc_1012:					  ; CODE XREF: ConvertToBase10+2Ej
 ; End of function ConvertToBase10
 
 ; ---------------------------------------------------------------------------
-PowersOf10:	dc.l 1000000000			  ; DATA XREF: ConvertToBase10+4o
+PowersOf10:	dc.l 1000000000			  ; DATA XREF: ConvertToBase10+4t
 		dc.l 0100000000
 		dc.l 0010000000
 		dc.l 0001000000

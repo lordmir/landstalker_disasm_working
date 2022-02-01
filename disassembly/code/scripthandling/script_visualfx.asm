@@ -167,7 +167,7 @@ loc_29C3E:					  ; CODE XREF: SpellBook+6Cj
 ; End of function SpellBook
 
 ; ---------------------------------------------------------------------------
-word_29C78:	dc.w $0000,$0008,$0002,$0100,$0004,$0000,$027F ; DATA XREF: SpellBook+1Co
+word_29C78:	dc.w $0000,$0008,$0002,$0100,$0004,$0000,$027F ; DATA XREF: SpellBook+1Ct
 		dc.w $FFF0,$009F
 
 ; =============== S U B	R O U T	I N E =======================================
@@ -292,7 +292,7 @@ loc_29D8E:					  ; CODE XREF: sub_29D52+3Ej
 
 
 sub_29DC4:					  ; CODE XREF: sub_29D52+6Ap
-						  ; DATA XREF: ROM:00029B7Ao
+						  ; DATA XREF: ROM:00029B7At
 		movem.l	d0-d1,-(sp)
 		move.w	d0,d1
 		andi.w	#$0007,d1
@@ -537,7 +537,7 @@ sub_29FC6:					  ; CODE XREF: SpellBook+44p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_29FD4:					  ; DATA XREF: sub_29FC6+2o
+sub_29FD4:					  ; DATA XREF: sub_29FC6+2t
 		move.l	d0,-(sp)
 		move.w	(a1),d0
 		bsr.w	sub_2A186
@@ -565,7 +565,7 @@ sub_29FEA:					  ; CODE XREF: SpellBook+8Ap
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_29FF8:					  ; DATA XREF: sub_29FEA+2o
+sub_29FF8:					  ; DATA XREF: sub_29FEA+2t
 		movem.l	d0-d2,-(sp)
 		move.w	(a2),d0
 		bsr.w	sub_2A186
@@ -597,7 +597,7 @@ sub_2A020:					  ; CODE XREF: sub_29CC4+18p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_2A02E:					  ; DATA XREF: sub_2A020+2o
+sub_2A02E:					  ; DATA XREF: sub_2A020+2t
 		move.l	d0,-(sp)
 		move.w	(a1),d0
 		bsr.w	sub_2A186
@@ -624,7 +624,7 @@ sub_2A044:					  ; CODE XREF: sub_29D16+2Ep
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_2A052:					  ; DATA XREF: sub_2A044+2o
+sub_2A052:					  ; DATA XREF: sub_2A044+2t
 		movem.l	d0-d2,-(sp)
 		move.w	(a2),d0
 		bsr.w	sub_2A186
@@ -914,7 +914,7 @@ loc_2A20C:					  ; CODE XREF: sub_2A206+1Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_2A228:					  ; DATA XREF: sub_22EECo
+sub_2A228:					  ; DATA XREF: sub_22EECt
 		addi.w	#$0040,d0
 ; End of function sub_2A228
 

@@ -1,6 +1,6 @@
 ; ---------------------------------------------------------------------------
 
-loc_15C1C:					  ; DATA XREF: sub_10348o
+loc_15C1C:					  ; DATA XREF: sub_10348t
 		lea	(Player_X).l,a0
 		move.w	#$4000,d0
 		and.w	d0,$000000AC(a0)
@@ -72,10 +72,10 @@ loc_15CDC:					  ; CODE XREF: ROM:00015CCCj
 		bcs.w	loc_15F6A
 		bra.s	loc_15D24
 ; ---------------------------------------------------------------------------
-byte_15D0C:	dc.b $00,$18,$00,$10,$00,$00,$00,$00 ; DATA XREF: ROM:00015C84o
-byte_15D14:	dc.b $00,$20,$00,$10,$00,$10,$FF,$F8 ; DATA XREF: ROM:00015C98o
-						  ; ROM:loc_15CC0o
-byte_15D1C:	dc.b $00,$18,$00,$00,$00,$10,$00,$00 ; DATA XREF: ROM:00015C8Eo
+byte_15D0C:	dc.b $00,$18,$00,$10,$00,$00,$00,$00 ; DATA XREF: ROM:00015C84t
+byte_15D14:	dc.b $00,$20,$00,$10,$00,$10,$FF,$F8 ; DATA XREF: ROM:00015C98t
+						  ; ROM:loc_15CC0t
+byte_15D1C:	dc.b $00,$18,$00,$00,$00,$10,$00,$00 ; DATA XREF: ROM:00015C8Et
 ; ---------------------------------------------------------------------------
 
 loc_15D24:					  ; CODE XREF: ROM:00015D0Aj
@@ -460,7 +460,7 @@ locret_16074:					  ; CODE XREF: sub_1602A+1Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_16076:					  ; DATA XREF: sub_103C4o
+sub_16076:					  ; DATA XREF: sub_103C4t
 		lea	(Sprite1_X).l,a5
 		moveq	#$0000000E,d7
 
@@ -664,7 +664,7 @@ locret_1621E:					  ; CODE XREF: sub_161E8+4j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_16220:					  ; DATA XREF: sub_10358o
+sub_16220:					  ; DATA XREF: sub_10358t
 
 ; FUNCTION CHUNK AT 0001638E SIZE 00000092 BYTES
 
@@ -850,7 +850,7 @@ loc_16416:					  ; CODE XREF: sub_16220+17Ej
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_16420:					  ; DATA XREF: sub_1034Co
+sub_16420:					  ; DATA XREF: sub_1034Ct
 
 ; FUNCTION CHUNK AT 00016512 SIZE 0000006C BYTES
 
@@ -1053,7 +1053,7 @@ loc_165FC:					  ; CODE XREF: sub_165D0+Cj
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_16602:					  ; DATA XREF: sub_10380o
+sub_16602:					  ; DATA XREF: sub_10380t
 
 ; FUNCTION CHUNK AT 000164EA SIZE 00000026 BYTES
 
@@ -1146,7 +1146,7 @@ loc_166E0:					  ; CODE XREF: sub_16602+78j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_166E8:					  ; DATA XREF: sub_10384o
+sub_166E8:					  ; DATA XREF: sub_10384t
 		tst.w	(g_Pal0Active).l
 		beq.s	locret_16710
 		lea	(g_Pal0Base).l,a0

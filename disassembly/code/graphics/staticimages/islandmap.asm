@@ -3,7 +3,7 @@
 
 ; Attributes: bp-based frame
 
-DisplayIslandMap:				  ; DATA XREF: j_DisplayIslandMapo
+DisplayIslandMap:				  ; DATA XREF: j_DisplayIslandMapt
 
 var_98		= -$98
 var_96		= -$96
@@ -154,7 +154,7 @@ loc_3E864:					  ; CODE XREF: sub_3E860+6j
 ; End of function sub_3E860
 
 ; ---------------------------------------------------------------------------
-off_3E86C:	dc.l sub_3EC44			  ; DATA XREF: DisplayIslandMap+1B8o
+off_3E86C:	dc.l sub_3EC44			  ; DATA XREF: DisplayIslandMap+1B8t
 		dc.l sub_3EC44
 		dc.l sub_3E87C
 		dc.l sub_3E890
@@ -213,7 +213,7 @@ loc_3E8DA:					  ; CODE XREF: sub_3E890+44j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_3E90A:					  ; DATA XREF: sub_3E890:loc_3E8C8o
+sub_3E90A:					  ; DATA XREF: sub_3E890:loc_3E8C8t
 		jsr	(j_WaitForZ80).l
 		lea	(g_Controller1State).l,a0
 		lea	-$00000085(a6),a1
@@ -476,13 +476,13 @@ loc_3EAD8:					  ; CODE XREF: sub_3E9F8+DAj
 		rts
 ; END OF FUNCTION CHUNK	FOR sub_3E9F8
 ; ---------------------------------------------------------------------------
-MapFridayCoords:dc.w $0178,$00C8		  ; DATA XREF: sub_3E9F8+24o
+MapFridayCoords:dc.w $0178,$00C8		  ; DATA XREF: sub_3E9F8+24t
 		dc.w $0198,$00F0		  ; GUMI
 		dc.w $0168,$0110		  ; RYUMA
 		dc.w $0128,$00E8		  ; MERCATOR
 		dc.w $00C8,$0100		  ; VERLA
 		dc.w $00C0,$00C0		  ; DESTEL
-MapTextCoords:	dc.w $0188,$00D8		  ; DATA XREF: sub_3E9F8:loc_3EA76o
+MapTextCoords:	dc.w $0188,$00D8		  ; DATA XREF: sub_3E9F8:loc_3EA76t
 		dc.w $0180,$00FC		  ; GUMI
 		dc.w $0170,$0130		  ; RYUMA
 		dc.w $0110,$00D8		  ; MERCATOR
@@ -811,13 +811,13 @@ loc_3ED2E:					  ; CODE XREF: sub_3ED18+12j
 ; End of function sub_3ED18
 
 ; ---------------------------------------------------------------------------
-byte_3ED3C:	dc.b $00, $04			  ; DATA XREF: sub_3EC9E+8o
+byte_3ED3C:	dc.b $00, $04			  ; DATA XREF: sub_3EC9E+8t
 		dc.b $01, $06
 		dc.b $02, $08
 		dc.b $03, $14
 		dc.b $FF, $00
-byte_3ED46:	dc.b $AC, $7B			  ; DATA XREF: sub_3EC9E+4Ao
-						  ; sub_3ED18o
+byte_3ED46:	dc.b $AC, $7B			  ; DATA XREF: sub_3EC9E+4At
+						  ; sub_3ED18t
 		dc.b $B4, $83
 		dc.b $BA, $8C
 		dc.b $BB, $99

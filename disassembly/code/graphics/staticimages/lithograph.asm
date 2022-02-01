@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-DisplayLithograph:				  ; DATA XREF: j_DisplayLithographo
+DisplayLithograph:				  ; DATA XREF: j_DisplayLithographt
 		jsr	(sub_3E6).l
 		move.w	#$0000,d0
 		move.b	#$10,d1

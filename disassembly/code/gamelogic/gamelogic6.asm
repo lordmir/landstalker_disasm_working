@@ -15,7 +15,7 @@ loc_9054:					  ; CODE XREF: LoadHUDSprites+10j
 ; End of function LoadHUDSprites
 
 ; ---------------------------------------------------------------------------
-HUDSprites:	dc.w $0080, $0201, $86B4, $0001	  ; DATA XREF: LoadHUDSpriteso
+HUDSprites:	dc.w $0080, $0201, $86B4, $0001	  ; DATA XREF: LoadHUDSpritest
 		dc.w $0080, $0202, $86B4, $0000
 
 ; =============== S U B	R O U T	I N E =======================================

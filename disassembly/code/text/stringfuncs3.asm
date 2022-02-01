@@ -79,7 +79,7 @@ loc_24710:					  ; CODE XREF: DecodeChar+36j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-YesNoPrompt:					  ; DATA XREF: j_YesNoPrompto
+YesNoPrompt:					  ; DATA XREF: j_YesNoPromptt
 		bsr.w	sub_24998
 		move.w	#$0050,(word_FF1194).l
 		move.w	#$0000,d0		  ; Yes
@@ -165,7 +165,7 @@ loc_24822:					  ; CODE XREF: YesNoPrompt+86j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_2482C:					  ; DATA XREF: sub_22E88o
+sub_2482C:					  ; DATA XREF: sub_22E88t
 		bsr.w	sub_24998
 		bsr.w	ClearTextbox
 		move.w	#$0050,(word_FF1194).l
@@ -189,7 +189,7 @@ sub_2482C:					  ; DATA XREF: sub_22E88o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_2488A:					  ; DATA XREF: sub_22E8Co
+sub_2488A:					  ; DATA XREF: sub_22E8Ct
 		move.w	(word_FF1800).l,d1
 		clr.b	(word_FF1800).l
 		clr.b	d2

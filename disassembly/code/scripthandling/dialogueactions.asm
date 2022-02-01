@@ -2189,7 +2189,7 @@ loc_13E86:					  ; CODE XREF: ROM:00013EA8j
 		move.b	(a0),d0
 		add.b	d0,d0
 		ext.w	d0
-		jsr	loc_13ECA(pc,d0.w)
+		jsr	j_CSA_00B2_ZakOnlyFlyUp(pc,d0.w)
 		bsr.w	ZakFlapWings
 		movem.l	d7-a0/a5,-(sp)
 		jsr	(sub_3F8).l
@@ -2204,7 +2204,7 @@ loc_13EB0:					  ; CODE XREF: ROM:00013E82j
 		move.w	#$009E,d0		  ; Cutscene 0x09E: 0x02556A
 		bra.w	LoadCutsceneDialogue
 ; ---------------------------------------------------------------------------
-ZakLaraCutsceneFlyCmds:dc.b $00,$1F		  ; DATA XREF: ROM:00013E7Ao
+ZakLaraCutsceneFlyCmds:dc.b $00,$1F		  ; DATA XREF: ROM:00013E7At
 		dc.b $01,$0F
 		dc.b $02,$07
 		dc.b $03,$2F
@@ -2213,10 +2213,15 @@ ZakLaraCutsceneFlyCmds:dc.b $00,$1F		  ; DATA XREF: ROM:00013E7Ao
 		dc.b $09,$09
 		dc.b $0A,$1F
 		dc.b $FF,$FF
-; ---------------------------------------------------------------------------
 
-loc_13ECA:					  ; DATA XREF: ROM:00013E8Co
+; =============== S U B	R O U T	I N E =======================================
+
+; Attributes: thunk
+
+j_CSA_00B2_ZakOnlyFlyUp:			  ; CODE XREF: ROM:00013E8Cp
 		bra.s	CSA_00B2_ZakOnlyFlyUp
+; End of function j_CSA_00B2_ZakOnlyFlyUp
+
 ; ---------------------------------------------------------------------------
 		bra.s	CSA_00B2_ZakOnlyMoveNW
 ; ---------------------------------------------------------------------------
@@ -2246,7 +2251,7 @@ CSA_00B2_MoveUp:				  ; CODE XREF: ROM:00013ECEj
 		addq.w	#$01,$00000092(a5)
 		addq.w	#$01,$000000D4(a5)
 
-CSA_00B2_ZakOnlyFlyUp:				  ; CODE XREF: ROM:loc_13ECAj
+CSA_00B2_ZakOnlyFlyUp:				  ; CODE XREF: j_CSA_00B2_ZakOnlyFlyUpj
 		addq.w	#$01,Z(a5)
 		addq.w	#$01,HitBoxZEnd(a5)
 		rts

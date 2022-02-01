@@ -34,7 +34,7 @@ j_LookupChestContents:				  ; DATA XREF: InitialiseSprites+214t
 
 sub_9B00C:					  ; DATA XREF: sub_7052+AAt
 						  ; sub_7052+E4t ...
-		jmp	loc_9EB9C(pc)		  ; Church in cave
+		jmp	sub_9EB9C(pc)		  ; Church in cave
 ; End of function sub_9B00C
 
 
@@ -66,7 +66,7 @@ locret_9B02A:					  ; CODE XREF: ROM:0009B01Ej
 ; D0 = spritedata[0x34]	= bytes[4] & 0x03 << 8 | bytes[7]
 
 LoadSpriteBehaviour:				  ; CODE XREF: ROM:0009B020p
-						  ; DATA XREF: j_LoadSpriteBehaviouro
+						  ; DATA XREF: j_LoadSpriteBehaviourt
 		lea	SpriteBehaviourOffsets(pc),a1
 		clr.l	d1
 		move.w	BehaviourLUTIndex(a5),d0

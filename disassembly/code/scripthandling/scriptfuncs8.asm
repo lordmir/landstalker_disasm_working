@@ -131,7 +131,7 @@ loc_29216:					  ; CODE XREF: GetItem+3Aj
 
 
 CheckAndConsumeItem:				  ; CODE XREF: ROM:000277A8p
-						  ; DATA XREF: j_CheckAndConsumeItemo
+						  ; DATA XREF: j_CheckAndConsumeItemt
 		move.l	d1,-(sp)
 		bsr.w	GetItemQtyAndMaxQty
 		tst.w	d1
@@ -252,7 +252,7 @@ GetItemMaxQty:					  ; CODE XREF: AddItem+8p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-GetItemUseStringIdx:				  ; DATA XREF: j_GetItemUseStringIdxo
+GetItemUseStringIdx:				  ; DATA XREF: j_GetItemUseStringIdxt
 		move.l	a0,-(sp)
 		bsr.s	GetItemProperties
 		move.b	(a0),d1
@@ -267,7 +267,7 @@ GetItemUseStringIdx:				  ; DATA XREF: j_GetItemUseStringIdxo
 ; =============== S U B	R O U T	I N E =======================================
 
 
-GetItemEquipSlot:				  ; DATA XREF: ROM:00022ED8o
+GetItemEquipSlot:				  ; DATA XREF: ROM:00022ED8t
 		move.l	a0,-(sp)
 		bsr.s	GetItemProperties
 		move.b	$00000001(a0),d1
@@ -281,7 +281,7 @@ GetItemEquipSlot:				  ; DATA XREF: ROM:00022ED8o
 
 
 GetItemRSP:					  ; CODE XREF: GetItemShopSellPrice+10p
-						  ; DATA XREF: ROM:00022EDCo
+						  ; DATA XREF: ROM:00022EDCt
 		move.l	a0,-(sp)
 		bsr.s	GetItemProperties
 		move.w	$00000002(a0),d1

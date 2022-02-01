@@ -160,7 +160,7 @@ loc_8F56:					  ; CODE XREF: InitHUD+12j
 ; End of function InitHUD
 
 ; ---------------------------------------------------------------------------
-VDPRegs:	dc.w $9100			  ; DATA XREF: InitHUD+4o
+VDPRegs:	dc.w $9100			  ; DATA XREF: InitHUD+4t
 		dc.w $9203			  ; Window position 0,3
 		dc.w $8014			  ; HInt enabled, HV Counter enabled
 		dc.w $8AB8			  ; HInt on line 184

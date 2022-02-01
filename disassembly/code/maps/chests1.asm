@@ -1,6 +1,8 @@
-; ---------------------------------------------------------------------------
 
-LookupChestContents:				  ; DATA XREF: j_LookupChestContentso
+; =============== S U B	R O U T	I N E =======================================
+
+
+LookupChestContents:				  ; DATA XREF: j_LookupChestContentst
 		move.w	(g_RmNum1).l,d0
 		jsr	(j_GetOriginalRoomNum).l
 		clr.w	d1
@@ -12,4 +14,6 @@ LookupChestContents:				  ; DATA XREF: j_LookupChestContentso
 		move.b	d1,$00000037(a1)	  ; ChestIdx
 		addq.b	#$01,(g_chestCount).l
 		rts
+; End of function LookupChestContents
+
 ; ---------------------------------------------------------------------------

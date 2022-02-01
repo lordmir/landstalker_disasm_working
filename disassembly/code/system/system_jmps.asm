@@ -772,7 +772,7 @@ j_TransitionToNewRoom:				  ; CODE XREF: ROM:000136F8p
 
 ; Attributes: thunk
 
-j_GetOriginalRoomNum:				  ; CODE XREF: ROM:0009E764p
+j_GetOriginalRoomNum:				  ; CODE XREF: LookupChestContents+6p
 		jmp	(GetOriginalRoomNum).l
 ; End of function j_GetOriginalRoomNum
 

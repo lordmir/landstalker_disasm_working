@@ -1,7 +1,10 @@
-; ---------------------------------------------------------------------------
 
-loc_9EB9C:					  ; DATA XREF: sub_9B00Co
-		cmpi.w	#$0188,(g_RmNum1).l	  ; Church in cave
+; =============== S U B	R O U T	I N E =======================================
+
+; Church in cave
+
+sub_9EB9C:					  ; DATA XREF: sub_9B00Ct
+		cmpi.w	#$0188,(g_RmNum1).l
 		beq.s	locret_9EBC4
 		move.b	#$FF,GoldOrChestContents(a4)
 		clr.w	d0
@@ -12,11 +15,15 @@ loc_9EB9C:					  ; DATA XREF: sub_9B00Co
 		lea	(g_ChestOpenFlags).l,a0
 		bset	d1,(a0,d0.w)
 
-locret_9EBC4:					  ; CODE XREF: ROM:0009EBA4j
+locret_9EBC4:					  ; CODE XREF: sub_9EB9C+8j
 		rts
-; ---------------------------------------------------------------------------
+; End of function sub_9EB9C
 
-CheckIfChestOpened:				  ; DATA XREF: j_CheckIfChestOpenedo
+
+; =============== S U B	R O U T	I N E =======================================
+
+
+CheckIfChestOpened:				  ; DATA XREF: j_CheckIfChestOpenedt
 		clr.w	d0
 		move.b	$00000037(a1),d0
 		move.b	d0,d1
@@ -25,3 +32,5 @@ CheckIfChestOpened:				  ; DATA XREF: j_CheckIfChestOpenedo
 		lea	(g_ChestOpenFlags).l,a0
 		btst	d1,(a0,d0.w)
 		rts
+; End of function CheckIfChestOpened
+

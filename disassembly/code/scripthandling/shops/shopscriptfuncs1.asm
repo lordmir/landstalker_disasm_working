@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_24A34:					  ; DATA XREF: sub_22EC0o
+sub_24A34:					  ; DATA XREF: sub_22EC0t
 		clr.b	(byte_FF1902).l
 		rts
 ; End of function sub_24A34
@@ -11,7 +11,7 @@ sub_24A34:					  ; DATA XREF: sub_22EC0o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_24A3C:					  ; DATA XREF: sub_22EA4o
+sub_24A3C:					  ; DATA XREF: sub_22EA4t
 		movem.l	d0-a6,-(sp)
 		moveq	#$00000004,d1
 		moveq	#$FFFFFFFF,d2
@@ -24,7 +24,7 @@ sub_24A3C:					  ; DATA XREF: sub_22EA4o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_24A4C:					  ; DATA XREF: sub_22EA8o
+sub_24A4C:					  ; DATA XREF: sub_22EA8t
 		movem.l	d0-a6,-(sp)
 		moveq	#$00000006,d1
 		moveq	#$FFFFFFFF,d2
@@ -37,7 +37,7 @@ sub_24A4C:					  ; DATA XREF: sub_22EA8o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_24A5C:					  ; DATA XREF: sub_22EACo
+sub_24A5C:					  ; DATA XREF: sub_22EACt
 		movem.l	d0-a6,-(sp)
 		bsr.w	sub_24D0C
 		bcc.s	loc_24A6C
@@ -59,7 +59,7 @@ loc_24A72:					  ; CODE XREF: sub_24A5C+Ej
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_24A78:					  ; DATA XREF: sub_22EB0o
+sub_24A78:					  ; DATA XREF: sub_22EB0t
 		movem.l	d0-a6,-(sp)
 		moveq	#$0000000A,d1
 		moveq	#$00000006,d2
@@ -72,7 +72,7 @@ sub_24A78:					  ; DATA XREF: sub_22EB0o
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_24A88:					  ; DATA XREF: sub_22EB4o
+sub_24A88:					  ; DATA XREF: sub_22EB4t
 		movem.l	d0-a6,-(sp)
 		moveq	#$0000000C,d1
 		moveq	#$00000008,d2

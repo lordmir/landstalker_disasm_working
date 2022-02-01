@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-LoadStatusGfx:					  ; DATA XREF: sub_10354o
+LoadStatusGfx:					  ; DATA XREF: sub_10354t
 		move.b	(byte_FF1147).l,d0
 		addq.b	#$01,(byte_FF1147).l
 		andi.b	#$07,d0

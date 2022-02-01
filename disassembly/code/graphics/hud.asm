@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1690A:					  ; DATA XREF: sub_10344o
+sub_1690A:					  ; DATA XREF: sub_10344t
 		bsr.w	RefreshCurrentHealthHUD
 		bsr.w	RefreshMaxHealthHUD
 		bsr.w	UpdateGoldHUD
@@ -386,8 +386,8 @@ sub_16BBE:					  ; CODE XREF: UpdateSmallHeartHUD+5Cp
 		bcs.s	loc_16BB8
 		addi.w	#$66B5,d1
 
-loc_16BCE:					  ; DATA XREF: UpdateSmallHeartHUD+12o
-						  ; UpdateSmallHeartHUD+46o
+loc_16BCE:					  ; DATA XREF: UpdateSmallHeartHUD+12t
+						  ; UpdateSmallHeartHUD+46t
 		move.w	d1,(a0)+
 		addq.w	#$01,d0
 		dbf	d7,sub_16BBE
@@ -503,7 +503,7 @@ sub_16CDE:					  ; CODE XREF: UpdateSmallHeartHUD+1Ep
 ; End of function sub_16CDE
 
 ; ---------------------------------------------------------------------------
-SwordChargeTiles:dc.b $40,$40,$40,$40,$40,$40,$36 ; DATA XREF: sub_16CC6+14o
+SwordChargeTiles:dc.b $40,$40,$40,$40,$40,$40,$36 ; DATA XREF: sub_16CC6+14t
 		dc.b $41,$40,$40,$40,$40,$40,$36
 		dc.b $42,$40,$40,$40,$40,$40,$36
 		dc.b $43,$40,$40,$40,$40,$40,$36

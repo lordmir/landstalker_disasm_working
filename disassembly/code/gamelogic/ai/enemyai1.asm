@@ -5743,7 +5743,7 @@ locret_1A83E4:					  ; CODE XREF: ROM:001A83C0j
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_1A83E6:					  ; DATA XREF: sub_1A4404o
+sub_1A83E6:					  ; DATA XREF: sub_1A4404t
 
 ; FUNCTION CHUNK AT 001A870E SIZE 00000098 BYTES
 ; FUNCTION CHUNK AT 001A87D2 SIZE 0000003A BYTES
@@ -5779,7 +5779,7 @@ loc_1A840E:					  ; CODE XREF: sub_1A83F0+Ej
 ; End of function sub_1A83F0
 
 ; ---------------------------------------------------------------------------
-EnemyTable:	dc.w SPR_ORC1			  ; DATA XREF: sub_1A83F0+8o
+EnemyTable:	dc.w SPR_ORC1			  ; DATA XREF: sub_1A83F0+8t
 						  ; ROM:EnemyTable+2o ...
 		dc.w SPR_ORC2
 		dc.w SPR_ORC3
@@ -5853,7 +5853,7 @@ EnemyTable:	dc.w SPR_ORC1			  ; DATA XREF: sub_1A83F0+8o
 		dc.w $FFFF
 ; ---------------------------------------------------------------------------
 
-loc_1A84A6:					  ; DATA XREF: sub_1A83F0:loc_1A840Eo
+loc_1A84A6:					  ; DATA XREF: sub_1A83F0:loc_1A840Et
 		bra.w	EnemyAI_Orc1_A
 ; ---------------------------------------------------------------------------
 		bra.w	EnemyAI_Orc1_B
@@ -6138,7 +6138,7 @@ loc_1A84A6:					  ; DATA XREF: sub_1A83F0:loc_1A840Eo
 
 
 sub_1A86D6:					  ; CODE XREF: sub_1A83E6+414p
-						  ; DATA XREF: sub_1A440Co
+						  ; DATA XREF: sub_1A440Ct
 		move.w	#$0004,d1
 		bsr.w	sub_1A83F0
 		bra.w	LoadSpecialAI
@@ -6241,7 +6241,7 @@ MoveSpriteOffscreen:				  ; CODE XREF: ROM:loc_1A78B4p
 ; =============== S U B	R O U T	I N E =======================================
 
 
-HideSprite:					  ; DATA XREF: j_HideSpriteo
+HideSprite:					  ; DATA XREF: j_HideSpritet
 		ori.b	#$01,$00000008(a5)
 		bra.s	MoveSpriteOffscreen
 ; End of function HideSprite

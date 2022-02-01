@@ -180,8 +180,8 @@ loc_2F5E:					  ; CODE XREF: CheckRAM+24j
 ; End of function CheckRAM
 
 ; ---------------------------------------------------------------------------
-aKanMakiko:	dc.b 'Kan&Makiko'                 ; DATA XREF: CheckRAM+6o
-						  ; CheckRAM+1Co
+aKanMakiko:	dc.b 'Kan&Makiko'                 ; DATA XREF: CheckRAM+6t
+						  ; CheckRAM+1Ct
 
 ; =============== S U B	R O U T	I N E =======================================
 

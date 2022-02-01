@@ -3,15 +3,18 @@
 
 
 ProcessTriggerAction:				  ; DATA XREF: sub_178FE+1256t
+
+; FUNCTION CHUNK AT 00010F4C SIZE 00000068 BYTES
+
 		andi.w	#$00FF,d0
 		lsl.w	#$02,d0
 		jmp	TriggerActionJumpTable(pc,d0.w)
-; End of function ProcessTriggerAction
-
 ; ---------------------------------------------------------------------------
 
-TriggerActionJumpTable:				  ; DATA XREF: ProcessTriggerAction+6o
+TriggerActionJumpTable:				  ; CODE XREF: ProcessTriggerAction+6j
 		bra.w	loc_10F56		  ; First dungeon: boulder trap
+; End of function ProcessTriggerAction
+
 ; ---------------------------------------------------------------------------
 		bra.w	loc_10FBA
 ; ---------------------------------------------------------------------------

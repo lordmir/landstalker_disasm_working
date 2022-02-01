@@ -3,7 +3,7 @@
 
 
 ProcessScriptWord:				  ; CODE XREF: RunTextCmd+10p
-						  ; DATA XREF: ROM:00022EBCo
+						  ; DATA XREF: ROM:00022EBCt
 		movem.l	d0-d1/a0-a1,-(sp)
 
 loc_28D68:					  ; CODE XREF: ProcessScriptWord+30j
@@ -37,7 +37,7 @@ loc_28D90:					  ; CODE XREF: ProcessScriptWord+26j
 ; End of function ProcessScriptWord
 
 ; ---------------------------------------------------------------------------
-ActionTable:	dc.w LoadValueIntoFF1196-ActionTable ; DATA XREF: ProcessScriptWord+18o
+ActionTable:	dc.w LoadValueIntoFF1196-ActionTable ; DATA XREF: ProcessScriptWord+18t
 						  ; ROM:ActionTableo ...
 		dc.w LoadValueIntoFF1198-ActionTable
 		dc.w LoadValueIntoFF119A-ActionTable
@@ -201,7 +201,7 @@ loc_28EAC:					  ; CODE XREF: DoSpecialAction+1Cj
 ; End of function DoSpecialAction
 
 ; ---------------------------------------------------------------------------
-ActionPointerList:dc.w ReceiveItem-ActionPointerList ; DATA XREF: DoSpecialAction:loc_28E9Ao
+ActionPointerList:dc.w ReceiveItem-ActionPointerList ; DATA XREF: DoSpecialAction:loc_28E9At
 						  ; ROM:ActionPointerListo ...
 		dc.w ReceiveGold-ActionPointerList
 		dc.w PlayMusicTrack36-ActionPointerList

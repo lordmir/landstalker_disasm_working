@@ -13,7 +13,7 @@ ProcessFloorType:				  ; CODE XREF: sub_16DCp
 ; =============== S U B	R O U T	I N E =======================================
 
 
-sub_604C:					  ; DATA XREF: ProcessFloorType+Co
+sub_604C:
 		bra.w	locret_6108		  ; Normal
 ; ---------------------------------------------------------------------------
 		bra.w	HandleFloorDoorNE	  ; Door NE

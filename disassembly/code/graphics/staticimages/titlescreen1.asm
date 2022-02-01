@@ -2,7 +2,7 @@
 ; =============== S U B	R O U T	I N E =======================================
 
 
-DisplayTitle:					  ; DATA XREF: j_DisplayTitleo
+DisplayTitle:					  ; DATA XREF: j_DisplayTitlet
 
 ; FUNCTION CHUNK AT 00039848 SIZE 00000140 BYTES
 
