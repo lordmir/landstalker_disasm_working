@@ -134,7 +134,7 @@ LifestockSoldFlags:         incbin  "assets_packed\roomdata\flagactions\lifestoc
                             Align   $2
                             include "code\maps\animtilesets.asm"
                             Align   $2
-                            include "code\maps\animtilesettbl.asm"
+AnimatedTilesetTable:       include "code\maps\animtilesettbl.asm"
                             Align   $2
                             include "code\maps\room1.asm"
                             Align   $2
@@ -466,8 +466,8 @@ IslandMapPals:              incbin  "assets_packed\graphics\static\islandmap\for
                             Align   $2
                             incbin  "assets_packed\graphics\static\islandmap\background.pal"
                             PadTo   $044010
-                            include "code\pointertables\graphics\tilesetpointers.asm"
-                            include "code\graphics\tileset_data.asm"
+TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"
+TilesetData:                include "code\graphics\tileset_data.asm"
                             PadTo   $09B000
                             include "code\sprites\sprites1.asm"
 SpriteBehaviourOffsets:     incbin  "assets_packed\spritedata\behaviouroffsets.bin"
