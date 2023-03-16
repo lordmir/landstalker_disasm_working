@@ -18,25 +18,25 @@ loc_11EA6C:					  ; CODE XREF: CheckRegion+4j
 
 loc_11EA7C:					  ; CODE XREF: CheckRegion+14j
 		jsr	(j_DisableDisplayAndInts).l
-		lea	aDevelopedForUs(pc),a0	  ; "  DEVELOPED FOR USE ONLY WITH"
+		lea	RegionErrorLine1(pc),a0	  ; "  DEVELOPED FOR USE ONLY WITH"
 		lea	((g_BackgroundBlocks+$886)).l,a1
 		bsr.w	sub_11EB40
 		move.b	#$80,d1
 		cmpi.b	#$80,d1
 		bne.s	loc_11EAAA
-		lea	aNtscGenesis(pc),a0	  ; "	      NTSC GENESIS"
+		lea	RegionErrorNTSC(pc),a0	  ; "	      NTSC GENESIS"
 		lea	((g_BackgroundBlocks+$A06)).l,a1
 		bsr.w	sub_11EB40
 		bra.s	loc_11EAB8
 ; ---------------------------------------------------------------------------
 
 loc_11EAAA:					  ; CODE XREF: CheckRegion+34j
-		lea	aPalAndFrenchSe(pc),a0	  ; "PAL AND FRENCH SECAM MEGA DRIVE"
+		lea	RegionErrorPAL(pc),a0	  ; "PAL AND FRENCH SECAM MEGA DRIVE"
 		lea	((g_BackgroundBlocks+$A06)).l,a1
 		bsr.w	sub_11EB40
 
 loc_11EAB8:					  ; CODE XREF: CheckRegion+44j
-		lea	aSystems_(pc),a0	  ; "		SYSTEMS."
+		lea	RegionErrorLine3(pc),a0	  ; "		SYSTEMS."
 		lea	((g_BackgroundBlocks+$B86)).l,a1
 		bsr.w	sub_11EB40
 		jsr	(j_EnableDisplayAndInts).l
@@ -85,8 +85,3 @@ loc_11EB48:					  ; CODE XREF: sub_11EB40+4j
 ; End of function sub_11EB40
 
 ; ---------------------------------------------------------------------------
-aDevelopedForUs:dc.b '  DEVELOPED FOR USE ONLY WITH',0 ; DATA XREF: CheckRegion+1Et
-aNtscGenesis:	dc.b '         NTSC GENESIS',0    ; DATA XREF: CheckRegion+36t
-aPalAndFrenchSe:dc.b 'PAL AND FRENCH SECAM MEGA DRIVE',0
-						  ; DATA XREF: CheckRegion:loc_11EAAAt
-aSystems_:	dc.b '           SYSTEMS.',0      ; DATA XREF: CheckRegion:loc_11EAB8t

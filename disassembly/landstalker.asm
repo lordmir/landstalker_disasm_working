@@ -502,8 +502,6 @@ RoomPals:                   include "code\palettes\roompals.asm"
 RoomExits:                  incbin  "assets_packed\roomdata\warps\exits.bin"
                             Align   $2
                             include "code\system\regioncheck.asm"
-                            Align   $2
-SystemFont:                 incbin  "assets_packed\graphics\fonts\system.bin"
                             PadTo   $120000
                             include "code\pointertables\sprites\spritegraphicsptr.asm"
                             Align   $2
