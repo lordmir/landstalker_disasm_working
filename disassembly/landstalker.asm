@@ -501,7 +501,7 @@ RoomMaps:                   include "code\graphics\roommaps.asm"
 RoomPals:                   include "code\palettes\roompals.asm"
 RoomExits:                  incbin  "assets_packed\roomdata\warps\exits.bin"
                             Align   $2
-                            include "code\system\regioncheck.asm"
+RegionCheck:                include "code\system\regioncheck.asm"
                             PadTo   $120000
                             include "code\pointertables\sprites\spritegraphicsptr.asm"
                             Align   $2
