@@ -257,6 +257,7 @@ EnemyStats:                 incbin  "assets_packed\spritedata\enemystats.bin"
 RoomSpriteTable:            incbin  "assets_packed\spritedata\roomspritetable.bin"
                             dcb.b   $30, $FF
                             Align   $2
+StringPtrs:					include "code\pointertables\strings\stringbankptr.asm"
                             include "code\text\stringfuncsjumptable.asm"
                             include "code\text\stringfuncs1.asm"
 DownArrowGfx:               incbin  "assets_packed\graphics\static\textbox\downarrow.bin"
@@ -317,7 +318,7 @@ MenuStringTable:            incbin  "assets_packed\strings\names\system.bin"
 SineTable:                  incbin  "assets_packed\misc\data\sinetable.bin"
                             Align   $2
                             include "code\misc\debugmenu.asm"
-StringData:                 include "code\script\strings\strings.asm"
+StringData:                 include "code\text\strings.asm"
                             Align   $2
 StringBankPtrs:             include "code\pointertables\strings\stringptrs.asm"
                             PadTo   $038600
