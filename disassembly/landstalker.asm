@@ -106,38 +106,28 @@ CoinFallGfx:                incbin  "assets_packed\graphics\static\swordeffects\
 LightableRooms:             incbin  "assets_packed\roomdata\flagactions\lanternflags.bin"
                             Align   $2
                             include "code\items\items3.asm"
-                            Align   $2
                             include "code\gamelogic\gamelogic5.asm"
-                            Align   $2
 DefaultPlayerPal:           incbin  "assets_packed\graphics\miscpalettes\defaultplayer.pal"
-                            Align   $2
 StatusBarPal:               incbin  "assets_packed\graphics\static\hud\hud.pal"
-                            Align   $2
                             include "code\gamelogic\gamelogic6.asm"
-                            Align   $2
 StatusBarTilemap:           incbin  "assets_packed\graphics\static\hud\hudtilemap.map"
 StatusBarGfx:               incbin  "assets_packed\graphics\static\hud\hud.lz77"
                             Align   $2
                             include "code\maps\doors.asm"
-                            Align   $2
 DoorLookup:                 incbin  "assets_packed\roomdata\misc\doorlookup.bin"
                             Align   $2
 DoorTable:                  incbin  "assets_packed\roomdata\misc\doortable.bin"
                             Align   $2
                             include "code\gamelogic\shops\shops1.asm"
-                            Align   $2
 Shops:                      incbin  "assets_packed\roomdata\misc\shops.bin"
                             Align   $2
                             include "code\gamelogic\shops\shops2.asm"
-                            Align   $2
 LifestockSoldFlags:         incbin  "assets_packed\roomdata\flagactions\lifestocksoldflags.bin"
                             Align   $2
                             include "code\maps\animtilesets.asm"
-                            Align   $2
 AnimatedTilesetTable:       include "code\maps\animtilesettbl.asm"
                             Align   $2
                             include "code\maps\room1.asm"
-                            Align   $2
 RoomFallDestination:        incbin  "assets_packed\roomdata\warps\roomfalldests.bin"
                             Align   $2
 RoomClimbDestination:       incbin  "assets_packed\roomdata\warps\roomclimbdests.bin"
@@ -145,7 +135,6 @@ RoomClimbDestination:       incbin  "assets_packed\roomdata\warps\roomclimbdests
 RoomTransitionLookup:       incbin  "assets_packed\roomdata\flagactions\roomtransitions.bin"
                             Align   $2
                             include "code\blocks\loadisometricblocks1.asm"
-                            Align   $2
 VDPCopyBlockCmds:           incbin  "assets_packed\misc\data\vdpcopyblockcmds.bin"
                             Align   $2
 TopLeftMapOffsets:          incbin  "assets_packed\misc\data\ulmapoffsets.bin"
@@ -155,9 +144,7 @@ BottomMapOffsets:           incbin  "assets_packed\misc\data\dmapoffsets.bin"
 RightMapOffsets:            incbin  "assets_packed\misc\data\rmapoffsets.bin"
                             Align   $2
                             include "code\blocks\loadisometricblocks2.asm"
-                            Align   $2
                             include "code\pointertables\strings\introstringptrs.asm"
-                            Align   $2
 IntroString1:               incbin  "assets_packed\strings\intro\string01.bin"
                             Align   $2
 IntroString2:               incbin  "assets_packed\strings\intro\string02.bin"
@@ -217,21 +204,13 @@ UnknownSpriteLookup_1:      incbin  "assets_packed\spritedata\spritetable6F.bin"
 InputPlayback:              incbin  "assets_packed\misc\playbackinputtable.bin"
                             Align   $2
                             include "code\sprites\spritefuncs2.asm"
-                            Align   $2
                             include "code\scripthandling\triggeractionjumptable.asm"
-                            Align   $2
                             include "code\scripthandling\triggeractions.asm"
-                            Align   $2
                             include "code\scripthandling\dialogueactionjumptable.asm"
-                            Align   $2
                             include "code\scripthandling\dialogueactions.asm"
-                            Align   $2
                             include "code\gamelogic\combat.asm"
-                            Align   $2
                             include "code\graphics\hud.asm"
-                            Align   $2
                             include "code\graphics\statusanim.asm"
-                            Align   $2
                             include "code\pointertables\graphics\statusanimptrs.asm"
 PoisonAnimFrame1:           incbin  "assets_packed\graphics\static\statuseffects\poison1.lz77"
 PoisonAnimFrame2:           incbin  "assets_packed\graphics\static\statuseffects\poison2.lz77"
@@ -249,22 +228,15 @@ CurseAnimFrame1:            incbin  "assets_packed\graphics\static\statuseffects
 CurseAnimFrame2:            incbin  "assets_packed\graphics\static\statuseffects\curse2.lz77"
                             Align   $2
                             include "code\gamelogic\gamefuncs.asm"
-                            Align   $2
                             include "code\sprites\spritebehaviourjumptable.asm"
-                            Align   $2
                             include "code\sprites\spritebehaviours.asm"
                             dcb.b   $200, $FF
-                            Align   $2
                             include "code\maps\loadroomsprites.asm"
-                            Align   $2
                             include "code\maps\customroomactions1.asm"
-                            Align   $2
 BigTreeLocations:           incbin  "assets_packed\roomdata\misc\bigtreelocs.bin"
                             Align   $2
                             include "code\maps\customroomactions2.asm"
-                            Align   $2
                             include "code\maps\roomspriteflags.asm"
-                            Align   $2
 SpriteVisibilityFlags:      incbin  "assets_packed\roomdata\flagactions\spritevisibility.bin"
                             Align   $2
 OneTimeEventFlags:          incbin  "assets_packed\roomdata\flagactions\onetime.bin"
@@ -286,78 +258,49 @@ RoomSpriteTable:            incbin  "assets_packed\spritedata\roomspritetable.bi
                             dcb.b   $30, $FF
                             Align   $2
                             include "code\text\stringfuncsjumptable.asm"
-                            Align   $2
                             include "code\text\stringfuncs1.asm"
-                            Align   $2
 DownArrowGfx:               incbin  "assets_packed\graphics\static\textbox\downarrow.bin"
-                            Align   $2
                             include "code\text\stringfuncs2.asm"
-                            Align   $2
 TextBoxTilemap:             incbin  "assets_packed\graphics\static\textbox\threelinetextbox.map"
-                            Align   $2
 InventoryTextBoxTilemap:    incbin  "assets_packed\graphics\static\textbox\twolinetextbox.map"
-                            Align   $2
 HuffTableOffsets:           incbin  "assets_packed\strings\main\huffmancharoffsets.bin"
 HuffTables:                 incbin  "assets_packed\strings\main\huffmantables.bin"
                             Align   $2
                             include "code\text\stringfuncs3.asm"
-                            Align   $2
 RightArrowGfx:              incbin  "assets_packed\graphics\static\textbox\rightarrow.bin"
-                            Align   $2
                             include "code\scripthandling\shops\shopscriptfuncs1.asm"
-                            Align   $2
                             include "code\script\shops\shoptable_specialitems.asm"
-                            Align   $2
                             include "code\scripthandling\shops\shopscriptfuncs2.asm"
-                            Align   $2
                             include "code\script\shops\shoptable.asm"
-                            Align   $2
                             include "code\scripthandling\scriptfuncs1.asm"
-                            Align   $2
                             include "code\script\shops\script_shopspecialitems.asm"
-                            Align   $2
                             include "code\scripthandling\scriptfuncs2.asm"
-                            Align   $2
                             include "code\script\scriptflagcheck.asm"
-                            Align   $2
                             include "code\scripthandling\scriptfuncs3.asm"
-                            Align   $2
                             include "code\script\cutscenes\script_cutscenetable.asm"
-                            Align   $2
 RoomDialogueTable:          incbin  "assets_packed\roomdata\roomcharatertable.bin"
                             Align   $2
                             include "code\script\characters\script_charactertable.asm"
-                            Align   $2
                             include "code\script\scriptfuncs4.asm"
-                            Align   $2
                             include "code\script\shops\script_shops.asm"
-                            Align   $2
                             include "code\scripthandling\scriptfuncs5.asm"
-                            Align   $2
                             include "code\script\characters\script_characters.asm"
-                            Align   $2
                             include "code\script\cutscenes\script_cutscenes.asm"
-                            Align   $2
 Script:                     incbin  "assets_packed\script\script.bin"
                             Align   $2
                             include "code\scripthandling\scriptfuncs6.asm"
-                            Align   $2
 SpriteIdToTalkSfx:          incbin  "assets_packed\script\spritetalksfx.bin"
                             Align   $2
                             include "code\scripthandling\scriptfuncs7.asm"
-                            Align   $2
 SpecialCharacterSfxList:    incbin  "assets_packed\script\charactertalksfx.bin"
                             Align   $2
                             include "code\scripthandling\scriptfuncs8.asm"
-                            Align   $2
 ItemProperties:             incbin  "assets_packed\script\items.bin"
                             Align   $2
                             include "code\scripthandling\scriptfuncs9.asm"
-                            Align   $2
 SaveGameLocations:          incbin  "assets_packed\script\savegamelocations.bin"
                             Align   $2
                             include "code\scripthandling\islandmaplocations.asm"
-                            Align   $2
 IslandMapLocations:         incbin  "assets_packed\script\islandmaplocations.bin"
                             Align   $2
 CharacterNameTable:         incbin  "assets_packed\strings\names\characternames.bin"
@@ -371,20 +314,10 @@ ItemNameTable:              incbin  "assets_packed\strings\names\itemnames.bin"
 MenuStringTable:            incbin  "assets_packed\strings\names\system.bin"
                             Align   $2
                             include "code\scripthandling\script_visualfx.asm"
-                            Align   $2
 SineTable:                  incbin  "assets_packed\misc\data\sinetable.bin"
                             Align   $2
                             include "code\misc\debugmenu.asm"
-MainFont:                   incbin  "assets_packed\graphics\fonts\mainfont.1bpp"
-StringBank0:                incbin  "assets_packed\strings\main\strings01.huf"
-StringBank1:                incbin  "assets_packed\strings\main\strings02.huf"
-StringBank2:                incbin  "assets_packed\strings\main\strings03.huf"
-StringBank3:                incbin  "assets_packed\strings\main\strings04.huf"
-StringBank4:                incbin  "assets_packed\strings\main\strings05.huf"
-StringBank5:                incbin  "assets_packed\strings\main\strings06.huf"
-StringBank6:                incbin  "assets_packed\strings\main\strings07.huf"
-StringBank7:                incbin  "assets_packed\strings\main\strings08.huf"
-StringBank8:                incbin  "assets_packed\strings\main\strings09.huf"
+StringData:                 include "code\script\strings\strings.asm"
                             Align   $2
 StringBankPtrs:             include "code\pointertables\strings\stringptrs.asm"
                             PadTo   $038600
