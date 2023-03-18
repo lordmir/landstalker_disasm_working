@@ -185,46 +185,24 @@ IntroString12:              incbin  "assets_packed\strings\intro\string12.bin"
 RoomVisitedFlagLookup:      incbin  "assets_packed\roomdata\flagactions\roomvisitflags.bin"
                             Align   $2
                             include "code\maps\mapdecompress.asm"
-                            Align   $2
                             include "code\blocks\blockdecompress.asm"
-                            Align   $2
                             include "code\inventory\inventory3.asm"
                             Align   $2
 InventoryItems:             incbin  "assets_packed\misc\inventory\inventoryitems.bin"
                             Align   $2
                             include "code\inventory\inventory4.asm"
-MenuFont:                   incbin  "assets_packed\graphics\fonts\menufont.1bpp"
-                            Align   $2
-MenuCursor2BPP:             incbin  "assets_packed\graphics\static\inventory\cursor.2bpp"
-                            Align   $2
-ArrowGraphic2BPP:           incbin  "assets_packed\graphics\static\inventory\arrow.2bpp"
-                            Align   $2
-Unused1_2BPP:               incbin  "assets_packed\graphics\static\inventory\unused1.2bpp"
-                            Align   $2
-Unused2_2BPP:               incbin  "assets_packed\graphics\static\inventory\unused2.2bpp"
-                            Align   $2
-InvPalette1:                incbin  "assets_packed\graphics\static\inventory\inv1.pal"
-                            Align   $2
-InvPalette2_GreyedOut:      incbin  "assets_packed\graphics\static\inventory\invitemgreyedout.pal"
+InventoryGraphics:          include "code\inventory\graphics.asm"
                             Align   $2
                             include "code\graphics\visualeffects1.asm"
-                            Align   $2
 KazaltWarpPalette:          incbin  "assets_packed\graphics\miscpalettes\kazaltwarp.pal"
-                            Align   $2
                             include "code\graphics\visualeffects2.asm"
-                            Align   $2
                             include "code\inventory\inventory5.asm"
-                            Align   $2
 EquipInventoryLayout:       incbin  "assets_packed\misc\inventory\inventoryequip.bin"
                             Align   $2
                             include "code\inventory\inventory6.asm"
-                            Align   $2
                             include "code\title\gameloadscreen1.asm"
-                            Align   $2
 GameStartPalette:           incbin  "assets_packed\graphics\static\loadgame\loadgame.pal"
-                            Align   $2
                             include "code\title\gameloadscreen2.asm"
-                            Align   $2
 InitialPlayerPal:           incbin  "assets_packed\graphics\static\loadgame\nigel.pal"
 LoadGameScreenCharsCmp:     incbin  "assets_packed\graphics\static\loadgame\chars.lz77"
 LoadGameScreenGfxCmp:       incbin  "assets_packed\graphics\static\loadgame\tiles.lz77"
@@ -232,16 +210,13 @@ LoadGameScreenTilemapCmp:   incbin  "assets_packed\graphics\static\loadgame\tile
                             Align   $2
                             include "code\title\gameloadscreen3.asm"
                             include "code\sprites\spritefuncsjumptable.asm"
-                            Align   $2
                             include "code\sprites\spritefuncs1.asm"
-                            Align   $2
 UnknownSpriteLookup_1:      incbin  "assets_packed\spritedata\spritetable6F.bin"
                             Align   $2
                             include "code\gamelogic\playbackinput.asm"
 InputPlayback:              incbin  "assets_packed\misc\playbackinputtable.bin"
                             Align   $2
                             include "code\sprites\spritefuncs2.asm"
-                            Align   $2
                             include "code\scripthandling\triggeractionjumptable.asm"
                             Align   $2
                             include "code\scripthandling\triggeractions.asm"
