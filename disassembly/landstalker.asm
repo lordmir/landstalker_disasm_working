@@ -3,7 +3,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; To build, run:
-;; .\build\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+,l_ landstalker.asm,landstalker.bin
+;; .\build\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+,l_ /e EXPANDED=0 landstalker.asm,landstalker.bin
 
                             include "code\include\landstalker.inc"
                             include "code\include\ram.inc"
@@ -12,27 +12,16 @@
 
                             org     $000000
                             include "code\system\header.asm"
-                            Align   $2
                             include "code\system\system_jmps.asm"
-                            Align   $2
                             include "code\system\system.asm"
-                            Align   $2
                             include "code\system\savegame.asm"
-                            Align   $2
                             include "code\gamelogic\gamelogic1.asm"
-                            Align   $2
                             include "code\maps\lavapalette.asm"
-                            Align   $2
 LavaPaletteRotation:        incbin  "assets_packed\graphics\miscpalettes\lavapalette.pal"
-                            Align   $2
                             include "code\maps\mapload.asm"
-                            Align   $2
 LabrynthLitPal:             incbin  "assets_packed\graphics\miscpalettes\labrynthlit.pal"
-                            Align   $2
                             include "code\gamelogic\gamelogic2.asm"
-                            Align   $2
                             include "code\misc\fridayanimation.asm"
-                            Align   $2
 FridayAnimation1:           incbin  "assets_packed\misc\fridayanim\fridayanim01.bin"
                             Align   $2
 FridayAnimation2:           incbin  "assets_packed\misc\fridayanim\fridayanim02.bin"
