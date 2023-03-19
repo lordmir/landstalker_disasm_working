@@ -64,7 +64,6 @@ FridayAnimation14:          incbin  "assets_packed\misc\fridayanim\fridayanim14.
 FridayAnimation15:          incbin  "assets_packed\misc\fridayanim\fridayanim15.bin"
                             Align   $2
                             include "code\gamelogic\gamelogic3.asm"
-                            Align   $2
                             include "code\maps\mapflagchanges.asm"
                             Align   $2
 RoomGfxSwapFlags:           incbin  "assets_packed\roomdata\flagactions\roomgfxswapflags.bin"
@@ -76,68 +75,42 @@ TreeWarpGfxSwapFlags:       incbin  "assets_packed\roomdata\flagactions\treewarp
 TileSwaps:                  incbin  "assets_packed\roomdata\flagactions\tileswaps.bin"
                             Align   $2
                             include "code\gamelogic\gamelogic4.asm"
-                            Align   $2
                             include "code\inventory\inventory1.asm"
-                            Align   $2
 InvItemPal:                 incbin  "assets_packed\graphics\static\inventory\invitempal.pal"
-                            Align   $2
                             include "code\misc\equipmentpaletteswap.asm"
-                            Align   $2
 SwordPalSwaps:              incbin  "assets_packed\graphics\miscpalettes\swordpalswaps.pal"
-                            Align   $2
 ArmourPalSwaps:             incbin  "assets_packed\graphics\miscpalettes\armourpalswaps.pal"
-                            Align   $2
                             include "code\inventory\inventory2.asm"
-InvScreenTilemap:           incbin  "assets_packed\graphics\static\inventory\invtilemap.lz77"
-MagicSwordGfx:              incbin  "assets_packed\graphics\static\swordeffects\magic.lz77"
-ThunderSwordGfx:            incbin  "assets_packed\graphics\static\swordeffects\thunder.lz77"
-GaiaSwordGfx:               incbin  "assets_packed\graphics\static\swordeffects\gaia.lz77"
-IceSwordGfx:                incbin  "assets_packed\graphics\static\swordeffects\ice.lz77"
-CoinFallGfx:                incbin  "assets_packed\graphics\static\swordeffects\coinfall.lz77"
+SwordGfxData:               include "code\graphics\staticimages\swordfx.asm"
                             Align   $2
                             include "code\items\items1.asm"
-                            Align   $2
                             include "code\pointertables\items\items_preusejmptable.asm"
-                            Align   $2
                             include "code\pointertables\items\items_postusejmptable.asm"
-                            Align   $2
                             include "code\items\items2.asm"
-                            Align   $2
 LightableRooms:             incbin  "assets_packed\roomdata\flagactions\lanternflags.bin"
                             Align   $2
                             include "code\items\items3.asm"
-                            Align   $2
                             include "code\gamelogic\gamelogic5.asm"
-                            Align   $2
 DefaultPlayerPal:           incbin  "assets_packed\graphics\miscpalettes\defaultplayer.pal"
-                            Align   $2
 StatusBarPal:               incbin  "assets_packed\graphics\static\hud\hud.pal"
-                            Align   $2
                             include "code\gamelogic\gamelogic6.asm"
-                            Align   $2
 StatusBarTilemap:           incbin  "assets_packed\graphics\static\hud\hudtilemap.map"
 StatusBarGfx:               incbin  "assets_packed\graphics\static\hud\hud.lz77"
                             Align   $2
                             include "code\maps\doors.asm"
-                            Align   $2
 DoorLookup:                 incbin  "assets_packed\roomdata\misc\doorlookup.bin"
                             Align   $2
 DoorTable:                  incbin  "assets_packed\roomdata\misc\doortable.bin"
                             Align   $2
                             include "code\gamelogic\shops\shops1.asm"
-                            Align   $2
 Shops:                      incbin  "assets_packed\roomdata\misc\shops.bin"
                             Align   $2
                             include "code\gamelogic\shops\shops2.asm"
-                            Align   $2
 LifestockSoldFlags:         incbin  "assets_packed\roomdata\flagactions\lifestocksoldflags.bin"
                             Align   $2
                             include "code\maps\animtilesets.asm"
-                            Align   $2
 AnimatedTilesetTable:       include "code\maps\animtilesettbl.asm"
-                            Align   $2
                             include "code\maps\room1.asm"
-                            Align   $2
 RoomFallDestination:        incbin  "assets_packed\roomdata\warps\roomfalldests.bin"
                             Align   $2
 RoomClimbDestination:       incbin  "assets_packed\roomdata\warps\roomclimbdests.bin"
@@ -145,19 +118,13 @@ RoomClimbDestination:       incbin  "assets_packed\roomdata\warps\roomclimbdests
 RoomTransitionLookup:       incbin  "assets_packed\roomdata\flagactions\roomtransitions.bin"
                             Align   $2
                             include "code\blocks\loadisometricblocks1.asm"
-                            Align   $2
 VDPCopyBlockCmds:           incbin  "assets_packed\misc\data\vdpcopyblockcmds.bin"
-                            Align   $2
 TopLeftMapOffsets:          incbin  "assets_packed\misc\data\ulmapoffsets.bin"
-                            Align   $2
 BottomMapOffsets:           incbin  "assets_packed\misc\data\dmapoffsets.bin"
-                            Align   $2
 RightMapOffsets:            incbin  "assets_packed\misc\data\rmapoffsets.bin"
                             Align   $2
                             include "code\blocks\loadisometricblocks2.asm"
-                            Align   $2
                             include "code\pointertables\strings\introstringptrs.asm"
-                            Align   $2
 IntroString1:               incbin  "assets_packed\strings\intro\string01.bin"
                             Align   $2
 IntroString2:               incbin  "assets_packed\strings\intro\string02.bin"
@@ -218,34 +185,14 @@ InputPlayback:              incbin  "assets_packed\misc\playbackinputtable.bin"
                             Align   $2
                             include "code\sprites\spritefuncs2.asm"
                             include "code\scripthandling\triggeractionjumptable.asm"
-                            Align   $2
                             include "code\scripthandling\triggeractions.asm"
-                            Align   $2
                             include "code\scripthandling\dialogueactionjumptable.asm"
-                            Align   $2
                             include "code\scripthandling\dialogueactions.asm"
-                            Align   $2
                             include "code\gamelogic\combat.asm"
-                            Align   $2
                             include "code\graphics\hud.asm"
-                            Align   $2
                             include "code\graphics\statusanim.asm"
-                            Align   $2
-                            include "code\pointertables\graphics\statusanimptrs.asm"
-PoisonAnimFrame1:           incbin  "assets_packed\graphics\static\statuseffects\poison1.lz77"
-PoisonAnimFrame2:           incbin  "assets_packed\graphics\static\statuseffects\poison2.lz77"
-PoisonAnimFrame3:           incbin  "assets_packed\graphics\static\statuseffects\poison3.lz77"
-PoisonAnimFrame4:           incbin  "assets_packed\graphics\static\statuseffects\poison4.lz77"
-ConfusionAnimFrame1:        incbin  "assets_packed\graphics\static\statuseffects\confusion1.lz77"
-ConfusionAnimFrame2:        incbin  "assets_packed\graphics\static\statuseffects\confusion2.lz77"
-ConfusionAnimFrame3:        incbin  "assets_packed\graphics\static\statuseffects\confusion3.lz77"
-ConfusionAnimFrame4:        incbin  "assets_packed\graphics\static\statuseffects\confusion4.lz77"
-ParalysisAnimFrame1:        incbin  "assets_packed\graphics\static\statuseffects\paralysis1.lz77"
-ParalysisAnimFrame2:        incbin  "assets_packed\graphics\static\statuseffects\paralysis2.lz77"
-ParalysisAnimFrame3:        incbin  "assets_packed\graphics\static\statuseffects\paralysis3.lz77"
-ParalysisAnimFrame4:        incbin  "assets_packed\graphics\static\statuseffects\paralysis4.lz77"
-CurseAnimFrame1:            incbin  "assets_packed\graphics\static\statuseffects\curse1.lz77"
-CurseAnimFrame2:            incbin  "assets_packed\graphics\static\statuseffects\curse2.lz77"
+StatusAnimPtrs:             include "code\pointertables\graphics\statusanimptrs.asm"
+StatusAnimData:             include "code\graphics\staticimages\statusfx.asm"
                             Align   $2
                             include "code\gamelogic\gamefuncs.asm"
                             include "code\sprites\spritebehaviourjumptable.asm"

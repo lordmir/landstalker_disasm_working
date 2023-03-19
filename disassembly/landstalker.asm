@@ -64,9 +64,7 @@ FridayAnimation14:          incbin  "assets_packed\misc\fridayanim\fridayanim14.
 FridayAnimation15:          incbin  "assets_packed\misc\fridayanim\fridayanim15.bin"
                             Align   $2
                             include "code\gamelogic\gamelogic3.asm"
-                            Align   $2
                             include "code\maps\mapflagchanges.asm"
-                            Align   $2
 RoomGfxSwapFlags:           incbin  "assets_packed\roomdata\flagactions\roomgfxswapflags.bin"
                             Align   $2
 LockedDoorGfxSwapFlags:     incbin  "assets_packed\roomdata\flagactions\lockeddoorgfxswapflags.bin"
@@ -76,33 +74,18 @@ TreeWarpGfxSwapFlags:       incbin  "assets_packed\roomdata\flagactions\treewarp
 TileSwaps:                  incbin  "assets_packed\roomdata\flagactions\tileswaps.bin"
                             Align   $2
                             include "code\gamelogic\gamelogic4.asm"
-                            Align   $2
                             include "code\inventory\inventory1.asm"
-                            Align   $2
 InvItemPal:                 incbin  "assets_packed\graphics\static\inventory\invitempal.pal"
-                            Align   $2
                             include "code\misc\equipmentpaletteswap.asm"
-                            Align   $2
 SwordPalSwaps:              incbin  "assets_packed\graphics\miscpalettes\swordpalswaps.pal"
-                            Align   $2
 ArmourPalSwaps:             incbin  "assets_packed\graphics\miscpalettes\armourpalswaps.pal"
-                            Align   $2
                             include "code\inventory\inventory2.asm"
-InvScreenTilemap:           incbin  "assets_packed\graphics\static\inventory\invtilemap.lz77"
-MagicSwordGfx:              incbin  "assets_packed\graphics\static\swordeffects\magic.lz77"
-ThunderSwordGfx:            incbin  "assets_packed\graphics\static\swordeffects\thunder.lz77"
-GaiaSwordGfx:               incbin  "assets_packed\graphics\static\swordeffects\gaia.lz77"
-IceSwordGfx:                incbin  "assets_packed\graphics\static\swordeffects\ice.lz77"
-CoinFallGfx:                incbin  "assets_packed\graphics\static\swordeffects\coinfall.lz77"
+SwordGfxData:               include "code\graphics\staticimages\swordfx.asm"
                             Align   $2
                             include "code\items\items1.asm"
-                            Align   $2
                             include "code\pointertables\items\items_preusejmptable.asm"
-                            Align   $2
                             include "code\pointertables\items\items_postusejmptable.asm"
-                            Align   $2
                             include "code\items\items2.asm"
-                            Align   $2
 LightableRooms:             incbin  "assets_packed\roomdata\flagactions\lanternflags.bin"
                             Align   $2
                             include "code\items\items3.asm"
@@ -211,21 +194,8 @@ InputPlayback:              incbin  "assets_packed\misc\playbackinputtable.bin"
                             include "code\gamelogic\combat.asm"
                             include "code\graphics\hud.asm"
                             include "code\graphics\statusanim.asm"
-                            include "code\pointertables\graphics\statusanimptrs.asm"
-PoisonAnimFrame1:           incbin  "assets_packed\graphics\static\statuseffects\poison1.lz77"
-PoisonAnimFrame2:           incbin  "assets_packed\graphics\static\statuseffects\poison2.lz77"
-PoisonAnimFrame3:           incbin  "assets_packed\graphics\static\statuseffects\poison3.lz77"
-PoisonAnimFrame4:           incbin  "assets_packed\graphics\static\statuseffects\poison4.lz77"
-ConfusionAnimFrame1:        incbin  "assets_packed\graphics\static\statuseffects\confusion1.lz77"
-ConfusionAnimFrame2:        incbin  "assets_packed\graphics\static\statuseffects\confusion2.lz77"
-ConfusionAnimFrame3:        incbin  "assets_packed\graphics\static\statuseffects\confusion3.lz77"
-ConfusionAnimFrame4:        incbin  "assets_packed\graphics\static\statuseffects\confusion4.lz77"
-ParalysisAnimFrame1:        incbin  "assets_packed\graphics\static\statuseffects\paralysis1.lz77"
-ParalysisAnimFrame2:        incbin  "assets_packed\graphics\static\statuseffects\paralysis2.lz77"
-ParalysisAnimFrame3:        incbin  "assets_packed\graphics\static\statuseffects\paralysis3.lz77"
-ParalysisAnimFrame4:        incbin  "assets_packed\graphics\static\statuseffects\paralysis4.lz77"
-CurseAnimFrame1:            incbin  "assets_packed\graphics\static\statuseffects\curse1.lz77"
-CurseAnimFrame2:            incbin  "assets_packed\graphics\static\statuseffects\curse2.lz77"
+StatusAnimPtrs:             include "code\pointertables\graphics\statusanimptrs.asm"
+StatusAnimData:             include "code\graphics\staticimages\statusfx.asm"
                             Align   $2
                             include "code\gamelogic\gamefuncs.asm"
                             include "code\sprites\spritebehaviourjumptable.asm"
