@@ -331,7 +331,6 @@ MapDots:                    incbin  "assets_packed\graphics\static\islandmap\dot
 MapFriday:                  incbin  "assets_packed\graphics\static\islandmap\friday.lz77"
                             Align   $2
 IslandMapPals:              incbin  "assets_packed\graphics\static\islandmap\foreground.pal"
-                            Align   $2
                             incbin  "assets_packed\graphics\static\islandmap\background.pal"
                             PadTo   $044010
 TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"
@@ -346,23 +345,14 @@ RoomChestOffsets:           incbin  "assets_packed\roomdata\chests\chestoffsets.
 ChestContents:              incbin  "assets_packed\roomdata\chests\chestcontents.bin"
                             Align   $2
                             include "code\maps\chests2.asm"
-                            Align   $2
                             include "code\ending\endcredits1.asm"
-                            Align   $2
 EndCreditText:              incbin  "assets_packed\strings\ending\credits.bin"
                             Align   $2
                             include "code\ending\endcredits2.asm"
-                            Align   $2
-EndCreditPal:               incbin  "assets_packed\graphics\static\ending\credits.pal"
-EndCreditFont:              incbin  "assets_packed\graphics\fonts\credits.lz77"
-EndCreditLogos:             incbin  "assets_packed\graphics\static\ending\logos.lz77"
-EndCreditLogoMap:           incbin  "assets_packed\graphics\static\ending\logos.rle"
+EndCreditsData:				include "code\ending\endcreditsdata.asm"
                             PadTo   $0A0A00
-                            Align   $2
                             include "code\pointertables\maps\mappointers.asm"
-                            Align   $2
                             include "code\system\regioncheckjump.asm"
-                            Align   $2
 RoomData_0:                 include "code\pointertables\maps\roomlist.asm"
 RoomMaps:                   include "code\graphics\roommaps.asm"
                             Align   $2
@@ -372,11 +362,9 @@ RoomExits:                  incbin  "assets_packed\roomdata\warps\exits.bin"
 RegionCheck:                include "code\system\regioncheck.asm"
                             PadTo   $120000
                             include "code\pointertables\sprites\spritegraphicsptr.asm"
-                            Align   $2
 SpriteGfxOffsetTable:       incbin  "assets_packed\spritedata\spritegfxoffsettable.bin"
                             Align   $2
                             include "code\pointertables\sprites\spriteanimations.asm"
-                            Align   $2
                             include "code\pointertables\sprites\spriteanimationframes.asm"
 SpriteGfx000Frame00:        incbin  "assets_packed\graphics\sprites\spr000_frm00.frm"
 SpriteGfx000Frame01:        incbin  "assets_packed\graphics\sprites\spr000_frm01.frm"
