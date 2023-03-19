@@ -93,7 +93,7 @@ loc_3E682:					  ; CODE XREF: DisplayIslandMap+30j
 		jsr	(j_FillVSRAMOffset1).l
 		jsr	(j_ClearVDPSpriteTable).l
 		bsr.w	sub_3EC76
-		lea	IslandMapPals(pc),a0
+		lea	IslandMapFgPal(pc),a0
 		lea	(g_Pal0Base).l,a1
 		moveq	#$0000000F,d7
 
