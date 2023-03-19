@@ -321,17 +321,8 @@ ClimaxLogo:                 incbin  "assets_packed\graphics\static\logos\climax.
 ClimaxLogoMap:              incbin  "assets_packed\graphics\static\logos\climax.rle"
                             Align   $2
 ClimaxLogoPalette:          incbin  "assets_packed\graphics\static\logos\climax.pal"
-                            Align   $2
                             include "code\graphics\staticimages\islandmap.asm"
-IslandMapFg:                incbin  "assets_packed\graphics\static\islandmap\foreground.lz77"
-IslandMapFgMap:             incbin  "assets_packed\graphics\static\islandmap\foreground.rle"
-IslandMapBg:                incbin  "assets_packed\graphics\static\islandmap\background.lz77"
-IslandMapBgMap:             incbin  "assets_packed\graphics\static\islandmap\background.rle"
-MapDots:                    incbin  "assets_packed\graphics\static\islandmap\dots.lz77"
-MapFriday:                  incbin  "assets_packed\graphics\static\islandmap\friday.lz77"
-                            Align   $2
-IslandMapPals:              incbin  "assets_packed\graphics\static\islandmap\foreground.pal"
-                            incbin  "assets_packed\graphics\static\islandmap\background.pal"
+IslandMapData:              include "code\graphics\staticimages\islandmapdata.asm"
                             PadTo   $044010
 TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"
 TilesetData:                include "code\graphics\tileset_data.asm"
