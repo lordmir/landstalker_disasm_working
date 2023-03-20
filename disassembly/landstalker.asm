@@ -291,38 +291,17 @@ SegaLogoPalette:            incbin  "assets_packed\graphics\static\logos\sega.pa
 SegaLogo:                   incbin  "assets_packed\graphics\static\logos\sega.lz77"
                             Align   $2
                             include "code\graphics\staticimages\lithograph.asm"
-                            Align   $2
 LithographPalette:          incbin  "assets_packed\graphics\static\lithograph\lithograph.pal"
 Lithograph:                 incbin  "assets_packed\graphics\static\lithograph\lithograph.lz77"
 LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\lithograph.rle"
                             Align   $2
-                            include "code\graphics\staticimages\titlescreen1.asm"
-                            Align   $2
-TitlePaletteBlueFade:       incbin  "assets_packed\graphics\static\titlescreen\blues.pal"
-                            Align   $2
-                            include "code\graphics\staticimages\titlescreen2.asm"
-                            Align   $2
-TitlePaletteYellowFade:     incbin  "assets_packed\graphics\static\titlescreen\yellows.pal"
-                            Align   $2
-                            include "code\graphics\staticimages\titlescreen3.asm"
-Title1:                     incbin  "assets_packed\graphics\static\titlescreen\title1.lz77"
-Title2:                     incbin  "assets_packed\graphics\static\titlescreen\title2.lz77"
-Title3:                     incbin  "assets_packed\graphics\static\titlescreen\title3.lz77"
-Title1Map:                  incbin  "assets_packed\graphics\static\titlescreen\title1.rle"
-Title2Map:                  incbin  "assets_packed\graphics\static\titlescreen\title2.rle"
-Title3Map:                  incbin  "assets_packed\graphics\static\titlescreen\title3.rle"
-                            Align   $2
-Title3Palette:              incbin  "assets_packed\graphics\static\titlescreen\title3.pal"
-                            Align   $2
-Title3PaletteHighlight:     incbin  "assets_packed\graphics\static\titlescreen\title3_highlight.pal"
-                            Align   $2
+TitleScreenData:			include "code\title\titlescreendata.asm"
                             include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogo:                 incbin  "assets_packed\graphics\static\logos\climax.lz77"
 ClimaxLogoMap:              incbin  "assets_packed\graphics\static\logos\climax.rle"
                             Align   $2
 ClimaxLogoPalette:          incbin  "assets_packed\graphics\static\logos\climax.pal"
-                            include "code\graphics\staticimages\islandmap.asm"
-IslandMapData:              include "code\graphics\staticimages\islandmapdata.asm"
+IslandMap:                  include "code\graphics\staticimages\islandmapdata.asm"
                             PadTo   $044010
 TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"
 TilesetData:                include "code\graphics\tileset_data.asm"

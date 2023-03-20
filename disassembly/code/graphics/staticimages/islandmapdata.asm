@@ -1,3 +1,4 @@
+IslandMapRoutines:          include "code\graphics\staticimages\islandmap.asm"
 IslandMapFg:                incbin  "assets_packed\graphics\static\islandmap\foreground.lz77"
 IslandMapFgMap:             incbin  "assets_packed\graphics\static\islandmap\foreground.rle"
 IslandMapBg:                incbin  "assets_packed\graphics\static\islandmap\background.lz77"
