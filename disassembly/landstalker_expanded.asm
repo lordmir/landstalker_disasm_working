@@ -290,7 +290,7 @@ LithographPalette:          incbin  "assets_packed\graphics\static\lithograph\li
 Lithograph:                 incbin  "assets_packed\graphics\static\lithograph\lithograph.lz77"
 LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\lithograph.rle"
                             Align   $2
-TitleScreenData:			include "code\title\titlescreendata.asm"
+TitleScreen:                include "code\graphics\staticimages\titlescreen.asm"
                             include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogoData:             include "code\graphics\staticimages\climaxlogodata.asm"
                             include "code\graphics\staticimages\islandmaproutines.asm"
@@ -310,7 +310,7 @@ ChestContents:              incbin  "assets_packed\roomdata\chests\chestcontents
 EndCreditText:              incbin  "assets_packed\strings\ending\credits.bin"
                             Align   $2
                             include "code\ending\endcredits2.asm"
-EndCreditsData:				include "code\ending\endcreditsdata.asm"
+EndCreditsData:             include "code\ending\endcreditsdata.asm"
                             Align   $2
                             include "code\pointertables\maps\mappointers.asm"
                             include "code\system\regioncheckjump.asm"

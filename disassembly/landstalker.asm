@@ -293,7 +293,7 @@ LithographPalette:          incbin  "assets_packed\graphics\static\lithograph\li
 Lithograph:                 incbin  "assets_packed\graphics\static\lithograph\lithograph.lz77"
 LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\lithograph.rle"
                             Align   $2
-TitleScreen:				include "code\graphics\staticimages\titlescreen.asm"
+TitleScreen:                include "code\graphics\staticimages\titlescreen.asm"
                             include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogoData:             include "code\graphics\staticimages\climaxlogodata.asm"
                             include "code\graphics\staticimages\islandmaproutines.asm"
