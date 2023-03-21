@@ -4,6 +4,6 @@ IslandMapBg:         incbin   "assets_packed\graphics\static\islandmap\backgroun
 IslandMapBgMap:      incbin   "assets_packed\graphics\static\islandmap\background.rle"
 MapDots:             incbin   "assets_packed\graphics\static\islandmap\dots.lz77"
 MapFriday:           incbin   "assets_packed\graphics\static\islandmap\friday.lz77"
-                     Align    $00000002
+                     Align    $2
 IslandMapFgPal:      incbin   "assets_packed\graphics\static\islandmap\foreground.pal"
 IslandMapBgPal:      incbin   "assets_packed\graphics\static\islandmap\background.pal"

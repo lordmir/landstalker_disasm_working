@@ -97,10 +97,10 @@ BTPtr08A:	dc.l BT08_10			  ; DATA XREF: ROM:001AF89Co
 		dc.l BT08_14
 		dc.l BT08_15
 		dc.l BT08_16
-BTPtr09A:	dc.l BT09_10			  ; DATA XREF: ROM:001AF8A4o
+BTPtr13A:	dc.l BT13_10			  ; DATA XREF: ROM:001AF8A4o
 						  ; ROM:001AF8A8o ...
-		dc.l BT09_11
-		dc.l BT09_12
+		dc.l BT13_11
+		dc.l BT13_12
 BTPtr14A:	dc.l BT14_10			  ; DATA XREF: ROM:001AF8B8o
 		dc.l BT14_11
 		dc.l BT14_12

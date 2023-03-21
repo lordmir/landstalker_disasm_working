@@ -39,11 +39,11 @@ BigTilesList:	dc.l BTPtr01			  ; DATA XREF: ROM:BigTilesListPtro
 		dc.l BTPtr06A
 		dc.l BTPtr08A
 		dc.l BTPtr08A
-		dc.l BTPtr09A
-		dc.l BTPtr09A
-		dc.l BTPtr09A
-		dc.l BTPtr09A
-		dc.l BTPtr09A
+		dc.l BTPtr13A
+		dc.l BTPtr13A
+		dc.l BTPtr13A
+		dc.l BTPtr13A
+		dc.l BTPtr13A
 		dc.l BTPtr14A
 		dc.l BTPtr15A
 		dc.l BTPtr17A
