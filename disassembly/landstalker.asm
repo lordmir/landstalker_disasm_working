@@ -296,6 +296,7 @@ LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\li
 TitleScreen:				include "code\graphics\staticimages\titlescreen.asm"
                             include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogoData:             include "code\graphics\staticimages\climaxlogodata.asm"
+                            include "code\graphics\staticimages\islandmaproutines.asm"
 IslandMap:                  include "code\graphics\staticimages\islandmap.asm"
                             PadTo   $044010
 TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"

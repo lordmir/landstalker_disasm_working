@@ -291,9 +291,10 @@ Lithograph:                 incbin  "assets_packed\graphics\static\lithograph\li
 LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\lithograph.rle"
                             Align   $2
 TitleScreenData:			include "code\title\titlescreendata.asm"
+                            include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogoData:             include "code\graphics\staticimages\climaxlogodata.asm"
+                            include "code\graphics\staticimages\islandmaproutines.asm"
 IslandMap:                  include "code\graphics\staticimages\islandmap.asm"
-IslandMapData:              include "code\graphics\staticimages\islandmapdata.asm"
 TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"
 TilesetData:                include "code\graphics\tileset_data.asm"
                             include "code\sprites\sprites1.asm"
