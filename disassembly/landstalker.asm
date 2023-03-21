@@ -158,15 +158,7 @@ KazaltWarpPalette:          incbin  "assets_packed\graphics\miscpalettes\kazaltw
 EquipInventoryLayout:       incbin  "assets_packed\misc\inventory\inventoryequip.bin"
                             Align   $2
                             include "code\inventory\inventory6.asm"
-                            include "code\title\gameloadscreen1.asm"
-GameStartPalette:           incbin  "assets_packed\graphics\static\loadgame\loadgame.pal"
-                            include "code\title\gameloadscreen2.asm"
-InitialPlayerPal:           incbin  "assets_packed\graphics\static\loadgame\nigel.pal"
-LoadGameScreenCharsCmp:     incbin  "assets_packed\graphics\static\loadgame\chars.lz77"
-LoadGameScreenGfxCmp:       incbin  "assets_packed\graphics\static\loadgame\tiles.lz77"
-LoadGameScreenTilemapCmp:   incbin  "assets_packed\graphics\static\loadgame\tilemap.rle"
-                            Align   $2
-                            include "code\title\gameloadscreen3.asm"
+GameLoadScreen:             include "code\title\gameloadscreen.asm"
                             PadTo   $010300
                             include "code\sprites\spritefuncsjumptable.asm"
                             include "code\sprites\spritefuncs1.asm"
@@ -282,17 +274,9 @@ StringData:                 include "code\text\strings.asm"
 StringBankPtrs:             include "code\pointertables\strings\stringptrs.asm"
                             PadTo   $038600
                             include "code\graphics\staticimages\staticgraphicjumps.asm"
-                            include "code\graphics\staticimages\segalogo1.asm"
-SegaLogoPalette:            incbin  "assets_packed\graphics\static\logos\sega.pal"
-                            Align   $2
-                            include "code\graphics\staticimages\segalogo2.asm"
-SegaLogo:                   incbin  "assets_packed\graphics\static\logos\sega.lz77"
-                            Align   $2
+SegaLogo:                   include "code\graphics\staticimages\segalogo.asm"
                             include "code\graphics\staticimages\lithograph.asm"
-LithographPalette:          incbin  "assets_packed\graphics\static\lithograph\lithograph.pal"
-Lithograph:                 incbin  "assets_packed\graphics\static\lithograph\lithograph.lz77"
-LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\lithograph.rle"
-                            Align   $2
+LithographData:             include "code\graphics\staticimages\lithographdata.asm"
 TitleScreen:                include "code\graphics\staticimages\titlescreen.asm"
                             include "code\graphics\staticimages\climaxlogo.asm"
 ClimaxLogoData:             include "code\graphics\staticimages\climaxlogodata.asm"
@@ -315,7 +299,7 @@ ChestContents:              incbin  "assets_packed\roomdata\chests\chestcontents
 EndCreditText:              incbin  "assets_packed\strings\ending\credits.bin"
                             Align   $2
                             include "code\ending\endcredits2.asm"
-EndCreditsData:				include "code\ending\endcreditsdata.asm"
+EndCreditsData:             include "code\ending\endcreditsdata.asm"
                             PadTo   $0A0A00
                             include "code\pointertables\maps\mappointers.asm"
                             include "code\system\regioncheckjump.asm"
