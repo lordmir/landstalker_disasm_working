@@ -282,9 +282,7 @@ StringData:                 include "code\text\strings.asm"
 StringBankPtrs:             include "code\pointertables\strings\stringptrs.asm"
                             PadTo   $038600
                             include "code\graphics\staticimages\staticgraphicjumps.asm"
-                            Align   $2
                             include "code\graphics\staticimages\segalogo1.asm"
-                            Align   $2
 SegaLogoPalette:            incbin  "assets_packed\graphics\static\logos\sega.pal"
                             Align   $2
                             include "code\graphics\staticimages\segalogo2.asm"
@@ -295,13 +293,10 @@ LithographPalette:          incbin  "assets_packed\graphics\static\lithograph\li
 Lithograph:                 incbin  "assets_packed\graphics\static\lithograph\lithograph.lz77"
 LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\lithograph.rle"
                             Align   $2
-TitleScreenData:			include "code\title\titlescreendata.asm"
+TitleScreen:				include "code\graphics\staticimages\titlescreen.asm"
                             include "code\graphics\staticimages\climaxlogo.asm"
-ClimaxLogo:                 incbin  "assets_packed\graphics\static\logos\climax.lz77"
-ClimaxLogoMap:              incbin  "assets_packed\graphics\static\logos\climax.rle"
-                            Align   $2
-ClimaxLogoPalette:          incbin  "assets_packed\graphics\static\logos\climax.pal"
-IslandMap:                  include "code\graphics\staticimages\islandmapdata.asm"
+ClimaxLogoData:             include "code\graphics\staticimages\climaxlogodata.asm"
+IslandMap:                  include "code\graphics\staticimages\islandmap.asm"
                             PadTo   $044010
 TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"
 TilesetData:                include "code\graphics\tileset_data.asm"

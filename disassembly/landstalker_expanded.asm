@@ -291,12 +291,8 @@ Lithograph:                 incbin  "assets_packed\graphics\static\lithograph\li
 LithographTilemap:          incbin  "assets_packed\graphics\static\lithograph\lithograph.rle"
                             Align   $2
 TitleScreenData:			include "code\title\titlescreendata.asm"
-                            Align   $2
-                            include "code\graphics\staticimages\climaxlogo.asm"
-ClimaxLogo:                 incbin  "assets_packed\graphics\static\logos\climax.lz77"
-ClimaxLogoMap:              incbin  "assets_packed\graphics\static\logos\climax.rle"
-                            Align   $2
-ClimaxLogoPalette:          incbin  "assets_packed\graphics\static\logos\climax.pal"
+ClimaxLogoData:             include "code\graphics\staticimages\climaxlogodata.asm"
+IslandMap:                  include "code\graphics\staticimages\islandmap.asm"
 IslandMapData:              include "code\graphics\staticimages\islandmapdata.asm"
 TilesetPtrTable:            include "code\pointertables\graphics\tilesetpointers.asm"
 TilesetData:                include "code\graphics\tileset_data.asm"
