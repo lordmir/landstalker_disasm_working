@@ -113,31 +113,7 @@ BottomMapOffsets:           incbin  "assets_packed\misc\data\dmapoffsets.bin"
 RightMapOffsets:            incbin  "assets_packed\misc\data\rmapoffsets.bin"
                             Align   $2
                             include "code\blocks\loadisometricblocks2.asm"
-                            include "code\pointertables\strings\introstringptrs.asm"
-IntroString1:               incbin  "assets_packed\strings\intro\string01.bin"
-                            Align   $2
-IntroString2:               incbin  "assets_packed\strings\intro\string02.bin"
-                            Align   $2
-IntroString3:               incbin  "assets_packed\strings\intro\string03.bin"
-                            Align   $2
-IntroString4:               incbin  "assets_packed\strings\intro\string04.bin"
-                            Align   $2
-IntroString5:               incbin  "assets_packed\strings\intro\string05.bin"
-                            Align   $2
-IntroString6:               incbin  "assets_packed\strings\intro\string06.bin"
-                            Align   $2
-IntroString7:               incbin  "assets_packed\strings\intro\string07.bin"
-                            Align   $2
-IntroString8:               incbin  "assets_packed\strings\intro\string08.bin"
-                            Align   $2
-IntroString9:               incbin  "assets_packed\strings\intro\string09.bin"
-                            Align   $2
-IntroString10:              incbin  "assets_packed\strings\intro\string10.bin"
-                            Align   $2
-IntroString11:              incbin  "assets_packed\strings\intro\string11.bin"
-                            Align   $2
-IntroString12:              incbin  "assets_packed\strings\intro\string12.bin"
-                            Align   $2
+IntroStrings:               include "code\text\introstrings.asm"
 RoomVisitedFlagLookup:      incbin  "assets_packed\roomdata\flagactions\roomvisitflags.bin"
                             Align   $2
                             include "code\maps\mapdecompress.asm"
@@ -203,7 +179,7 @@ EnemyStats:                 incbin  "assets_packed\spritedata\enemystats.bin"
                             Align   $2
 RoomSpriteTable:            incbin  "assets_packed\spritedata\roomspritetable.bin"
                             Align   $2
-StringPtrs:					include "code\pointertables\strings\stringbankptr.asm"
+StringPtrs:                 include "code\pointertables\strings\stringbankptr.asm"
                             include "code\text\stringfuncsjumptable.asm"
                             include "code\text\stringfuncs1.asm"
 DownArrowGfx:               incbin  "assets_packed\graphics\static\textbox\downarrow.bin"
