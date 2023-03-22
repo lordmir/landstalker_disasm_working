@@ -249,17 +249,7 @@ SaveGameLocations:          incbin  "assets_packed\script\savegamelocations.bin"
                             Align   $2
                             include "code\scripthandling\islandmaplocations.asm"
 IslandMapLocations:         incbin  "assets_packed\script\islandmaplocations.bin"
-                            Align   $2
-CharacterNameTable:         incbin  "assets_packed\strings\names\characternames.bin"
-                            Align   $2
-SpecialCharacterNameTable:  incbin  "assets_packed\strings\names\specialcharacternames.bin"
-                            Align   $2
-DefaultName:                incbin  "assets_packed\strings\names\defaultname.bin"
-                            Align   $2
-ItemNameTable:              incbin  "assets_packed\strings\names\itemnames.bin"
-                            Align   $2
-MenuStringTable:            incbin  "assets_packed\strings\names\system.bin"
-                            Align   $2
+StringTables:               include "code\text\stringtables.asm"
                             include "code\scripthandling\script_visualfx.asm"
 SineTable:                  incbin  "assets_packed\misc\data\sinetable.bin"
                             Align   $2
