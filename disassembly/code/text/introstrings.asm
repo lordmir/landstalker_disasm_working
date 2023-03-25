@@ -1,4 +1,4 @@
-IntroStringPtrs:            include "code\pointertables\strings\introstringptrs.asm"
+IntroStringPointers:        include "code\pointertables\strings\introstringptrs.asm"
 IntroString1:               incbin  "assets_packed\strings\intro\string01.bin"
                             Align   $2
 IntroString2:               incbin  "assets_packed\strings\intro\string02.bin"
