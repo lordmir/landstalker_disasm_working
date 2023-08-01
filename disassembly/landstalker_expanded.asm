@@ -266,7 +266,6 @@ RoomMaps:                   include "code\graphics\roommaps.asm"
 RoomPals:                   include "code\palettes\roompals.asm"
 RoomExits:                  incbin  "assets_packed\roomdata\warps\exits.bin"
                             Align   $2
-RegionCheck:                include "code\system\regioncheck.asm"
                             include "code\pointertables\sprites\spritegraphicsptr.asm"
 SpriteGfxOffsetTable:       incbin  "assets_packed\spritedata\spritegfxoffsettable.bin"
                             Align   $2
