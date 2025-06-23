@@ -116,6 +116,7 @@ def decodeflagmsg():
    MakeComm(ScreenEA() + 2, "Flag clear: " + convoffsetatbase(ScreenEA()+2, ScreenEA()))
    MakeWord(ScreenEA() + 4)
    MakeComm(ScreenEA() + 4, "Flag set:   " + convoffsetatbase(ScreenEA()+4, ScreenEA()))
+   Jump(ScreenEA() + 6)
 
 def decodeflagmsg2():
    MakeWord(ScreenEA())
@@ -124,9 +125,11 @@ def decodeflagmsg2():
    MakeComm(ScreenEA() + 2, "Flag set:   " + convoffsetatbase(ScreenEA()+2, ScreenEA()))
    MakeWord(ScreenEA() + 4)
    MakeComm(ScreenEA() + 4, "Flag clear: " + convoffsetatbase(ScreenEA()+4, ScreenEA()))
+   Jump(ScreenEA() + 6)
 
 def decodedialogue():
    convtextcmdat(ScreenEA())
+   Jump(ScreenEA() + 2)
 
 def convshopoffsets():
    MakeWord(ScreenEA())
@@ -137,12 +140,14 @@ def convshopoffsets():
    MakeComm(ScreenEA() + 4, "Not enough money:  " + convoffsetatbase(ScreenEA()+4, ScreenEA()))
    MakeWord(ScreenEA() + 6)
    MakeComm(ScreenEA() + 6, "Sale declined:     " + convoffsetatbase(ScreenEA()+6, ScreenEA()))
+   Jump(ScreenEA() + 8)
 
 def convchurchoffsets():
    MakeWord(ScreenEA())
    MakeComm(ScreenEA(),     "Normal priest:   " + convoffsetatbase(ScreenEA(), ScreenEA()))
    MakeWord(ScreenEA() + 2)
    MakeComm(ScreenEA() + 2, "Skeleton priest: " + convoffsetatbase(ScreenEA() + 2, ScreenEA()))
+   Jump(ScreenEA() + 4)
 
 def convyesnooffsets():
    MakeWord(ScreenEA())
@@ -151,6 +156,7 @@ def convyesnooffsets():
    MakeComm(ScreenEA() + 2, "Answer 'yes': " + convoffsetatbase(ScreenEA()+2, ScreenEA()))
    MakeWord(ScreenEA() + 4)
    MakeComm(ScreenEA() + 4, "Answer 'no':  " + convoffsetatbase(ScreenEA()+4, ScreenEA()))
+   Jump(ScreenEA() + 6)
    
 def convscriptoffsetarray():
    addr = ScreenEA()
@@ -158,13 +164,15 @@ def convscriptoffsetarray():
    for i in range(elems):
       MakeWord(addr + i * 2)
       MakeComm(addr + i * 2, "%s (0x%02X) : %s" % (GetCharacterName(i), i, convoffsetatbase(addr + i * 2, addr)))
+   Jump(addr + i * 2 + 2)
 
 def convscriptarray():
    addr = ScreenEA()
    elems = ItemSize(addr)/2
    for i in range(elems):
       MakeWord(addr + i * 2)
-      MakeComm(addr + i * 2, decodeSingleWord(addr + i * 2))
+      MakeComm(addr + i * 2, convoffsetatbase(addr + i * 2, addr))
+   Jump(addr + i * 2 + 2)
 
 def convcutsceneoffsetarray():
    addr = ScreenEA()
@@ -172,6 +180,7 @@ def convcutsceneoffsetarray():
    for i in range(elems):
       MakeWord(addr + i * 2)
       MakeComm(addr + i * 2, "ID 0x%03X : %s" % (i, convoffsetatbase(addr + i * 2, addr)))
+   Jump(addr + i * 2 + 2)
 
 def convroomscriptarray():
    addr = ScreenEA()
@@ -198,6 +207,7 @@ def convroomscriptarray():
          MakeComm(addr + i * 2 + j * 2 + 2, '\n'.join(comment))
       i += sz + 1
       MakeWord(addr + i * 2)
+   Jump(addr + i * 2 + 2)
 
 def convinntable():
    addr = ScreenEA()
@@ -208,6 +218,7 @@ def convinntable():
    for i in range(elems):
       MakeWord(addr + i * 2 + 4)
       convoffsetatbase(addr + i * 2 + 4, addr)
+   Jump(addr + i * 2 + 6)
 
 def convshoptable():
    addr = ScreenEA()
@@ -222,6 +233,7 @@ def convshoptable():
          convoffsetatbase(addr + i * 2 + 4, base)
       addr += 0x0E
       MakeWord(addr)
+   Jump(addr + i * 2 + 2)
 
 def convscriptoffsets():
    addr = ScreenEA()
@@ -234,6 +246,7 @@ def convscriptoffsets():
       MakeComm(addr + 2,convoffsetatbase(addr + 2, base) + "\n")
       addr += 4
    MakeWord(addr)
+   Jump(addr + 2)
 
 charset = " 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz*.,?!/<>:-\'\"%#&()="
 
@@ -291,6 +304,50 @@ def loadStringTable(addr, total):
       ret.append(decode)
    return ret
 
+def makeSingleInsn(addr):
+    r = MakeCode(addr)
+    autoWait()
+    if(r == 0):
+        return addr
+    last_inst = addr
+    while isCode(GetFlags(last_inst)):
+        last_inst = ItemEnd(last_inst)
+    while PrevNotTail(last_inst) > addr:
+        last_inst = PrevNotTail(last_inst)
+        MakeUnkn(last_inst, 0)
+        autoWait()
+    return ItemEnd(addr)
+
+def processScript():
+    for i in range(100):
+        ea = makeSingleInsn(ScreenEA())
+        mnem = GetMnem(ScreenEA())
+        op = GetOpnd(ScreenEA(), 0)
+        print(hex(ea), mnem, op)
+        Jump(ea)
+        if mnem == "bsr":
+            if op == "HandleYesNoPrompt":
+                convyesnooffsets()
+            elif op == "HandleProgressDependentDialogue":
+                convscriptoffsets()
+            elif op == "SetFlagBitOnTalking":
+                decodeflagmsg()
+            elif op == "CheckFlagAndDisplayMessage":
+                decodeflagmsg2()
+            elif op == "Sleep_0":
+                MakeWord(ea)
+                OpDecimal(ea, 0)
+                Jump(ea + 2)
+        elif mnem == "trap":
+            if op == "#$01":
+                convoffset()
+            else:
+                MakeWord(ea)
+            Jump(ea + 2)
+        Refresh()
+        if Name(ScreenEA()) not in (BADADDR, ""):
+            break
+
 names1 = []
 names2 = []
 defaultname = []
@@ -330,3 +387,4 @@ idaapi.add_hotkey("Ctrl-Alt-Q", decodeflagmsg)
 idaapi.add_hotkey("Ctrl-Alt-W", decodeflagmsg2)
 idaapi.add_hotkey("Ctrl-Alt-Z", convscriptoffsets)
 idaapi.add_hotkey("Ctrl-Alt-N", decodeString)
+idaapi.add_hotkey("Ctrl-Alt-L", processScript)
