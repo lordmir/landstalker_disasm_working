@@ -310,7 +310,7 @@ def makeSingleInsn(addr):
     if(r == 0):
         return addr
     last_inst = addr
-    while isCode(GetFlags(last_inst)):
+    while isCode(GetFlags(last_inst)) and Name(ScreenEA()) not in (BADADDR, ""):
         last_inst = ItemEnd(last_inst)
     while PrevNotTail(last_inst) > addr:
         last_inst = PrevNotTail(last_inst)
@@ -319,6 +319,7 @@ def makeSingleInsn(addr):
     return ItemEnd(addr)
 
 def processScript():
+    orig_ea = ScreenEA()
     for i in range(100):
         ea = makeSingleInsn(ScreenEA())
         mnem = GetMnem(ScreenEA())
@@ -334,6 +335,13 @@ def processScript():
                 decodeflagmsg()
             elif op == "CheckFlagAndDisplayMessage":
                 decodeflagmsg2()
+            elif op == "DisplayItemPriceMessage":
+                convoffset()
+                Jump(ea + 2)
+            elif op == "HandleShopInterraction":
+                convshopoffsets()
+            elif op == "HandleChurchInterraction":
+                convchurchoffsets()
             elif op == "Sleep_0":
                 MakeWord(ea)
                 OpDecimal(ea, 0)
@@ -347,6 +355,9 @@ def processScript():
         Refresh()
         if Name(ScreenEA()) not in (BADADDR, ""):
             break
+    final_ea = ScreenEA()
+    Jump(orig_ea)
+    Jump(final_ea)
 
 names1 = []
 names2 = []
