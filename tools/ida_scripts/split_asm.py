@@ -128,7 +128,7 @@ copy_file(".\\tools\\decode\\expand.bat", ".\\disassembly\\expand.bat")
 copy_file(".\\expanded\\landstalker_expanded.asm", ".\\disassembly\\landstalker_expanded.asm")
 copy_file(".\\expanded\\sounddrv_expanded.z80", ".\\disassembly\\sounddrv_expanded.z80")
 
-with open(".\\tools\\ida_scripts\\rom_sections\\sections_jp.json") as f:
+with open(".\\tools\\ida_scripts\\rom_sections\\sections_eur.json") as f:
     sections = json.load(f)["sections"]
 
 print("Exporting ASM file...")
