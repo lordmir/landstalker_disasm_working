@@ -10,7 +10,6 @@ def decodeSingleWord(cmdaddr):
     if ((cmd & 0x8000) > 0):
        stridx = (cmd & 0x1FFF) + 0x4D
        text += "PRINT MSG 0x%04X" % (stridx)
-       msg = ": \"%s\"" % strings[stridx]
     else:
        action = (cmd & 0x1C00) >> 10
        wparam = cmd & 0x3FF
@@ -20,7 +19,7 @@ def decodeSingleWord(cmdaddr):
           lparam = Dword(Dword(cmdaddr + 2))
           text += "LOAD FROM POINTER 0x%08X!  " % Dword(cmdaddr + 2)
        if action < 4:
-          text += "LOAD 0x%04X INTO 0x%06X (%s)" % (wparam, 0xFF1196 + action * 2, GetItemName(wparam))
+          text += "LOAD 0x%04X INTO 0x%06X" % (wparam, 0xFF1196 + action * 2)
        elif action == 4:
           text += "LOAD %d INTO NUMERIC VARIABLE" % (lparam)
        elif action == 5:
@@ -38,9 +37,9 @@ def decodeSingleWord(cmdaddr):
              text += "INVALID ACTION"
        elif action == 6:
           if wparam < 1000:
-             text += "LOAD CHARACTER SCRIPT %s (0x%04X)" % (GetCharacterName(wparam), wparam)
+             text += "LOAD CHARACTER SCRIPT 0x%04X" % (wparam)
           else:
-             text += "LOAD SPECIAL CHARACTER %s (0x%02X)" % (GetSpecialCharacterName(wparam - 1000), (wparam - 1000))
+             text += "LOAD SPECIAL CHARACTER 0x%02X" % ((wparam - 1000))
        elif action == 7:
           offset = LocByName("CustomScriptActionTable") + 4 * wparam
           text += "LOAD CUSTOM ACTION 0x%02X (0x%06X CSA_%04X)" % (wparam, offset, wparam) 
@@ -157,7 +156,7 @@ def convscriptoffsetarray():
    elems = ItemSize(addr)/2
    for i in range(elems):
       MakeWord(addr + i * 2)
-      MakeComm(addr + i * 2, "%s (0x%02X) : %s" % (GetCharacterName(i), i, convoffsetatbase(addr + i * 2, addr)))
+      MakeComm(addr + i * 2, "0x%02X : %s" % (i, convoffsetatbase(addr + i * 2, addr)))
 
 def convscriptarray():
    addr = ScreenEA()
@@ -193,7 +192,7 @@ def convroomscriptarray():
          for k in range(count):
             idx = idx_base + k
             speaker = speaker_base + k
-            comment += ["ID 0x%01X, Speaker %s (0x%02X) : 0x%06X" % (idx, GetCharacterName(speaker), speaker, LocByName("CharacterScriptTable") + speaker * 2)]
+            comment += ["ID 0x%01X, Speaker 0x%02X : 0x%06X" % (idx, speaker, LocByName("CharacterScriptTable") + speaker * 2)]
          idx_base += count
          MakeComm(addr + i * 2 + j * 2 + 2, '\n'.join(comment))
       i += sz + 1
@@ -309,10 +308,24 @@ def loadAllStrings():
    items = loadStringTable(LocByName("ItemNameTable"), 64)
    system = loadStringTable(LocByName("MenuStringTable"), 29)
    
-with open("out.txt") as f:
+with open("out_jp.txt") as f:
     strings = f.readlines()
-strings = [x.strip() for x in strings] 
-loadAllStrings()
+strings = [x.strip() for x in strings]
+with open("out_jp_chrs.txt") as f:
+    names1 = f.readlines()
+names1 = [x.strip() for x in names1]
+with open("out_jp_schrs.txt") as f:
+    names2 = f.readlines()
+names2 = [x.strip() for x in names2]
+with open("out_jp_dchr.txt") as f:
+    defaultname = f.readlines()
+defaultname = [x.strip() for x in defaultname]
+with open("out_jp_items.txt") as f:
+    items = f.readlines()
+items = [x.strip() for x in items] 
+with open("out_jp_system.txt") as f:
+    system = f.readlines()
+system = [x.strip() for x in system]
 
 idaapi.add_hotkey("Ctrl-Alt-R", convroomscriptarray)
 idaapi.add_hotkey("Ctrl-Alt-S", convshopoffsets)

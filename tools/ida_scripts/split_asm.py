@@ -3,6 +3,8 @@ from idaapi import *
 from idc import *
 import os;
 import shutil;
+import re
+import json
 
 types = {"ASM":0, "BIN":1, "ORG":2, "PAD":3, "PADTO":4}
 
@@ -55,6 +57,28 @@ def copy_file(src, dst):
     ensure_dir(dst)
     shutil.copyfile(src, dst)
 
+def strip_init_label(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    lines[0] = re.sub("^[A-Za-z0-9_]+:","\t\t",lines[0])
+    with open(filename, 'w') as file:
+        file.writelines(lines)
+
+def get_addr(label):
+    offset = 0
+    if label.endswith("+1"):
+        offset = 1
+        label = label[:-2]
+    elif label.endswith("-1"):
+        offset = -1
+        label = label[:-2]
+    print("*" + label + "*")
+    addr = LocByName(label.encode("ascii"))
+    if addr == BADADDR:
+        raise RuntimeError(label + " not found")
+    return addr + offset
+
+
 if os.path.exists(".\\disassembly"):
     response = -1
     while response != 0 and response != 1:
@@ -104,56 +128,26 @@ copy_file(".\\tools\\decode\\expand.bat", ".\\disassembly\\expand.bat")
 copy_file(".\\expanded\\landstalker_expanded.asm", ".\\disassembly\\landstalker_expanded.asm")
 copy_file(".\\expanded\\sounddrv_expanded.z80", ".\\disassembly\\sounddrv_expanded.z80")
 
-execfile(".\\tools\\ida_scripts\\rom_sections\\us_release.py")
-sections = get_sections()
+with open(".\\tools\\ida_scripts\\rom_sections\\sections_jp.json") as f:
+    sections = json.load(f)["sections"]
 
 print("Exporting ASM file...")
 for section in sections:
-    if section.type == types["ASM"]:
-        ensure_dir(".\\disassembly\\" + section.filename)
-        idc.GenerateFile(idc.OFILE_ASM, ".\\disassembly\\" + section.filename, section.start_address, section.end_address, 0 )
-    elif section.type == types["BIN"]:
-        ensure_dir(".\\disassembly\\" + section.filename)
-        extract_binary_data(".\\landstalker.bin", section.start_address, section.end_address, ".\\disassembly\\" + section.filename )
-
-print("Producing main assembly file...")
-lastorg = 1
-with open(".\\disassembly\\landstalker.asm", 'w') as asmfile:
-    asmfile.write(";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n")
-    asmfile.write(";; LANDSTALKER US ROM Disassembly ;;\n")
-    asmfile.write(";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;\n")
-    asmfile.write(";;\n")
-    asmfile.write(";; To build, run:\n")
-    asmfile.write(";; .\\build\\asm68k.exe /p /o ae-,e+,w+,c+,op+,os+,ow+,oz+,l_ landstalker.asm,landstalker.bin\n")
-    asmfile.write("\n")
-    asmfile.write("%-26s  include \"%s\"\n" % ("","code\\include\\landstalker.inc"))
-    asmfile.write("%-26s  include \"%s\"\n" % ("","code\\include\\ram.inc"))
-    asmfile.write("%-26s  include \"%s\"\n" % ("","code\\include\\macros.inc"))
-    asmfile.write("\n\n")
-    for section in sections:
-        label = ""
-
-        if section.type == types["BIN"] or section.type == types["ASM"]:
-            if section.align > 1 and lastorg % section.align > 0:
-                asmfile.write("%-26s  Align   $%X\n" % ("", section.align))
-        if section.type == types["ORG"] or section.type == types["PADTO"]:
-            lastorg = section.start_address
-        else:
-            lastorg = 1
-
-        if len(section.label) > 0:
-            label = "%s:" % section.label
-
-        if section.type == types["ASM"]:
-            asmfile.write("%-26s  include \"%s\"\n" % (label, section.filename))
-        elif section.type == types["BIN"]:
-            asmfile.write("%-26s  incbin  \"%s\"\n" % (label, section.filename))
-        elif section.type == types["ORG"]:
-            asmfile.write("%-26s  org     $%06X\n" % (label, section.start_address))
-        elif section.type == types["PAD"]:
-            asmfile.write("%-26s  dcb.b   $%X, $FF\n" % (label, section.end_address - section.start_address))
-        elif section.type == types["PADTO"]:
-            asmfile.write("%-26s  PadTo   $%06X\n" % (label, section.end_address))
+    ensure_dir(".\\disassembly\\" + section["filename"])
+    start_address = get_addr(section["start"])
+    end_address = get_addr(section["end"])
+    if section["type"] == types["ASM"]:
+        idc.GenerateFile(idc.OFILE_ASM, ".\\disassembly\\" + section["filename"].encode("ascii"), start_address, end_address, 0 )
+    elif section["type"] == types["BIN"]:
+        extract_binary_data(".\\" + get_root_filename(), start_address, end_address, ".\\disassembly\\" + section["filename"].encode("ascii") )
+    
+# Post Processing
+strip_init_label("disassembly\\code\\pointertables\\strings\\introstringptrs.asm")
+strip_init_label("disassembly\\code\\pointertables\\maps\\roomlist.asm")
+strip_init_label("disassembly\\code\\script\\characters\\script_charactertable.asm")
+strip_init_label("disassembly\\code\\script\\cutscenes\\script_cutscenetable.asm")
+strip_init_label("disassembly\\code\\script\\shops\\shoptable.asm")
+strip_init_label("disassembly\\code\\script\\shops\\shoptable_specialitems.asm")
 
 print("Done!")
 
